@@ -4,6 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>TerpPark - UMD Parking Guide</title>
+<meta name="description" content="TerpPark helps University of Maryland (UMD) students, staff, and visitors check parking lot restrictions in real time, find the nearest open parking lot to any building on campus, and see live status for every lot and visitor garage at College Park, MD.">
+<meta name="keywords" content="UMD parking, University of Maryland parking, College Park MD parking, UMD parking lots, UMD parking map, UMD visitor parking, UMD DOTS parking, campus parking guide">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://terppark.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TerpPark - UMD Parking Guide">
+<meta property="og:description" content="Check UMD parking lot restrictions in real time, find the nearest open lot to any campus building, and see live status for every lot and visitor garage.">
+<meta property="og:url" content="https://terppark.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TerpPark - UMD Parking Guide">
+<meta name="twitter:description" content="Check UMD parking lot restrictions in real time and find the nearest open parking lot on campus.">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
@@ -106,7 +117,18 @@
 </div>
 
 <!-- Main Content Canvas -->
-<main id="app-root" class="flex-grow px-margin-mobile pt-stack-lg pb-8 space-y-stack-lg max-w-md mx-auto w-full"></main>
+<main id="app-root" class="flex-grow px-margin-mobile pt-stack-lg pb-8 space-y-stack-lg max-w-md mx-auto w-full">
+  <!-- Static fallback for search engines / non-JS clients. JavaScript replaces
+       this immediately with the live app for real visitors. -->
+  <h1 class="font-headline-lg text-headline-lg text-on-surface">TerpPark - UMD Parking Guide</h1>
+  <p class="font-body-md text-body-md text-on-surface-variant">
+    TerpPark is a free tool for checking parking at the University of Maryland, College Park.
+    Look up any UMD parking lot to see its restriction rules and whether it's open right now,
+    find the nearest available lot or visitor parking garage to any building on campus, and
+    browse an interactive map of every lot at College Park, MD.
+  </p>
+  <p class="font-body-md text-body-md text-on-surface-variant">Loading the live app…</p>
+</main>
 
 <!-- Disclaimer -->
 <footer class="w-full px-margin-mobile py-stack-md border-t border-outline-variant bg-surface-container-low">
