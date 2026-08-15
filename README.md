@@ -6,17 +6,6 @@ A client-side webapp for UMD (College Park) parking. Three things it does:
 2. **Park near a building** — type a building name (e.g. "McKeldin Library") and get the closest parking lots ranked by distance, each with distance, estimated walk time, and live status.
 3. **Map** — every lot and building plotted on a real OpenStreetMap map, color-coded by restriction category.
 
-## Running it
-
-No build step, no backend.
-
-```
-cd docs
-python3 -m http.server 8791
-```
-
-Then open `http://localhost:8791`. (A plain double-click on `index.html` also mostly works, except some browsers block `fetch`/CORS for `file://` — this app avoids that by inlining all data into `data.js`, so double-clicking should work too.)
-
 ## Where the data comes from
 
 - **`Campus-parking-map.pdf`** — the official UMD Transportation Services Campus Parking Map (2025-26 edition) you provided. This is the source for: the list of 117 lot codes, each lot's restriction category (color-coded on the map: green/cyan/orange/red/purple), the rule text for each category, and the special per-lot rules (KK, TV, YC, BB, D, E, GG2, HP), gated lots, and overflow-lot lists. Read via `pdftotext` + rendering pages to PNG and reading the legend/directory tables directly.
