@@ -1,0 +1,606 @@
+<!-- Lot Detail - Mobile -->
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#2f3131",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffe07c",
+                    "primary-fixed": "#ffdad8",
+                    "secondary-container": "#dbe3ef",
+                    "on-secondary-fixed": "#141c24",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#231b00",
+                    "on-primary-container": "#fff8f7",
+                    "on-tertiary-container": "#4d3e00",
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-surface-variant": "#5d3f3e",
+                    "surface-container": "#eeeeee",
+                    "on-background": "#1a1c1c",
+                    "outline": "#926e6d",
+                    "outline-variant": "#e6bdba",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e2e2e2",
+                    "error": "#ba1a1a",
+                    "secondary": "#575f69",
+                    "tertiary": "#725c00",
+                    "surface-container-low": "#f3f3f3",
+                    "secondary-fixed": "#dbe3ef",
+                    "on-surface": "#1a1c1c",
+                    "secondary-fixed-dim": "#bfc7d2",
+                    "on-secondary-container": "#5d656f",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#410006",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#cca800",
+                    "on-tertiary-fixed-variant": "#564500",
+                    "on-secondary-fixed-variant": "#3f4851",
+                    "background": "#f9f9f9",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e8e8e8",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary-fixed-dim": "#ecc200",
+                    "inverse-primary": "#ffb3b0",
+                    "primary-fixed-dim": "#ffb3b0",
+                    "on-primary-fixed-variant": "#93001a",
+                    "surface-dim": "#dadada",
+                    "primary": "#b80023",
+                    "surface-tint": "#bf0025",
+                    "surface": "#f9f9f9",
+                    "primary-container": "#e21833"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "gutter": "12px",
+                    "margin-mobile": "16px",
+                    "stack-lg": "24px",
+                    "touch-target-min": "48px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "stat-display": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "stat-display": ["32px", {"lineHeight": "32px", "fontWeight": "900"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        
+        /* Custom Hide Scrollbar */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Slider track styling */
+        input[type=range]::-webkit-slider-runnable-track {
+            background: #e2e2e2;
+            height: 8px;
+            border-radius: 999px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            background: #b80023;
+            border-radius: 50%;
+            margin-top: -8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg min-h-screen pb-32">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flex justify-between items-center h-14 px-margin-mobile">
+<div class="flex items-center gap-stack-sm">
+<button class="active:opacity-90 transition-opacity flex items-center justify-center w-10 h-10" onclick="window.history.back()">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<span class="font-headline-md text-headline-md font-black text-primary">Terp Park</span>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-on-surface-variant">account_circle</span>
+</div>
+</header>
+<!-- Operational Status Banner -->
+<div class="flex items-center px-margin-mobile py-2 w-full mt-14 bg-primary-container dark:bg-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-on-primary-container mr-2" style="font-variation-settings: 'FILL' 1;">info</span>
+<span class="font-label-lg text-label-lg uppercase tracking-widest text-on-primary-container">Status: Normal Operations</span>
+</div>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile py-stack-lg">
+<!-- Section 1: Header -->
+<section class="mb-stack-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-1">Lot 1 (Mowatt Lane)</h1>
+<div class="flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-body-md mr-1">location_on</span>
+<p class="font-body-md text-body-md">South Campus, adjacent to Van Munching Hall</p>
+</div>
+</section>
+<!-- Section 2: Status Indicator (High Contrast Banner) -->
+<section class="mb-stack-lg">
+<div class="bg-[#1b5e20] text-white p-stack-md rounded-lg flex items-center justify-between border-l-[8px] border-[#2e7d32]" id="status-banner">
+<div>
+<p class="font-label-lg text-label-lg opacity-90 uppercase">Current Status</p>
+<h2 class="font-headline-lg text-headline-lg leading-tight">PARKING ALLOWED</h2>
+</div>
+<span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</section>
+<!-- Section 3: The "Why" (Bento-style info card) -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md mb-stack-lg">
+<h3 class="font-label-lg text-label-lg text-primary uppercase mb-stack-sm">Current Rules (4:15 PM)</h3>
+<ul class="space-y-stack-sm">
+<li class="flex items-start gap-stack-sm">
+<span class="material-symbols-outlined text-primary mt-0.5">verified</span>
+<div>
+<p class="font-body-md text-body-md font-bold">Commuter Permits</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Allowed in all numbered lots after 4:00 PM.</p>
+</div>
+</li>
+<li class="flex items-start gap-stack-sm">
+<span class="material-symbols-outlined text-secondary mt-0.5">payments</span>
+<div>
+<p class="font-body-md text-body-md font-bold">Visitors &amp; Public</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Pay station or ParkMobile required ($3.00/hr).</p>
+</div>
+</li>
+</ul>
+</section>
+<!-- Section 4: Temporal Logic Slider -->
+<section class="mb-stack-lg">
+<div class="flex justify-between items-end mb-stack-sm">
+<h3 class="font-label-lg text-label-lg text-on-surface uppercase">Plan Ahead</h3>
+<span class="font-stat-display text-stat-display text-primary" id="time-display">4:15 PM</span>
+</div>
+<div class="bg-surface-container border border-outline-variant p-stack-md rounded-xl">
+<input class="w-full h-2 bg-outline-variant rounded-lg appearance-none cursor-pointer accent-primary" id="time-slider" max="1440" min="0" step="15" type="range" value="975">
+<div class="flex justify-between mt-stack-sm text-on-surface-variant font-label-md text-label-md">
+<span class="">Morning</span>
+<span class="">Noon</span>
+<span class="">Evening</span>
+</div>
+</div>
+<p class="mt-stack-sm font-body-md text-body-md text-on-surface-variant italic text-center">
+                Check restrictions for a later arrival time.
+            </p>
+</section>
+<!-- Section 5: Physical Sign Preview & Visual Context -->
+<section class="grid grid-cols-2 gap-gutter mb-stack-lg">
+<button class="bg-surface-container-low border border-outline-variant rounded-lg p-stack-md flex flex-col items-center justify-center gap-stack-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-secondary">signpost</span>
+<span class="font-label-lg text-label-lg text-on-secondary-container">See Entrance Sign</span>
+</button>
+<div class="relative rounded-lg overflow-hidden border border-outline-variant h-24">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A high-resolution, clear photograph of a red and white University of Maryland parking lot entrance sign. The sign explicitly lists Lot 1 and various permit restrictions. The lighting is bright daylight, highlighting the crisp typography and the campus architectural style in the background with brick buildings and greenery." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQih_VJfvgmzCqnVXCNb5zr8HrfzKw8y_ku7egd6mAIB3jzTzSDZaP8Nd48DkNaliKV3JCBAoC71E4JRx_ME4F0TiiNaCuJhsQq_8WXX9SZBcSlnVJh5RWgUxh3TYElXsz1Xbtyf7H7QpII2LHKHz8i9zIMlBtXol8yb7cXgawgXCI9YTPFHTnPFLoSzcJeL7CPlqnGIXSw2K_T0gJHzycBe-Rh6RQW15gi7oJ96aoWoBvGEerysZIFVGOWZX88aPc2zkRALAitrs')"></div>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white">zoom_in</span>
+</div>
+</div>
+</section>
+<!-- Section 6: Quick Nav CTA (Floating Bottom-Anchored) -->
+<div class="fixed bottom-24 left-0 w-full px-margin-mobile">
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-headline-md rounded-lg flex items-center justify-center gap-stack-sm shadow-md active:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">directions</span>
+                Navigate to Lot
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full z-50 h-20 bg-surface dark:bg-surface-dim border-t border-outline-variant dark:border-outline flex justify-around items-center pb-safe">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-lg text-label-lg">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_parking</span>
+<span class="font-label-lg text-label-lg">Permits</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">eco</span>
+<span class="font-label-lg text-label-lg">Green</span>
+</a>
+</nav>
+<script>
+        const slider = document.getElementById('time-slider');
+        const display = document.getElementById('time-display');
+        const banner = document.getElementById('status-banner');
+
+        function formatTime(minutes) {
+            let h = Math.floor(minutes / 60);
+            let m = minutes % 60;
+            let ampm = h >= 12 ? 'PM' : 'AM';
+            h = h % 12;
+            h = h ? h : 12; 
+            m = m < 10 ? '0' + m : m;
+            return h + ':' + m + ' ' + ampm;
+        }
+
+        slider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value);
+            display.textContent = formatTime(val);
+
+            // Mock Logic: Permit required during business hours (7AM - 4PM)
+            if (val >= 420 && val < 960) {
+                banner.style.backgroundColor = '#b71c1c';
+                banner.style.borderColor = '#d32f2f';
+                banner.innerHTML = `
+                    <div>
+                        <p class="font-label-lg text-label-lg opacity-90 uppercase">Status at ${formatTime(val)}</p>
+                        <h2 class="font-headline-lg text-headline-lg leading-tight">PERMIT REQUIRED</h2>
+                    </div>
+                    <span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1;">error</span>
+                `;
+            } else {
+                banner.style.backgroundColor = '#1b5e20';
+                banner.style.borderColor = '#2e7d32';
+                banner.innerHTML = `
+                    <div>
+                        <p class="font-label-lg text-label-lg opacity-90 uppercase">Status at ${formatTime(val)}</p>
+                        <h2 class="font-headline-lg text-headline-lg leading-tight">PARKING ALLOWED</h2>
+                    </div>
+                    <span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                `;
+            }
+        });
+    </script>
+
+
+</body></html>
+
+<!-- TerpPark Mobile - Destination Navigator -->
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>TerpPark Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#2f3131",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffe07c",
+                    "primary-fixed": "#ffdad8",
+                    "secondary-container": "#dbe3ef",
+                    "on-secondary-fixed": "#141c24",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#231b00",
+                    "on-primary-container": "#fff8f7",
+                    "on-tertiary-container": "#4d3e00",
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-surface-variant": "#5d3f3e",
+                    "surface-container": "#eeeeee",
+                    "on-background": "#1a1c1c",
+                    "outline": "#926e6d",
+                    "outline-variant": "#e6bdba",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e2e2e2",
+                    "error": "#ba1a1a",
+                    "secondary": "#575f69",
+                    "tertiary": "#725c00",
+                    "surface-container-low": "#f3f3f3",
+                    "secondary-fixed": "#dbe3ef",
+                    "on-surface": "#1a1c1c",
+                    "secondary-fixed-dim": "#bfc7d2",
+                    "on-secondary-container": "#5d656f",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#410006",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#cca800",
+                    "on-tertiary-fixed-variant": "#564500",
+                    "on-secondary-fixed-variant": "#3f4851",
+                    "background": "#f9f9f9",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e8e8e8",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary-fixed-dim": "#ecc200",
+                    "inverse-primary": "#ffb3b0",
+                    "primary-fixed-dim": "#ffb3b0",
+                    "on-primary-fixed-variant": "#93001a",
+                    "surface-dim": "#dadada",
+                    "primary": "#b80023",
+                    "surface-tint": "#bf0025",
+                    "surface": "#f9f9f9",
+                    "primary-container": "#e21833"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "gutter": "12px",
+                    "margin-mobile": "16px",
+                    "stack-lg": "24px",
+                    "touch-target-min": "48px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "stat-display": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "stat-display": ["32px", {"lineHeight": "32px", "fontWeight": "900"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            user-select: none;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+<!-- Top Navigation Shell (Fixed) -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flex justify-between items-center h-14 px-margin-mobile w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">directions_car</span>
+<span class="font-headline-md text-headline-md-mobile font-black text-primary dark:text-primary-fixed">UMD Parking</span>
+</div>
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed active:opacity-90 transition-opacity">account_circle</button>
+</header>
+<!-- Sub-Header: Campus Status -->
+<div class="flex items-center px-margin-mobile py-2 w-full mt-14 bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-on-primary-fixed">
+
+<span class="font-label-lg text-label-lg uppercase tracking-widest"><br></span>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-margin-mobile pt-stack-lg pb-32 space-y-stack-lg max-w-md mx-auto w-full">
+<!-- Time & Status Card (Mini High Contrast) -->
+<section class="flex justify-between items-center bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-lg shadow-sm">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface-variant/70 uppercase">Current Time</span>
+<span class="font-headline-md text-headline-md leading-none" id="current-time">12:55 AM</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-lg text-label-lg text-on-surface-variant/70 uppercase"><br></span>
+<span class="font-body-md text-body-md font-bold"><br></span>
+</div>
+</section>
+<!-- Instant Resolver Search -->
+<section class="space-y-stack-sm">
+<label class="font-label-lg text-label-lg text-secondary uppercase px-1" for="lot-search">Quick Lot Lookup</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-outline">search</span>
+<input class="w-full h-12 pl-12 pr-4 bg-surface-container-lowest border border-outline rounded-lg font-body-lg text-body-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm" id="lot-search" placeholder="Enter Lot ID (e.g. Lot 1)" type="text">
+</div>
+</section><section class="space-y-stack-sm">
+<label class="font-label-lg text-label-lg text-secondary uppercase px-1" for="destination-search">Destination Search</label>
+<div class="relative flex items-center mb-stack-md">
+<span class="material-symbols-outlined absolute left-4 text-outline">location_on</span>
+<input class="w-full h-12 pl-12 pr-4 bg-surface-container-lowest border border-outline rounded-lg font-body-lg text-body-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm" id="destination-search" placeholder="Enter Building (e.g. Van Munching Hall)" type="text">
+</div>
+<div class="flex justify-between items-end px-1">
+<h2 class="font-label-lg text-label-lg text-secondary uppercase">Nearest Lots for Destination</h2>
+</div>
+<div class="flex gap-stack-md overflow-x-auto hide-scrollbar pb-2">
+<div class="flex-shrink-0 w-32 bg-surface-container border border-outline-variant p-3 rounded-xl active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-1">
+<span class="font-headline-md text-headline-md">Lot 1</span>
+<span class="material-symbols-outlined text-primary text-sm">directions_walk</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">2 min walk</p>
+<p class="font-label-lg text-label-lg text-primary mt-1">Allowed</p>
+</div>
+<div class="flex-shrink-0 w-32 bg-surface-container border border-outline-variant p-3 rounded-xl active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-1">
+<span class="font-headline-md text-headline-md">Lot U2</span>
+<span class="material-symbols-outlined text-primary text-sm">directions_walk</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">5 min walk</p>
+<p class="font-label-lg text-label-lg text-primary mt-1">Allowed</p>
+</div>
+<div class="flex-shrink-0 w-32 bg-surface-container border border-outline-variant p-3 rounded-xl active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-1">
+<span class="font-headline-md text-headline-md">Lot Z</span>
+<span class="material-symbols-outlined text-primary text-sm">directions_walk</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">8 min walk</p>
+<p class="font-label-lg text-label-lg text-secondary mt-1">Restricted</p>
+</div>
+</div>
+</section>
+<!-- Primary Decision Tool: Can I Park? -->
+<section class="relative">
+<div class="bg-surface-container-lowest border-l-4 border-primary rounded-lg p-stack-lg shadow-sm">
+<h2 class="font-label-lg text-label-lg text-secondary uppercase mb-2">Nearest Location</h2>
+<div class="flex justify-between items-start mb-stack-md">
+<div>
+<h3 class="font-headline-lg text-headline-lg-mobile text-on-surface">Mowatt Lane Garage</h3>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-sm mr-1">near_me</span>
+<span class="font-body-md text-body-md">250ft from your location</span>
+</div>
+</div>
+<!-- Availability Chip -->
+<div class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full font-label-lg text-label-lg">
+                        18% OPEN
+                    </div>
+</div>
+<!-- Eligibility Visualizer -->
+<div class="space-y-stack-md">
+<div class="p-4 bg-inverse-surface text-inverse-on-surface rounded-lg flex items-center gap-4">
+<div class="bg-primary p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: &quot;FILL&quot; 1;">block</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md leading-tight">No, Restriction Active</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Until 4:00 PM (Faculty Permit Only)</p>
+</div>
+</div>
+<button class="w-full h-touch-target-min bg-primary text-white font-headline-md text-headline-md rounded-lg active:scale-95 transition-transform">
+                        Check Other Lots
+                    </button>
+</div>
+</div>
+</section>
+<!-- Recent/Saved Lots Horizontal Scroll -->
+<section class="space-y-stack-sm">
+<div class="flex justify-between items-end px-1">
+<h2 class="font-label-lg text-label-lg text-secondary uppercase">Quick Access</h2>
+<button class="font-label-lg text-label-lg text-primary underline">Edit</button>
+</div>
+
+</section>
+<!-- Subtle Info Card (Bento Style) -->
+<section class="grid grid-cols-2 gap-stack-md">
+<div class="bg-surface-container-low border border-outline-variant p-4 rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-2">map</span>
+<p class="font-headline-md text-headline-md-mobile">Map View</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Explore campus</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-4 rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-2">eco</span>
+<p class="font-headline-md text-headline-md-mobile">Green Spots</p>
+<p class="font-body-md text-body-md text-on-surface-variant">EV Charging</p>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full z-50 h-20 bg-surface dark:bg-surface-dim border-t border-outline-variant dark:border-outline shadow-md dark:shadow-none flex justify-around items-center w-full pb-safe">
+<div class="flex flex-col items-center justify-center dark:text-primary-fixed hover:bg-surface-container dark:hover:bg-surface-container-high active:scale-95 transition-transform duration-100 cursor-pointer text-secondary">
+
+
+</div>
+
+
+<div class="flex flex-col items-center justify-center dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-high active:scale-95 transition-transform duration-100 cursor-pointer text-secondary">
+
+
+</div>
+</nav>
+<script>
+        // Update Time Live
+        function updateTime() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            const strTime = hours + ':' + minutes + ' ' + ampm;
+            document.getElementById('current-time').textContent = strTime;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Search Interactivity
+        const searchInput = document.getElementById('lot-search');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.02]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.02]');
+        });
+
+        // Mock Navigation Highlight
+        const navItems = document.querySelectorAll('nav > div');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navItems.forEach(i => {
+                    i.classList.remove('text-primary', 'font-bold');
+                    i.classList.add('text-secondary');
+                    const icon = i.querySelector('.material-symbols-outlined');
+                    icon.style.fontVariationSettings = "'FILL' 0";
+                });
+                item.classList.add('text-primary', 'font-bold');
+                item.classList.remove('text-secondary');
+                const activeIcon = item.querySelector('.material-symbols-outlined');
+                activeIcon.style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+    </script>
+
+
+</body></html>

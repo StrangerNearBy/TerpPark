@@ -1,0 +1,1472 @@
+[
+  {
+    "id": "815",
+    "name": "7401 BALTIMORE AVE",
+    "grid": "F13",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "800",
+    "name": "4-H HEADQUARTERS",
+    "grid": "D3",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "429",
+    "name": "A. JAMES CLARK HALL",
+    "grid": "F8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "115",
+    "name": "A.V. WILLIAMS BUILDING",
+    "grid": "F8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "816",
+    "name": "ANACOSTIA BUILDING",
+    "grid": "ANACOSTIA INSET",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "142",
+    "name": "ANIMAL SCIENCES/AGRIC. ENGRG. BLDG",
+    "grid": "E8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "008",
+    "name": "ANNAPOLIS HALL",
+    "grid": "E12",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "156",
+    "name": "ARBORETUM OUTREACH CENTER",
+    "grid": "C8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "145",
+    "name": "ARCHITECTURE BUILDING",
+    "grid": "D11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "813",
+    "name": "ARTEMESIA BUILDING",
+    "grid": "G7",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "221",
+    "name": "ASTRONOMICAL OBSERVATORY",
+    "grid": "B3",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "224",
+    "name": "ATLANTIC BUILDING",
+    "grid": "E8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "795",
+    "name": "AVRUM GUDELSKY VET. CENTER",
+    "grid": "E2",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "143",
+    "name": "BENJAMIN BUILDING",
+    "grid": "D10",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "144",
+    "name": "BIOLOGY-PSYCHOLOGY BUILDING",
+    "grid": "E9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "296",
+    "name": "BIOMOLECULAR SCIENCES BUILDING",
+    "grid": "F7",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "413",
+    "name": "BIOSCIENCE RESEARCH BUILDING",
+    "grid": "E9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "432",
+    "name": "BRENDEN IRIBE CENTER",
+    "grid": "F9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "006",
+    "name": "BUILDING 006 (WEWORK)",
+    "grid": "G10",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "097",
+    "name": "CAMBRIDGE COMMUNITY CENTER",
+    "grid": "E7",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "381",
+    "name": "CENTER FOR YOUNG CHILDREN",
+    "grid": "C7",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "090",
+    "name": "CHEMICAL & NUCLEAR ENGINEERING BUILDING",
+    "grid": "F8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "091",
+    "name": "CHEMISTRY BUILDING",
+    "grid": "E9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "338",
+    "name": "CHESAPEAKE BUILDING",
+    "grid": "E5",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "059",
+    "name": "CHINCOTEAGUE HALL",
+    "grid": "D11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "052",
+    "name": "CLARENCE M. MITCHELL, JR. BUILDING",
+    "grid": "E10",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "386",
+    "name": "CLARICE SMITH PERFORMING ARTS CENTER",
+    "grid": "C8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "162",
+    "name": "COLE STUDENT ACTIVITIES BUILDING",
+    "grid": "D9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "802",
+    "name": "COLLEGE PARK FIRE STATION",
+    "grid": "G8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "406",
+    "name": "COMPUTER SCIENCE INSTRUCTIONAL CENTER",
+    "grid": "F8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "886",
+    "name": "CRANE AQUACULTURE BUILDING",
+    "grid": "E2",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "814",
+    "name": "CYPRESS BUILDING",
+    "grid": "G7",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "251",
+    "name": "DENTON AREA DINING HALL",
+    "grid": "C7",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "228",
+    "name": "E.A. FERNANDEZ IDEA FACTORY",
+    "grid": "F8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "226",
+    "name": "EDWARD ST. JOHN CENTER",
+    "grid": "E10",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "257",
+    "name": "ELLICOTT AREA DINING HALL (THE DINER)",
+    "grid": "D7",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "223",
+    "name": "ENERGY RESEARCH FACILITY",
+    "grid": "F8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "093",
+    "name": "ENGINEERING ANNEX",
+    "grid": "F8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "089",
+    "name": "ENGINEERING LABORATORY BUILDING",
+    "grid": "F9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "344",
+    "name": "ENVIRONMENTAL SERVICE FACILITY",
+    "grid": "D6",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "048",
+    "name": "FRANCIS SCOTT KEY HALL",
+    "grid": "E11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "237",
+    "name": "GEOLOGY BUILDING",
+    "grid": "E9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "352",
+    "name": "GRADUATE STUDENT HOUSING",
+    "grid": "G11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "073",
+    "name": "H.J. PATTERSON HALL",
+    "grid": "D10",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "140",
+    "name": "HEALTH CENTER",
+    "grid": "D10",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "085",
+    "name": "INSTITUTE FOR PHYSICAL SCIENCE & TECH. BLDG",
+    "grid": "E8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "083",
+    "name": "J.M. PATTERSON BUILDING",
+    "grid": "E8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "034",
+    "name": "JIMENEZ HALL",
+    "grid": "D10",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "082",
+    "name": "JOHN S. TOLL PHYSICS BUILDING",
+    "grid": "E9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "227",
+    "name": "JULL HALL",
+    "grid": "D8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "225",
+    "name": "KIM ENGINEERING BUILDING",
+    "grid": "F8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "417",
+    "name": "KNIGHT HALL",
+    "grid": "C10",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "796",
+    "name": "LAB. FOR PHYSICAL SCIENCES",
+    "grid": "D2",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "071",
+    "name": "LEE BUILDING",
+    "grid": "E11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "038",
+    "name": "LEFRAK HALL",
+    "grid": "D11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "148",
+    "name": "MANUFACTURING BUILDING",
+    "grid": "E7",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "046",
+    "name": "MARIE MOUNT HALL",
+    "grid": "E11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "088",
+    "name": "MARTIN HALL",
+    "grid": "F9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "009",
+    "name": "MEMORIAL CHAPEL",
+    "grid": "E11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "199",
+    "name": "MFRI OFFICE/CLASSROOM",
+    "grid": "H12",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "231",
+    "name": "MICROBIOLOGY BUILDING",
+    "grid": "E9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "040",
+    "name": "MORRILL HALL",
+    "grid": "D11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "382",
+    "name": "NEUTRAL BUOYANCY RESEARCH FACILITY",
+    "grid": "F7",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "232",
+    "name": "NYUMBURU CULTURAL CENTER",
+    "grid": "D9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "383",
+    "name": "PAINT BRANCH BUILDING",
+    "grid": "H12",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "146",
+    "name": "PARREN J. MITCHELL ART-SOCIOLOGY BUILDING",
+    "grid": "D11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "805",
+    "name": "PATAPSCO BUILDING PATAPSCO & TECH",
+    "grid": "VENTURES INSET",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "010",
+    "name": "PATUXENT BUILDING",
+    "grid": "D9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "415",
+    "name": "PHYSICAL SCIENCES COMPLEX",
+    "grid": "E8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "036",
+    "name": "PLANT SCIENCES BUILDING",
+    "grid": "E9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "007",
+    "name": "POCOMOKE BUILDING",
+    "grid": "F12",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "054",
+    "name": "PREINKERT HALL",
+    "grid": "D11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "202",
+    "name": "REGENTS DRIVE PARKING GARAGE",
+    "grid": "E9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "398",
+    "name": "RESEARCH GREENHOUSE",
+    "grid": "E5",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "407",
+    "name": "RIGGS ALUMNI CENTER",
+    "grid": "C9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "080",
+    "name": "ROSSBOROUGH INN",
+    "grid": "F11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "255",
+    "name": "SCHOOL OF PUBLIC HEALTH BUILDING",
+    "grid": "E7",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "812",
+    "name": "SENECA BUILDING",
+    "grid": "G7",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "003",
+    "name": "SERVICE BUILDING",
+    "grid": "F10",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "810",
+    "name": "SEVERN BUILDING",
+    "grid": "SEVERN INSET",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "037",
+    "name": "SHOEMAKER BUILDING",
+    "grid": "E11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "424",
+    "name": "SHUTTLE BUS FACILITY",
+    "grid": "F6",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "044",
+    "name": "SKINNER BUILDING",
+    "grid": "E11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "026",
+    "name": "SOUTH CAMPUS DINING HALL",
+    "grid": "D12",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "163",
+    "name": "STAMP STUDENT UNION",
+    "grid": "D9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "233",
+    "name": "SUSQUEHANNA HALL",
+    "grid": "D12",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "076",
+    "name": "SYMONS HALL",
+    "grid": "E10",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "043",
+    "name": "TALIAFERRO HALL",
+    "grid": "E11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "141",
+    "name": "TAWES HALL",
+    "grid": "C10",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "387",
+    "name": "TECH. ADVANCEMENT PROGRAM BUILDING",
+    "grid": "F7",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "806",
+    "name": "TECH. VENTURES BUILDING PATAPSCO & TECH",
+    "grid": "VENTURES INSET",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "011",
+    "name": "THE HALL",
+    "grid": "G10",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "077",
+    "name": "THOMAS V. MILLER, JR. ADMINISTRATION BUILDING",
+    "grid": "E10",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "433",
+    "name": "THURGOOD MARSHALL HALL",
+    "grid": "F11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "079",
+    "name": "TURNER HALL",
+    "grid": "F10",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "042",
+    "name": "TYDINGS HALL",
+    "grid": "D11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "164",
+    "name": "UNIVERSITY HOUSE",
+    "grid": "B9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "039",
+    "name": "VAN MUNCHING HALL",
+    "grid": "D12",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "084",
+    "name": "WILLIAM E. KIRWAN HALL",
+    "grid": "F9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "081",
+    "name": "WIND TUNNEL BUILDING",
+    "grid": "F9",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "047",
+    "name": "WOODS HALL",
+    "grid": "E11",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "428",
+    "name": "WYE OAK BUILDING",
+    "grid": "D6",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "436",
+    "name": "YAHENTAMITSI DINING HALL",
+    "grid": "D8",
+    "category": "Academic/Administrative"
+  },
+  {
+    "id": "035",
+    "name": "MCKELDIN LIBRARY",
+    "grid": "D10",
+    "category": "Library"
+  },
+  {
+    "id": "147",
+    "name": "HORNBAKE LIBRARY",
+    "grid": "E9",
+    "category": "Library"
+  },
+  {
+    "id": "404",
+    "name": "MOWATT LANE PARKING GARAGE",
+    "grid": "D12",
+    "category": "Parking Garage"
+  },
+  {
+    "id": "202",
+    "name": "REGENTS DRIVE PARKING GARAGE",
+    "grid": "E9",
+    "category": "Parking Garage"
+  },
+  {
+    "id": "218",
+    "name": "STADIUM DRIVE PARKING GARAGE",
+    "grid": "C8",
+    "category": "Parking Garage"
+  },
+  {
+    "id": "179",
+    "name": "UNION LANE PARKING GARAGE",
+    "grid": "D9",
+    "category": "Parking Garage"
+  },
+  {
+    "id": "399",
+    "name": "AQUATIC CENTER",
+    "grid": "D7",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "378",
+    "name": "BARRY P. GOSSETT BASKETBALL PERFORMANCE CENTER",
+    "grid": "E6",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "159",
+    "name": "BOB \u201cTURTLE\u201d SMITH STADIUM AT SHIPLEY FIELD",
+    "grid": "D9",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "368",
+    "name": "CAPITAL ONE FIELD AT MARYLAND STADIUM",
+    "grid": "D8",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "068",
+    "name": "EPPLEY RECREATION CENTER",
+    "grid": "D7",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "414",
+    "name": "FIELD HOCKEY AND LACROSSE COMPLEX",
+    "grid": "F6",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "166",
+    "name": "GOLF COURSE CLUB HOUSE",
+    "grid": "B8",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "379",
+    "name": "GOSSETT FOOTBALL TEAM HOUSE",
+    "grid": "D9",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "309",
+    "name": "INDOOR PRACTICE FACILITY",
+    "grid": "B9",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "388",
+    "name": "KEHOE TRACK AT LUDWIG FIELD",
+    "grid": "C10",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "409",
+    "name": "MARYLAND SOFTBALL STADIUM",
+    "grid": "E6",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "078",
+    "name": "RECKORD ARMORY",
+    "grid": "F10",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "004",
+    "name": "RITCHIE COLISEUM",
+    "grid": "F11",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "408",
+    "name": "SOFTBALL PLAYER DEVELOPMENT CENTER",
+    "grid": "E6",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "157",
+    "name": "STANLEY BOBB BASEBALL PLAYER DEVELOP. CENTER",
+    "grid": "D9",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "361",
+    "name": "TYSER TOWER",
+    "grid": "C9",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "158",
+    "name": "VARSITY SPORTS TEAMHOUSE",
+    "grid": "D8",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "360",
+    "name": "XFINITY CENTER",
+    "grid": "E6",
+    "category": "Recreation/Athletic"
+  },
+  {
+    "id": "024",
+    "name": "ALLEGANY HALL",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "060",
+    "name": "ANNE ARUNDEL HALL",
+    "grid": "D10",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "016",
+    "name": "BALTIMORE HALL",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "099",
+    "name": "BEL AIR HALL",
+    "grid": "E7",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "015",
+    "name": "CALVERT HALL",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "096",
+    "name": "CAMBRIDGE HALL",
+    "grid": "E8",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "070",
+    "name": "CAROLINE HALL",
+    "grid": "D11",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "065",
+    "name": "CARROLL HALL",
+    "grid": "D11",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "017",
+    "name": "CECIL HALL",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "098",
+    "name": "CENTREVILLE HALL",
+    "grid": "E7",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "025",
+    "name": "CHARLES HALL",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "121",
+    "name": "CHESTERTOWN HALL",
+    "grid": "E7",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "122",
+    "name": "CUMBERLAND HALL",
+    "grid": "D7",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "252",
+    "name": "DENTON HALL",
+    "grid": "C7",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "064",
+    "name": "DORCHESTER HALL",
+    "grid": "D10",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "253",
+    "name": "EASTON HALL",
+    "grid": "C7",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "254",
+    "name": "ELKTON HALL",
+    "grid": "C7",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "256",
+    "name": "ELLICOTT HALL",
+    "grid": "D8",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "029",
+    "name": "FREDERICK HALL",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "031",
+    "name": "GARRETT HALL",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "258",
+    "name": "HAGERSTOWN HALL",
+    "grid": "D7",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "014",
+    "name": "HARFORD HALL",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "028",
+    "name": "HOWARD HALL",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "022",
+    "name": "KENT HALL",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "259",
+    "name": "LA PLATA HALL",
+    "grid": "D7",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "032",
+    "name": "MONTGOMERY HALL",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "419",
+    "name": "OAKLAND HALL",
+    "grid": "C7",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "425",
+    "name": "PRINCE FREDERICK HALL",
+    "grid": "D12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "021",
+    "name": "PRINCE GEORGE\u2019S HALL",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "434",
+    "name": "PYON-CHEN HALL",
+    "grid": "D8",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "061",
+    "name": "QUEEN ANNE\u2019S HALL",
+    "grid": "D11",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "063",
+    "name": "SOMERSET HALL",
+    "grid": "D11",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "974",
+    "name": "SOUTH CAMPUS COMMONS",
+    "grid": "D12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "975",
+    "name": "SOUTH CAMPUS COMMONS",
+    "grid": "D12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "981",
+    "name": "SOUTH CAMPUS COMMONS",
+    "grid": "D12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "996",
+    "name": "SOUTH CAMPUS COMMONS",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "997",
+    "name": "SOUTH CAMPUS COMMONS",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "998",
+    "name": "SOUTH CAMPUS COMMONS",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "999",
+    "name": "SOUTH CAMPUS COMMONS",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "435",
+    "name": "JOHNSON-WHITTLE HALL",
+    "grid": "D8",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "062",
+    "name": "ST. MARY\u2019S HALL",
+    "grid": "D10",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "030",
+    "name": "TALBOT HALL",
+    "grid": "E11",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "023",
+    "name": "WASHINGTON HALL",
+    "grid": "E12",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "069",
+    "name": "WICOMICO HALL",
+    "grid": "D11",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "051",
+    "name": "WORCESTER HALL",
+    "grid": "D11",
+    "category": "Residence Hall"
+  },
+  {
+    "id": "987",
+    "name": "COURTYARDS GREENMEAD",
+    "grid": "DR INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "988",
+    "name": "COURTYARDS GREENMEAD",
+    "grid": "DR INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "989",
+    "name": "COURTYARDS GREENMEAD",
+    "grid": "DR INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "990",
+    "name": "COURTYARDS GREENMEAD",
+    "grid": "DR INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "991",
+    "name": "COURTYARDS GREENMEAD",
+    "grid": "DR INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "992",
+    "name": "COURTYARDS GREENMEAD",
+    "grid": "DR INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "993",
+    "name": "COURTYARDS GREENMEAD",
+    "grid": "DR INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "994",
+    "name": "COURTYARDS GREENMEAD",
+    "grid": "DR INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "260",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "261",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "262",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "263",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "264",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "265",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "266",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "267",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "268",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "269",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "270",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "271",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "272",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "273",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "274",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "275",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "276",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "277",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "278",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "279",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "280",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "281",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "282",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "283",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "284",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "285",
+    "name": "GRADUATE GARDENS APT GRADUATE",
+    "grid": "GARDENS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "286",
+    "name": "GRADUATE HILLS APARTMENTS GRADUATE",
+    "grid": "HILLS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "287",
+    "name": "GRADUATE HILLS APARTMENTS GRADUATE",
+    "grid": "HILLS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "288",
+    "name": "GRADUATE HILLS APARTMENTS GRADUATE",
+    "grid": "HILLS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "289",
+    "name": "GRADUATE HILLS APARTMENTS GRADUATE",
+    "grid": "HILLS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "290",
+    "name": "GRADUATE HILLS APARTMENTS GRADUATE",
+    "grid": "HILLS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "291",
+    "name": "GRADUATE HILLS APARTMENTS GRADUATE",
+    "grid": "HILLS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "292",
+    "name": "GRADUATE HILLS APARTMENTS GRADUATE",
+    "grid": "HILLS INSET",
+    "category": "Apartment"
+  },
+  {
+    "id": "244",
+    "name": "LEONARDTOWN APARTMENTS G11,",
+    "grid": "G12",
+    "category": "Apartment"
+  },
+  {
+    "id": "245",
+    "name": "LEONARDTOWN APARTMENTS G11,",
+    "grid": "G12",
+    "category": "Apartment"
+  },
+  {
+    "id": "246",
+    "name": "LEONARDTOWN APARTMENTS G11,",
+    "grid": "G12",
+    "category": "Apartment"
+  },
+  {
+    "id": "247",
+    "name": "LEONARDTOWN APARTMENTS G11,",
+    "grid": "G12",
+    "category": "Apartment"
+  },
+  {
+    "id": "248",
+    "name": "LEONARDTOWN APARTMENTS G11,",
+    "grid": "G12",
+    "category": "Apartment"
+  },
+  {
+    "id": "249",
+    "name": "LEONARDTOWN APARTMENTS G11,",
+    "grid": "G12",
+    "category": "Apartment"
+  },
+  {
+    "id": "250",
+    "name": "LEONARDTOWN APARTMENTS G11,",
+    "grid": "G12",
+    "category": "Apartment"
+  },
+  {
+    "id": "348",
+    "name": "COLLEGE PARK MARRIOTT HOTEL AND CONF. CTR.",
+    "grid": "B10",
+    "category": "Hotel/UMGC"
+  },
+  {
+    "id": "345",
+    "name": "COLLEGE PARK MARRIOTT HOTEL AND CONF. CTR.",
+    "grid": "B10",
+    "category": "Hotel/UMGC"
+  },
+  {
+    "id": "346",
+    "name": "UMGC ADMINISTRATION BUILDING",
+    "grid": "B10",
+    "category": "Hotel/UMGC"
+  },
+  {
+    "id": "347",
+    "name": "UMGC/ MARRIOTT GARAGE",
+    "grid": "B10",
+    "category": "Hotel/UMGC"
+  },
+  {
+    "id": "126",
+    "name": "HOUSE 1",
+    "grid": "F11",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "127",
+    "name": "HOUSE 2",
+    "grid": "F11",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "128",
+    "name": "HOUSE 3",
+    "grid": "F11",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "129",
+    "name": "HOUSE 4",
+    "grid": "F11",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "130",
+    "name": "HOUSE 5",
+    "grid": "G11",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "131",
+    "name": "HOUSE 6",
+    "grid": "G11",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "132",
+    "name": "HOUSE 7",
+    "grid": "G11",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "133",
+    "name": "HOUSE 8",
+    "grid": "G11",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "134",
+    "name": "HOUSE 9",
+    "grid": "G12",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "135",
+    "name": "HOUSE 10",
+    "grid": "F12",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "136",
+    "name": "HOUSE 11",
+    "grid": "F12",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "137",
+    "name": "HOUSE 12",
+    "grid": "F12",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "138",
+    "name": "HOUSE 13",
+    "grid": "F12",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "139",
+    "name": "HOUSE 14",
+    "grid": "F12",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "170",
+    "name": "HOUSE 170",
+    "grid": "F12",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "171",
+    "name": "HOUSE 171",
+    "grid": "F12",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "172",
+    "name": "HOUSE 172",
+    "grid": "F12",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "173",
+    "name": "HOUSE 173",
+    "grid": "F13",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "174",
+    "name": "HOUSE 174",
+    "grid": "F13",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "175",
+    "name": "HOUSE 175",
+    "grid": "F13",
+    "category": "Fraternity/Sorority"
+  },
+  {
+    "id": "176",
+    "name": "HOUSE 176",
+    "grid": "F13",
+    "category": "Fraternity/Sorority"
+  }
+]
