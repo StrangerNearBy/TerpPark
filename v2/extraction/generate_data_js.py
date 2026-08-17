@@ -37,6 +37,17 @@ def load(name):
         return json.load(f)
 
 
+# Fields that are either 100% derivable from LOT_DATA.categories[lot.category]
+# (rule, category_label) or pure build-time provenance the app never reads
+# (coord_source). Kept in the intermediate *_v1.json/stage1.json files for the
+# audit trail; stripped here so they aren't shipped to every visitor.
+LOT_FIELDS_TO_DROP = ('rule', 'category_label', 'coord_source')
+
+
+def strip_lot(lot):
+    return {k: v for k, v in lot.items() if k not in LOT_FIELDS_TO_DROP}
+
+
 def main():
     buildings = load('buildings_v2_stage1.json')
     lot_data = load('lots_v2_stage1.json')
@@ -50,7 +61,6 @@ def main():
             'note': a.get('note'),
             'lat': a['lat'],
             'lng': a['lng'],
-            'source': a.get('source'),
         })
 
     offcampus_path = os.path.join(HERE, 'offcampus_parking_v1.json')
@@ -65,10 +75,7 @@ def main():
                 'name': o['name'],
                 'lat': o['lat'],
                 'lng': o['lng'],
-                'coord_source': f"offcampus_research:{o.get('source', 'unknown')}",
                 'category': 'off_campus_parking',
-                'category_label': OFF_CAMPUS_CATEGORY['label'],
-                'rule': OFF_CAMPUS_CATEGORY['rule'],
                 'lot_type': None,
                 'gated': False,
                 'overflow_faculty_staff': False,
@@ -80,6 +87,8 @@ def main():
                 'confidence': o.get('confidence'),
                 'note': o.get('note'),
             })
+
+    lot_data['lots'] = [strip_lot(l) for l in lot_data['lots']]
 
     out = []
     out.append("// v2 dataset: freshly re-extracted and independently re-verified from the source PDF + Maryland GIS + OSM cross-references. See v2/ for methodology.")

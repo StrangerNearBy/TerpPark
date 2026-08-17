@@ -132,7 +132,7 @@ function computeLotStatus(lot, now) {
     return { level: 'warn', label: 'Public parking (non-UMD)', detail: (bits.join(' ') || 'Not a UMD lot - check posted rates/hours.') + ' Confirm it is currently open before you go.', parkableNow: false, paid: true };
   }
 
-  return { level: 'warn', label: 'Check posted sign', detail: lot.rule || 'Restriction category could not be confidently read from the source map.', parkableNow: false, paid: false };
+  return { level: 'warn', label: 'Check posted sign', detail: LOT_DATA.categories[cat].rule || 'Restriction category could not be confidently read from the source map.', parkableNow: false, paid: false };
 }
 
 const STATUS_META = {
@@ -709,7 +709,7 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
       <ul class="space-y-stack-sm">
         <li class="flex items-start gap-stack-sm">
           <span class="material-symbols-outlined text-primary mt-0.5">verified</span>
-          <p class="font-body-md text-body-md text-on-surface-variant">${lot.rule}</p>
+          <p class="font-body-md text-body-md text-on-surface-variant">${cat.rule}</p>
         </li>
         ${lot.special_rule ? `<li class="flex items-start gap-stack-sm">
           <span class="material-symbols-outlined text-secondary mt-0.5">priority_high</span>
@@ -1005,7 +1005,7 @@ function renderMap() {
       if (lot.lat == null) continue;
       const cat = LOT_DATA.categories[lot.category];
       const marker = L.circleMarker([lot.lat, lot.lng], { radius: 7, color: '#222', weight: 1, fillColor: cat.color, fillOpacity: 0.85 }).addTo(leafletMap);
-      marker.bindPopup(`<strong>${lot.code}${lot.name ? ' - ' + lot.name : ''}</strong> - ${cat.label}<br>${lot.rule}${lot.special_rule ? '<br><em>' + lot.special_rule + '</em>' : ''}<br><a href="#/lot/${encodeURIComponent(lot.code)}">View details &rarr;</a>`);
+      marker.bindPopup(`<strong>${lot.code}${lot.name ? ' - ' + lot.name : ''}</strong> - ${cat.label}<br>${cat.rule}${lot.special_rule ? '<br><em>' + lot.special_rule + '</em>' : ''}<br><a href="#/lot/${encodeURIComponent(lot.code)}">View details &rarr;</a>`);
     }
     for (const b of BUILDINGS) {
       if (b.lat == null) continue;
