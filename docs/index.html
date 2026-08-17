@@ -16,10 +16,10 @@
 <meta name="twitter:title" content="TerpPark - UMD Parking Guide">
 <meta name="twitter:description" content="Check UMD parking lot restrictions in real time and find the nearest open parking lot on campus.">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script id="tailwind-config">
+  const SYSTEM_FONT_STACK = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
   tailwind.config = {
     darkMode: "class",
     theme: {
@@ -79,8 +79,13 @@
           "stack-lg": "24px", "touch-target-min": "48px", "stack-sm": "8px"
         },
         fontFamily: {
-          "body-lg": ["Inter"], "label-md": ["Inter"], "stat-display": ["Inter"],
-          "headline-md": ["Inter"], "body-md": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"]
+          // Platform system font, not a fetched web font - it already ships
+          // correct optical sizing, tracking tables, and legibility tuning
+          // per platform (San Francisco on Apple, Segoe UI on Windows,
+          // Roboto on Android/Chrome OS). See the apple-design skill,
+          // "Typography - optical sizing, tracking, leading".
+          "body-lg": [SYSTEM_FONT_STACK], "label-md": [SYSTEM_FONT_STACK], "stat-display": [SYSTEM_FONT_STACK],
+          "headline-md": [SYSTEM_FONT_STACK], "body-md": [SYSTEM_FONT_STACK], "label-lg": [SYSTEM_FONT_STACK], "headline-lg": [SYSTEM_FONT_STACK]
         },
         fontSize: {
           "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
