@@ -119,6 +119,16 @@ silently picking one number.
   rate card. Treat the dollar figures in `pricing_summary` as approximate
   and re-verify before showing a specific number to end users.
 
+## Post-research scoping decision (2026-08-17)
+
+After reviewing a local demo, the project owner chose to ship only 2 of the
+4 verified facilities: **City of College Park Downtown Parking Garage** and
+**Cambria College Park Garage**. The **WMATA Metro Station Garage** and
+**The Hotel at the University of Maryland Garage** were removed from
+`offcampus_parking_v1.json` at the owner's request - this was a scope
+decision, not a verification failure; both remain accurately documented
+above if they're ever added back.
+
 ## Bottom line
 
 4 facilities verified and included, all at medium-or-higher confidence, none
