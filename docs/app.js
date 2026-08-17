@@ -259,7 +259,7 @@ function bestAvailableCardHTML(entry) {
   const { lot, dist, status } = entry;
   const cat = LOT_DATA.categories[lot.category];
   const meta = STATUS_META[status.level];
-  return `<div class="flex items-center gap-stack-sm bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-sm cursor-pointer active:bg-surface-container transition-colors" data-lot="${lot.code}">
+  return `<div class="stagger-in flex items-center gap-stack-sm bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-sm cursor-pointer active:bg-surface-container transition-colors" data-lot="${lot.code}">
     <span class="material-symbols-outlined text-[20px]" style="color:${meta.bg}">${meta.icon}</span>
     <div class="flex-1 min-w-0">
       <p class="font-body-md text-body-md font-bold">${lot.code}${lot.name ? ' - ' + lot.name : ''} <span class="font-label-md text-label-md font-normal" style="color:${meta.bg}">&middot; ${status.label}</span></p>
@@ -331,29 +331,31 @@ function nearestAmenities(lat, lng, opts = {}) {
 // ============================================================
 
 function attachAutocomplete(inputEl, panelEl, items, onSelect) {
-  // items: [{label, sub, value}]
+  // items: [{label, sub, value}]. Visibility is driven by the .open class
+  // (opacity/scale/pointer-events in style.css) instead of display:none, so
+  // opening and closing can actually transition instead of snapping.
   function render(query) {
     const q = query.trim().toLowerCase();
-    if (!q) { panelEl.classList.add('hidden'); panelEl.innerHTML = ''; return; }
+    if (!q) { panelEl.classList.remove('open'); panelEl.innerHTML = ''; return; }
     const matches = items.filter(it => it.label.toLowerCase().includes(q)).slice(0, 8);
-    if (!matches.length) { panelEl.classList.add('hidden'); panelEl.innerHTML = ''; return; }
+    if (!matches.length) { panelEl.classList.remove('open'); panelEl.innerHTML = ''; return; }
     panelEl.innerHTML = matches.map(it => `
       <div class="autocomplete-item px-4 py-3 border-b border-outline-variant last:border-0" data-value="${it.value}">
         <p class="font-body-md text-body-md font-bold text-on-surface">${it.label}</p>
         ${it.sub ? `<p class="font-label-md text-label-md text-on-surface-variant">${it.sub}</p>` : ''}
       </div>`).join('');
-    panelEl.classList.remove('hidden');
+    panelEl.classList.add('open');
     panelEl.querySelectorAll('.autocomplete-item').forEach(el => {
       el.addEventListener('mousedown', (e) => {
         e.preventDefault();
         onSelect(el.dataset.value);
-        panelEl.classList.add('hidden');
+        panelEl.classList.remove('open');
       });
     });
   }
   inputEl.addEventListener('input', () => render(inputEl.value));
   inputEl.addEventListener('focus', () => render(inputEl.value));
-  inputEl.addEventListener('blur', () => setTimeout(() => panelEl.classList.add('hidden'), 100));
+  inputEl.addEventListener('blur', () => setTimeout(() => panelEl.classList.remove('open'), 100));
 }
 
 // ============================================================
@@ -378,8 +380,12 @@ function lotListItemHTML(lot, dist, rank) {
   const now = campusNow();
   const status = computeLotStatus(lot, now);
   const cat = LOT_DATA.categories[lot.category];
+  // Stagger only applies to the short, rank-numbered "nearest lots" lists,
+  // never the full All Lots list - that one re-renders on every filter
+  // keystroke, and animating every row on every keystroke would fight
+  // against the "never animate keyboard-repeated actions" rule.
   return `
-  <div class="lot-row flex items-center gap-stack-sm py-stack-sm border-b border-outline-variant last:border-0 cursor-pointer active:bg-surface-container transition-colors" data-lot="${lot.code}">
+  <div class="${rank ? 'stagger-in ' : ''}lot-row flex items-center gap-stack-sm py-stack-sm border-b border-outline-variant last:border-0 cursor-pointer active:bg-surface-container transition-colors" data-lot="${lot.code}">
     ${rank ? `<div class="font-label-lg text-label-lg text-on-surface-variant w-5 text-center flex-shrink-0">${rank}</div>` : ''}
     <div class="flex-1 min-w-0">
       <div class="flex items-center gap-2 flex-wrap">
@@ -443,7 +449,7 @@ function renderHome() {
       <div class="relative flex items-center">
         <span class="material-symbols-outlined absolute left-4 text-outline">search</span>
         <input id="lot-search" class="w-full h-12 pl-12 pr-4 bg-surface-container-lowest border border-outline rounded-lg font-body-lg text-body-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Enter a lot code, e.g. LL4, P2, 1a" type="text" autocomplete="off">
-        <div id="lot-panel" class="autocomplete-panel hidden"></div>
+        <div id="lot-panel" class="autocomplete-panel"></div>
       </div>
     </div>
 
@@ -452,7 +458,7 @@ function renderHome() {
       <div class="relative flex items-center">
         <span class="material-symbols-outlined absolute left-4 text-outline">location_on</span>
         <input id="dest-search" class="w-full h-12 pl-12 pr-4 bg-surface-container-lowest border border-outline rounded-lg font-body-lg text-body-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Enter a building, e.g. McKeldin Library" type="text" autocomplete="off">
-        <div id="dest-panel" class="autocomplete-panel hidden"></div>
+        <div id="dest-panel" class="autocomplete-panel"></div>
       </div>
       <div class="relative">
         <label class="font-label-md text-label-md text-on-surface-variant px-1" for="dest-parker-type">What kind of parking do you need?</label>
@@ -472,30 +478,30 @@ function renderHome() {
             ${parkerTypeOptionsHTML()}
           </select>
         </div>
-        <div id="geo-card"><button id="geo-btn" class="w-full h-touch-target-min bg-primary text-white font-headline-md text-headline-md rounded-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
+        <div id="geo-card"><button id="geo-btn" class="press w-full h-touch-target-min bg-primary text-white font-headline-md text-headline-md rounded-lg flex items-center justify-center gap-2">
           <span class="material-symbols-outlined">near_me</span> Use My Location
         </button></div>
       </div>
     </section>
 
-    <button data-route="lots" class="bento-tile w-full h-touch-target-min bg-primary text-white font-headline-md rounded-lg flex items-center justify-center gap-stack-sm active:opacity-90 transition-opacity">
+    <button data-route="lots" class="press bento-tile w-full h-touch-target-min bg-primary text-white font-headline-md rounded-lg flex items-center justify-center gap-stack-sm active:opacity-90 transition-opacity">
       <span class="material-symbols-outlined">local_parking</span> All Lots
     </button>
 
     <section class="grid grid-cols-2 gap-stack-md">
-      <div data-route="map" class="bento-tile bg-surface-container-low border border-outline-variant p-4 rounded-lg cursor-pointer active:bg-surface-container-high transition-colors">
+      <div data-route="map" class="press bento-tile bg-surface-container-low border border-outline-variant p-4 rounded-lg cursor-pointer active:bg-surface-container-high transition-colors">
         <span class="material-symbols-outlined text-secondary mb-2">map</span>
         <p class="font-headline-md text-headline-md-mobile">Map View</p>
         <p class="font-body-md text-body-md text-on-surface-variant">Explore all lots &amp; buildings</p>
       </div>
-      <div data-route="rules" class="bento-tile bg-surface-container-low border border-outline-variant p-4 rounded-lg cursor-pointer active:bg-surface-container-high transition-colors">
+      <div data-route="rules" class="press bento-tile bg-surface-container-low border border-outline-variant p-4 rounded-lg cursor-pointer active:bg-surface-container-high transition-colors">
         <span class="material-symbols-outlined text-secondary mb-2">gavel</span>
         <p class="font-headline-md text-headline-md-mobile">Rules Legend</p>
         <p class="font-body-md text-body-md text-on-surface-variant">Every restriction, explained</p>
       </div>
     </section>
 
-    <button data-route="amenities" class="bento-tile w-full h-touch-target-min bg-surface-container-low border border-outline-variant text-on-surface font-headline-md rounded-lg flex items-center justify-center gap-stack-sm active:bg-surface-container-high transition-colors">
+    <button data-route="amenities" class="press bento-tile w-full h-touch-target-min bg-surface-container-low border border-outline-variant text-on-surface font-headline-md rounded-lg flex items-center justify-center gap-stack-sm active:bg-surface-container-high transition-colors">
       <span class="material-symbols-outlined text-secondary">ev_station</span> Bike, Moto &amp; EV Parking
     </button>
   </section>`;
@@ -610,7 +616,7 @@ function renderHome() {
           <p class="font-body-md text-body-md opacity-90">${status.detail}</p>
         </div>
       </div>
-      <button data-lot="${near.lot.code}" class="mt-stack-md w-full h-touch-target-min bg-primary text-white font-headline-md text-headline-md rounded-lg active:scale-95 transition-transform">View Lot Details</button>
+      <button data-lot="${near.lot.code}" class="press mt-stack-md w-full h-touch-target-min bg-primary text-white font-headline-md text-headline-md rounded-lg">View Lot Details</button>
       <div class="mt-stack-md">
         <h3 class="font-label-lg text-label-lg text-secondary uppercase mb-1">${parkerType === 'any' ? 'Best Available Lots near you' : `Nearest ${PARKER_TYPES[parkerType].label} Lots near you`}</h3>
         ${bestAvailableLotsHTML(latitude, longitude, now, null, parkerType)}
@@ -725,8 +731,8 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
       </div>
       <div class="bg-surface-container border border-outline-variant p-stack-md rounded-xl">
         <div class="flex gap-2 mb-stack-md">
-          <button data-daytype="weekday" class="daytype-btn flex-1 h-9 rounded-full font-label-lg text-label-lg border transition-colors">Weekday</button>
-          <button data-daytype="weekend" class="daytype-btn flex-1 h-9 rounded-full font-label-lg text-label-lg border transition-colors">Weekend</button>
+          <button data-daytype="weekday" class="press daytype-btn flex-1 h-9 rounded-full font-label-lg text-label-lg border transition-colors">Weekday</button>
+          <button data-daytype="weekend" class="press daytype-btn flex-1 h-9 rounded-full font-label-lg text-label-lg border transition-colors">Weekend</button>
         </div>
         <input id="time-slider" class="w-full h-2 bg-outline-variant rounded-lg appearance-none cursor-pointer accent-primary" max="1440" min="0" step="15" type="range" value="${now.minutesOfDay}">
         <div class="flex justify-between mt-stack-sm text-on-surface-variant font-label-md text-label-md">
@@ -754,7 +760,7 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
     </section>` : ''}
   </section>
   ${lot.lat != null ? `<div class="fixed bottom-6 left-0 w-full px-margin-mobile max-w-md mx-auto">
-    <button id="navigate-btn" class="w-full h-touch-target-min bg-primary text-on-primary font-headline-md rounded-lg flex items-center justify-center gap-stack-sm shadow-md active:opacity-90 transition-opacity">
+    <button id="navigate-btn" class="press w-full h-touch-target-min bg-primary text-on-primary font-headline-md rounded-lg flex items-center justify-center gap-stack-sm shadow-md active:opacity-90 transition-opacity">
       <span class="material-symbols-outlined">directions</span> Navigate to Lot ${lot.code}
     </button>
   </div>` : ''}`;
@@ -773,7 +779,7 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
   function updateDaytypeButtons() {
     document.querySelectorAll('.daytype-btn').forEach(btn => {
       const active = btn.dataset.daytype === previewDayType;
-      btn.className = 'daytype-btn flex-1 h-9 rounded-full font-label-lg text-label-lg border transition-colors ' +
+      btn.className = 'press daytype-btn flex-1 h-9 rounded-full font-label-lg text-label-lg border transition-colors ' +
         (active ? 'bg-primary text-white border-primary' : 'bg-surface-container-lowest text-on-surface-variant border-outline-variant');
     });
   }
@@ -875,13 +881,13 @@ function renderAmenities() {
       <p class="font-body-md text-body-md text-on-surface-variant mt-1">EV charging stations, motorcycle parking, and covered bicycle parking (with repair stations), each anchored to the nearest known lot or building on the official campus parking map.</p>
     </div>
 
-    <button id="amenity-geo-btn" class="w-full h-11 bg-surface-container-lowest border border-outline text-on-surface font-headline-md text-body-lg rounded-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
+    <button id="amenity-geo-btn" class="press w-full h-11 bg-surface-container-lowest border border-outline text-on-surface font-headline-md text-body-lg rounded-lg flex items-center justify-center gap-2">
       <span class="material-symbols-outlined text-[18px]">near_me</span> Sort by distance from me
     </button>
 
     <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-1" id="amenity-filters">
-      <button data-type="all" class="amenity-filter-btn flex-shrink-0 h-9 px-4 rounded-full font-label-lg text-label-lg border transition-colors">All</button>
-      ${parkingTypes.map(t => `<button data-type="${t}" class="amenity-filter-btn flex-shrink-0 h-9 px-4 rounded-full font-label-lg text-label-lg border transition-colors">${AMENITY_TYPES[t].label}</button>`).join('')}
+      <button data-type="all" class="press amenity-filter-btn flex-shrink-0 h-9 px-4 rounded-full font-label-lg text-label-lg border transition-colors">All</button>
+      ${parkingTypes.map(t => `<button data-type="${t}" class="press amenity-filter-btn flex-shrink-0 h-9 px-4 rounded-full font-label-lg text-label-lg border transition-colors">${AMENITY_TYPES[t].label}</button>`).join('')}
     </div>
 
     <div id="amenity-list" class="space-y-2"></div>
@@ -899,7 +905,7 @@ function renderAmenities() {
   function updateFilterButtons() {
     document.querySelectorAll('.amenity-filter-btn').forEach(btn => {
       const active = btn.dataset.type === activeType;
-      btn.className = 'amenity-filter-btn flex-shrink-0 h-9 px-4 rounded-full font-label-lg text-label-lg border transition-colors ' +
+      btn.className = 'press amenity-filter-btn flex-shrink-0 h-9 px-4 rounded-full font-label-lg text-label-lg border transition-colors ' +
         (active ? 'bg-primary text-white border-primary' : 'bg-surface-container-lowest text-on-surface-variant border-outline-variant');
     });
   }
@@ -907,13 +913,13 @@ function renderAmenities() {
   function amenityCardHTML(entry) {
     const a = entry.amenity;
     const meta = AMENITY_TYPES[a.type];
-    return `<div class="flex items-center gap-stack-sm bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-sm">
+    return `<div class="stagger-in flex items-center gap-stack-sm bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-sm">
       <span class="material-symbols-outlined text-[22px] flex-shrink-0" style="color:${meta.color}">${meta.icon}</span>
       <div class="flex-1 min-w-0">
         <p class="font-body-md text-body-md font-bold">${meta.label}</p>
         <p class="font-label-md text-label-md text-on-surface-variant">${a.note || ''}${entry.dist != null ? ` &middot; ${formatDistance(entry.dist)} &middot; ${walkMinutes(entry.dist)} min walk` : ''}</p>
       </div>
-      <button data-lat="${a.lat}" data-lng="${a.lng}" class="amenity-directions-btn flex-shrink-0 p-2 text-primary" aria-label="Directions">
+      <button data-lat="${a.lat}" data-lng="${a.lng}" class="press amenity-directions-btn flex-shrink-0 p-2 text-primary" aria-label="Directions">
         <span class="material-symbols-outlined">directions</span>
       </button>
     </div>`;
@@ -976,7 +982,7 @@ function renderMap() {
     <div id="map-legend" class="flex flex-wrap gap-3 font-label-md text-label-md"></div>
     <a href="https://transportation.umd.edu/sites/default/files/2026-02/Campus-parking-map.pdf"
        target="_blank" rel="noopener"
-       class="w-full h-touch-target-min flex items-center justify-center gap-stack-sm rounded-lg border border-primary text-primary font-headline-md active:bg-surface-container transition-colors">
+       class="press w-full h-touch-target-min flex items-center justify-center gap-stack-sm rounded-lg border border-primary text-primary font-headline-md active:bg-surface-container transition-colors">
       <span class="material-symbols-outlined">download</span> Download Official PDF Map
     </a>
   </section>`;

@@ -1,3 +1,10 @@
+:root {
+  /* Stronger, more intentional easing than the stock CSS keywords -
+     see apple-design / emil-design-eng skills for the reasoning. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
 body {
   min-height: max(884px, 100dvh);
   -webkit-tap-highlight-color: transparent;
@@ -34,8 +41,26 @@ input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
-.screen-enter { animation: fadein 0.18s ease; }
-@keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+/* One press-feedback rule, reused on every real button/tile/CTA - not on
+   plain list rows, which already get a background highlight on press
+   (the row convention; scaling a whole row of many looks jittery). */
+.press { transition: transform 140ms var(--ease-out); }
+.press:active { transform: scale(0.97); }
+
+.screen-enter { animation: fadein 220ms var(--ease-out); }
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(8px) scale(0.99); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Header material: translucent, content scrolls underneath, with a bright
+   top edge standing in for light catching a real material's surface. */
+.header-material {
+  background: rgba(184, 0, 35, 0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
 
 .autocomplete-panel {
   position: absolute;
@@ -47,9 +72,46 @@ input[type=range]::-webkit-slider-thumb {
   max-height: 260px;
   overflow-y: auto;
   z-index: 40;
+  transform-origin: top;
+  opacity: 0;
+  transform: scale(0.97) translateY(-4px);
+  pointer-events: none;
+  transition: opacity 150ms var(--ease-out), transform 150ms var(--ease-out);
+}
+.autocomplete-panel.open {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
 }
 .autocomplete-item { cursor: pointer; }
 .autocomplete-item:hover, .autocomplete-item.highlight { background: #f3f3f3; }
 
+/* Lightweight stagger for card lists - short, capped delays so a long list
+   never feels slow to finish appearing. */
+.stagger-in { animation: fadein 260ms var(--ease-out) backwards; }
+.stagger-in:nth-child(1) { animation-delay: 0ms; }
+.stagger-in:nth-child(2) { animation-delay: 30ms; }
+.stagger-in:nth-child(3) { animation-delay: 60ms; }
+.stagger-in:nth-child(4) { animation-delay: 90ms; }
+.stagger-in:nth-child(5) { animation-delay: 120ms; }
+.stagger-in:nth-child(6) { animation-delay: 150ms; }
+.stagger-in:nth-child(7) { animation-delay: 180ms; }
+.stagger-in:nth-child(n+8) { animation-delay: 200ms; }
+
 #map { height: 70vh; min-height: 420px; width: 100%; }
 .leaflet-popup-content { font-size: 13px; line-height: 1.5; font-family: Inter, sans-serif; }
+
+@media (prefers-reduced-motion: reduce) {
+  .screen-enter, .stagger-in {
+    animation: fadein-reduced 150ms ease !important;
+  }
+  .press:active { transform: none; }
+  .autocomplete-panel {
+    transition: opacity 150ms ease;
+    transform: none !important;
+  }
+  @keyframes fadein-reduced {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}

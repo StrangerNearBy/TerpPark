@@ -84,8 +84,8 @@
         },
         fontSize: {
           "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
-          "label-md": ["11px", { lineHeight: "14px", fontWeight: "500" }],
-          "stat-display": ["32px", { lineHeight: "32px", fontWeight: "900" }],
+          "label-md": ["11px", { lineHeight: "14px", letterSpacing: "0.01em", fontWeight: "500" }],
+          "stat-display": ["32px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "900" }],
           "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "700" }],
           "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
           "label-lg": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "700" }],
@@ -100,7 +100,7 @@
 <body class="bg-background text-on-background font-body-lg min-h-screen flex flex-col">
 
 <!-- Top Navigation Shell -->
-<header class="fixed top-0 w-full z-50 bg-primary flex justify-between items-center h-14 px-margin-mobile">
+<header class="header-material fixed top-0 w-full z-50 flex justify-between items-center h-14 px-margin-mobile">
   <div class="flex items-center gap-stack-sm">
     <button id="back-btn" class="active:opacity-90 transition-opacity items-center justify-center w-10 h-10 -ml-2" style="display:none">
       <span class="material-symbols-outlined text-white">arrow_back</span>
