@@ -1018,6 +1018,11 @@ function renderMap() {
       const marker = L.circleMarker([a.lat, a.lng], { radius: 5, color: '#fff', weight: 1, fillColor: meta.color, fillOpacity: 0.95 }).addTo(leafletMap);
       marker.bindPopup(`<strong>${meta.label}</strong>${a.note ? '<br>' + a.note : ''}`);
     }
+    // The .screen-enter entrance animation is still running on the ancestor
+    // <section> when the map initializes (its transform can make Leaflet
+    // mis-measure the container). Re-validate once the animation has
+    // definitely settled so the map's internal size/position is correct.
+    setTimeout(() => { if (leafletMap) leafletMap.invalidateSize(); }, 260);
   }, 0);
 }
 
