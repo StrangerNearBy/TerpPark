@@ -53,29 +53,6 @@ input[type=range]::-webkit-slider-thumb {
   to { opacity: 1; transform: none; }
 }
 
-/* Header material: translucent, content scrolls underneath, with a bright
-   top edge standing in for light catching a real material's surface. */
-.header-material {
-  background: rgba(184, 0, 35, 0.88);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-top: 1px solid rgba(255, 255, 255, 0.35);
-  /* Content genuinely scrolls under this header on every tall screen (list
-     rows, map tiles) - fade the material's own bottom edge over its last few
-     pixels instead of ending on a hard rectangle. */
-  mask-image: linear-gradient(to bottom, black calc(100% - 10px), transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 10px), transparent 100%);
-}
-
-/* Vibrancy over a translucent, scrolling-content-backed surface: the
-   wordmark inherits headline-md's -0.01em tracking, correct for headings on
-   a solid page background, but the opposite of what a translucent material
-   wants (apple-design: "a small letter-spacing bump" keeps text legible as
-   whatever's blurred behind it changes). */
-.header-material .header-wordmark {
-  letter-spacing: 0.01em;
-}
-
 .autocomplete-panel {
   position: absolute;
   left: 0; right: 0; top: calc(100% + 4px);
@@ -136,28 +113,11 @@ input[type=range]::-webkit-slider-thumb {
   }
 }
 
-/* Frost the translucent header into a solid surface when the user has asked
-   the OS to reduce transparency - same material, no see-through blur. */
-@media (prefers-reduced-transparency: reduce) {
-  .header-material {
-    background: rgb(184, 0, 35);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
-}
-
-/* Under high-contrast mode, give the translucent header a solid backing and
-   a real edge (not just the light-catching top hairline), and give the
-   color-only status pills (STATUS_PILL_CLASS in app.js: pastel bg + colored
-   text, no border) a defined border so the state reads as a shape, not just
-   a hue, if the browser's contrast remapping flattens the pastel background. */
+/* Under high-contrast mode, give the color-only status pills
+   (STATUS_PILL_CLASS in app.js: pastel bg + colored text, no border) a
+   defined border so the state reads as a shape, not just a hue, if the
+   browser's contrast remapping flattens the pastel background. */
 @media (prefers-contrast: more) {
-  .header-material {
-    background: rgb(184, 0, 35);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-  }
   [class*="bg-[#e6f4ea]"],
   [class*="bg-[#fdf0d5]"],
   [class*="bg-[#fbe4e2]"] {
