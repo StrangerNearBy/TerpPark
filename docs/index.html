@@ -16,10 +16,10 @@
 <meta name="twitter:title" content="TerpPark - UMD Parking Guide">
 <meta name="twitter:description" content="Check UMD parking lot restrictions in real time and find the nearest open parking lot on campus.">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script id="tailwind-config">
+  const SYSTEM_FONT_STACK = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
   tailwind.config = {
     darkMode: "class",
     theme: {
@@ -79,17 +79,28 @@
           "stack-lg": "24px", "touch-target-min": "48px", "stack-sm": "8px"
         },
         fontFamily: {
-          "body-lg": ["Inter"], "label-md": ["Inter"], "stat-display": ["Inter"],
-          "headline-md": ["Inter"], "body-md": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"]
+          // Platform system font, not a fetched web font - it already ships
+          // correct optical sizing, tracking tables, and legibility tuning
+          // per platform (San Francisco on Apple, Segoe UI on Windows,
+          // Roboto on Android/Chrome OS). See the apple-design skill,
+          // "Typography - optical sizing, tracking, leading".
+          "body-lg": [SYSTEM_FONT_STACK], "label-md": [SYSTEM_FONT_STACK], "stat-display": [SYSTEM_FONT_STACK],
+          "headline-md": [SYSTEM_FONT_STACK], "body-md": [SYSTEM_FONT_STACK], "label-lg": [SYSTEM_FONT_STACK], "headline-lg": [SYSTEM_FONT_STACK]
         },
+        // Sizes in rem (not px) so the scale honors the user's browser/OS text-size
+        // setting (Dynamic Type). Leading is unitless so it scales with each
+        // element's own font-size instead of being pinned to the root size.
+        // Tracking is size-specific per apple-design: negative and growing on
+        // large display/headline text, near-zero on body, slightly positive on
+        // small labels - never one flat value for every size.
         fontSize: {
-          "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
-          "label-md": ["11px", { lineHeight: "14px", fontWeight: "500" }],
-          "stat-display": ["32px", { lineHeight: "32px", fontWeight: "900" }],
-          "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "700" }],
-          "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
-          "label-lg": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "700" }],
-          "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "800" }]
+          "body-lg": ["1rem", { lineHeight: "1.5", fontWeight: "400" }],
+          "label-md": ["0.6875rem", { lineHeight: "1.27", letterSpacing: "0.01em", fontWeight: "500" }],
+          "stat-display": ["2rem", { lineHeight: "1", letterSpacing: "-0.025em", fontWeight: "900" }],
+          "headline-md": ["1.25rem", { lineHeight: "1.4", letterSpacing: "-0.01em", fontWeight: "700" }],
+          "body-md": ["0.875rem", { lineHeight: "1.43", fontWeight: "400" }],
+          "label-lg": ["0.75rem", { lineHeight: "1.33", letterSpacing: "0.05em", fontWeight: "700" }],
+          "headline-lg": ["1.5rem", { lineHeight: "1.33", letterSpacing: "-0.02em", fontWeight: "800" }]
         }
       }
     }
@@ -102,7 +113,7 @@
 <!-- Top Navigation Shell -->
 <header class="fixed top-0 w-full z-50 bg-primary flex justify-between items-center h-14 px-margin-mobile">
   <div class="flex items-center gap-stack-sm">
-    <button id="back-btn" class="active:opacity-90 transition-opacity items-center justify-center w-10 h-10 -ml-2" style="display:none">
+    <button id="back-btn" class="press active:opacity-90 transition-opacity items-center justify-center w-10 h-10 -ml-2" style="display:none">
       <span class="material-symbols-outlined text-white">arrow_back</span>
     </button>
     <span class="material-symbols-outlined text-white">directions_car</span>
