@@ -552,7 +552,7 @@ function renderHome() {
     // detail page's "nearest lots" stays relative to this building and this
     // parker type, not just to the lot itself.
     box.innerHTML = `
-      <div data-near="${building.id}"${parkerDataAttr(parkerType)}>
+      <div class="screen-enter" data-near="${building.id}"${parkerDataAttr(parkerType)}>
         <h3 class="font-label-lg text-label-lg text-secondary uppercase px-1 mt-stack-sm mb-1">${bestHeading}</h3>
         ${bestHTML}
         <div class="mt-stack-md">
@@ -599,7 +599,7 @@ function renderHome() {
     const cat = LOT_DATA.categories[near.lot.category];
     const parkerAttr = parkerDataAttr(parkerType);
     card.innerHTML = `
-      <div${parkerAttr}>
+      <div class="screen-enter"${parkerAttr}>
       <div class="flex justify-between items-start mb-stack-md">
         <div>
           <h3 class="font-headline-lg text-headline-lg-mobile text-on-surface">Lot ${near.lot.code}</h3>
