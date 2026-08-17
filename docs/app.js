@@ -133,6 +133,50 @@ const STATUS_PILL_CLASS = {
 };
 
 // ============================================================
+// Parking type ("who's parking") - lets a search be narrowed to lots a
+// given kind of parker can actually use, instead of just nearest-by-distance.
+// ============================================================
+
+const PARKER_TYPES = {
+  any:           { label: 'Any / just checking' },
+  visitor:       { label: 'Visitor (no permit)' },
+  student:       { label: 'Student permit' },
+  faculty_staff: { label: 'Faculty/Staff permit' }
+};
+
+// Is this lot usable right now by a parker of this type? Built entirely from
+// fields already on the lot record (lot_type, overflow flags) plus the live
+// status computed above - not a new source of parking policy. 'any' never
+// filters, so existing flows are unaffected when no type is chosen.
+function parkerEligible(lot, parkerType, status) {
+  if (!parkerType || parkerType === 'any') return true;
+  if (status.parkableNow) return true; // open to anyone (or pay-to-park) right now
+  if (parkerType === 'student') return lot.lot_type === 'student' || lot.overflow_student === true;
+  if (parkerType === 'faculty_staff') {
+    return lot.lot_type === 'faculty_staff' || lot.overflow_faculty_staff === true ||
+      status.label === 'Faculty/Staff permit only';
+  }
+  return false; // visitor: only ever eligible via parkableNow above (visitors hold no permit)
+}
+
+function parkerTypeOptionsHTML() {
+  return Object.entries(PARKER_TYPES).map(([val, meta]) => `<option value="${val}">${meta.label}</option>`).join('');
+}
+
+// HTML attribute carrying the chosen parking type through hash-routed
+// navigation (see bindLotRowClicks) - empty for 'any' since that's the
+// no-filter default and needs no context to propagate.
+function parkerDataAttr(parkerType) {
+  return parkerType && parkerType !== 'any' ? ` data-parker="${parkerType}"` : '';
+}
+
+function noLotsMessage(parkerType) {
+  return (parkerType && parkerType !== 'any')
+    ? `No ${PARKER_TYPES[parkerType].label.toLowerCase()} lots found nearby right now.`
+    : `No lots found nearby right now.`;
+}
+
+// ============================================================
 // Data indices
 // ============================================================
 
@@ -140,12 +184,32 @@ const lotsByCode = {};
 for (const l of LOT_DATA.lots) lotsByCode[l.code.toUpperCase()] = l;
 
 function nearestLots(lat, lng, opts = {}) {
-  const { limit = 8, excludeCode = null } = opts;
-  return LOT_DATA.lots
+  const { limit = 8, excludeCode = null, parkerType = 'any', now = null } = opts;
+  const filterByType = parkerType && parkerType !== 'any';
+  const scored = LOT_DATA.lots
     .filter(l => l.lat != null && l.lng != null && l.code !== excludeCode)
-    .map(l => ({ lot: l, dist: haversineMeters(lat, lng, l.lat, l.lng) }))
+    .map(l => {
+      const status = filterByType ? computeLotStatus(l, now || campusNow()) : null;
+      return { lot: l, dist: haversineMeters(lat, lng, l.lat, l.lng), status };
+    });
+  if (!filterByType) return scored.sort((a, b) => a.dist - b.dist).slice(0, limit);
+
+  const top = scored
+    .filter(e => parkerEligible(e.lot, parkerType, e.status))
     .sort((a, b) => a.dist - b.dist)
     .slice(0, limit);
+  // "Eligible for my permit type" isn't the same as "usable right now" - a
+  // lot-specific permit doesn't help outside its own hours. Guarantee this
+  // list always includes at least one lot open to anyone right now, the same
+  // promise the unfiltered ("any") results make, so a type filter can never
+  // leave someone with zero currently-parkable options.
+  if (!top.some(e => e.status.parkableNow)) {
+    const nearestParkable = scored
+      .filter(e => e.status.parkableNow)
+      .sort((a, b) => a.dist - b.dist)[0];
+    if (nearestParkable && !top.some(e => e.lot.code === nearestParkable.lot.code)) top.push(nearestParkable);
+  }
+  return top;
 }
 
 // "Best Available Lots": scans ALL lots by distance (not just a top-N slice)
@@ -192,7 +256,14 @@ function bestAvailableCardHTML(entry) {
 // Renders the "Best Available Lots" panel for a given anchor point: the
 // single nearest lot of every restriction category present in the dataset,
 // each labeled with its live status right now.
-function bestAvailableLotsHTML(lat, lng, now, excludeCode = null) {
+function bestAvailableLotsHTML(lat, lng, now, excludeCode = null, parkerType = 'any') {
+  if (parkerType && parkerType !== 'any') {
+    const nearest = nearestLots(lat, lng, { limit: 6, excludeCode, parkerType, now });
+    if (!nearest.length) {
+      return `<p class="font-body-md text-body-md text-on-surface-variant">${noLotsMessage(parkerType)}</p>`;
+    }
+    return `<div class="space-y-2">${nearest.map(bestAvailableCardHTML).join('')}</div>`;
+  }
   const byCategory = nearestBestAvailableByCategory(lat, lng, now, excludeCode);
   const entries = Object.entries(byCategory);
   if (entries.every(([, v]) => !v)) {
@@ -298,9 +369,12 @@ function bindLotRowClicks(root) {
     el.addEventListener('click', () => {
       const nearEl = el.closest('[data-near]');
       const near = nearEl ? nearEl.dataset.near : null;
-      location.hash = near
-        ? `#/lot/${encodeURIComponent(el.dataset.lot)}/near/${encodeURIComponent(near)}`
-        : `#/lot/${encodeURIComponent(el.dataset.lot)}`;
+      const parkEl = el.closest('[data-parker]');
+      const parkerType = parkEl ? parkEl.dataset.parker : null;
+      let hash = `#/lot/${encodeURIComponent(el.dataset.lot)}`;
+      if (near) hash += `/near/${encodeURIComponent(near)}`;
+      if (parkerType && parkerType !== 'any') hash += `/park/${encodeURIComponent(parkerType)}`;
+      location.hash = hash;
     });
   });
 }
@@ -343,12 +417,24 @@ function renderHome() {
         <input id="dest-search" class="w-full h-12 pl-12 pr-4 bg-surface-container-lowest border border-outline rounded-lg font-body-lg text-body-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Enter a building, e.g. McKeldin Library" type="text" autocomplete="off">
         <div id="dest-panel" class="autocomplete-panel hidden"></div>
       </div>
+      <div class="relative">
+        <label class="font-label-md text-label-md text-on-surface-variant px-1" for="dest-parker-type">What kind of parking do you need?</label>
+        <select id="dest-parker-type" class="w-full h-11 px-3 bg-surface-container-lowest border border-outline rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary">
+          ${parkerTypeOptionsHTML()}
+        </select>
+      </div>
       <div id="dest-results"></div>
     </div>
 
     <section class="relative">
       <div class="bg-surface-container-lowest border-l-4 border-primary rounded-lg p-stack-lg shadow-sm">
         <h2 class="font-label-lg text-label-lg text-secondary uppercase mb-2">Nearest Lot to You</h2>
+        <div class="mb-stack-sm">
+          <label class="font-label-md text-label-md text-on-surface-variant px-1" for="geo-parker-type">What kind of parking do you need?</label>
+          <select id="geo-parker-type" class="w-full h-11 px-3 bg-surface-container-lowest border border-outline rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary">
+            ${parkerTypeOptionsHTML()}
+          </select>
+        </div>
         <div id="geo-card"><button id="geo-btn" class="w-full h-touch-target-min bg-primary text-white font-headline-md text-headline-md rounded-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
           <span class="material-symbols-outlined">near_me</span> Use My Location
         </button></div>
@@ -386,27 +472,45 @@ function renderHome() {
   const buildingItems = BUILDINGS.filter(b => b.lat != null).map(b => ({
     label: b.name, sub: b.category, value: b.id
   }));
+  let selectedDestBuilding = null;
   attachAutocomplete(document.getElementById('dest-search'), document.getElementById('dest-panel'), buildingItems,
     (id) => {
       const building = BUILDINGS.find(b => b.id === id);
       document.getElementById('dest-search').value = building.name;
+      selectedDestBuilding = building;
       renderDestResults(building);
     });
+  document.getElementById('dest-parker-type').addEventListener('change', () => {
+    if (selectedDestBuilding) renderDestResults(selectedDestBuilding);
+  });
 
   function renderDestResults(building) {
     const now = campusNow();
-    const nearest = nearestLots(building.lat, building.lng, { limit: 6 });
+    const parkerType = document.getElementById('dest-parker-type').value;
+    const nearest = nearestLots(building.lat, building.lng, { limit: 6, parkerType, now });
     const box = document.getElementById('dest-results');
-    // data-near carries the destination building's id to every lot clicked
-    // from within this box, so the lot detail page's "nearest lots" stays
-    // relative to this building, not the lot itself.
+    const bestHeading = parkerType === 'any'
+      ? `Best Available Lots near ${building.name}`
+      : `Nearest ${PARKER_TYPES[parkerType].label} Lots near ${building.name}`;
+    // When a parker type is chosen, the "Best Available" panel and the
+    // "Nearest lots" strip below want the exact same nearest-eligible-lots
+    // computation, so reuse `nearest` instead of asking bestAvailableLotsHTML
+    // to recompute it. The 'any' (unfiltered) case still needs its own
+    // one-lot-per-category logic, which stays inside bestAvailableLotsHTML.
+    const bestHTML = parkerType === 'any'
+      ? bestAvailableLotsHTML(building.lat, building.lng, now, null, 'any')
+      : (nearest.length ? `<div class="space-y-2">${nearest.map(bestAvailableCardHTML).join('')}</div>` : `<p class="font-body-md text-body-md text-on-surface-variant">${noLotsMessage(parkerType)}</p>`);
+    // data-near/data-parker carry the destination building's id and chosen
+    // parking type to every lot clicked from within this box, so the lot
+    // detail page's "nearest lots" stays relative to this building and this
+    // parker type, not just to the lot itself.
     box.innerHTML = `
-      <div data-near="${building.id}">
-        <h3 class="font-label-lg text-label-lg text-secondary uppercase px-1 mt-stack-sm mb-1">Best Available Lots near ${building.name}</h3>
-        ${bestAvailableLotsHTML(building.lat, building.lng, now)}
+      <div data-near="${building.id}"${parkerDataAttr(parkerType)}>
+        <h3 class="font-label-lg text-label-lg text-secondary uppercase px-1 mt-stack-sm mb-1">${bestHeading}</h3>
+        ${bestHTML}
         <div class="mt-stack-md">
           <h3 class="font-label-lg text-label-lg text-secondary uppercase px-1 mb-1">Nearest lots to ${building.name}</h3>
-          <div class="flex gap-stack-sm overflow-x-auto hide-scrollbar pb-2">
+          ${nearest.length ? `<div class="flex gap-stack-sm overflow-x-auto hide-scrollbar pb-2">
             ${nearest.map(n => {
               const status = computeLotStatus(n.lot, now);
               const cat = LOT_DATA.categories[n.lot.category];
@@ -419,7 +523,7 @@ function renderHome() {
                 <p class="font-label-lg text-label-lg mt-1 ${status.level === 'ok' ? 'text-[#1b5e20]' : status.level === 'warn' ? 'text-[#8a5a00]' : 'text-[#b71c1c]'}">${status.label}</p>
               </div>`;
             }).join('')}
-          </div>
+          </div>` : `<p class="font-body-md text-body-md text-on-surface-variant px-1">${noLotsMessage(parkerType)}</p>`}
         </div>
       </div>`;
     bindLotRowClicks(box);
@@ -430,6 +534,54 @@ function renderHome() {
   });
 
   // Geolocation "nearest to me"
+  let geoCoords = null; // cached after first successful lookup, so changing
+                         // the parking-type dropdown afterward re-filters
+                         // instantly without asking the browser for location again.
+
+  function renderGeoResults(latitude, longitude) {
+    const card = document.getElementById('geo-card');
+    const parkerType = document.getElementById('geo-parker-type').value;
+    const now = campusNow();
+    const near = nearestLots(latitude, longitude, { limit: 1, parkerType, now })[0];
+    if (!near) {
+      card.innerHTML = `<p class="font-body-md text-body-md text-on-surface-variant">${noLotsMessage(parkerType)}</p>`;
+      return;
+    }
+    const status = computeLotStatus(near.lot, now);
+    const meta = STATUS_META[status.level];
+    const cat = LOT_DATA.categories[near.lot.category];
+    const parkerAttr = parkerDataAttr(parkerType);
+    card.innerHTML = `
+      <div${parkerAttr}>
+      <div class="flex justify-between items-start mb-stack-md">
+        <div>
+          <h3 class="font-headline-lg text-headline-lg-mobile text-on-surface">Lot ${near.lot.code}</h3>
+          <div class="flex items-center text-secondary">
+            <span class="material-symbols-outlined text-sm mr-1">near_me</span>
+            <span class="font-body-md text-body-md">${formatDistance(near.dist)} away &middot; ${cat.label}</span>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 rounded-lg flex items-center gap-4 text-white" style="background:${meta.bg};">
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">${meta.icon}</span>
+        <div>
+          <p class="font-headline-md text-headline-md leading-tight">${status.label}</p>
+          <p class="font-body-md text-body-md opacity-90">${status.detail}</p>
+        </div>
+      </div>
+      <button data-lot="${near.lot.code}" class="mt-stack-md w-full h-touch-target-min bg-primary text-white font-headline-md text-headline-md rounded-lg active:scale-95 transition-transform">View Lot Details</button>
+      <div class="mt-stack-md">
+        <h3 class="font-label-lg text-label-lg text-secondary uppercase mb-1">${parkerType === 'any' ? 'Best Available Lots near you' : `Nearest ${PARKER_TYPES[parkerType].label} Lots near you`}</h3>
+        ${bestAvailableLotsHTML(latitude, longitude, now, null, parkerType)}
+      </div>
+      </div>`;
+    bindLotRowClicks(card);
+  }
+
+  document.getElementById('geo-parker-type').addEventListener('change', () => {
+    if (geoCoords) renderGeoResults(geoCoords.lat, geoCoords.lng);
+  });
+
   document.getElementById('geo-btn').addEventListener('click', () => {
     const card = document.getElementById('geo-card');
     card.innerHTML = `<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2"><span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span> Getting your location…</p>`;
@@ -439,35 +591,8 @@ function renderHome() {
     }
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        const { latitude, longitude } = pos.coords;
-        const near = nearestLots(latitude, longitude, { limit: 1 })[0];
-        if (!near) { card.innerHTML = `<p class="font-body-md text-body-md">No lot data available.</p>`; return; }
-        const status = computeLotStatus(near.lot, campusNow());
-        const meta = STATUS_META[status.level];
-        const cat = LOT_DATA.categories[near.lot.category];
-        card.innerHTML = `
-          <div class="flex justify-between items-start mb-stack-md">
-            <div>
-              <h3 class="font-headline-lg text-headline-lg-mobile text-on-surface">Lot ${near.lot.code}</h3>
-              <div class="flex items-center text-secondary">
-                <span class="material-symbols-outlined text-sm mr-1">near_me</span>
-                <span class="font-body-md text-body-md">${formatDistance(near.dist)} away &middot; ${cat.label}</span>
-              </div>
-            </div>
-          </div>
-          <div class="p-4 rounded-lg flex items-center gap-4 text-white" style="background:${meta.bg};">
-            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">${meta.icon}</span>
-            <div>
-              <p class="font-headline-md text-headline-md leading-tight">${status.label}</p>
-              <p class="font-body-md text-body-md opacity-90">${status.detail}</p>
-            </div>
-          </div>
-          <button data-lot="${near.lot.code}" class="mt-stack-md w-full h-touch-target-min bg-primary text-white font-headline-md text-headline-md rounded-lg active:scale-95 transition-transform">View Lot Details</button>
-          <div class="mt-stack-md">
-            <h3 class="font-label-lg text-label-lg text-secondary uppercase mb-1">Best Available Lots near you</h3>
-            ${bestAvailableLotsHTML(latitude, longitude, campusNow())}
-          </div>`;
-        bindLotRowClicks(card);
+        geoCoords = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        renderGeoResults(geoCoords.lat, geoCoords.lng);
       },
       (err) => {
         card.innerHTML = `<p class="font-body-md text-body-md text-on-surface-variant">Couldn't get your location (${err.message}). <button id="geo-retry" class="text-primary underline">Try again</button></p>`;
@@ -478,7 +603,8 @@ function renderHome() {
   });
 }
 
-function renderLotDetail(code, nearBuildingId) {
+function renderLotDetail(code, nearBuildingId, parkerType = null) {
+  if (!PARKER_TYPES[parkerType]) parkerType = 'any';
   const lot = lotsByCode[(code || '').toUpperCase()];
   if (!lot) {
     appRoot.innerHTML = `<div class="screen-enter text-center py-stack-lg">
@@ -499,8 +625,10 @@ function renderLotDetail(code, nearBuildingId) {
   const anchor = nearBuilding ? { lat: nearBuilding.lat, lng: nearBuilding.lng } : { lat: lot.lat, lng: lot.lng };
   const anchorLabel = nearBuilding ? nearBuilding.name : null;
   const nearAttr = nearBuilding ? ` data-near="${nearBuilding.id}"` : '';
+  const parkerAttr = parkerDataAttr(parkerType);
+  const contextAttr = nearAttr + parkerAttr;
 
-  const alts = anchor.lat != null ? nearestLots(anchor.lat, anchor.lng, { limit: 6, excludeCode: lot.code }) : [];
+  const alts = anchor.lat != null ? nearestLots(anchor.lat, anchor.lng, { limit: 6, excludeCode: lot.code, parkerType, now }) : [];
 
   const chips = [];
   if (lot.lot_type === 'faculty_staff') chips.push('Faculty/Staff lot (letter-prefixed)');
@@ -565,18 +693,21 @@ function renderLotDetail(code, nearBuildingId) {
       <p class="mt-stack-sm font-body-md text-body-md text-on-surface-variant italic text-center">Drag the slider and toggle weekday/weekend to preview this lot's status at any time.</p>
     </section>
 
-    ${anchorLabel ? `<p class="font-label-md text-label-md text-on-surface-variant italic -mb-2">Showing lots nearest to ${anchorLabel}, not to ${lot.code}</p>` : ''}
+    ${anchorLabel || parkerType !== 'any' ? `<p class="font-label-md text-label-md text-on-surface-variant italic -mb-2">
+      ${anchorLabel ? `Showing lots nearest to ${anchorLabel}, not to ${lot.code}.` : ''}
+      ${parkerType !== 'any' ? ` Filtered for: ${PARKER_TYPES[parkerType].label}.` : ''}
+    </p>` : ''}
 
-    ${alts.length ? `<section${nearAttr}>
+    ${alts.length ? `<section${contextAttr}>
       <h3 class="font-label-lg text-label-lg text-on-surface uppercase mb-stack-sm">${anchorLabel ? `Nearest Lots to ${anchorLabel}` : 'Nearest Alternative Lots'}</h3>
       <div class="bg-surface-container-lowest border border-outline-variant rounded-xl px-stack-md">
         ${alts.map((a, i) => lotListItemHTML(a.lot, a.dist, i + 1)).join('')}
       </div>
     </section>` : ''}
 
-    ${anchor.lat != null ? `<section${nearAttr}>
+    ${anchor.lat != null ? `<section${contextAttr}>
       <h3 class="font-label-lg text-label-lg text-on-surface uppercase mb-stack-sm">${anchorLabel ? `Best Available Lots near ${anchorLabel}` : 'Best Available Lots'}</h3>
-      ${bestAvailableLotsHTML(anchor.lat, anchor.lng, now, lot.code)}
+      ${bestAvailableLotsHTML(anchor.lat, anchor.lng, now, lot.code, parkerType)}
     </section>` : ''}
   </section>
   ${lot.lat != null ? `<div class="fixed bottom-6 left-0 w-full px-margin-mobile max-w-md mx-auto">
@@ -738,18 +869,24 @@ const ROUTES = {
   lots:  { render: renderLotsList, showBack: true },
   map:   { render: renderMap, showBack: true },
   rules: { render: renderRules, showBack: true },
-  lot:   { render: (arg, nearId) => renderLotDetail(arg, nearId), showBack: true }
+  lot:   { render: (arg, nearId, parkerType) => renderLotDetail(arg, nearId, parkerType), showBack: true }
 };
 
 function route() {
   if (leafletMap) { leafletMap.remove(); leafletMap = null; }
   const hash = location.hash.replace(/^#\//, '') || 'home';
-  // #/lot/CODE or #/lot/CODE/near/BUILDINGID (the latter arriving via a
-  // destination search, so the lot detail page can stay anchored to that
-  // destination rather than to the lot itself).
-  const [seg, arg, nearKeyword, nearId] = hash.split('/').map(decodeURIComponent);
+  // #/lot/CODE, optionally followed by /near/BUILDINGID and/or /park/TYPE
+  // (either order) - both arrive via search results carrying context, so the
+  // lot detail page can stay anchored to the right point and parker type.
+  const [seg, arg, ...rest] = hash.split('/').map(decodeURIComponent);
+  let nearId = null, parkerType = null;
+  for (let i = 0; i < rest.length; i += 2) {
+    if (rest[i] === 'near') nearId = rest[i + 1];
+    if (rest[i] === 'park') parkerType = rest[i + 1];
+  }
+  if (!PARKER_TYPES[parkerType]) parkerType = null;
   const r = ROUTES[seg] || ROUTES.home;
-  r.render(arg || '', nearKeyword === 'near' ? nearId : null);
+  r.render(arg || '', nearId, parkerType);
 
   document.getElementById('back-btn').style.display = r.showBack ? 'flex' : 'none';
   window.scrollTo(0, 0);
