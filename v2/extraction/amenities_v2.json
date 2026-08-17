@@ -1,0 +1,352 @@
+[
+  {
+    "type": "ev_charging",
+    "note": "near Mowatt Visitor Lot",
+    "lat": 38.982968,
+    "lng": -76.945135,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "ev_charging",
+    "note": "near lot NN",
+    "lat": 38.996929,
+    "lng": -76.941559,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "ev_charging",
+    "note": "near Stadium Drive Garage (SDG)",
+    "lat": 38.991092,
+    "lng": -76.948661,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "ev_charging",
+    "note": "near Union Lane Garage / lot HH",
+    "lat": 38.98857,
+    "lng": -76.9458,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "ev_charging",
+    "note": "near Regents Drive Garage",
+    "lat": 38.989664,
+    "lng": -76.941451,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "ev_charging",
+    "note": "near lot C1 / bldg 079",
+    "lat": 38.987111,
+    "lng": -76.937357,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "ev_charging",
+    "note": "near bldg 003 (Hotel Dr)",
+    "lat": 38.986012,
+    "lng": -76.935757,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "ev_charging",
+    "note": "Anacostia inset, near bldg 816",
+    "lat": 38.996219,
+    "lng": -76.922206,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot 1d",
+    "lat": 38.98686,
+    "lng": -76.949852,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot N9",
+    "lat": 38.992894,
+    "lng": -76.949424,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot S8",
+    "lat": 38.992839,
+    "lng": -76.945928,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot LL4",
+    "lat": 38.99084,
+    "lng": -76.950946,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot S7",
+    "lat": 38.990989,
+    "lng": -76.945604,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot 1b (Alumni Dr)",
+    "lat": 38.98686,
+    "lng": -76.949852,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot BB",
+    "lat": 38.988609,
+    "lng": -76.945324,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot HH / Union Lane Garage",
+    "lat": 38.988609,
+    "lng": -76.945324,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot 1b (south, near lot 1d)",
+    "lat": 38.98686,
+    "lng": -76.949852,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot PH1",
+    "lat": 38.992975,
+    "lng": -76.941875,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near Regents Drive Garage",
+    "lat": 38.989664,
+    "lng": -76.941451,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot JJ1",
+    "lat": 38.984673,
+    "lng": -76.948805,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot O3",
+    "lat": 38.984673,
+    "lng": -76.948805,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot O1",
+    "lat": 38.984673,
+    "lng": -76.948805,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot A",
+    "lat": 38.984464,
+    "lng": -76.945229,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot U1",
+    "lat": 38.982968,
+    "lng": -76.945135,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot Y",
+    "lat": 38.984538,
+    "lng": -76.941716,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot LL3",
+    "lat": 38.982436,
+    "lng": -76.941383,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot J2 / K3",
+    "lat": 38.985089,
+    "lng": -76.936966,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot K5",
+    "lat": 38.982551,
+    "lng": -76.937765,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot 11b",
+    "lat": 38.993496,
+    "lng": -76.937307,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot 9b",
+    "lat": 38.993496,
+    "lng": -76.937307,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "motorcycle",
+    "note": "near lot XX1",
+    "lat": 38.993496,
+    "lng": -76.937307,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "covered_bike_parking",
+    "note": "near lot 6 / Terrapin Trail Garage",
+    "lat": 38.996929,
+    "lng": -76.941559,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "covered_bike_parking",
+    "note": "near Stadium Drive Garage",
+    "lat": 38.991092,
+    "lng": -76.948661,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "covered_bike_parking",
+    "note": "near Union Lane Garage / lot HH",
+    "lat": 38.98857,
+    "lng": -76.9458,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "covered_bike_parking",
+    "note": "near lot LL5 (Denton area)",
+    "lat": 38.992894,
+    "lng": -76.949424,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "covered_bike_parking",
+    "note": "near lot 19 / U2",
+    "lat": 38.982968,
+    "lng": -76.945135,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "covered_bike_parking",
+    "note": "near lots W / W1 (Chapel Ln)",
+    "lat": 38.984538,
+    "lng": -76.941716,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "covered_bike_parking",
+    "note": "near lot LL3 (Lehigh Rd)",
+    "lat": 38.982436,
+    "lng": -76.941383,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "covered_bike_parking",
+    "note": "near lot N6 / lot 15 (College Ave)",
+    "lat": 38.980974,
+    "lng": -76.93563,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "covered_bike_parking",
+    "note": "near bldg 003 (Hotel Dr)",
+    "lat": 38.986012,
+    "lng": -76.935757,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "covered_bike_parking",
+    "note": "near bldg 111 / lot CC1 area",
+    "lat": 38.992975,
+    "lng": -76.941875,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "bike_repair_station",
+    "note": "near lot LL5 (Denton area)",
+    "lat": 38.992894,
+    "lng": -76.949424,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "bike_repair_station",
+    "note": "near lot 6 / Terrapin Trail Garage",
+    "lat": 38.996929,
+    "lng": -76.941559,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "bike_repair_station",
+    "note": "near lot GG2",
+    "lat": 38.99118,
+    "lng": -76.936973,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "bike_repair_station",
+    "note": "near bldg 082 (near lot TT)",
+    "lat": 38.989092,
+    "lng": -76.941059,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "bike_repair_station",
+    "note": "near bldg 406/081",
+    "lat": 38.989903,
+    "lng": -76.93689,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "bike_repair_station",
+    "note": "near Mowatt Visitor Lot / lot 19",
+    "lat": 38.982968,
+    "lng": -76.945135,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "bike_repair_station",
+    "note": "near lot LL1",
+    "lat": 38.982436,
+    "lng": -76.941383,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "bike_repair_station",
+    "note": "near lot N6 / lot 15 (College Ave)",
+    "lat": 38.980974,
+    "lng": -76.93563,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  },
+  {
+    "type": "dots_impound_lot",
+    "note": "at Regents Drive Garage",
+    "lat": 38.989664,
+    "lng": -76.941451,
+    "source": "map_icon_anchored_to_nearest_known_lot_or_building"
+  }
+]

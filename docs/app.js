@@ -106,7 +106,7 @@ function computeLotStatus(lot, now) {
     return { level: 'bad', label: 'Permit required, 24/7', detail: '24-hour restricted lot - only vehicles with a valid lot-specific permit/CLPR may park here, any time, any day.', parkableNow: false, paid: false };
   }
 
-  if (cat === 'visitor_garage') {
+  if (cat === 'visitor_pay_parking') {
     return { level: 'warn', label: 'Pay to park, no permit needed', detail: '$4/hr, $20/day max. Daily, 7AM-Midnight.', parkableNow: true, paid: true };
   }
 
@@ -148,62 +148,52 @@ function nearestLots(lat, lng, opts = {}) {
     .slice(0, limit);
 }
 
-// Guarantees the "at least one parkable lot, free and/or paid" rule: scans
-// ALL lots by distance (not just a top-N slice) and returns the nearest one
-// that's actually parkable right now by a generic visitor, split into three
-// options: nearest free/unrestricted lot, nearest paid option of any kind
-// (a payable special-restriction lot or a garage, whichever is closer), and
-// nearest visitor parking garage specifically (Mowatt Lane, Regents Drive,
-// Stadium Drive, Union Lane) - garages are always open and pay-to-park, so
-// this one never needs a parkableNow/paid filter. Any of the three may come
-// back null if no such lot has coordinates, which should be rare.
-function nearestGuaranteedOptions(lat, lng, now, excludeCode = null) {
+// "Best Available Lots": scans ALL lots by distance (not just a top-N slice)
+// and returns the single nearest lot of EACH restriction category that
+// exists in the dataset, each carrying its own live status (open/restricted
+// right now) so the list stays honest even when a category's nearest lot
+// happens to be closed at that moment. Guarantees category coverage near
+// any point on campus; any one entry may come back null only if that
+// category truly has no lot with coordinates anywhere in the dataset.
+function nearestBestAvailableByCategory(lat, lng, now, excludeCode = null) {
   const ranked = LOT_DATA.lots
     .filter(l => l.lat != null && l.lng != null && l.code !== excludeCode)
     .map(l => ({ lot: l, dist: haversineMeters(lat, lng, l.lat, l.lng), status: computeLotStatus(l, now) }))
     .sort((a, b) => a.dist - b.dist);
-  const free = ranked.find(r => r.status.parkableNow && !r.status.paid) || null;
-  const paid = ranked.find(r => r.status.parkableNow && r.status.paid) || null;
-  const garage = ranked.find(r => r.lot.category === 'visitor_garage') || null;
-  return { free, paid, garage };
+  const byCategory = {};
+  for (const catKey of Object.keys(LOT_DATA.categories)) {
+    byCategory[catKey] = ranked.find(r => r.lot.category === catKey) || null;
+  }
+  return byCategory;
 }
 
-const GUARANTEED_CARD_META = {
-  free:   { color: '#1b5e20', icon: 'check_circle', label: 'free, unrestricted' },
-  paid:   { color: '#8a5a00', icon: 'payments', label: 'pay to park' },
-  garage: { color: '#3b6fb0', icon: 'local_parking', label: 'visitor parking garage' },
-};
-
-function guaranteedOptionCardHTML(entry, kind) {
-  const { lot, dist } = entry;
+function bestAvailableCardHTML(entry) {
+  const { lot, dist, status } = entry;
   const cat = LOT_DATA.categories[lot.category];
-  const meta = GUARANTEED_CARD_META[kind];
+  const statusColor = status.level === 'ok' ? '#1b5e20' : status.level === 'warn' ? '#8a5a00' : '#b71c1c';
+  const statusIcon = status.level === 'ok' ? 'check_circle' : status.level === 'warn' ? 'warning' : 'block';
   return `<div class="flex items-center gap-stack-sm bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-sm cursor-pointer active:bg-surface-container transition-colors" data-lot="${lot.code}">
-    <span class="material-symbols-outlined text-[20px]" style="color:${meta.color}">${meta.icon}</span>
+    <span class="material-symbols-outlined text-[20px]" style="color:${statusColor}">${statusIcon}</span>
     <div class="flex-1 min-w-0">
-      <p class="font-body-md text-body-md font-bold">${lot.code}${lot.name ? ' - ' + lot.name : ''} <span class="font-label-md text-label-md font-normal text-on-surface-variant">&middot; ${meta.label}</span></p>
+      <p class="font-body-md text-body-md font-bold">${lot.code}${lot.name ? ' - ' + lot.name : ''} <span class="font-label-md text-label-md font-normal" style="color:${statusColor}">&middot; ${status.label}</span></p>
       <p class="font-label-md text-label-md text-on-surface-variant">${cat.label} &middot; ${formatDistance(dist)} &middot; ${walkMinutes(dist)} min walk</p>
     </div>
   </div>`;
 }
 
-// Renders the "you can always park here right now" guarantee panel for a
-// given anchor point: up to three cards (free / paid / nearest visitor
-// garage). Always shows something as long as the campus has any parkable
-// lot at all (in practice, always true).
-function guaranteedParkingHTML(lat, lng, now, excludeCode = null) {
-  const { free, paid, garage } = nearestGuaranteedOptions(lat, lng, now, excludeCode);
-  if (!free && !paid && !garage) {
-    return `<p class="font-body-md text-body-md text-on-surface-variant">No currently-parkable lot found in the dataset - check posted signage.</p>`;
+// Renders the "Best Available Lots" panel for a given anchor point: the
+// single nearest lot of every restriction category present in the dataset,
+// each labeled with its live status right now.
+function bestAvailableLotsHTML(lat, lng, now, excludeCode = null) {
+  const byCategory = nearestBestAvailableByCategory(lat, lng, now, excludeCode);
+  const entries = Object.entries(byCategory);
+  if (entries.every(([, v]) => !v)) {
+    return `<p class="font-body-md text-body-md text-on-surface-variant">No lots found in the dataset near here.</p>`;
   }
-  // Don't show the garage card twice if it's already the "paid" pick.
-  const showGarage = garage && (!paid || garage.lot.code !== paid.lot.code);
   return `<div class="space-y-2">
-    ${free ? guaranteedOptionCardHTML(free, 'free') : ''}
-    ${paid ? guaranteedOptionCardHTML(paid, 'paid') : ''}
-    ${showGarage ? guaranteedOptionCardHTML(garage, 'garage') : ''}
-    ${!free ? `<p class="font-label-md text-label-md text-on-surface-variant italic">No free unrestricted lot currently open nearby - closest option is pay-to-park.</p>` : ''}
-    ${!paid && !showGarage ? `<p class="font-label-md text-label-md text-on-surface-variant italic">No pay-to-park option found nearby.</p>` : ''}
+    ${entries.map(([catKey, entry]) => entry ? bestAvailableCardHTML(entry) :
+      `<p class="font-label-md text-label-md text-on-surface-variant italic">No ${LOT_DATA.categories[catKey].label} lot found nearby.</p>`
+    ).join('')}
   </div>`;
 }
 
@@ -290,9 +280,20 @@ function lotListItemHTML(lot, dist, rank) {
   </div>`;
 }
 
+// data-near (a building id), when present on an element or an ancestor,
+// carries the "I got here via a destination search for building X" context
+// through to the lot detail page, so that page's nearest/best-available
+// lists stay relative to the destination the user actually cares about,
+// not the lot they happened to click on.
 function bindLotRowClicks(root) {
   root.querySelectorAll('[data-lot]').forEach(el => {
-    el.addEventListener('click', () => { location.hash = `#/lot/${encodeURIComponent(el.dataset.lot)}`; });
+    el.addEventListener('click', () => {
+      const nearEl = el.closest('[data-near]');
+      const near = nearEl ? nearEl.dataset.near : null;
+      location.hash = near
+        ? `#/lot/${encodeURIComponent(el.dataset.lot)}/near/${encodeURIComponent(near)}`
+        : `#/lot/${encodeURIComponent(el.dataset.lot)}`;
+    });
   });
 }
 
@@ -388,24 +389,29 @@ function renderHome() {
     const now = campusNow();
     const nearest = nearestLots(building.lat, building.lng, { limit: 6 });
     const box = document.getElementById('dest-results');
+    // data-near carries the destination building's id to every lot clicked
+    // from within this box, so the lot detail page's "nearest lots" stays
+    // relative to this building, not the lot itself.
     box.innerHTML = `
-      <h3 class="font-label-lg text-label-lg text-secondary uppercase px-1 mt-stack-sm mb-1">Guaranteed to be available now near ${building.name}</h3>
-      ${guaranteedParkingHTML(building.lat, building.lng, now)}
-      <div class="mt-stack-md">
-        <h3 class="font-label-lg text-label-lg text-secondary uppercase px-1 mb-1">Nearest lots to ${building.name}</h3>
-        <div class="flex gap-stack-sm overflow-x-auto hide-scrollbar pb-2">
-          ${nearest.map(n => {
-            const status = computeLotStatus(n.lot, now);
-            const cat = LOT_DATA.categories[n.lot.category];
-            return `<div class="flex-shrink-0 w-32 bg-surface-container border border-outline-variant p-3 rounded-xl active:bg-surface-container-high transition-colors cursor-pointer" data-lot="${n.lot.code}">
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-headline-md text-headline-md px-1.5 rounded text-white text-[16px]" style="background:${cat.color}">${n.lot.code}</span>
-                <span class="material-symbols-outlined text-secondary text-sm">directions_walk</span>
-              </div>
-              <p class="font-label-md text-label-md text-on-surface-variant">${walkMinutes(n.dist)} min walk</p>
-              <p class="font-label-lg text-label-lg mt-1 ${status.level === 'ok' ? 'text-[#1b5e20]' : status.level === 'warn' ? 'text-[#8a5a00]' : 'text-[#b71c1c]'}">${status.label}</p>
-            </div>`;
-          }).join('')}
+      <div data-near="${building.id}">
+        <h3 class="font-label-lg text-label-lg text-secondary uppercase px-1 mt-stack-sm mb-1">Best Available Lots near ${building.name}</h3>
+        ${bestAvailableLotsHTML(building.lat, building.lng, now)}
+        <div class="mt-stack-md">
+          <h3 class="font-label-lg text-label-lg text-secondary uppercase px-1 mb-1">Nearest lots to ${building.name}</h3>
+          <div class="flex gap-stack-sm overflow-x-auto hide-scrollbar pb-2">
+            ${nearest.map(n => {
+              const status = computeLotStatus(n.lot, now);
+              const cat = LOT_DATA.categories[n.lot.category];
+              return `<div class="flex-shrink-0 w-32 bg-surface-container border border-outline-variant p-3 rounded-xl active:bg-surface-container-high transition-colors cursor-pointer" data-lot="${n.lot.code}">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-headline-md text-headline-md px-1.5 rounded text-white text-[16px]" style="background:${cat.color}">${n.lot.code}</span>
+                  <span class="material-symbols-outlined text-secondary text-sm">directions_walk</span>
+                </div>
+                <p class="font-label-md text-label-md text-on-surface-variant">${walkMinutes(n.dist)} min walk</p>
+                <p class="font-label-lg text-label-lg mt-1 ${status.level === 'ok' ? 'text-[#1b5e20]' : status.level === 'warn' ? 'text-[#8a5a00]' : 'text-[#b71c1c]'}">${status.label}</p>
+              </div>`;
+            }).join('')}
+          </div>
         </div>
       </div>`;
     bindLotRowClicks(box);
@@ -450,8 +456,8 @@ function renderHome() {
           </div>
           <button data-lot="${near.lot.code}" class="mt-stack-md w-full h-touch-target-min bg-primary text-white font-headline-md text-headline-md rounded-lg active:scale-95 transition-transform">View Lot Details</button>
           <div class="mt-stack-md">
-            <h3 class="font-label-lg text-label-lg text-secondary uppercase mb-1">Guaranteed to be available now near you</h3>
-            ${guaranteedParkingHTML(latitude, longitude, campusNow())}
+            <h3 class="font-label-lg text-label-lg text-secondary uppercase mb-1">Best Available Lots near you</h3>
+            ${bestAvailableLotsHTML(latitude, longitude, campusNow())}
           </div>`;
         bindLotRowClicks(card);
       },
@@ -464,7 +470,7 @@ function renderHome() {
   });
 }
 
-function renderLotDetail(code) {
+function renderLotDetail(code, nearBuildingId) {
   const lot = lotsByCode[(code || '').toUpperCase()];
   if (!lot) {
     appRoot.innerHTML = `<div class="screen-enter text-center py-stack-lg">
@@ -477,7 +483,16 @@ function renderLotDetail(code) {
   const now = campusNow();
   const status = computeLotStatus(lot, now);
   const near = lot.lat != null ? nearestBuilding(lot.lat, lot.lng) : null;
-  const alts = lot.lat != null ? nearestLots(lot.lat, lot.lng, { limit: 6, excludeCode: lot.code }) : [];
+
+  // Arrived here via a destination search? Anchor "nearest lots" and "best
+  // available" to that destination instead of to this lot itself, and keep
+  // carrying the same context if the user clicks through to another lot.
+  const nearBuilding = nearBuildingId ? BUILDINGS.find(b => b.id === nearBuildingId) : null;
+  const anchor = nearBuilding ? { lat: nearBuilding.lat, lng: nearBuilding.lng } : { lat: lot.lat, lng: lot.lng };
+  const anchorLabel = nearBuilding ? nearBuilding.name : null;
+  const nearAttr = nearBuilding ? ` data-near="${nearBuilding.id}"` : '';
+
+  const alts = anchor.lat != null ? nearestLots(anchor.lat, anchor.lng, { limit: 6, excludeCode: lot.code }) : [];
 
   const chips = [];
   if (lot.lot_type === 'faculty_staff') chips.push('Faculty/Staff lot (letter-prefixed)');
@@ -542,16 +557,18 @@ function renderLotDetail(code) {
       <p class="mt-stack-sm font-body-md text-body-md text-on-surface-variant italic text-center">Drag the slider and toggle weekday/weekend to preview this lot's status at any time.</p>
     </section>
 
-    ${alts.length ? `<section>
-      <h3 class="font-label-lg text-label-lg text-on-surface uppercase mb-stack-sm">Nearest Alternative Lots</h3>
+    ${anchorLabel ? `<p class="font-label-md text-label-md text-on-surface-variant italic -mb-2">Showing lots nearest to ${anchorLabel}, not to ${lot.code}</p>` : ''}
+
+    ${alts.length ? `<section${nearAttr}>
+      <h3 class="font-label-lg text-label-lg text-on-surface uppercase mb-stack-sm">${anchorLabel ? `Nearest Lots to ${anchorLabel}` : 'Nearest Alternative Lots'}</h3>
       <div class="bg-surface-container-lowest border border-outline-variant rounded-xl px-stack-md">
         ${alts.map((a, i) => lotListItemHTML(a.lot, a.dist, i + 1)).join('')}
       </div>
     </section>` : ''}
 
-    ${lot.lat != null ? `<section>
-      <h3 class="font-label-lg text-label-lg text-on-surface uppercase mb-stack-sm">Guaranteed to be available now</h3>
-      ${guaranteedParkingHTML(lot.lat, lot.lng, now, lot.code)}
+    ${anchor.lat != null ? `<section${nearAttr}>
+      <h3 class="font-label-lg text-label-lg text-on-surface uppercase mb-stack-sm">${anchorLabel ? `Best Available Lots near ${anchorLabel}` : 'Best Available Lots'}</h3>
+      ${bestAvailableLotsHTML(anchor.lat, anchor.lng, now, nearBuilding ? null : lot.code)}
     </section>` : ''}
   </section>
   ${lot.lat != null ? `<div class="fixed bottom-6 left-0 w-full px-margin-mobile max-w-md mx-auto">
@@ -713,15 +730,18 @@ const ROUTES = {
   lots:  { render: renderLotsList, showBack: true },
   map:   { render: renderMap, showBack: true },
   rules: { render: renderRules, showBack: true },
-  lot:   { render: (arg) => renderLotDetail(arg), showBack: true }
+  lot:   { render: (arg, nearId) => renderLotDetail(arg, nearId), showBack: true }
 };
 
 function route() {
   if (leafletMap) { leafletMap.remove(); leafletMap = null; }
   const hash = location.hash.replace(/^#\//, '') || 'home';
-  const [seg, arg] = hash.split('/');
+  // #/lot/CODE or #/lot/CODE/near/BUILDINGID (the latter arriving via a
+  // destination search, so the lot detail page can stay anchored to that
+  // destination rather than to the lot itself).
+  const [seg, arg, nearKeyword, nearId] = hash.split('/').map(decodeURIComponent);
   const r = ROUTES[seg] || ROUTES.home;
-  r.render(decodeURIComponent(arg || ''));
+  r.render(arg || '', nearKeyword === 'near' ? nearId : null);
 
   document.getElementById('back-btn').style.display = r.showBack ? 'flex' : 'none';
   window.scrollTo(0, 0);

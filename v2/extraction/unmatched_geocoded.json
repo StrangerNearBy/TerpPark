@@ -1,0 +1,90 @@
+[
+  {
+    "id": "815",
+    "name": "7401 BALTIMORE AVE",
+    "grid": "F13",
+    "category": "Academic/Administrative",
+    "osm_lat": null,
+    "osm_lng": null
+  },
+  {
+    "id": "816",
+    "name": "ANACOSTIA BUILDING",
+    "grid": "ANACOSTIA INSET",
+    "category": "Academic/Administrative",
+    "osm_lat": null,
+    "osm_lng": null
+  },
+  {
+    "id": "228",
+    "name": "E.A. FERNANDEZ IDEA FACTORY",
+    "grid": "F8",
+    "category": "Academic/Administrative",
+    "osm_lat": null,
+    "osm_lng": null
+  },
+  {
+    "id": "352",
+    "name": "GRADUATE STUDENT HOUSING",
+    "grid": "G11",
+    "category": "Academic/Administrative",
+    "osm_lat": null,
+    "osm_lng": null
+  },
+  {
+    "id": "433",
+    "name": "THURGOOD MARSHALL HALL",
+    "grid": "F11",
+    "category": "Academic/Administrative",
+    "osm_lat": null,
+    "osm_lng": null
+  },
+  {
+    "id": "436",
+    "name": "YAHENTAMITSI DINING HALL",
+    "grid": "D8",
+    "category": "Academic/Administrative",
+    "osm_lat": null,
+    "osm_lng": null
+  },
+  {
+    "id": "378",
+    "name": "BARRY P. GOSSETT BASKETBALL PERFORMANCE CENTER",
+    "grid": "E6",
+    "category": "Recreation/Athletic",
+    "osm_lat": null,
+    "osm_lng": null
+  },
+  {
+    "id": "408",
+    "name": "SOFTBALL PLAYER DEVELOPMENT CENTER",
+    "grid": "E6",
+    "category": "Recreation/Athletic",
+    "osm_lat": null,
+    "osm_lng": null
+  },
+  {
+    "id": "157",
+    "name": "STANLEY BOBB BASEBALL PLAYER DEVELOP. CENTER",
+    "grid": "D9",
+    "category": "Recreation/Athletic",
+    "osm_lat": null,
+    "osm_lng": null
+  },
+  {
+    "id": "434",
+    "name": "PYON-CHEN HALL",
+    "grid": "D8",
+    "category": "Residence Hall",
+    "osm_lat": null,
+    "osm_lng": null
+  },
+  {
+    "id": "435",
+    "name": "JOHNSON-WHITTLE HALL",
+    "grid": "D8",
+    "category": "Residence Hall",
+    "osm_lat": null,
+    "osm_lng": null
+  }
+]
