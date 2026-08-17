@@ -51,5 +51,11 @@ input[type=range]::-webkit-slider-thumb {
 .autocomplete-item { cursor: pointer; }
 .autocomplete-item:hover, .autocomplete-item.highlight { background: #f3f3f3; }
 
-#map { height: 70vh; min-height: 420px; width: 100%; }
+/* Leaflet ships its own internal z-index hierarchy (zoom controls at 1000,
+   popups at 700, etc.) - all higher than this app's fixed header (z-50). With
+   the map at 70vh tall, scrolling the page moves those controls up and over
+   the header. isolation:isolate contains Leaflet's stacking inside #map so
+   nothing inside it can ever paint above elements outside it, regardless of
+   Leaflet's own internal numbers. */
+#map { height: 70vh; min-height: 420px; width: 100%; isolation: isolate; }
 .leaflet-popup-content { font-size: 13px; line-height: 1.5; font-family: Inter, sans-serif; }
