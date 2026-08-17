@@ -152,7 +152,7 @@ const STATUS_PILL_CLASS = {
 // ============================================================
 
 const PARKER_TYPES = {
-  any:           { label: 'Any / just checking' },
+  any:           { label: 'Any/Just Checking' },
   visitor:       { label: 'Visitor (no permit)' },
   student:       { label: 'Student permit' },
   faculty_staff: { label: 'Faculty/Staff permit' }
