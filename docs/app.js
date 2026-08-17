@@ -767,7 +767,7 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
       ${bestAvailableLotsHTML(anchor.lat, anchor.lng, now, lot.code, parkerType)}
     </section>` : ''}
   </section>
-  ${lot.lat != null ? `<div class="fixed bottom-6 left-0 w-full px-margin-mobile max-w-md mx-auto">
+  ${lot.lat != null ? `<div class="fixed bottom-6 left-0 right-0 w-full px-margin-mobile max-w-md mx-auto">
     <button id="navigate-btn" class="press w-full h-touch-target-min bg-primary text-on-primary font-headline-md rounded-lg flex items-center justify-center gap-stack-sm shadow-md active:opacity-90 transition-opacity">
       <span class="material-symbols-outlined">directions</span> Navigate to Lot ${lot.code}
     </button>
