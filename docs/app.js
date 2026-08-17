@@ -290,6 +290,17 @@ function openLotCount(now) {
   return LOT_DATA.lots.filter(l => computeLotStatus(l, now).level === 'ok').length;
 }
 
+// Bike/moto/EV/repair amenities, each already anchored to real coordinates
+// near a known lot or building (see v2/extraction/amenities_v2.json).
+function nearestAmenities(lat, lng, opts = {}) {
+  const { type = 'all', limit = 200 } = opts;
+  return AMENITIES
+    .filter(a => type === 'all' || a.type === type)
+    .map(a => ({ amenity: a, dist: haversineMeters(lat, lng, a.lat, a.lng) }))
+    .sort((a, b) => a.dist - b.dist)
+    .slice(0, limit);
+}
+
 // ============================================================
 // Tiny autocomplete helper
 // ============================================================
@@ -457,6 +468,10 @@ function renderHome() {
         <p class="font-body-md text-body-md text-on-surface-variant">Every restriction, explained</p>
       </div>
     </section>
+
+    <button data-route="amenities" class="bento-tile w-full h-touch-target-min bg-surface-container-low border border-outline-variant text-on-surface font-headline-md rounded-lg flex items-center justify-center gap-stack-sm active:bg-surface-container-high transition-colors">
+      <span class="material-symbols-outlined text-secondary">ev_station</span> Bike, Moto &amp; EV Parking
+    </button>
   </section>`;
   bindLotRowClicks(appRoot);
 
@@ -819,6 +834,109 @@ function renderRules() {
   </section>`;
 }
 
+function renderAmenities() {
+  const parkingTypes = ['ev_charging', 'motorcycle', 'covered_bike_parking', 'bike_repair_station'];
+  const impoundLot = AMENITIES.find(a => a.type === 'dots_impound_lot');
+  let activeType = 'all';
+  let userLoc = null; // once set (via "Sort by distance from me"), cards show real walking distance
+
+  appRoot.innerHTML = `
+  <section class="screen-enter space-y-stack-lg pb-8">
+    <div>
+      <h1 class="font-headline-lg text-headline-lg text-on-surface">Bike, Moto &amp; EV Parking</h1>
+      <p class="font-body-md text-body-md text-on-surface-variant mt-1">EV charging stations, motorcycle parking, and covered bicycle parking (with repair stations), each anchored to the nearest known lot or building on the official campus parking map.</p>
+    </div>
+
+    <button id="amenity-geo-btn" class="w-full h-11 bg-surface-container-lowest border border-outline text-on-surface font-headline-md text-body-lg rounded-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-[18px]">near_me</span> Sort by distance from me
+    </button>
+
+    <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-1" id="amenity-filters">
+      <button data-type="all" class="amenity-filter-btn flex-shrink-0 h-9 px-4 rounded-full font-label-lg text-label-lg border transition-colors">All</button>
+      ${parkingTypes.map(t => `<button data-type="${t}" class="amenity-filter-btn flex-shrink-0 h-9 px-4 rounded-full font-label-lg text-label-lg border transition-colors">${AMENITY_TYPES[t].label}</button>`).join('')}
+    </div>
+
+    <div id="amenity-list" class="space-y-2"></div>
+
+    ${impoundLot ? `
+    <section class="bg-surface-container border border-outline-variant rounded-xl p-stack-md">
+      <h3 class="font-label-lg text-label-lg text-secondary uppercase mb-1">Good to know</h3>
+      <div class="flex items-center gap-stack-sm">
+        <span class="material-symbols-outlined" style="color:${AMENITY_TYPES.dots_impound_lot.color}">${AMENITY_TYPES.dots_impound_lot.icon}</span>
+        <p class="font-body-md text-body-md text-on-surface-variant">${AMENITY_TYPES.dots_impound_lot.label}${impoundLot.note ? ' - ' + impoundLot.note : ''}. If your vehicle is towed, this is where DOTS holds it.</p>
+      </div>
+    </section>` : ''}
+  </section>`;
+
+  function updateFilterButtons() {
+    document.querySelectorAll('.amenity-filter-btn').forEach(btn => {
+      const active = btn.dataset.type === activeType;
+      btn.className = 'amenity-filter-btn flex-shrink-0 h-9 px-4 rounded-full font-label-lg text-label-lg border transition-colors ' +
+        (active ? 'bg-primary text-white border-primary' : 'bg-surface-container-lowest text-on-surface-variant border-outline-variant');
+    });
+  }
+
+  function amenityCardHTML(entry) {
+    const a = entry.amenity;
+    const meta = AMENITY_TYPES[a.type];
+    return `<div class="flex items-center gap-stack-sm bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-sm">
+      <span class="material-symbols-outlined text-[22px] flex-shrink-0" style="color:${meta.color}">${meta.icon}</span>
+      <div class="flex-1 min-w-0">
+        <p class="font-body-md text-body-md font-bold">${meta.label}</p>
+        <p class="font-label-md text-label-md text-on-surface-variant">${a.note || ''}${entry.dist != null ? ` &middot; ${formatDistance(entry.dist)} &middot; ${walkMinutes(entry.dist)} min walk` : ''}</p>
+      </div>
+      <button data-lat="${a.lat}" data-lng="${a.lng}" class="amenity-directions-btn flex-shrink-0 p-2 text-primary" aria-label="Directions">
+        <span class="material-symbols-outlined">directions</span>
+      </button>
+    </div>`;
+  }
+
+  function draw() {
+    // Before the user shares their location, sort by proximity to a fixed
+    // campus-center point for a stable default order - but don't show that
+    // as a "distance from you" figure, since it isn't one.
+    const anchor = userLoc || { lat: 38.9869, lng: -76.9426 };
+    const results = nearestAmenities(anchor.lat, anchor.lng, { type: activeType })
+      .filter(e => e.amenity.type !== 'dots_impound_lot');
+    const box = document.getElementById('amenity-list');
+    box.innerHTML = results.length
+      ? results.map(e => amenityCardHTML(userLoc ? e : { amenity: e.amenity, dist: null })).join('')
+      : `<p class="font-body-md text-body-md text-on-surface-variant text-center py-stack-md">No amenities found for this filter.</p>`;
+    box.querySelectorAll('.amenity-directions-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        window.open(`https://www.google.com/maps/dir/?api=1&destination=${btn.dataset.lat},${btn.dataset.lng}`, '_blank', 'noopener');
+      });
+    });
+  }
+
+  document.querySelectorAll('.amenity-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => { activeType = btn.dataset.type; updateFilterButtons(); draw(); });
+  });
+
+  document.getElementById('amenity-geo-btn').addEventListener('click', () => {
+    const btn = document.getElementById('amenity-geo-btn');
+    if (!navigator.geolocation) {
+      btn.textContent = "Geolocation isn't supported by this browser.";
+      return;
+    }
+    btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span> Getting your location…`;
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        userLoc = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        btn.innerHTML = `<span class="material-symbols-outlined text-[18px]">near_me</span> Sorted by distance from you`;
+        draw();
+      },
+      () => {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[18px]">near_me</span> Couldn't get your location - try again`;
+      },
+      { timeout: 8000 }
+    );
+  });
+
+  updateFilterButtons();
+  draw();
+}
+
 let leafletMap = null;
 function renderMap() {
   appRoot.innerHTML = `
@@ -838,7 +956,10 @@ function renderMap() {
   const legend = document.getElementById('map-legend');
   legend.innerHTML = Object.values(LOT_DATA.categories).map(c =>
     `<span class="flex items-center gap-1"><span class="w-3 h-3 rounded inline-block" style="background:${c.color}"></span>${c.label}</span>`
-  ).join('') + `<span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full inline-block bg-white border border-outline"></span>Building</span>`;
+  ).join('') + `<span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full inline-block bg-white border border-outline"></span>Building</span>`
+    + Object.entries(AMENITY_TYPES).filter(([type]) => type !== 'dots_impound_lot').map(([, meta]) =>
+      `<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" style="color:${meta.color}">${meta.icon}</span>${meta.label}</span>`
+    ).join('');
 
   setTimeout(() => {
     leafletMap = L.map('map').setView([38.9869, -76.9426], 15);
@@ -857,6 +978,12 @@ function renderMap() {
       const marker = L.circleMarker([b.lat, b.lng], { radius: 3, color: '#444', weight: 1, fillColor: '#ffffff', fillOpacity: 0.9 }).addTo(leafletMap);
       marker.bindPopup(`<strong>${b.name}</strong><br>${b.category}`);
     }
+    for (const a of AMENITIES) {
+      if (a.type === 'dots_impound_lot') continue;
+      const meta = AMENITY_TYPES[a.type];
+      const marker = L.circleMarker([a.lat, a.lng], { radius: 5, color: '#fff', weight: 1, fillColor: meta.color, fillOpacity: 0.95 }).addTo(leafletMap);
+      marker.bindPopup(`<strong>${meta.label}</strong>${a.note ? '<br>' + a.note : ''}`);
+    }
   }, 0);
 }
 
@@ -865,11 +992,12 @@ function renderMap() {
 // ============================================================
 
 const ROUTES = {
-  home:  { render: renderHome, showBack: false },
-  lots:  { render: renderLotsList, showBack: true },
-  map:   { render: renderMap, showBack: true },
-  rules: { render: renderRules, showBack: true },
-  lot:   { render: (arg, nearId, parkerType) => renderLotDetail(arg, nearId, parkerType), showBack: true }
+  home:      { render: renderHome, showBack: false },
+  lots:      { render: renderLotsList, showBack: true },
+  map:       { render: renderMap, showBack: true },
+  rules:     { render: renderRules, showBack: true },
+  amenities: { render: renderAmenities, showBack: true },
+  lot:       { render: (arg, nearId, parkerType) => renderLotDetail(arg, nearId, parkerType), showBack: true }
 };
 
 function route() {
