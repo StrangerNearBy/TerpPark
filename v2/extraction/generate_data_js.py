@@ -44,11 +44,9 @@ def main():
 
     amenities = []
     for i, a in enumerate(amenities_raw):
-        meta = AMENITY_TYPE_META.get(a['type'], {})
         amenities.append({
             'id': f"AM{i+1}",
             'type': a['type'],
-            'type_label': meta.get('label', a['type']),
             'note': a.get('note'),
             'lat': a['lat'],
             'lng': a['lng'],

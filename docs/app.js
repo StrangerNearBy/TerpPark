@@ -119,12 +119,17 @@ function computeLotStatus(lot, now) {
   }
 
   if (cat === 'off_campus_parking') {
-    // Not a UMD lot, so there's no CLPR/permit restriction to model - it's a
-    // public facility open to anyone during its own operator's hours. We
-    // can't verify live occupancy/hours here, so this stays open (parkableNow
-    // true) but every detail is the operator's own info, surfaced verbatim.
+    // Not a UMD lot, so there's no CLPR/permit restriction to model - any
+    // parker type may use it (see parkerEligible's explicit off-campus
+    // check). But we have no structured hours data, only free-text summaries
+    // that sometimes describe hours when the facility is CLOSED (e.g. the
+    // WMATA garage overnight) - so parkableNow stays false rather than
+    // claiming a guarantee we can't verify in real time. It still surfaces
+    // in every nearest-lot list by plain distance; it just never gets
+    // treated as "the guaranteed open option" the way an actually-verified
+    // open UMD lot does.
     const bits = [lot.operator ? `Operated by ${lot.operator}.` : '', lot.pricing_summary, lot.hours_summary ? `Hours: ${lot.hours_summary}` : ''].filter(Boolean);
-    return { level: 'warn', label: 'Public parking (non-UMD)', detail: bits.join(' ') || 'Not a UMD lot - check posted rates/hours.', parkableNow: true, paid: true };
+    return { level: 'warn', label: 'Public parking (non-UMD)', detail: (bits.join(' ') || 'Not a UMD lot - check posted rates/hours.') + ' Confirm it is currently open before you go.', parkableNow: false, paid: true };
   }
 
   return { level: 'warn', label: 'Check posted sign', detail: lot.rule || 'Restriction category could not be confidently read from the source map.', parkableNow: false, paid: false };
@@ -159,6 +164,7 @@ const PARKER_TYPES = {
 // filters, so existing flows are unaffected when no type is chosen.
 function parkerEligible(lot, parkerType, status) {
   if (!parkerType || parkerType === 'any') return true;
+  if (lot.category === 'off_campus_parking') return true; // no UMD permit ever required here, for anyone
   if (status.parkableNow) return true; // open to anyone (or pay-to-park) right now
   if (parkerType === 'student') return lot.lot_type === 'student' || lot.overflow_student === true;
   if (parkerType === 'faculty_staff') {
@@ -663,7 +669,7 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
   if (lot.note) chips.push(lot.note);
   if (lot.approx_pavement_area_sqft) chips.push(`~${lot.approx_pavement_area_sqft.toLocaleString()} sq ft`);
   if (lot.address) chips.push(lot.address);
-  if (lot.confidence === 'medium') chips.push('Pricing/hours not fully confirmed from an official source - verify with the operator before relying on it');
+  if (lot.category === 'off_campus_parking' && lot.confidence !== 'high') chips.push('Pricing/hours not fully confirmed from an official source - verify with the operator before relying on it');
 
   appRoot.innerHTML = `
   <section class="screen-enter space-y-stack-lg pb-16">
