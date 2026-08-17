@@ -118,6 +118,15 @@ function computeLotStatus(lot, now) {
     return { level: 'bad', label: 'Custom permit required', detail: lot.special_rule || '', parkableNow: false, paid: false };
   }
 
+  if (cat === 'off_campus_parking') {
+    // Not a UMD lot, so there's no CLPR/permit restriction to model - it's a
+    // public facility open to anyone during its own operator's hours. We
+    // can't verify live occupancy/hours here, so this stays open (parkableNow
+    // true) but every detail is the operator's own info, surfaced verbatim.
+    const bits = [lot.operator ? `Operated by ${lot.operator}.` : '', lot.pricing_summary, lot.hours_summary ? `Hours: ${lot.hours_summary}` : ''].filter(Boolean);
+    return { level: 'warn', label: 'Public parking (non-UMD)', detail: bits.join(' ') || 'Not a UMD lot - check posted rates/hours.', parkableNow: true, paid: true };
+  }
+
   return { level: 'warn', label: 'Check posted sign', detail: lot.rule || 'Restriction category could not be confidently read from the source map.', parkableNow: false, paid: false };
 }
 
@@ -653,6 +662,8 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
   if (lot.overflow_student) chips.push('Student overflow lot');
   if (lot.note) chips.push(lot.note);
   if (lot.approx_pavement_area_sqft) chips.push(`~${lot.approx_pavement_area_sqft.toLocaleString()} sq ft`);
+  if (lot.address) chips.push(lot.address);
+  if (lot.confidence === 'medium') chips.push('Pricing/hours not fully confirmed from an official source - verify with the operator before relying on it');
 
   appRoot.innerHTML = `
   <section class="screen-enter space-y-stack-lg pb-16">

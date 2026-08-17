@@ -1,0 +1,54 @@
+[
+  {
+    "name": "College Park-U of Md Metro Station Parking Garage",
+    "address": "4931 Calvert Road, College Park, MD 20740",
+    "lat": 38.978916,
+    "lng": -76.927582,
+    "type": "garage",
+    "operator": "WMATA (Washington Metropolitan Area Transit Authority)",
+    "pricing_summary": "$4.95/day flat daily rate Mon-Fri (paid via SmarTrip card or credit card at exit); $65/month for a reserved space; a $15.00 special-event parking fee applies to non-Metro riders during events at Capital One Field/SECU Stadium. Rates per wmata.com as of Aug 2026 - confirm at wmata.com before relying on them, since WMATA garage rates change periodically.",
+    "hours_summary": "Garage generally open during Metrorail station hours (station opens ~10 min before first train, roughly 5-6:47am depending on line/day, closes with last train ~11:35pm-2:44am Fri/Sat). Note: as of Aug 2026 the station's Kiss & Ride area was under construction (standpipe/fire connection replacement) June 15-Aug 10, 2026; WMATA stated the adjacent parking garage itself remained open throughout. A separate, larger garage rehabilitation project (up to ~325 spaces affected at a time) has also been reported in past WMATA advisories - check wmata.com/service/status for current construction impacts before visiting.",
+    "source": "wmata.com rider-guide and parking pages (station ID 79) + Wikipedia 'College Park-University of Maryland station' article (address, 1,345-space capacity, 2005 opening, 2021 reconstruction) + OpenStreetMap Nominatim named amenity=parking POI at 4931 Calvert Road matching the same address",
+    "confidence": "high",
+    "note": "Located on the east side of the Metro station, roughly 1 mile / ~18-20 min walk east of the main campus core (McKeldin Mall), near the intersection of River Road and Paint Branch Parkway. This is the facility most directly comparable to a 'park and walk or take Metro/Shuttle-UM to campus' option. Do not confuse with the WMATA Kiss & Ride short-term pickup/drop-off area, which is a distinct sub-area of the same complex and had a temporary 2-month closure in mid-2026."
+  },
+  {
+    "name": "City of College Park Downtown Parking Garage",
+    "address": "4509 Knox Road, College Park, MD 20740 (at the corner of Knox Road and Yale Avenue)",
+    "lat": 38.980453,
+    "lng": -76.937078,
+    "type": "garage",
+    "operator": "City of College Park (Department of Public Services)",
+    "pricing_summary": "$2.00/hour, Mon-Sat 8:00am-10:00pm, payable only by credit card or mobile app at electronic pay stations (per collegeparkmd.gov/parking, checked Aug 2026). Vehicles with handicap tags park free all day (no overnight parking permitted). Note: a couple of third-party aggregator sites (e.g. Yelp) list an older $0.75/hour rate - treat the official city site as authoritative and verify at the pay station.",
+    "hours_summary": "Enforced Monday-Saturday, 8:00am-10:00pm, except City-observed holidays; appears unenforced/free outside those hours and on Sundays per the official rate structure.",
+    "source": "collegeparkmd.gov/parking (official City of College Park page, fetched directly) + OpenStreetMap Nominatim named match 'City of College Park Downtown Parking Garage' at 4509 Knox Road",
+    "confidence": "high",
+    "note": "In the heart of Downtown College Park, about 0.5 miles / ~10 min walk south of the main campus core, near Route 1 (Baltimore Ave) restaurants/shops. Has 2 EV charging stations. Some secondary listings (Yelp, an older Parkopedia entry) give the address as '7306 Yale Ave' instead of the Knox Road address OSM lists - likely reflects the building's dual street frontage at the Knox/Yale corner rather than a factual conflict, but flagging for a human to double-check the exact posted street number if it matters for the app."
+  },
+  {
+    "name": "The Hotel at the University of Maryland Parking Garage",
+    "address": "7777 Baltimore Avenue, College Park, MD 20740",
+    "lat": 38.986970,
+    "lng": -76.935185,
+    "type": "garage",
+    "operator": "The Hotel at the University of Maryland (privately operated by Southern Management/Hotel; not a UMD-run facility)",
+    "pricing_summary": "Daily self-parking is $16/day but is a hotel-guest benefit (electronic pass issued at check-in), not general public drop-in parking. The garage also sells monthly parking passes open to 'students, long-term guests and visitors to College Park' at what the hotel describes as a rate competitive with UMD parking, but the exact current monthly dollar figure is not published on the hotel's own site - pricing not fully confirmed for the monthly/public option, see thehotelumd.com or call ahead. Third-party booking aggregators (ParkWhiz) separately list day/hourly self-park bookable at this address around $16.",
+    "hours_summary": "Monthly pass holders get 24/7 in/out access per the hotel's own parking page; specific daily-visitor hours not separately published.",
+    "source": "thehotelumd.com/parking-garage-info/ (official hotel page) + OpenStreetMap Nominatim named match 'The Hotel at The University of Maryland' at 7777 Baltimore Avenue + ParkWhiz third-party listing for the same address as an independent cross-check",
+    "confidence": "medium",
+    "note": "Sits directly on Baltimore Avenue (Route 1) at the edge of the main campus, essentially across from the Stamp Student Union/South Campus area - the closest of these facilities to central campus. Included because the hotel explicitly markets monthly self-parking to 'students...and visitors to College Park,' making it a real (if pricier, hospitality-oriented) public alternative - but flagged medium confidence because the actual monthly public rate could not be independently confirmed from a primary source, and same-day/hourly public (non-guest) access terms were not fully spelled out on the operator's own page."
+  },
+  {
+    "name": "Cambria College Park Garage",
+    "address": "8321 Baltimore Avenue, College Park, MD 20740 (alley entrance)",
+    "lat": 38.993092,
+    "lng": -76.932478,
+    "type": "garage",
+    "operator": "Cambria Hotel College Park (Choice Hotels franchisee; privately operated, not UMD)",
+    "pricing_summary": "Reported around $10-12 per night: ParkWhiz lists it as a bookable garage at this address for about $10, while the hotel's own guest-parking rate is described in press/review sources as $12.00/vehicle/night with in-and-out privileges. Treat as approximate; not independently confirmed from the hotel's own published rate card, so pricing_summary should be read as 'roughly $10-12/night, confirm current rate with the hotel.'",
+    "hours_summary": "Not confirmed (self-park garage typically accessible whenever the hotel is staffed; no published public hours found).",
+    "source": "ParkWhiz listing ('Cambria College Park Garage, 8321 Baltimore Ave. Alley Entrance') + choicehotels.com/cambriacollegepark.com hotel site + OpenStreetMap Nominatim named match 'Cambria' hotel building at 8321 Baltimore Avenue",
+    "confidence": "medium",
+    "note": "About 1.1 miles / ~20-22 min walk north of the main campus core, in the Lakeland/Discovery District area of Baltimore Avenue near Ritchie Coliseum's north side - at the outer edge of the 'walkable' range for most students, more realistic for visitors driving up and walking the last stretch, or biking/scooting in. Bookable via third-party parking apps (ParkWhiz/SpotHero-style aggregators), which is a meaningfully different access model than the WMATA or City garages (no dedicated public pay station on-site; you generally reserve ahead through an app or ask the hotel directly)."
+  }
+]
