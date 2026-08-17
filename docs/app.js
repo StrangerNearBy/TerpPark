@@ -650,12 +650,20 @@ function renderHome() {
   });
 }
 
+// `code` in renderLotDetail below comes straight from location.hash (an
+// attacker-controlled URL, e.g. a shared link) with no validation - escape
+// before it ever reaches innerHTML. Every other value rendered in this file
+// comes from the trusted static dataset, so this is the one real sink.
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
 function renderLotDetail(code, nearBuildingId, parkerType = null) {
   if (!PARKER_TYPES[parkerType]) parkerType = 'any';
   const lot = lotsByCode[(code || '').toUpperCase()];
   if (!lot) {
     appRoot.innerHTML = `<div class="screen-enter text-center py-stack-lg">
-      <p class="font-headline-md text-headline-md">Lot "${code}" not found.</p>
+      <p class="font-headline-md text-headline-md">Lot "${escapeHtml(code)}" not found.</p>
       <a href="#/home" class="text-primary underline">Back to search</a>
     </div>`;
     return;
