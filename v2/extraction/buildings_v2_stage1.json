@@ -1020,15 +1020,6 @@
   {
     "id": "202",
     "name": "Regents Drive Parking Garage",
-    "category": "Academic/Administrative",
-    "grid": "E9",
-    "lat": 38.989664,
-    "lng": -76.941451,
-    "source": "gis_exact"
-  },
-  {
-    "id": "202",
-    "name": "Regents Drive Parking Garage",
     "category": "Parking Garage",
     "grid": "E9",
     "lat": 38.989664,

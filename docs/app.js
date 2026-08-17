@@ -156,26 +156,34 @@ function nearestLots(lat, lng, opts = {}) {
 // any point on campus; any one entry may come back null only if that
 // category truly has no lot with coordinates anywhere in the dataset.
 function nearestBestAvailableByCategory(lat, lng, now, excludeCode = null) {
+  const byCategory = {};
+  const remaining = new Set(Object.keys(LOT_DATA.categories));
   const ranked = LOT_DATA.lots
     .filter(l => l.lat != null && l.lng != null && l.code !== excludeCode)
-    .map(l => ({ lot: l, dist: haversineMeters(lat, lng, l.lat, l.lng), status: computeLotStatus(l, now) }))
+    .map(l => ({ lot: l, dist: haversineMeters(lat, lng, l.lat, l.lng) }))
     .sort((a, b) => a.dist - b.dist);
-  const byCategory = {};
-  for (const catKey of Object.keys(LOT_DATA.categories)) {
-    byCategory[catKey] = ranked.find(r => r.lot.category === catKey) || null;
+  // Single pass over the distance-sorted list: fill each category the first
+  // time it's seen (computing status lazily, only for lots actually used),
+  // and stop as soon as every category has a pick.
+  for (const entry of ranked) {
+    if (remaining.size === 0) break;
+    if (!remaining.has(entry.lot.category)) continue;
+    entry.status = computeLotStatus(entry.lot, now);
+    byCategory[entry.lot.category] = entry;
+    remaining.delete(entry.lot.category);
   }
+  for (const catKey of remaining) byCategory[catKey] = null;
   return byCategory;
 }
 
 function bestAvailableCardHTML(entry) {
   const { lot, dist, status } = entry;
   const cat = LOT_DATA.categories[lot.category];
-  const statusColor = status.level === 'ok' ? '#1b5e20' : status.level === 'warn' ? '#8a5a00' : '#b71c1c';
-  const statusIcon = status.level === 'ok' ? 'check_circle' : status.level === 'warn' ? 'warning' : 'block';
+  const meta = STATUS_META[status.level];
   return `<div class="flex items-center gap-stack-sm bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-sm cursor-pointer active:bg-surface-container transition-colors" data-lot="${lot.code}">
-    <span class="material-symbols-outlined text-[20px]" style="color:${statusColor}">${statusIcon}</span>
+    <span class="material-symbols-outlined text-[20px]" style="color:${meta.bg}">${meta.icon}</span>
     <div class="flex-1 min-w-0">
-      <p class="font-body-md text-body-md font-bold">${lot.code}${lot.name ? ' - ' + lot.name : ''} <span class="font-label-md text-label-md font-normal" style="color:${statusColor}">&middot; ${status.label}</span></p>
+      <p class="font-body-md text-body-md font-bold">${lot.code}${lot.name ? ' - ' + lot.name : ''} <span class="font-label-md text-label-md font-normal" style="color:${meta.bg}">&middot; ${status.label}</span></p>
       <p class="font-label-md text-label-md text-on-surface-variant">${cat.label} &middot; ${formatDistance(dist)} &middot; ${walkMinutes(dist)} min walk</p>
     </div>
   </div>`;
@@ -568,7 +576,7 @@ function renderLotDetail(code, nearBuildingId) {
 
     ${anchor.lat != null ? `<section${nearAttr}>
       <h3 class="font-label-lg text-label-lg text-on-surface uppercase mb-stack-sm">${anchorLabel ? `Best Available Lots near ${anchorLabel}` : 'Best Available Lots'}</h3>
-      ${bestAvailableLotsHTML(anchor.lat, anchor.lng, now, nearBuilding ? null : lot.code)}
+      ${bestAvailableLotsHTML(anchor.lat, anchor.lng, now, lot.code)}
     </section>` : ''}
   </section>
   ${lot.lat != null ? `<div class="fixed bottom-6 left-0 w-full px-margin-mobile max-w-md mx-auto">
