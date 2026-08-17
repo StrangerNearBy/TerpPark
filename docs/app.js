@@ -301,8 +301,18 @@ function nearestBuilding(lat, lng) {
   return best ? { building: best, dist: bestDist } : null;
 }
 
-function openLotCount(now) {
-  return LOT_DATA.lots.filter(l => computeLotStatus(l, now).level === 'ok').length;
+// "Open" is ambiguous on its own - free-and-open (no permit, no cost) and
+// pay-to-park (no permit, but costs money) are both "parkable right now" but
+// mean very different things to a user deciding where to go. Report them
+// separately rather than collapsing them into one number.
+function lotAvailabilityCounts(now) {
+  let free = 0, paid = 0;
+  for (const l of LOT_DATA.lots) {
+    const status = computeLotStatus(l, now);
+    if (status.level === 'ok') free++;
+    else if (status.parkableNow && status.paid) paid++;
+  }
+  return { free, paid };
 }
 
 // Bike/moto/EV/repair amenities, each already anchored to real coordinates
@@ -413,7 +423,7 @@ const appRoot = document.getElementById('app-root');
 
 function renderHome() {
   const now = campusNow();
-  const openCount = openLotCount(now);
+  const counts = lotAvailabilityCounts(now);
   appRoot.innerHTML = `
   <section class="screen-enter space-y-stack-lg">
     <div class="flex justify-between items-center bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-lg shadow-sm">
@@ -422,8 +432,9 @@ function renderHome() {
         <span id="home-day" class="font-label-md text-label-md text-white/60 mt-1">${WEEKDAY_FULL[now.weekday]} &middot; College Park, MD</span>
       </div>
       <div class="flex flex-col items-end">
-        <span id="home-open-count" class="font-stat-display text-stat-display text-primary-fixed-dim leading-none">${openCount}</span>
-        <span class="font-label-md text-label-md text-white/60 mt-1">of ${LOT_DATA.lots.length} lots open now</span>
+        <span id="home-open-count" class="font-stat-display text-stat-display text-primary-fixed-dim leading-none">${counts.free}</span>
+        <span class="font-label-md text-label-md text-white/60 mt-1">free &amp; open now</span>
+        <span id="home-paid-count" class="font-label-md text-label-md text-white/80 mt-0.5">+${counts.paid} pay-to-park</span>
       </div>
     </div>
 
@@ -1052,7 +1063,9 @@ function liveTick() {
   clockEl.textContent = formatClock(now.minutesOfDay);
   document.getElementById('home-day').textContent =
     `${WEEKDAY_FULL[now.weekday]} · College Park, MD`;
-  document.getElementById('home-open-count').textContent = openLotCount(now);
+  const counts = lotAvailabilityCounts(now);
+  document.getElementById('home-open-count').textContent = counts.free;
+  document.getElementById('home-paid-count').textContent = `+${counts.paid} pay-to-park`;
 }
 setInterval(liveTick, 1000);
 
