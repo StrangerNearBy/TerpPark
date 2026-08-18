@@ -658,6 +658,54 @@ function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
 
+// Some UMD buildings only have a generic numbered name ("House 173",
+// "Building 006") rather than a proper name - the category alone
+// ("Fraternity/Sorority") is clearer there than pairing it with the number.
+function nearestBuildingLabel(building) {
+  if (/^(House|Building)\s+\d+$/.test(building.name)) return building.category || building.name;
+  return building.category ? `${building.name} &middot; ${building.category}` : building.name;
+}
+
+// Hand-authored, not derived: every fact below is quoted/paraphrased
+// directly from the verified off-campus lot records in data.js
+// (pricing_summary / hours_summary / operator / note). Only 2 off-campus
+// lots exist, so this is safer than a generic text parser - each entry
+// was written after reading that lot's exact verified source text, not
+// guessed or pattern-matched. Add an entry here only after doing the same.
+const OFF_CAMPUS_DETAILS = {
+  OC1: {
+    price: '$2.00', unit: '/hr',
+    schedule: ['Mon-Sat, 8:00am - 10:00pm', 'Free outside these hours & Sundays'],
+    payNote: null, // no city-garage-specific pay-station note exists in the verified data - do NOT
+    // substitute UMD's own pay_area_rule here, that's a different operator's rate, not OC1's.
+    pills: [
+      { icon: 'credit_card', label: 'Credit/App Only' },
+      { icon: 'accessible', label: 'Handicap Tag Free All Day' },
+      { icon: 'bedtime', label: 'No Overnight Parking' },
+      { icon: 'domain', label: 'Non-UMD Operated' }
+    ],
+    amenities: [
+      { icon: 'ev_station', label: '2 EV Charging Stations' },
+      { icon: 'directions_walk', label: '0.5 miles to Campus' },
+      { icon: 'smartphone', label: 'Pay via App/Card' }
+    ]
+  },
+  OC2: {
+    price: '$10-12', unit: '/night',
+    schedule: ['Hours not publicly confirmed', 'Ask the hotel directly'],
+    payNote: 'Book via ParkWhiz/SpotHero-style apps, or ask the hotel directly.',
+    pills: [
+      { icon: 'apartment', label: 'Privately Operated' },
+      { icon: 'domain', label: 'Non-UMD Operated' },
+      { icon: 'smartphone', label: 'Reserve via App' }
+    ],
+    amenities: [
+      { icon: 'directions_walk', label: '1.1 miles to Campus' },
+      { icon: 'smartphone', label: 'Book via App' }
+    ]
+  }
+};
+
 function renderLotDetail(code, nearBuildingId, parkerType = null) {
   if (!PARKER_TYPES[parkerType]) parkerType = 'any';
   const lot = lotsByCode[(code || '').toUpperCase()];
@@ -685,64 +733,121 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
 
   const alts = anchor.lat != null ? nearestLots(anchor.lat, anchor.lng, { limit: 6, excludeCode: lot.code, parkerType, now }) : [];
 
+  // Short, tag-length facts become pill chips (Airbnb-amenities style).
+  // Anything that's actually a sentence stays as plain prose in `notes` -
+  // squeezing a whole paragraph into a pill shape is what caused the clutter.
   const chips = [];
-  if (lot.lot_type === 'faculty_staff') chips.push('Faculty/Staff lot (letter-prefixed)');
-  if (lot.lot_type === 'student') chips.push('Student lot (number-prefixed)');
-  if (lot.gated) chips.push('Gated lot');
-  if (lot.overflow_faculty_staff) chips.push('Faculty/Staff overflow lot');
-  if (lot.overflow_student) chips.push('Student overflow lot');
-  if (lot.note) chips.push(lot.note);
+  if (lot.lot_type === 'faculty_staff') chips.push('Faculty/Staff lot');
+  if (lot.lot_type === 'student') chips.push('Student lot');
+  if (lot.gated) chips.push('Gated');
+  if (lot.overflow_faculty_staff) chips.push('Faculty/Staff overflow');
+  if (lot.overflow_student) chips.push('Student overflow');
   if (lot.approx_pavement_area_sqft) chips.push(`~${lot.approx_pavement_area_sqft.toLocaleString()} sq ft`);
   if (lot.address) chips.push(lot.address);
-  if (lot.category === 'off_campus_parking' && lot.confidence !== 'high') chips.push('Pricing/hours not fully confirmed from an official source - verify with the operator before relying on it');
+
+  const notes = [];
+  if (lot.note) notes.push(lot.note);
+  if (lot.category === 'off_campus_parking' && lot.confidence !== 'high') notes.push('Pricing/hours not fully confirmed from an official source - verify with the operator before relying on it.');
+
+  // Off-campus lots get a distinct blue "Garage Details" layout (only the 2
+  // lots with hand-verified OFF_CAMPUS_DETAILS entries - anything else in
+  // this category falls back to the normal red UMD layout below).
+  const ocd = lot.category === 'off_campus_parking' ? OFF_CAMPUS_DETAILS[lot.code] : null;
+  const useOC = !!ocd;
 
   appRoot.innerHTML = `
   <section class="screen-enter space-y-stack-lg pb-16">
     <div>
-      <div class="flex items-center gap-2 mb-1">
+      ${useOC ? `<div class="flex items-center gap-2 mb-2">
+        <span class="font-label-md text-label-md font-bold px-3 py-1 rounded-full text-white bg-blue-600 uppercase">Public Parking</span>
+        <span class="font-body-md text-body-md text-on-surface-variant">Off-campus</span>
+      </div>
+      <h1 class="font-headline-lg text-headline-lg text-on-surface">${lot.name || cat.label}</h1>
+      ${lot.address ? `<div class="flex items-start gap-1 mt-stack-sm text-on-surface-variant">
+        <span class="material-symbols-outlined text-body-md mt-0.5">location_on</span>
+        <p class="font-body-md text-body-md">${lot.address}</p>
+      </div>` : ''}
+      ${near ? `<div class="flex items-center text-on-surface-variant mt-1">
+        <span class="material-symbols-outlined text-body-md mr-1">near_me</span>
+        <p class="font-body-md text-body-md">Nearest building: ${nearestBuildingLabel(near.building)} (${formatDistance(near.dist)})</p>
+      </div>` : ''}` : `<div class="flex items-center gap-2 mb-1">
         <span class="font-headline-lg text-headline-lg px-2 rounded text-white" style="background:${cat.color}">${lot.code}</span>
         <h1 class="font-headline-lg text-headline-lg text-on-surface">${lot.name || cat.label}</h1>
       </div>
       ${lot.name ? `<p class="font-body-md text-body-md text-on-surface-variant -mt-1 mb-1">${cat.label}</p>` : ''}
       ${near ? `<div class="flex items-center text-on-surface-variant">
         <span class="material-symbols-outlined text-body-md mr-1">location_on</span>
-        <p class="font-body-md text-body-md">Nearest building: ${near.building.name} (${formatDistance(near.dist)})</p>
-      </div>` : ''}
+        <p class="font-body-md text-body-md">Nearest building: ${nearestBuildingLabel(near.building)} (${formatDistance(near.dist)})</p>
+      </div>` : ''}`}
     </div>
 
+    ${useOC ? `
+    <section class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-stack-md">
+      <div class="flex items-baseline gap-1">
+        <span class="font-headline-lg text-headline-lg text-blue-600 font-bold">${ocd.price}</span>
+        <span class="font-body-md text-body-md text-on-surface-variant">${ocd.unit}</span>
+      </div>
+      <div class="flex items-start gap-stack-sm mt-stack-sm">
+        <span class="material-symbols-outlined text-on-surface-variant mt-0.5">schedule</span>
+        <div>${ocd.schedule.map(line => `<p class="font-body-md text-body-md text-on-surface">${line}</p>`).join('')}</div>
+      </div>
+      ${ocd.payNote ? `<div class="flex items-start gap-stack-sm mt-stack-md bg-blue-50 rounded-lg p-stack-sm">
+        <span class="material-symbols-outlined text-blue-600 text-[20px] mt-0.5">info</span>
+        <p class="font-label-md text-label-md text-on-surface-variant">${ocd.payNote}</p>
+      </div>` : ''}
+    </section>
+
+    <section>
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Rules &amp; Info</h3>
+      <div class="flex flex-wrap gap-stack-sm">
+        ${ocd.pills.map(p => `<span class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-full font-label-lg text-label-lg text-on-surface">
+          <span class="material-symbols-outlined text-blue-600 text-[18px]">${p.icon}</span>${p.label}
+        </span>`).join('')}
+      </div>
+    </section>
+
+    <section>
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Amenities</h3>
+      <div class="grid grid-cols-2 gap-stack-md">
+        ${ocd.amenities.map(a => `<div class="flex items-center gap-stack-sm">
+          <span class="material-symbols-outlined flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 text-[20px]">${a.icon}</span>
+          <p class="font-body-md text-body-md text-on-surface">${a.label}</p>
+        </div>`).join('')}
+      </div>
+    </section>
+    ${notes.length ? `<div class="space-y-1">
+      ${notes.map(n => `<p class="font-label-md text-label-md text-on-surface-variant italic">${n}</p>`).join('')}
+    </div>` : ''}
+    ` : `
     <div id="status-wrap">${statusBannerHTML(status, `Status now &middot; ${now.weekday} ${formatClock(now.minutesOfDay)}`)}</div>
 
-    <section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md">
-      <h3 class="font-label-lg text-label-lg text-primary uppercase mb-stack-sm">Rules</h3>
-      <ul class="space-y-stack-sm">
-        <li class="flex items-start gap-stack-sm">
-          <span class="material-symbols-outlined text-primary mt-0.5">verified</span>
-          <p class="font-body-md text-body-md text-on-surface-variant">${cat.rule}</p>
-        </li>
-        ${lot.special_rule ? `<li class="flex items-start gap-stack-sm">
-          <span class="material-symbols-outlined text-secondary mt-0.5">priority_high</span>
-          <div><p class="font-body-md text-body-md font-bold">Special rule</p>
-          <p class="font-body-md text-body-md text-on-surface-variant">${lot.special_rule}</p></div>
-        </li>` : ''}
-        <li class="flex items-start gap-stack-sm">
-          <span class="material-symbols-outlined text-secondary mt-0.5">payments</span>
-          <p class="font-body-md text-body-md text-on-surface-variant">${LOT_DATA.pay_area_rule}</p>
-        </li>
-      </ul>
-      ${chips.length ? `<div class="flex flex-wrap gap-2 mt-stack-md">${chips.map(c => `<span class="px-3 py-1 bg-surface-container rounded-full font-label-md text-label-md text-on-surface-variant">${c}</span>`).join('')}</div>` : ''}
+    <section>
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">What you need to know</h3>
+      <div class="space-y-stack-sm">
+        <p class="font-body-md text-body-md text-on-surface">${cat.rule}</p>
+        ${lot.special_rule ? `<p class="font-body-md text-body-md text-on-surface">${lot.special_rule}</p>` : ''}
+        <p class="font-body-md text-body-md text-on-surface">${LOT_DATA.pay_area_rule}</p>
+      </div>
+      ${chips.length ? `<div class="flex flex-wrap gap-2 mt-stack-md">
+        ${chips.map(c => `<span class="px-3 py-1.5 bg-surface-container rounded-full font-label-md text-label-md text-on-surface-variant">${c}</span>`).join('')}
+      </div>` : ''}
+      ${notes.length ? `<div class="space-y-1 mt-stack-md">
+        ${notes.map(n => `<p class="font-label-md text-label-md text-on-surface-variant italic">${n}</p>`).join('')}
+      </div>` : ''}
     </section>
+    `}
 
     <section>
       <div class="flex justify-between items-end mb-stack-sm">
         <h3 class="font-label-lg text-label-lg text-on-surface uppercase">Plan Ahead</h3>
-        <span class="font-stat-display text-stat-display text-primary" id="time-display">${formatClock(now.minutesOfDay)}</span>
+        <span class="font-stat-display text-stat-display ${useOC ? 'text-blue-600' : 'text-primary'}" id="time-display">${formatClock(now.minutesOfDay)}</span>
       </div>
       <div class="bg-surface-container border border-outline-variant p-stack-md rounded-xl">
         <div class="flex gap-2 mb-stack-md">
           <button data-daytype="weekday" class="press daytype-btn flex-1 h-9 rounded-full font-label-lg text-label-lg border transition-colors">Weekday</button>
           <button data-daytype="weekend" class="press daytype-btn flex-1 h-9 rounded-full font-label-lg text-label-lg border transition-colors">Weekend</button>
         </div>
-        <input id="time-slider" class="w-full h-2 bg-outline-variant rounded-lg appearance-none cursor-pointer accent-primary" max="1440" min="0" step="15" type="range" value="${now.minutesOfDay}">
+        <input id="time-slider" class="w-full h-2 bg-outline-variant rounded-lg appearance-none cursor-pointer ${useOC ? 'accent-blue-600' : 'accent-primary'}" max="1440" min="0" step="15" type="range" value="${now.minutesOfDay}">
         <div class="flex justify-between mt-stack-sm text-on-surface-variant font-label-md text-label-md">
           <span>12 AM</span><span>Noon</span><span>11:59 PM</span>
         </div>
@@ -768,7 +873,7 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
     </section>` : ''}
   </section>
   ${lot.lat != null ? `<div class="fixed bottom-6 left-0 right-0 w-full px-margin-mobile max-w-md mx-auto">
-    <button id="navigate-btn" class="press w-full h-touch-target-min bg-primary text-on-primary font-headline-md rounded-lg flex items-center justify-center gap-stack-sm shadow-md active:opacity-90 transition-opacity">
+    <button id="navigate-btn" class="press w-full h-touch-target-min ${useOC ? 'bg-blue-600' : 'bg-primary'} text-on-primary font-headline-md rounded-lg flex items-center justify-center gap-stack-sm shadow-md active:opacity-90 transition-opacity">
       <span class="material-symbols-outlined">directions</span> Navigate to Lot ${lot.code}
     </button>
   </div>` : ''}`;
@@ -788,12 +893,15 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
     document.querySelectorAll('.daytype-btn').forEach(btn => {
       const active = btn.dataset.daytype === previewDayType;
       btn.className = 'press daytype-btn flex-1 h-9 rounded-full font-label-lg text-label-lg border transition-colors ' +
-        (active ? 'bg-primary text-white border-primary' : 'bg-surface-container-lowest text-on-surface-variant border-outline-variant');
+        (active ? (useOC ? 'bg-blue-600 text-white border-blue-600' : 'bg-primary text-white border-primary') : 'bg-surface-container-lowest text-on-surface-variant border-outline-variant');
     });
   }
   function updatePreview() {
     const mins = parseInt(slider.value, 10);
     document.getElementById('time-display').textContent = formatClock(mins);
+    // Off-campus lots have no live permit-window status to preview (computeLotStatus
+    // returns the same static message regardless of time), so there's no #status-wrap.
+    if (useOC) return;
     const previewNow = timeAt(mins, REP_WEEKDAY[previewDayType]);
     const previewStatus = computeLotStatus(lot, previewNow);
     const dayLabel = previewDayType === 'weekend' ? 'a weekend day' : 'a weekday';
