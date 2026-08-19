@@ -262,7 +262,7 @@ function bestAvailableCardHTML(entry) {
   return `<div class="stagger-in flex items-center gap-stack-sm bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-sm cursor-pointer active:bg-surface-container transition-colors" data-lot="${lot.code}">
     <span class="material-symbols-outlined text-[20px]" style="color:${meta.bg}">${meta.icon}</span>
     <div class="flex-1 min-w-0">
-      <p class="font-body-md text-body-md font-bold">${lot.code}${lot.name ? ' - ' + lot.name : ''} <span class="font-label-md text-label-md font-normal" style="color:${meta.bg}">&middot; ${status.label}</span></p>
+      <p class="font-body-md text-body-md font-bold">${lot.has_code === false ? lot.name : (lot.code + (lot.name ? ' - ' + lot.name : ''))} <span class="font-label-md text-label-md font-normal" style="color:${meta.bg}">&middot; ${status.label}</span></p>
       <p class="font-label-md text-label-md text-on-surface-variant">${cat.label} &middot; ${formatDistance(dist)} &middot; ${walkMinutes(dist)} min walk</p>
     </div>
   </div>`;
@@ -388,11 +388,15 @@ function lotListItemHTML(lot, dist, rank) {
   <div class="${rank ? 'stagger-in ' : ''}lot-row flex items-center gap-stack-sm py-stack-sm border-b border-outline-variant last:border-0 cursor-pointer active:bg-surface-container transition-colors" data-lot="${lot.code}">
     ${rank ? `<div class="font-label-lg text-label-lg text-on-surface-variant w-5 text-center flex-shrink-0">${rank}</div>` : ''}
     <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 flex-wrap">
+      ${lot.has_code === false ? `<div class="flex items-center gap-2 flex-wrap">
+        <span class="font-body-md text-body-md font-bold">${lot.name}</span>
+        <span class="px-2 py-0.5 rounded-full font-label-md text-label-md ${STATUS_PILL_CLASS[status.level]}">${status.label}</span>
+      </div>
+      <p class="font-label-md text-label-md text-on-surface-variant mt-0.5">${cat.label}</p>` : `<div class="flex items-center gap-2 flex-wrap">
         <span class="font-headline-md text-headline-md px-2 rounded text-white" style="background:${cat.color};">${lot.code}</span>
         <span class="px-2 py-0.5 rounded-full font-label-md text-label-md ${STATUS_PILL_CLASS[status.level]}">${status.label}</span>
       </div>
-      <p class="font-label-md text-label-md text-on-surface-variant mt-0.5">${lot.name ? lot.name + ' &middot; ' : ''}${cat.label}${lot.special_rule ? ' &middot; special rule' : ''}</p>
+      <p class="font-label-md text-label-md text-on-surface-variant mt-0.5">${lot.name ? lot.name + ' &middot; ' : ''}${cat.label}${lot.special_rule ? ' &middot; special rule' : ''}</p>`}
     </div>
     ${dist != null ? `<div class="text-right flex-shrink-0 font-label-md text-label-md text-on-surface-variant">
       <div class="flex items-center gap-1 justify-end"><span class="material-symbols-outlined text-[16px]">directions_walk</span>${formatDistance(dist)}</div>
@@ -706,6 +710,38 @@ const OFF_CAMPUS_DETAILS = {
   }
 };
 
+// OC3-OC10: City of College Park residential permit parking (RPP) zone
+// blocks. Coordinates came directly from the City's own zone map (verified
+// against Google Maps), but unlike OC1/OC2, the actual pay rate, time
+// limit, and permit requirement for each specific block were NOT
+// independently confirmed - the City's RPP page states permits are
+// zone-restricted to residents, so a permit may be required here. Every
+// field below reflects that honestly (no price, no invented amenities);
+// do not upgrade any of these without a real per-block source.
+const UNCONFIRMED_ZONE_LOTS = [
+  { code: 'OC3', zone: 'Zone 4' },
+  { code: 'OC4', zone: 'Zone 3' },
+  { code: 'OC5', zone: 'Zone 2' },
+  { code: 'OC6', zone: 'Zone 2' },
+  { code: 'OC7', zone: 'Zone 9' },
+  { code: 'OC8', zone: 'Zone 9' },
+  { code: 'OC9', zone: 'Zone 9' },
+  { code: 'OC10', zone: 'Zone 8' }
+];
+for (const { code, zone } of UNCONFIRMED_ZONE_LOTS) {
+  OFF_CAMPUS_DETAILS[code] = {
+    badge: 'City Parking Zone',
+    price: null, unit: null,
+    schedule: ['Hours not confirmed'],
+    payNote: `This location is within City of College Park ${zone}. Pay stations here accept cards, coins, and the AMP Park app - but the exact rate, time limit, and whether a residential parking permit is required were not independently confirmed. Always check the posted sign here before parking.`,
+    pills: [
+      { icon: 'domain', label: 'Non-UMD Operated' },
+      { icon: 'payments', label: 'Cards / Coins / AMP Park App' }
+    ],
+    amenities: []
+  };
+}
+
 function renderLotDetail(code, nearBuildingId, parkerType = null) {
   if (!PARKER_TYPES[parkerType]) parkerType = 'any';
   const lot = lotsByCode[(code || '').toUpperCase()];
@@ -759,17 +795,13 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
   <section class="screen-enter space-y-stack-lg pb-16">
     <div>
       ${useOC ? `<div class="flex items-center gap-2 mb-2">
-        <span class="font-label-md text-label-md font-bold px-3 py-1 rounded-full text-white bg-blue-600 uppercase">Public Parking</span>
+        <span class="font-label-md text-label-md font-bold px-3 py-1 rounded-full text-white bg-blue-600 uppercase">${ocd.badge || 'Public Parking'}</span>
         <span class="font-body-md text-body-md text-on-surface-variant">Off-campus</span>
       </div>
       <h1 class="font-headline-lg text-headline-lg text-on-surface">${lot.name || cat.label}</h1>
       ${lot.address ? `<div class="flex items-start gap-1 mt-stack-sm text-on-surface-variant">
         <span class="material-symbols-outlined text-body-md mt-0.5">location_on</span>
         <p class="font-body-md text-body-md">${lot.address}</p>
-      </div>` : ''}
-      ${near ? `<div class="flex items-center text-on-surface-variant mt-1">
-        <span class="material-symbols-outlined text-body-md mr-1">near_me</span>
-        <p class="font-body-md text-body-md">Nearest building: ${nearestBuildingLabel(near.building)} (${formatDistance(near.dist)})</p>
       </div>` : ''}` : `<div class="flex items-center gap-2 mb-1">
         <span class="font-headline-lg text-headline-lg px-2 rounded text-white" style="background:${cat.color}">${lot.code}</span>
         <h1 class="font-headline-lg text-headline-lg text-on-surface">${lot.name || cat.label}</h1>
@@ -783,30 +815,33 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
 
     ${useOC ? `
     <section class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-stack-md">
-      <div class="flex items-baseline gap-1">
+      ${ocd.price ? `<div class="flex items-baseline gap-1">
         <span class="font-headline-lg text-headline-lg text-blue-600 font-bold">${ocd.price}</span>
         <span class="font-body-md text-body-md text-on-surface-variant">${ocd.unit}</span>
-      </div>
+      </div>` : `<div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-secondary">priority_high</span>
+        <span class="font-headline-md text-headline-md text-secondary">Rate not confirmed</span>
+      </div>`}
       <div class="flex items-start gap-stack-sm mt-stack-sm">
         <span class="material-symbols-outlined text-on-surface-variant mt-0.5">schedule</span>
         <div>${ocd.schedule.map(line => `<p class="font-body-md text-body-md text-on-surface">${line}</p>`).join('')}</div>
       </div>
-      ${ocd.payNote ? `<div class="flex items-start gap-stack-sm mt-stack-md bg-blue-50 rounded-lg p-stack-sm">
-        <span class="material-symbols-outlined text-blue-600 text-[20px] mt-0.5">info</span>
+      ${ocd.payNote ? `<div class="flex items-start gap-stack-sm mt-stack-md ${ocd.price ? 'bg-blue-50' : 'bg-amber-50'} rounded-lg p-stack-sm">
+        <span class="material-symbols-outlined ${ocd.price ? 'text-blue-600' : 'text-amber-700'} text-[20px] mt-0.5">${ocd.price ? 'info' : 'warning'}</span>
         <p class="font-label-md text-label-md text-on-surface-variant">${ocd.payNote}</p>
       </div>` : ''}
     </section>
 
-    <section>
+    ${ocd.pills.length ? `<section>
       <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Rules &amp; Info</h3>
       <div class="flex flex-wrap gap-stack-sm">
         ${ocd.pills.map(p => `<span class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-full font-label-lg text-label-lg text-on-surface">
           <span class="material-symbols-outlined text-blue-600 text-[18px]">${p.icon}</span>${p.label}
         </span>`).join('')}
       </div>
-    </section>
+    </section>` : ''}
 
-    <section>
+    ${ocd.amenities.length ? `<section>
       <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Amenities</h3>
       <div class="grid grid-cols-2 gap-stack-md">
         ${ocd.amenities.map(a => `<div class="flex items-center gap-stack-sm">
@@ -814,7 +849,7 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
           <p class="font-body-md text-body-md text-on-surface">${a.label}</p>
         </div>`).join('')}
       </div>
-    </section>
+    </section>` : ''}
     ${notes.length ? `<div class="space-y-1">
       ${notes.map(n => `<p class="font-label-md text-label-md text-on-surface-variant italic">${n}</p>`).join('')}
     </div>` : ''}
@@ -837,7 +872,7 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
     </section>
     `}
 
-    <section>
+    ${lot.has_code !== false ? `<section>
       <div class="flex justify-between items-end mb-stack-sm">
         <h3 class="font-label-lg text-label-lg text-on-surface uppercase">Plan Ahead</h3>
         <span class="font-stat-display text-stat-display ${useOC ? 'text-blue-600' : 'text-primary'}" id="time-display">${formatClock(now.minutesOfDay)}</span>
@@ -853,7 +888,7 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
         </div>
       </div>
       <p class="mt-stack-sm font-body-md text-body-md text-on-surface-variant italic text-center">Drag the slider and toggle weekday/weekend to preview this lot's status at any time.</p>
-    </section>
+    </section>` : ''}
 
     ${anchorLabel || parkerType !== 'any' ? `<p class="font-label-md text-label-md text-on-surface-variant italic -mb-2">
       ${anchorLabel ? `Showing lots nearest to ${anchorLabel}, not to ${lot.code}.` : ''}
@@ -874,7 +909,7 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
   </section>
   ${lot.lat != null ? `<div class="fixed bottom-6 left-0 right-0 w-full px-margin-mobile max-w-md mx-auto">
     <button id="navigate-btn" class="press w-full h-touch-target-min ${useOC ? 'bg-blue-600' : 'bg-primary'} text-on-primary font-headline-md rounded-lg flex items-center justify-center gap-stack-sm shadow-md active:opacity-90 transition-opacity">
-      <span class="material-symbols-outlined">directions</span> Navigate to Lot ${lot.code}
+      <span class="material-symbols-outlined">directions</span> ${lot.has_code === false ? 'Navigate Here' : 'Navigate to Lot ' + lot.code}
     </button>
   </div>` : ''}`;
 
@@ -908,16 +943,20 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
     document.getElementById('status-wrap').innerHTML = statusBannerHTML(previewStatus, `Status at ${formatClock(mins)} on ${dayLabel}`);
   }
 
+  // No Plan Ahead section is rendered for has_code:false lots (no confirmed
+  // schedule to preview against), so #time-slider won't exist - guard it.
   const slider = document.getElementById('time-slider');
-  updateDaytypeButtons();
-  slider.addEventListener('input', updatePreview);
-  document.querySelectorAll('.daytype-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      previewDayType = btn.dataset.daytype;
-      updateDaytypeButtons();
-      updatePreview();
+  if (slider) {
+    updateDaytypeButtons();
+    slider.addEventListener('input', updatePreview);
+    document.querySelectorAll('.daytype-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        previewDayType = btn.dataset.daytype;
+        updateDaytypeButtons();
+        updatePreview();
+      });
     });
-  });
+  }
 }
 
 function renderLotsList() {
