@@ -733,7 +733,7 @@ for (const { code, zone } of UNCONFIRMED_ZONE_LOTS) {
     badge: 'City Parking Zone',
     price: null, unit: null,
     schedule: ['Hours not confirmed'],
-    payNote: `<strong>City of College Park &mdash; ${zone}</strong><br>Parking information not fully confirmed. The exact parking rate, time limit, operating hours, and residential permit requirements for this location have not been independently verified.<br><br>Always check the posted parking signs at this location before parking.`,
+    payNote: `<strong>City of College Park &mdash; ${zone}</strong><br>Parking information not fully confirmed. The exact parking rate, time limit, operating hours, and residential permit requirements for this location have not been independently verified.`,
     pills: [
       { icon: 'domain', label: 'Non-UMD Operated' },
       { icon: 'payments', label: 'Cards / Coins / AMP Park App' }
@@ -817,6 +817,10 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
 
     ${useOC ? `
     <section class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-stack-md">
+      ${!ocd.price ? `<div class="flex items-center gap-2 pb-stack-sm mb-stack-sm border-b border-outline-variant">
+        <span class="material-symbols-outlined text-amber-700">warning</span>
+        <p class="font-label-lg text-label-lg text-amber-700 font-bold">Always check the posted parking signs at this location before parking.</p>
+      </div>` : ''}
       ${ocd.price ? `<div class="flex items-baseline gap-1">
         <span class="font-headline-lg text-headline-lg text-blue-600 font-bold">${ocd.price}</span>
         <span class="font-body-md text-body-md text-on-surface-variant">${ocd.unit}</span>
