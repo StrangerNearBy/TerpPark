@@ -733,7 +733,7 @@ for (const { code, zone } of UNCONFIRMED_ZONE_LOTS) {
     badge: 'City Parking Zone',
     price: null, unit: null,
     schedule: ['Hours not confirmed'],
-    payNote: `<strong>City of College Park &mdash; ${zone}</strong><br>Parking information not fully confirmed. The exact parking rate, time limit, operating hours, and residential permit requirements for this location have not been independently verified.`,
+    payNote: `<strong>City of College Park ${zone}</strong><br>Rate, time limit, hours, and permit rules for this spot are unconfirmed.`,
     pills: [
       { icon: 'domain', label: 'Non-UMD Operated' },
       { icon: 'payments', label: 'Cards / Coins / AMP Park App' }
