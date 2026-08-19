@@ -733,7 +733,7 @@ for (const { code, zone } of UNCONFIRMED_ZONE_LOTS) {
     badge: 'City Parking Zone',
     price: null, unit: null,
     schedule: ['Hours not confirmed'],
-    payNote: `This location is within City of College Park ${zone}. Pay stations here accept cards, coins, and the AMP Park app - but the exact rate, time limit, and whether a residential parking permit is required were not independently confirmed. Always check the posted sign here before parking.`,
+    payNote: `<strong>City of College Park &mdash; ${zone}</strong><br>Parking information not fully confirmed. The exact parking rate, time limit, operating hours, and residential permit requirements for this location have not been independently verified.<br><br>Always check the posted parking signs at this location before parking.`,
     pills: [
       { icon: 'domain', label: 'Non-UMD Operated' },
       { icon: 'payments', label: 'Cards / Coins / AMP Park App' }
@@ -783,7 +783,9 @@ function renderLotDetail(code, nearBuildingId, parkerType = null) {
 
   const notes = [];
   if (lot.note) notes.push(lot.note);
-  if (lot.category === 'off_campus_parking' && lot.confidence !== 'high') notes.push('Pricing/hours not fully confirmed from an official source - verify with the operator before relying on it.');
+  // has_code:false lots already carry a clearer, dedicated caution in their
+  // payNote box - this generic line would just repeat it.
+  if (lot.category === 'off_campus_parking' && lot.confidence !== 'high' && lot.has_code !== false) notes.push('Pricing/hours not fully confirmed from an official source - verify with the operator before relying on it.');
 
   // Off-campus lots get a distinct blue "Garage Details" layout (only the 2
   // lots with hand-verified OFF_CAMPUS_DETAILS entries - anything else in
