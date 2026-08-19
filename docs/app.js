@@ -677,7 +677,7 @@ function nearestBuildingLabel(building) {
 // was written after reading that lot's exact verified source text, not
 // guessed or pattern-matched. Add an entry here only after doing the same.
 const OFF_CAMPUS_DETAILS = {
-  OC1: {
+  'downtown-parking-garage': {
     price: '$2.00', unit: '/hr',
     schedule: ['Mon-Sat, 8:00am - 10:00pm', 'Free outside these hours & Sundays'],
     payNote: null, // no city-garage-specific pay-station note exists in the verified data - do NOT
@@ -694,7 +694,7 @@ const OFF_CAMPUS_DETAILS = {
       { icon: 'smartphone', label: 'Pay via App/Card' }
     ]
   },
-  OC2: {
+  'cambria-college-park-garage': {
     price: '$10-12', unit: '/night',
     schedule: ['Hours not publicly confirmed', 'Ask the hotel directly'],
     payNote: 'Book via ParkWhiz/SpotHero-style apps, or ask the hotel directly.',
@@ -719,20 +719,20 @@ const OFF_CAMPUS_DETAILS = {
 // field below reflects that honestly (no price, no invented amenities);
 // do not upgrade any of these without a real per-block source.
 const UNCONFIRMED_ZONE_LOTS = [
-  { code: 'OC3', zone: 'Zone 4' },
-  { code: 'OC4', zone: 'Zone 3' },
-  { code: 'OC5', zone: 'Zone 2' },
-  { code: 'OC6', zone: 'Zone 2' },
-  { code: 'OC7', zone: 'Zone 9' },
-  { code: 'OC8', zone: 'Zone 9' },
-  { code: 'OC9', zone: 'Zone 9' },
-  { code: 'OC10', zone: 'Zone 8' }
+  { code: 'zone4-college-ave', zone: 'Zone 4' },
+  { code: 'zone3-baltimore-ave', zone: 'Zone 3' },
+  { code: 'zone2-yale-lehigh-a', zone: 'Zone 2' },
+  { code: 'zone2-yale-lehigh-b', zone: 'Zone 2' },
+  { code: 'zone9-knox-hartwick-guilford-a', zone: 'Zone 9' },
+  { code: 'zone9-knox-hartwick-guilford-b', zone: 'Zone 9' },
+  { code: 'zone9-knox-hartwick-guilford-c', zone: 'Zone 9' },
+  { code: 'zone8-hartwick-rd', zone: 'Zone 8' }
 ];
 for (const { code, zone } of UNCONFIRMED_ZONE_LOTS) {
   OFF_CAMPUS_DETAILS[code] = {
     badge: 'City Parking Zone',
     price: null, unit: null,
-    schedule: ['Hours not confirmed'],
+    schedule: ['Pay to park during enforced hours', 'Free outside enforced hours - exact times not confirmed - check the local sign'],
     payNote: `<strong>City of College Park ${zone}</strong><br>Rate, time limit, hours, and permit rules for this spot are unconfirmed.`,
     pills: [
       { icon: 'domain', label: 'Non-UMD Operated' },
