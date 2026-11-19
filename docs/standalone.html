@@ -962,9 +962,40 @@ details.more .in b{color:var(--ink)}
 .mBtn{width:42px;height:42px;border-radius:12px;background:var(--surface);box-shadow:var(--shadow-l);display:grid;place-items:center;color:var(--ink-2)}
 .mBtn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2}
 .mBtn.on{background:var(--ink);color:#fff}
+.explore{display:flex;gap:6px;overflow-x:auto;padding:10px 16px 0;flex:none;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.explore::-webkit-scrollbar{display:none}
+.xchip{display:flex;align-items:center;gap:6px;height:34px;padding:0 12px 0 10px;border-radius:99px;background:var(--surface);
+  border:1px solid var(--line);font-size:13px;font-weight:650;color:var(--ink-2);white-space:nowrap;flex:none;transition:.12s}
+.xchip:hover{border-color:var(--line-2)}
+.xchip svg{width:15px;height:15px;fill:none;stroke:var(--xc);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.xchip.on{background:var(--xc);border-color:var(--xc);color:#fff}
+.xchip.on svg{stroke:#fff}
+.xhead{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.xhead b{font-size:15px}
+.xhead .n{color:var(--muted);font-weight:600;font-size:13px}
+.xhead button{margin-left:auto;font-size:13px;font-weight:650;padding:6px 10px;border-radius:9px;border:1px solid var(--line-2);background:var(--surface)}
+#map.explore-on .picon.top .nm{display:block}
+/* On a phone, unlabelled lot dots appear only once zoomed in, so the map stays readable. */
+@media (max-width:820px){ #map.far .mdot{display:none} }
+#map.explore-on ~ .key{display:none}
+#map.explore-on .dest .lbl, #map.explore-on .dest .stem{display:none}
+@media (max-width:820px){ #keyPlaces{display:none!important} }
+.picon.dim{opacity:.35}
+.parkHereBtn{display:block;width:100%;margin-top:8px;height:44px;border-radius:12px;font-weight:700;font-size:14.5px;
+  background:var(--surface);border:1.5px solid var(--ink);color:var(--ink)}
+.picon{display:flex;align-items:center;gap:4px;transform:translate(-11px,-11px);cursor:pointer;white-space:nowrap}
+.picon .ic{width:22px;height:22px;border-radius:50%;background:#fff;border:2px solid var(--pc);display:grid;place-items:center;
+  box-shadow:0 1px 3px rgba(0,0,0,.25);flex:none}
+.picon svg{width:13px;height:13px;fill:none;stroke:var(--pc);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.picon .nm{display:none;font-size:11.5px;font-weight:700;color:var(--pc);background:rgba(255,255,255,.92);padding:1px 6px;border-radius:6px;
+  box-shadow:0 0 0 1px rgba(0,0,0,.06);max-width:150px;overflow:hidden;text-overflow:ellipsis}
+#map.labels .picon .nm{display:block}
+.key .kp{display:flex;align-items:center;gap:4px}
+.key .kp svg{width:12px;height:12px;fill:none;stroke:var(--pc);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .key{position:absolute;left:12px;bottom:calc(22px + var(--safe-b));z-index:10;display:flex;gap:12px;align-items:center;
   background:var(--surface);border-radius:99px;padding:7px 13px;box-shadow:var(--shadow-l);font-size:12px;font-weight:600;color:var(--ink-2)}
 .key span{display:flex;align-items:center;gap:5px}
+.key{flex-wrap:wrap;row-gap:5px;max-width:calc(100% - 80px);border-radius:16px}
 .key .sep{width:1px;height:14px;background:var(--line-2)}
 .placesPanel{position:absolute;top:12px;right:62px;z-index:11;background:var(--surface);border-radius:var(--radius);
   box-shadow:var(--shadow-l);padding:8px 12px;width:230px;font-size:13.5px}
@@ -1047,6 +1078,8 @@ details.more .in b{color:var(--ink)}
       </div>
     </div>
 
+    <div class="explore" id="explore" role="toolbar" aria-label="Explore campus places"></div>
+
     <div class="seg" id="seg"><button data-v="list" class="on">List</button><button data-v="map">Map</button></div>
 
     <div class="list" id="list"></div>
@@ -1071,6 +1104,7 @@ details.more .in b{color:var(--ink)}
       <span><i class="pip" style="--c:var(--permit)"></i>Permit</span>
       <span class="sep"></span>
       <span><i class="pip" style="--c:var(--you)"></i>You</span>
+      <span id="keyPlaces" style="display:contents"></span>
     </div>
   </div>
 </div>
@@ -1817,6 +1851,13 @@ const spacesOf=(x)=> x.spaces ?? (x.garage?.complete ? x.garage.total_spaces : n
 function sync(){
   syncTime();
   el('near').innerHTML=`Near <b>${esc(S.origin.name)}</b>`;
+  renderExploreChips();
+  if (S.explore){
+    if (S.mode==='car') { rows=query(); renderTiles(); } else { const rs=placeRows(); rows=[]; renderModeTiles(rs); }
+    renderExploreList(); drawMap();
+    if (String(S.selected).startsWith('place:')) renderPlaceDetail(+String(S.selected).slice(6));
+    return;
+  }
   if (S.mode!=='car'){
     const rs=placeRows(); rows=[];
     renderModeTiles(rs); renderModeList(rs); drawMap();
@@ -2070,6 +2111,9 @@ function initMap(){
   }).addTo(map);
   layers={ lots:L.layerGroup().addTo(map), places:L.layerGroup().addTo(map),
            pins:L.layerGroup().addTo(map), origin:L.layerGroup().addTo(map) };
+  // Place names show once zoomed in far enough to fit them; icons alone before that.
+  const labelZoom=()=>{ el('map').classList.toggle('labels', map.getZoom()>=18); el('map').classList.toggle('far', map.getZoom()<17); };
+  map.on('zoomend', labelZoom); labelZoom();
   drawPlaces();
 }
 function drawOrigin(){
@@ -2080,6 +2124,8 @@ function drawOrigin(){
 }
 function drawMap(keepView){
   if(!map) initMap();
+  el('map').classList.toggle('explore-on', !!S.explore);
+  if (S.explore) return drawExploreMap(keepView);
   if (S.mode!=='car') return drawModeMap(keepView);
   const shown=rows.filter(passes);
   layers.lots.clearLayers(); layers.pins.clearLayers(); layers.origin.clearLayers();
@@ -2093,7 +2139,7 @@ function drawMap(keepView){
                  : {color:'#a9a9a3',weight:.8,opacity:.55,fillColor:'#c9c8c2',fillOpacity:.22};
   }}).addTo(layers.lots);
 
-  const LABELLED=12;
+  const LABELLED=mobile()?8:12;
   shown.forEach((x,i)=>{
     const isSel=S.selected===String(x.lot), ll=[x.coordinates[1],x.coordinates[0]];
     const sp=spacesOf(x), sg=signOf(x);
@@ -2118,10 +2164,10 @@ el('zFit').onclick=()=>{ fitted=false; drawMap(); };
 
 /* ---------------- campus places ---------------- */
 const PLACE_GROUPS=[
-  // Hollow rings in hues that never collide with the green/blue/grey status dots.
-  ['food','Food & dining','#7C3AED',true],
-  ['study','Libraries & study','#0891B2',true],
-  ['vehicle','EV, motorcycle, Zipcar','#4D7C0F',true],
+  // All off by default: the map shows parking only. Explore chips (or ≡) bring places in.
+  ['food','Food & dining','#7C3AED',false],
+  ['study','Libraries & study','#0891B2',false],
+  ['vehicle','EV, motorcycle, Zipcar','#4D7C0F',false],
   ['landmarks','Landmarks','#78716C',false],
   ['transit','Shuttle & transit','#475569',false],
   ['services','Health & restrooms','#A21CAF',false],
@@ -2129,7 +2175,6 @@ const PLACE_GROUPS=[
 ];
 const placeOn=Object.fromEntries(PLACE_GROUPS.map(g=>[g[0],g[3]]));
 const placeColour=Object.fromEntries(PLACE_GROUPS.map(g=>[g[0],g[2]]));
-const placeCanvas=L.canvas({padding:.3});
 function placePopup(f){
   const p=f.properties, [lon,lat]=f.geometry.coordinates;
   const lines=[
@@ -2144,13 +2189,59 @@ function placePopup(f){
     <div class="row"><button class="btn primary" data-park>Parking near here</button>
     ${dirLinks(lat,lon,p.name+', University of Maryland, College Park, MD',false).replace(/btn primary/,'btn')}</div></div>`;
 }
+/* One small icon per kind of place, so a dot on the map says what it is. */
+const ICON={
+  fork:'<path d="M7 3v8M5 3v4a2 2 0 0 0 4 0V3M7 11v10M16 3c-2 1.5-3 4-3 7h3v11"/>',
+  cup:'<path d="M5 8h12v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5zM17 10h2a2 2 0 0 1 0 4h-2M8 3v2M12 3v2"/>',
+  bag:'<path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/>',
+  leaf:'<path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15M5 19l7-7"/>',
+  book:'<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5M8 7h7"/>',
+  tool:'<path d="M14 7a4 4 0 0 0 5 5l-8 8-3-3 8-8a4 4 0 0 0-2-2z"/>',
+  laptop:'<path d="M5 6h14v9H5zM3 18h18"/>',
+  bolt:'<path d="M13 2 5 14h6l-1 8 8-12h-6z"/>',
+  moto:'<circle cx="6" cy="16" r="3"/><circle cx="18" cy="16" r="3"/><path d="M6 16l3-6h5l4 6M12 10l-1-3H9"/>',
+  car:'<path d="M5 17h14M4 17v-4l2-5h12l2 5v4M7 17v2M17 17v2"/>',
+  bus:'<path d="M6 4h12a1 1 0 0 1 1 1v12H5V5a1 1 0 0 1 1-1zM5 11h14M8 17v2M16 17v2"/>',
+  train:'<path d="M7 3h10a2 2 0 0 1 2 2v10a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V5a2 2 0 0 1 2-2zM5 10h14M8 21l2-3M16 21l-2-3"/>',
+  bike:'<circle cx="6" cy="16" r="3"/><circle cx="18" cy="16" r="3"/><path d="M6 16l4-8h4l4 8M12 16l2-8"/>',
+  star:'<path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/>',
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  wc:'<path d="M7 4v0M7 7v6M5 21l2-8 2 8M17 4v0M17 7l-2 7h4l-2-7M16 21v-7M18 21v-7"/>',
+  baby:'<circle cx="12" cy="6" r="3"/><path d="M8 21v-6l-2-3 6-2 6 2-2 3v6"/>',
+  drop:'<path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/>',
+  pin:'<path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/>',
+};
+const ICON_FOR={
+  'Dining hall':'fork','Food court':'fork','Restaurant':'fork','Cafe':'cup','Shop':'bag','Food pantry':'bag','Farmers market':'leaf',
+  'Library':'book','Makerspace':'tool','Terrapin Tech':'laptop',
+  'EV charging':'bolt','Motorcycle & scooter parking':'moto','Zipcar':'car','DOTS impound lot':'car',
+  'Shuttle-UM stop':'bus','Metro station':'train','Purple Line station':'train',
+  'Health':'plus','Disability services':'plus','Hearing & speech':'plus','All-gender restroom':'wc','Family restroom':'wc',
+  'Lactation room':'baby','Baby changing':'baby','Adult changing table':'baby','Shower':'drop',
+};
+const iconFor=(p)=>ICON[ICON_FOR[p.category]] ?? (p.group==='landmarks'?ICON.star:p.group==='bike'?ICON.bike:ICON.pin);
+const svg=(paths)=>`<svg viewBox="0 0 24 24">${paths}</svg>`;
+// Short label for the map: rooms are named "Restroom — Building", so show the kind.
+const mapName=(p)=>p.group==='services' ? p.category : String(p.name).replace(/^Bike rack \S+ — /,'Rack · ');
+
+function renderPlaceKey(){
+  const seen=new Map();
+  for (const f of DATA.places.features){ const p=f.properties; if(!placeOn[p.group]) continue;
+    const k=ICON_FOR[p.category]??p.group; if(!seen.has(k)) seen.set(k,{p,label:p.category}); }
+  const LABEL={fork:'Dining',cup:'Cafe',bag:'Shop',book:'Library',tool:'Makerspace',bolt:'EV',moto:'Moto',car:'Zipcar',bus:'Shuttle',train:'Rail',wc:'Restroom'};
+  const items=[...seen.entries()].filter(([k])=>LABEL[k]).slice(0,6);
+  el('keyPlaces').innerHTML=items.length?'<span class="sep"></span>'+items.map(([k,{p}])=>
+    `<span class="kp" style="--pc:${placeColour[p.group]}">${svg(ICON[k])}${LABEL[k]}</span>`).join(''):'';
+}
+
 function drawPlaces(){
-  if(!map) return; layers.places.clearLayers();
+  if(!map) return; layers.places.clearLayers(); renderPlaceKey();
   for(const f of DATA.places.features){
-    const g=f.properties.group; if(!placeOn[g]) continue;
+    const p=f.properties, g=p.group; if(!placeOn[g]) continue;
     const [lon,lat]=f.geometry.coordinates;
-    L.circleMarker([lat,lon],{renderer:placeCanvas,radius:3.5,weight:2,color:placeColour[g],fillColor:'#fff',
-      fillOpacity:1,bubblingMouseEvents:false})
+    const html=`<div class="picon" style="--pc:${placeColour[g]}"><span class="ic">${svg(iconFor(p))}</span><span class="nm">${esc(mapName(p))}</span></div>`;
+    L.marker([lat,lon],{icon:L.divIcon({className:'',iconSize:null,html}),keyboard:false,zIndexOffset:-100,bubblingMouseEvents:false})
+      .bindTooltip(esc(p.name),{direction:'top',offset:[0,-12]})
       .bindPopup(()=>placePopup(f),{maxWidth:270})
       .on('popupopen',(e)=>{ const b=e.popup.getElement().querySelector('[data-park]');
         if(b) b.onclick=()=>{ map.closePopup(); setOrigin(f); if(mobile()) setView('list'); }; })
@@ -2256,7 +2347,9 @@ function renderModeList(rs){
 }
 function renderPlaceDetail(idx){
   const f=PF[idx]; if(!f){ closeDetail(); return; }
-  const p=f.properties, [lon,lat]=f.geometry.coordinates, M=MODES[S.mode]??MODES.bike;
+  const p=f.properties, [lon,lat]=f.geometry.coordinates;
+  const M = S.explore || !MODES[S.mode] || !MODES[S.mode].match(p)
+    ? { colour: placeColour[p.group] ?? '#475569', travel: 'walking', hint: '' } : MODES[S.mode];
   const d0=Math.round(engine.haversine(S.origin.coords,f.geometry.coordinates)), {t,s}=placeTitle(p);
   const stats=[p.loops?['Loops',p.loops]:null, p.spaces!=null?['Spaces',p.spaces]:null,
     p.covered!=null?['Covered',p.covered?'Yes':'No']:null, p.lock!=null?['Lock point',p.lock?'Yes':'No']:null,
@@ -2273,15 +2366,20 @@ function renderPlaceDetail(idx){
         `<div class="stat"><div class="k">${k}</div><div class="v">${esc(v)}</div></div>`).join('')}</div>
       ${p.access?`<div class="notice">${esc(cleanAccess(p.access))}${link?` <a href="${esc(link)}" target="_blank" rel="noopener">Request access</a>`:''}</div>`:''}
       <div class="dirs">${dirLinks(lat,lon,t+', University of Maryland, College Park, MD',isApple,M.travel)}</div>
-      ${p.website?`<p class="credit"><a href="${esc(p.website)}" target="_blank" rel="noopener">${/veoride/.test(p.website)?'Veo rentals at UMD':'Website'}</a></p>`:''}
-      <div class="hint" style="margin-top:14px">${M.hint}</div>
+      <button class="parkHereBtn" data-parkhere="${idx}">Find parking near here</button>
+      ${p.description?`<p class="credit" style="color:var(--ink-2)">${esc(p.description.length>320?p.description.slice(0,317)+'…':p.description)}</p>`:''}
+      ${p.also?.length?`<p class="credit">Also: ${esc(p.also.join(', '))}</p>`:''}
+      ${p.room?`<p class="credit">Room ${esc(p.room)}${p.building?` · ${esc(p.building)}`:''}</p>`:''}
+      ${p.website?`<p class="credit"><a href="${esc(p.website.startsWith('http')?p.website:'https://'+p.website)}" target="_blank" rel="noopener">${/veoride/.test(p.website)?'Veo rentals at UMD':'Website'}</a></p>`:''}
+      ${M.hint?`<div class="hint" style="margin-top:14px">${M.hint}</div>`:''}
     </div>`;
   el('dBack').onclick=()=>closeDetail();
 }
 function openPlace(idx){
   S.selected='place:'+idx; renderPlaceDetail(idx);
   const d=el('detail'); d.classList.add('open'); d.setAttribute('aria-hidden','false'); d.querySelector('.dBody').scrollTop=0;
-  renderModeList(placeRows()); drawMap(true);
+  if (S.explore) renderExploreList(); else if (S.mode!=='car') renderModeList(placeRows());
+  drawMap(true);
 }
 function drawModeMap(keepView){
   layers.lots.clearLayers(); layers.pins.clearLayers(); layers.origin.clearLayers(); layers.places.clearLayers();
@@ -2312,18 +2410,85 @@ function setMode(m){
 }
 el('modes').onclick=(e)=>{ const b=e.target.closest('button[data-m]'); if(b && b.dataset.m!==S.mode) setMode(b.dataset.m); };
 
+/* ---------------- explore: browse a kind of place, like map category chips ---------------- */
+const LANDMARK_CATS=['Landmark','Arts','Research','Student life','Athletics','Green campus','Ghost tour','Testudo statue','Area','Residential community'];
+const EXPLORE=[
+  ['dining','Dining','fork',['Dining hall']],
+  ['cafe','Cafes','cup',['Cafe']],
+  ['eat','Restaurants','fork',['Food court','Restaurant']],
+  ['shop','Shops','bag',['Shop','Food pantry','Farmers market']],
+  ['library','Libraries','book',['Library']],
+  ['maker','Makerspaces','tool',['Makerspace','Terrapin Tech']],
+  ['restroom','Restrooms','wc',['All-gender restroom','Family restroom']],
+  ['family','Family rooms','baby',['Lactation room','Baby changing','Adult changing table']],
+  ['health','Health','plus',['Health','Disability services','Hearing & speech']],
+  ['landmark','Landmarks','star',LANDMARK_CATS],
+  ['shuttle','Shuttle','bus',['Shuttle-UM stop']],
+  ['ev','EV','bolt',['EV charging']],
+];
+S.explore=null;
+const exploreDef=()=>EXPLORE.find(e=>e[0]===S.explore);
+function exploreRows(){
+  const [, , , cats]=exploreDef(), o=S.origin.coords;
+  return PF.map((f,idx)=>({f,idx,p:f.properties,d:Math.round(engine.haversine(o,f.geometry.coordinates))}))
+    .filter(r=>cats.includes(r.p.category)).sort((a,b)=>a.d-b.d).slice(0,60);
+}
+const exploreColour=(cats)=>{ const f=PF.find(f=>cats.includes(f.properties.category)); return placeColour[f?.properties.group] ?? '#475569'; };
+function renderExploreChips(){
+  el('explore').innerHTML=EXPLORE.map(([k,label,ic,cats])=>`<button class="xchip ${S.explore===k?'on':''}" data-x="${k}"
+    style="--xc:${exploreColour(cats)}" aria-pressed="${S.explore===k}">${svg(ICON[ic])}${label}</button>`).join('');
+}
+el('explore').onclick=(e)=>{ const b=e.target.closest('[data-x]'); if(!b) return;
+  S.explore = S.explore===b.dataset.x ? null : b.dataset.x;
+  closeDetail(false); fitted=false; sync(); el('list').scrollTop=0;
+  if (!S.explore && map) drawPlaces(); };
+function exploreTitle(p){
+  if (p.group==='services') return { t: p.building ?? p.name, s: p.category };
+  return { t: p.name, s: [p.category, p.building && p.building!==p.name ? p.building : null].filter(Boolean).join(' · ') };
+}
+function renderExploreList(){
+  const [k,label,ic,cats]=exploreDef(), rs=exploreRows(), c=exploreColour(cats);
+  const head=`<div class="xhead"><b>${label}</b><span class="n">${rs.length} near ${esc(S.origin.name)}</span>
+    <button id="xBack">Back to parking</button></div>`;
+  el('list').innerHTML=head+(rs.length?rs.map(r=>{ const {t,s}=exploreTitle(r.p);
+    return `<button class="card ${S.selected==='place:'+r.idx?'on':''}" data-place="${r.idx}">
+      <div class="r1"><h3>${esc(t)}</h3><span class="d">${dist(r.d)} · ${Math.max(1,Math.round(r.d/80))} min</span></div>
+      <div class="r2"><span class="mtag" style="--mc:${c}">${esc(s.split(' · ')[0])}</span>${s.includes(' · ')?`<span class="ftag">${esc(s.split(' · ').slice(1).join(' · '))}</span>`:''}
+        ${r.p.room?`<span class="ftag">Room ${esc(r.p.room)}</span>`:''}</div>
+    </button>`; }).join(''):`<div class="empty">None found near here.</div>`);
+  el('xBack').onclick=()=>{ S.explore=null; closeDetail(false); fitted=false; sync(); if(map) drawPlaces(); };
+}
+function drawExploreMap(keepView){
+  layers.lots.clearLayers(); layers.pins.clearLayers(); layers.origin.clearLayers(); layers.places.clearLayers();
+  const rs=exploreRows(), [, , , cats]=exploreDef(), c=exploreColour(cats);
+  rs.forEach((r,i)=>{ const [lon,lat]=r.f.geometry.coordinates, sel=S.selected==='place:'+r.idx, {t}=exploreTitle(r.p);
+    const html=`<div class="picon ${i<5||sel?'top':''}" style="--pc:${c}"><span class="ic" style="${sel?'transform:scale(1.25);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--you)':''}">${svg(iconFor(r.p))}</span><span class="nm">${esc(t)}</span></div>`;
+    L.marker([lat,lon],{icon:L.divIcon({className:'',iconSize:null,html}),zIndexOffset:sel?1000:0,keyboard:false})
+      .addTo(layers.places).on('click',()=>openPlace(r.idx)); });
+  drawOrigin();
+  if (el('mapPane').offsetParent===null) return;
+  const selR=rs.find(r=>S.selected==='place:'+r.idx);
+  if (keepView && selR){ map.panTo([selR.f.geometry.coordinates[1],selR.f.geometry.coordinates[0]]); return; }
+  if (!fitted && rs.length){
+    map.fitBounds(L.latLngBounds([[S.origin.coords[1],S.origin.coords[0]],...rs.slice(0,5).map(r=>[r.f.geometry.coordinates[1],r.f.geometry.coordinates[0]])]),
+      {padding:[50,50],maxZoom:18}); fitted=true;
+  }
+}
+document.addEventListener('click',(e)=>{ const b=e.target.closest('[data-parkhere]'); if(!b) return;
+  const f=PF[+b.dataset.parkhere]; S.explore=null; setOrigin(f); if (map) drawPlaces(); });
+
 /* ---------------- home ---------------- */
 const [seed]=engine.searchBuildings('McKeldin Library');
 const HOME={coords:seed.geometry.coordinates,name:seed.properties.name};
 /* Tapping the logo/title: back to the starting screen, like any app's home. */
 function goHome(){
   closeDetail(false);
-  S.origin={...HOME}; S.filter='all'; S.who='any'; S.when=new Date(); S.live=true; S.ev=false; S.mfilter={moto:'all',bike:'all'};
+  S.origin={...HOME}; S.filter='all'; S.who='any'; S.when=new Date(); S.live=true; S.ev=false; S.mfilter={moto:'all',bike:'all'}; S.explore=null;
   el('q').value=''; el('sugg').hidden=true; el('who').value='any';
   el('timePick').hidden=true; el('whenBtn').setAttribute('aria-expanded','false');
   el('placesPanel').hidden=true; el('placesBtn').classList.remove('on');
   if(map) map.closePopup();
-  fitted=false; setView('list'); sync();
+  fitted=false; setView('list'); sync(); if(map) drawPlaces();
   el('list').scrollTop=0;
 }
 el('homeBtn').onclick=(e)=>{ e.preventDefault(); goHome(); };
