@@ -1,0 +1,76 @@
+# Manual deploy to terppark.com.
+#
+# GitHub Pages serves docs/ from the `main` branch, and any push to `main` goes live.
+# So: do all work on `dev` (or any branch), and publish only by running this workflow:
+#
+#   GitHub:   Actions tab -> "Deploy to terppark.com" -> Run workflow
+#   Terminal: npm run deploy        (or: gh workflow run deploy.yml -f ref=dev)
+#
+# It refuses to deploy if tests fail, if docs/ is not rebuilt from the current
+# source, if docs/CNAME is missing, or if `main` has commits the branch lacks.
+name: Deploy to terppark.com
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Branch, tag or commit to publish
+        required: true
+        default: dev
+
+permissions:
+  contents: write   # push the tested commit to main
+  pages: write      # ask Pages to rebuild
+
+concurrency:
+  group: deploy-terppark
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run tests
+        run: node test.mjs
+
+      - name: Check docs/ is built from the current source
+        run: |
+          node build.mjs
+          node bundle-standalone.mjs
+          cp src/engine.js docs/engine.js
+          if ! git diff --quiet -- docs; then
+            echo "::error::docs/ is out of date. Run 'npm run build' locally, commit docs/, then deploy again."
+            git diff --stat -- docs
+            exit 1
+          fi
+
+      - name: Check the custom domain is still set
+        run: |
+          test -f docs/CNAME && grep -qx 'terppark.com' docs/CNAME \
+            || { echo "::error::docs/CNAME must contain terppark.com"; exit 1; }
+
+      - name: Publish to main (fast-forward only)
+        run: |
+          git fetch origin main
+          if ! git merge-base --is-ancestor origin/main HEAD; then
+            echo "::error::main has commits that '${{ inputs.ref }}' does not. Merge main into it first."
+            exit 1
+          fi
+          git push origin HEAD:main
+          echo "Published $(git rev-parse --short HEAD) from ${{ inputs.ref }} to main" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Ask GitHub Pages to rebuild
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" --jq '.status' || true
+          echo "terppark.com updates in about a minute." >> "$GITHUB_STEP_SUMMARY"
