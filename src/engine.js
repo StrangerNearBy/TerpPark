@@ -187,7 +187,19 @@ export function createEngine({
       if (name === q) score = 10;
       else if (name.startsWith(q)) score = 11;
       else if (has(name) || has(bldg) || cat.startsWith(q)) score = 12;
-      if (score < 0 || seenPlace.has(name) || buildingNames.has(name)) continue;
+      // Restaurants inside a food court are findable by their own name.
+      if (score < 0) {
+        for (const v of p.vendors ?? []) {
+          const vn = v.name.toLowerCase();
+          const key = `${vn}@${name}`;          // Subway is in two food courts
+          if (!(vn === q || vn.startsWith(q) || has(vn)) || seenPlace.has(key)) continue;
+          seenPlace.add(key);
+          scored.push({ score: vn.startsWith(q) ? 11 : 12, feature: { type: 'Feature', geometry: f.geometry,
+            properties: { ...p, name: v.name, category: `in ${p.name}`, vendorOf: p.name, website: v.hours ?? p.website } } });
+        }
+        continue;
+      }
+      if (seenPlace.has(name) || buildingNames.has(name)) continue;
       seenPlace.add(name);
       scored.push({ score, feature: f });
     }

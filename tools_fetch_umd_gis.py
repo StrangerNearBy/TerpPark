@@ -243,6 +243,42 @@ def _metres(a, b):
     return math.hypot((a[0] - b[0]) * 86900, (a[1] - b[1]) * 111000)
 
 
+def attach_food_court_vendors(features):
+    """UMD lists the restaurants inside each food court in a table (DiningServices/6).
+    Keep one place per food court with its vendors listed, and fold restaurants that
+    sit inside a food court's building (Panera in Stamp) into it, so the map shows
+    one pin per food court and search still finds every restaurant by name."""
+    rows = [x['attributes'] for x in query('DiningServices', 6, False)]
+    by_bldg = {}
+    for r in rows:
+        num = str(r.get('BUILDINGID') or '').lstrip('0')
+        if r.get('Name') and num:
+            by_bldg.setdefault(num, []).append({
+                'name': re.sub(r'\s*\((Stamp|Kirwan) Food Court\)$', '', r['Name'].strip()),
+                'hours': clean(r.get('Hours')) if str(r.get('Hours') or '').startswith('http') else None})
+    num_of = {v.lower(): k for k, v in BLDG_NAMES.items()}
+    courts = [f for f in features if f['properties']['category'] == 'Food court']
+    for c in courts:
+        num = num_of.get((c['properties'].get('building') or '').lower())
+        if num in by_bldg:
+            c['properties']['vendors'] = sorted(by_bldg[num], key=lambda v: v['name'].lower())
+    keep = []
+    for f in features:
+        p = f['properties']
+        if p['category'] == 'Restaurant':
+            host = next((c for c in courts if c['properties'].get('building') and
+                         c['properties']['building'] == p.get('building') and
+                         _metres(c['geometry']['coordinates'], f['geometry']['coordinates']) < 80), None)
+            if host:
+                v = host['properties'].setdefault('vendors', [])
+                if not any(x['name'].lower() == p['name'].lower() for x in v):
+                    v.append({'name': p['name'], 'hours': p.get('website')})
+                    v.sort(key=lambda x: x['name'].lower())
+                continue
+        keep.append(f)
+    return keep
+
+
 def dedupe_places(features):
     """UMD's layers overlap: McKeldin Library is a library, a 'Student life' tour stop
     and a Testudo statue location; restrooms come one per room. Collapse each real
@@ -380,6 +416,7 @@ def build_places():
             }
             out.append({'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': c},
                         'properties': {k: v for k, v in props.items() if v is not None}})
+    out = attach_food_court_vendors(out)
     out = dedupe_places(out)
     return {'type': 'FeatureCollection',
             '_source': 'UMD ArcGIS — DiningServices, CampusServices, Transportation, '

@@ -369,7 +369,15 @@ details.more .in b{color:var(--ink)}
   .detail .dBody{flex:1 1 auto;min-height:0}
   .sheetBack{position:fixed;inset:0;background:rgba(0,0,0,.28);z-index:65;opacity:0;pointer-events:none;transition:opacity .25s}
   body.sheet-open .sheetBack{opacity:1;pointer-events:auto}
-  /* Compact header once you are on the map or scrolling the list. */
+  /* List view: the whole panel scrolls as one page (smooth, native), with the
+     search bar pinned to the top. Nothing resizes while you scroll. */
+  body:not(.mapMode) .panel{overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+  body:not(.mapMode) .list{flex:none;overflow:visible;min-height:auto}
+  .search{position:sticky;top:0;z-index:25;background:var(--bg);margin:0;padding:6px 16px}
+  .search > svg{left:29px}
+  #locBtn{right:21px;top:11px}
+  .sugg{left:16px;right:16px}
+  /* Compact header on the Map view (a view switch, so no mid-scroll jump). */
   body.compact header.top{padding:8px 16px 4px}
   body.compact .devBanner{display:none}
   body.compact .modes{margin-top:6px}
@@ -985,7 +993,7 @@ el('rulesBtn').onclick=openRules;
 
 /* ---------------- list / map switch (mobile) ---------------- */
 function setView(v){
-  S.view=v; document.body.classList.toggle('mapMode', v==='map');
+  S.view=v; document.body.classList.toggle('mapMode', v==='map'); if (v==='map') el('panel').scrollTop=0;
   [...el('seg').children].forEach(b=>b.classList.toggle('on', b.dataset.v===v));
   updateCompact(); layoutMap();
 }
@@ -1008,11 +1016,10 @@ el('sheetBack').onclick=()=>closeDetail();
 /* Compact header on phones: when the map is showing, or once the list scrolls. */
 let compact=false;
 function updateCompact(){
-  const st=el('list').scrollTop;
-  const want = mobile() && (S.view==='map' || (compact ? st>4 : st>60));
+  const want = mobile() && S.view==='map';
   if (want!==compact){ compact=want; document.body.classList.toggle('compact',compact); layoutMap(); }
 }
-el('list').addEventListener('scroll',()=>requestAnimationFrame(updateCompact),{passive:true});
+function resetScroll(){ el('list').scrollTop=0; el('panel').scrollTop=0; }
 el('seg').onclick=(e)=>{ const b=e.target.closest('button'); if(b) setView(b.dataset.v); };
 function layoutMap(){
   if (mobile()){
@@ -1104,6 +1111,7 @@ function placePopup(f){
     p.chargers!=null&&`${p.chargers} charging ${p.chargers==1?'port':'ports'}`,
     p.vehicles!=null&&`${p.vehicles} cars`,
     p.also?.length&&`Also: ${esc(p.also.join(', '))}`,
+    p.vendors?.length&&`Inside: ${esc(p.vendors.map(v=>v.name).join(', '))}`,
   ].filter(Boolean).map(t=>`<p>${t}</p>`).join('');
   const web=p.website?`<p><a href="${esc(p.website)}" target="_blank" rel="noopener">Website</a></p>`:'';
   return `<div class="pp"><div class="c">${esc(p.category)}</div><h4>${esc(p.name)}</h4>${lines}${web}
@@ -1287,6 +1295,10 @@ function renderPlaceDetail(idx){
         `<div class="stat"><div class="k">${k}</div><div class="v">${esc(v)}</div></div>`).join('')}</div>
       ${p.access?`<div class="notice">${esc(cleanAccess(p.access))}${link?` <a href="${esc(link)}" target="_blank" rel="noopener">Request access</a>`:''}</div>`:''}
       <div class="dirs">${dirLinks(lat,lon,t+', University of Maryland, College Park, MD',isApple,M.travel)}</div>
+      ${p.vendors?.length?`<div class="sec">Inside (${p.vendors.length})</div><div class="sched">${p.vendors.map(v=>
+        `<div><span class="when" style="grid-column:1/-1;color:var(--ink);font-size:14px;font-weight:650">${v.hours
+          ?`<a href="${esc(v.hours)}" target="_blank" rel="noopener" style="color:inherit">${esc(v.name)}</a> <span style="color:var(--muted);font-weight:500">· hours</span>`
+          :esc(v.name)}</span></div>`).join('')}</div>`:''}
       <button class="parkHereBtn" data-parkhere="${idx}">Find parking near here</button>
       ${p.description?`<p class="credit" style="color:var(--ink-2)">${esc(p.description.length>320?p.description.slice(0,317)+'…':p.description)}</p>`:''}
       ${p.also?.length?`<p class="credit">Also: ${esc(p.also.join(', '))}</p>`:''}
@@ -1327,7 +1339,7 @@ function setMode(m){
   [...el('modes').children].forEach(b=>{ b.classList.toggle('on',b.dataset.m===m); b.setAttribute('aria-selected',String(b.dataset.m===m)); });
   closeDetail(false); fitted=false;
   if (map && m==='car') drawPlaces();
-  sync(); el('list').scrollTop=0; layoutMap();
+  sync(); resetScroll(); layoutMap();
 }
 el('modes').onclick=(e)=>{ const b=e.target.closest('button[data-m]'); if(b && b.dataset.m!==S.mode) setMode(b.dataset.m); };
 
@@ -1361,7 +1373,7 @@ function renderExploreChips(){
 }
 el('explore').onclick=(e)=>{ const b=e.target.closest('[data-x]'); if(!b) return;
   S.explore = S.explore===b.dataset.x ? null : b.dataset.x;
-  closeDetail(false); fitted=false; sync(); el('list').scrollTop=0;
+  closeDetail(false); fitted=false; sync(); resetScroll();
   if (!S.explore && map) drawPlaces(); };
 function exploreTitle(p){
   if (p.group==='services') return { t: p.building ?? p.name, s: p.category };
@@ -1376,6 +1388,7 @@ function renderExploreList(){
       <div class="r1"><h3>${esc(t)}</h3><span class="d">${dist(r.d)} · ${Math.max(1,Math.round(r.d/80))} min</span></div>
       <div class="r2"><span class="mtag" style="--mc:${c}">${esc(s.split(' · ')[0])}</span>${s.includes(' · ')?`<span class="ftag">${esc(s.split(' · ').slice(1).join(' · '))}</span>`:''}
         ${r.p.room?`<span class="ftag">Room ${esc(r.p.room)}</span>`:''}</div>
+      ${r.p.vendors?.length?`<div class="r3">${esc(r.p.vendors.slice(0,4).map(v=>v.name).join(', '))}${r.p.vendors.length>4?` +${r.p.vendors.length-4} more`:''}</div>`:''}
     </button>`; }).join(''):`<div class="empty">None found near here.</div>`);
   el('xBack').onclick=()=>{ S.explore=null; closeDetail(false); fitted=false; sync(); if(map) drawPlaces(); };
 }
@@ -1410,7 +1423,7 @@ function goHome(){
   el('placesPanel').hidden=true; el('placesBtn').classList.remove('on');
   if(map) map.closePopup();
   fitted=false; setView('list'); sync(); if(map) drawPlaces();
-  el('list').scrollTop=0;
+  resetScroll();
 }
 el('homeBtn').onclick=(e)=>{ e.preventDefault(); goHome(); };
 el('detail').addEventListener('click',(e)=>{ if(e.target.closest('[data-home]')){ e.preventDefault(); goHome(); } });
