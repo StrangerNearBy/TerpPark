@@ -1,13 +1,14 @@
 # Manual deploy to terppark.com.
 #
-# GitHub Pages serves docs/ from the `main` branch, and any push to `main` goes live.
-# So: do all work on `dev` (or any branch), and publish only by running this workflow:
+# GitHub Pages' source is "GitHub Actions", so pushing to any branch publishes
+# nothing. The site changes only when this workflow runs:
 #
 #   GitHub:   Actions tab -> "Deploy to terppark.com" -> Run workflow
 #   Terminal: npm run deploy        (or: gh workflow run deploy.yml -f ref=dev)
 #
 # It refuses to deploy if tests fail, if docs/ is not rebuilt from the current
 # source, if docs/CNAME is missing, or if `main` has commits the branch lacks.
+# `main` is moved to the deployed commit, so `main` always equals what is live.
 name: Deploy to terppark.com
 
 on:
@@ -19,8 +20,9 @@ on:
         default: dev
 
 permissions:
-  contents: write   # push the tested commit to main
-  pages: write      # ask Pages to rebuild
+  contents: write   # move main to the deployed commit
+  pages: write      # publish to GitHub Pages
+  id-token: write   # required by actions/deploy-pages
 
 concurrency:
   group: deploy-terppark
@@ -29,15 +31,18 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: ${{ inputs.ref }}
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Run tests
         run: node test.mjs
@@ -58,7 +63,7 @@ jobs:
           test -f docs/CNAME && grep -qx 'terppark.com' docs/CNAME \
             || { echo "::error::docs/CNAME must contain terppark.com"; exit 1; }
 
-      - name: Publish to main (fast-forward only)
+      - name: Move main to this commit (fast-forward only)
         run: |
           git fetch origin main
           if ! git merge-base --is-ancestor origin/main HEAD; then
@@ -66,11 +71,16 @@ jobs:
             exit 1
           fi
           git push origin HEAD:main
-          echo "Published $(git rev-parse --short HEAD) from ${{ inputs.ref }} to main" >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Ask GitHub Pages to rebuild
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api -X POST "repos/${{ github.repository }}/pages/builds" --jq '.status' || true
-          echo "terppark.com updates in about a minute." >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Summary
+        run: echo "Published $(git rev-parse --short HEAD) from ${{ inputs.ref }} to ${{ steps.deployment.outputs.page_url }}" >> "$GITHUB_STEP_SUMMARY"
