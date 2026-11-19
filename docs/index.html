@@ -359,7 +359,30 @@ details.more .in b{color:var(--ink)}
   .app{grid-template-columns:100%;grid-template-rows:100%}
   .panel{border-right:0;z-index:auto}
   .mapPane{position:absolute;left:0;right:0;bottom:0;top:var(--mapTop,200px);display:none;z-index:6}
-  .detail{position:fixed;z-index:70}
+  /* Details and Rules slide up as a sheet; the map stays visible above, dimmed. */
+  .detail{position:fixed;z-index:70;top:auto;left:0;right:0;bottom:0;max-height:66vh;height:auto;
+    border-radius:20px 20px 0 0;box-shadow:0 -8px 30px rgba(0,0,0,.18);transform:translateY(105%)}
+  .detail.open{transform:none}
+  .detail.tall{max-height:86vh}
+  .detail::before{content:"";display:block;width:38px;height:5px;border-radius:99px;background:var(--line-2);margin:8px auto 0;flex:none}
+  .detail .dTop{padding-top:2px}
+  .detail .dBody{flex:1 1 auto;min-height:0}
+  .sheetBack{position:fixed;inset:0;background:rgba(0,0,0,.28);z-index:65;opacity:0;pointer-events:none;transition:opacity .25s}
+  body.sheet-open .sheetBack{opacity:1;pointer-events:auto}
+  /* Compact header once you are on the map or scrolling the list. */
+  body.compact header.top{padding:8px 16px 4px}
+  body.compact .devBanner{display:none}
+  body.compact .modes{margin-top:6px}
+  body.compact .modes button{height:32px;font-size:13px}
+  body.compact .summary{margin-top:6px;padding:7px 9px}
+  body.compact .sumHead{padding-bottom:5px}
+  body.compact .whoRow, body.compact .evBtn{display:none!important}
+  body.compact .tile{padding:3px 2px 4px;border-radius:9px}
+  body.compact .tile .n{font-size:14.5px}
+  body.compact .tile .l{font-size:10.5px}
+  body.compact .explore{padding-top:6px}
+  body.compact .xchip{height:30px;font-size:12.5px}
+  body.compact .seg{margin-top:6px}
   body.mapMode .mapPane{display:block}
   body.mapMode .list{display:none}
   .seg{display:grid;grid-template-columns:1fr 1fr;margin:12px 16px 0;padding:3px;border-radius:12px;background:#e9e9e5;flex:none}
@@ -423,6 +446,7 @@ details.more .in b{color:var(--ink)}
 
     <div class="list" id="list"></div>
 
+    <div class="sheetBack" id="sheetBack"></div>
     <div class="detail" id="detail" aria-hidden="true"></div>
   </section>
 
@@ -881,13 +905,14 @@ function renderDetail(lot){
 }
 function openDetail(lot){
   S.selected=String(lot); renderDetail(lot);
-  const d=el('detail'); d.classList.add('open'); d.setAttribute('aria-hidden','false');
+  const d=el('detail'); showSheet();
   d.querySelector('.dBody').scrollTop=0;
   renderList(); drawMap(true);
 }
 function closeDetail(redraw=true){
   if(S.selected==null) return;
   S.selected=null; const d=el('detail'); d.classList.remove('open'); d.setAttribute('aria-hidden','true');
+  document.body.classList.remove('sheet-open'); d.style.transform='';
   if(redraw){ renderList(); drawMap(); }
 }
 document.addEventListener('keydown',(e)=>{ if(e.key==='Escape' && S.selected!=null) closeDetail(); });
@@ -953,7 +978,7 @@ function openRules(){
       <p class="credit">Sources: UMD Transportation Services Campus Parking Map; UMD's campus GIS (space counts, lot types, places).
         Posted signs at the lot always take priority over this app.</p>
     </div>`;
-  S.selected=RULES_VIEW; d.classList.add('open'); d.setAttribute('aria-hidden','false'); d.querySelector('.dBody').scrollTop=0;
+  S.selected=RULES_VIEW; showSheet(true); d.querySelector('.dBody').scrollTop=0;
   el('dBack').onclick=()=>closeDetail();
 }
 el('rulesBtn').onclick=openRules;
@@ -962,17 +987,41 @@ el('rulesBtn').onclick=openRules;
 function setView(v){
   S.view=v; document.body.classList.toggle('mapMode', v==='map');
   [...el('seg').children].forEach(b=>b.classList.toggle('on', b.dataset.v===v));
-  layoutMap();
+  updateCompact(); layoutMap();
 }
+/* Sheet open / close, plus swipe-down and tap-outside to close. */
+function showSheet(tall=false){
+  const d=el('detail'); d.style.transform=''; d.classList.toggle('tall',tall); d.classList.add('open'); d.setAttribute('aria-hidden','false');
+  if (mobile()) document.body.classList.add('sheet-open');
+}
+el('sheetBack').onclick=()=>closeDetail();
+(()=>{ let y0=null, dy=0; const d=el('detail');
+  d.addEventListener('touchstart',(e)=>{ const body=d.querySelector('.dBody');
+    // Drag from the handle/top bar, or from the content when it is scrolled to the top.
+    if (!mobile() || (body && body.contains(e.target) && body.scrollTop>0)) { y0=null; return; }
+    y0=e.touches[0].clientY; dy=0; d.style.transition='none'; },{passive:true});
+  d.addEventListener('touchmove',(e)=>{ if(y0==null) return; dy=Math.max(0,e.touches[0].clientY-y0);
+    if (dy>0) d.style.transform=`translateY(${dy}px)`; },{passive:true});
+  d.addEventListener('touchend',()=>{ if(y0==null) return; d.style.transition='';
+    if (dy>90) closeDetail(); else d.style.transform=''; y0=null; });
+})();
+/* Compact header on phones: when the map is showing, or once the list scrolls. */
+let compact=false;
+function updateCompact(){
+  const st=el('list').scrollTop;
+  const want = mobile() && (S.view==='map' || (compact ? st>4 : st>60));
+  if (want!==compact){ compact=want; document.body.classList.toggle('compact',compact); layoutMap(); }
+}
+el('list').addEventListener('scroll',()=>requestAnimationFrame(updateCompact),{passive:true});
 el('seg').onclick=(e)=>{ const b=e.target.closest('button'); if(b) setView(b.dataset.v); };
 function layoutMap(){
   if (mobile()){
     const r=el('seg').getBoundingClientRect();
-    document.documentElement.style.setProperty('--mapTop', (r.bottom+10)+'px');
+    document.documentElement.style.setProperty('--mapTop', (r.bottom+(compact?4:10))+'px');
   }
   if(map) setTimeout(()=>{ map.invalidateSize(); if(!fitted) drawMap(); },0);
 }
-addEventListener('resize', layoutMap);
+addEventListener('resize', ()=>{ updateCompact(); layoutMap(); });
 
 /* ---------------- map ---------------- */
 let map=null, layers=null, fitted=false;
@@ -1249,7 +1298,7 @@ function renderPlaceDetail(idx){
 }
 function openPlace(idx){
   S.selected='place:'+idx; renderPlaceDetail(idx);
-  const d=el('detail'); d.classList.add('open'); d.setAttribute('aria-hidden','false'); d.querySelector('.dBody').scrollTop=0;
+  const d=el('detail'); showSheet(); d.querySelector('.dBody').scrollTop=0;
   if (S.explore) renderExploreList(); else if (S.mode!=='car') renderModeList(placeRows());
   drawMap(true);
 }
