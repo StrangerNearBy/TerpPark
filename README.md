@@ -74,6 +74,20 @@ assumption in the system. **Do not add it back without a real DOTS data source.*
 - Light-only UMD palette; responsive desktop panel ↔ mobile bottom sheet
 - `node test.mjs` passes (window-wrap boundaries + 15 lot-family cases)
 
+### Palette (v3.2, 2026-11-19): UMD colours, not UMD branding
+
+User decision: use Maryland's colours and styling so the app *feels* like campus,
+but **never UMD's wordmark, logos, Testudo artwork or other brand marks**. TerpPark
+keeps its own red "P" mark, and the disclaimer stays.
+
+- UMD red `#E21833`: primary buttons, logo, red-sign lots, top strip
+- UMD gold `#FFD200`: Beta tag, Bike-mode pins (black text), selected-chip icons,
+  EV filter; gold *text* uses `#7A6000` for contrast
+- Black `#141414` and white: text, selected modes and chips, Motorcycle pins
+- Status keeps meaning-colours, softened: free `#1E7A47`, pay `#C9820A`, permit grey;
+  blue `#1A73E8` only for "you"
+- Places and Explore: gold, black and greys only (no violet, cyan or pink)
+
 ### Design direction (redesigned 2026-11-18, v3)
 
 Two earlier attempts were rejected. v2 (red/gold, red permit pills) worked but the

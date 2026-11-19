@@ -15,7 +15,9 @@
   --bg:#f6f6f4; --surface:#fff; --surface-2:#f2f2ef;
   --ink:#141414; --ink-2:#4a4a46; --muted:#8a8a83;
   --line:#e7e7e2; --line-2:#d6d6d0;
-  --free:#16824A; --pay:#D97706; --permit:#8E8E87; --none:#c3c3bc;
+  --free:#1E7A47; --pay:#C9820A; --permit:#8E8E87; --none:#c3c3bc;
+  /* UMD palette (red PMS 186, gold PMS 116, black, white). Gold text uses --gold-ink. */
+  --umd-red:#E21833; --umd-gold:#FFD200; --gold-ink:#7A6000; --umd-black:#141414;
   --you:#1A73E8; --sign-red:#C8102E; --sign-black:#141414;
   --radius:14px;
   --shadow:0 1px 2px rgba(0,0,0,.05),0 2px 8px rgba(0,0,0,.05);
@@ -38,7 +40,9 @@ a{color:inherit}
 .mapPane{position:relative;min-height:0}
 #map{position:absolute;inset:0;z-index:0;background:#eceae6} /* own stacking context, so Leaflet's z-400 panes stay under the buttons */
 
-header.top{display:flex;align-items:center;gap:10px;padding:14px 16px 10px;flex:none}
+header.top{display:flex;align-items:center;gap:10px;padding:14px 16px 10px;flex:none;position:relative}
+.panel::before{content:"";display:block;height:4px;flex:none;
+  background:linear-gradient(90deg,var(--umd-red) 0 70%,var(--umd-gold) 70% 100%)}
 .logo{width:26px;height:26px;border-radius:7px;background:var(--red);display:grid;place-items:center;
   color:#fff;font-weight:800;font-size:15px;flex:none}
 header.top h1{margin:0;font-size:18px;font-weight:750;letter-spacing:-.02em}
@@ -73,7 +77,8 @@ header.top .home:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .modes button{height:40px;border-radius:12px;background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;
   justify-content:center;gap:7px;font-weight:650;font-size:14px;color:var(--ink-2);transition:.12s}
 .modes button:hover{border-color:var(--line-2)}
-.modes button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.modes button.on{background:var(--umd-black);color:#fff;border-color:var(--umd-black)}
+.modes button.on svg{stroke:var(--umd-gold)}
 .modes svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
 body:not([data-mode="car"]) .whoRow, body:not([data-mode="car"]) .whenBtn, body:not([data-mode="car"]) #timePick,
 body:not([data-mode="car"]) .evBtn, body:not([data-mode="car"]) #placesBtn, body:not([data-mode="car"]) .key,
@@ -81,7 +86,7 @@ body:not([data-mode="car"]) #placesPanel{display:none!important}
 .evBtn{display:flex;align-items:center;gap:7px;width:100%;margin-top:8px;padding:8px 11px;border-radius:11px;font-size:13.5px;font-weight:650;
   background:var(--surface-2);border:1.5px solid transparent;color:var(--ink-2)}
 .evBtn .n{margin-left:auto;font-weight:600;color:var(--muted)}
-.evBtn[aria-pressed="true"]{background:#E3F4EA;border-color:#16824A;color:#0E5C33}
+.evBtn[aria-pressed="true"]{background:#FFF6CC;border-color:var(--umd-gold);color:var(--umd-black)}
 .evBtn svg{width:16px;height:16px;fill:currentColor}
 .mtag{display:inline-flex;align-items:center;padding:3px 10px;border-radius:99px;font-size:12.5px;font-weight:700;
   background:color-mix(in srgb,var(--mc) 13%,#fff);color:var(--mc)}
@@ -92,7 +97,7 @@ body:not([data-mode="car"]) #placesPanel{display:none!important}
   background:var(--mc);color:#fff;box-shadow:0 1px 4px rgba(0,0,0,.3);transform:translate(-50%,-50%);cursor:pointer}
 .mpin span{opacity:.8;font-weight:600}
 .mpin.sel{transform:translate(-50%,-50%) scale(1.18);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--you),0 4px 12px rgba(0,0,0,.3);z-index:900}
-.evline{display:flex;align-items:center;gap:7px;margin-top:10px;padding:10px 13px;border-radius:12px;background:#E3F4EA;color:#0E5C33;font-size:13.5px;font-weight:600}
+.evline{display:flex;align-items:center;gap:7px;margin-top:10px;padding:10px 13px;border-radius:12px;background:#FFF6CC;color:var(--umd-black);font-size:13.5px;font-weight:600}
 .evline svg{width:16px;height:16px;fill:currentColor;flex:none}
 
 /* ---------- summary: also the filter ---------- */
@@ -117,7 +122,7 @@ body:not([data-mode="car"]) #placesPanel{display:none!important}
   -webkit-appearance:none;appearance:none;font-size:14px;font-weight:600;color:var(--ink)}
 .hint{font-size:12.5px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:9px 12px;margin-bottom:8px;line-height:1.45}
 .beta{font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:6px;
-  background:#FFF1C2;color:#7A5200;border:1px solid #F0D27A;margin-left:2px}
+  background:var(--umd-gold);color:var(--umd-black);margin-left:2px}
 .devBanner{display:flex;align-items:flex-start;gap:10px;margin:0 16px 10px;padding:10px 12px;border-radius:12px;
   background:#FFF8E1;border:1px solid #F3DFA2;color:#5C4400;font-size:12.5px;line-height:1.45;flex:none}
 .devBanner[hidden]{display:none}
@@ -191,8 +196,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .code.c-black{background:var(--sign-black)}
 .gname{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .st{display:inline-flex;align-items:center;gap:6px;padding:3px 10px 3px 8px;border-radius:99px;font-weight:650;font-size:13px}
-.st-free{background:#E3F4EA;color:#0E5C33}
-.st-pay{background:#FDF0DC;color:#8A4B00}
+.st-free{background:#E6F2EA;color:#165C35}
+.st-pay{background:#FBF0DA;color:#7A4E00}
 .st-permit{background:#EFEFEC;color:#45453F}
 .st-none{background:#F4F4F1;color:#76766F}
 .card .r3{margin-top:4px;font-size:12.5px;color:var(--muted)}
@@ -307,8 +312,8 @@ details.more .in b{color:var(--ink)}
   border:1px solid var(--line);font-size:13px;font-weight:650;color:var(--ink-2);white-space:nowrap;flex:none;transition:.12s}
 .xchip:hover{border-color:var(--line-2)}
 .xchip svg{width:15px;height:15px;fill:none;stroke:var(--xc);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.xchip.on{background:var(--xc);border-color:var(--xc);color:#fff}
-.xchip.on svg{stroke:#fff}
+.xchip.on{background:var(--umd-black);border-color:var(--umd-black);color:#fff}
+.xchip.on svg{stroke:var(--umd-gold)}
 .xhead{display:flex;align-items:center;gap:10px;margin-bottom:8px}
 .xhead b{font-size:15px}
 .xhead .n{color:var(--muted);font-weight:600;font-size:13px}
@@ -508,7 +513,7 @@ const STATUS = {
   faculty_staff: { key:'permit', label:'Faculty/staff permit',c:'var(--permit)' },
   unknown:       { key:'none',   label:'No published rule',   c:'var(--none)'   },
 };
-const HEX = { free:'#16824A', pay:'#D97706', permit:'#8E8E87', none:'#c3c3bc' };
+const HEX = { free:'#1E7A47', pay:'#C9820A', permit:'#8E8E87', none:'#c3c3bc' };
 const FILTERS = [
   ['all','All', null],
   ['free','Free', 'var(--free)'],
@@ -1092,14 +1097,14 @@ el('zFit').onclick=()=>{ fitted=false; drawMap(); };
 
 /* ---------------- campus places ---------------- */
 const PLACE_GROUPS=[
-  // All off by default: the map shows parking only. Explore chips (or ≡) bring places in.
-  ['food','Food & dining','#7C3AED',false],
-  ['study','Libraries & study','#0891B2',false],
-  ['vehicle','EV, motorcycle, Zipcar','#4D7C0F',false],
-  ['landmarks','Landmarks','#78716C',false],
-  ['transit','Shuttle & transit','#475569',false],
-  ['services','Health & restrooms','#A21CAF',false],
-  ['bike','Bikes','#A8A29E',false],
+  // UMD gold / black / grey only. All off by default: the map shows parking only.
+  ['food','Food & dining','#7A6000',false],
+  ['study','Libraries & study','#141414',false],
+  ['vehicle','EV, motorcycle, Zipcar','#3F3F3B',false],
+  ['landmarks','Landmarks','#9A7B00',false],
+  ['transit','Shuttle & transit','#5A5A55',false],
+  ['services','Health & restrooms','#6B6B66',false],
+  ['bike','Bikes','#7A6000',false],
 ];
 const placeOn=Object.fromEntries(PLACE_GROUPS.map(g=>[g[0],g[3]]));
 const placeColour=Object.fromEntries(PLACE_GROUPS.map(g=>[g[0],g[2]]));
@@ -1190,13 +1195,13 @@ const lsGet=(k)=>{ try{ return localStorage.getItem(k); }catch{ return null; } }
 const lsSet=(k,v)=>{ try{ localStorage.setItem(k,v); }catch{} };
 const PF=DATA.places.features;
 const MODES={
-  moto:{ colour:'#6D28D9', radius:1600, travel:'driving',
+  moto:{ colour:'#141414', radius:1600, travel:'driving',
     match:(p)=>p.category==='Motorcycle & scooter parking',
     filters:[['all','All',()=>true],['lock','Lock point',(p)=>p.lock===true],['count','Space count',(p)=>p.spaces!=null]],
     hint:`<b>Motorcycles</b> need DOTS registration (a CLPR permit) and may park in your assigned lot or a designated motorcycle area.
       <b>Scooters &amp; mopeds</b> need a DOTS plate and may park only in designated motorcycle, scooter and moped areas.
       Chaining to fixed objects is not allowed. <a href="https://transportation.umd.edu/node/29" target="_blank" rel="noopener">UMD rules</a>` },
-  bike:{ colour:'#0F766E', radius:700, travel:'bicycling',
+  bike:{ colour:'#7A6000', pin:'#FFD200', pinInk:'#141414', radius:700, travel:'bicycling',
     match:(p)=>p.group==='bike' && p.status!=='CLOSED',
     filters:[['all','All',()=>true],['rack','Racks',(p)=>p.category==='Bike rack'],['covered','Covered',(p)=>p.covered===true],
              ['ebike','E-bike & scooter',(p)=>p.category==='E-scooter & e-bike parking']],
@@ -1320,8 +1325,9 @@ function drawModeMap(keepView){
   const rs=placeRows().filter(r=>fn(r.p));
   rs.forEach((r,i)=>{
     const [lon,lat]=r.f.geometry.coordinates, sel=S.selected==='place:'+r.idx, n=r.p.loops??r.p.spaces, lab=i<12||sel;
-    const html= lab ? `<div class="mpin ${sel?'sel':''}" style="--mc:${M.colour}">${glyph(r.p)}${n!=null?`<span>${n}</span>`:''}</div>`
-      : `<div class="mdot" style="background:${M.colour};--ring:#fff"></div>`;
+    // Bike pins in UMD gold with black text; motorcycle pins black.
+    const html= lab ? `<div class="mpin ${sel?'sel':''}" style="--mc:${M.pin??M.colour};color:${M.pinInk??'#fff'}">${glyph(r.p)}${n!=null?`<span>${n}</span>`:''}</div>`
+      : `<div class="mdot" style="background:${M.pin??M.colour};--ring:${M.pinInk??'#fff'}"></div>`;
     L.marker([lat,lon],{icon:L.divIcon({className:'',iconSize:null,html}),zIndexOffset:sel?1000:(lab?500-i:100),keyboard:false})
       .addTo(layers.pins).on('click',()=>openPlace(r.idx));
   });
