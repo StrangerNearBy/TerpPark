@@ -86,7 +86,10 @@ keeps its own red "P" mark, and the disclaimer stays.
 - Black `#141414` and white: text, selected modes and chips, Motorcycle pins
 - Status keeps meaning-colours, softened: free `#1E7A47`, pay `#C9820A`, permit grey;
   blue `#1A73E8` only for "you"
-- Places and Explore: gold, black and greys only (no violet, cyan or pink)
+- Places and Explore: one muted hue per kind, so they are distinguishable without
+  bright colours: food deep gold `#8A6A00`, study navy `#1F3A5F`, vehicle teal
+  `#2E6E73`, landmarks plum `#6A3D7A`, transit slate `#4B5563`, services terracotta
+  `#A0472C`, bikes olive `#5F6B2E`
 
 ### Design direction (redesigned 2026-11-18, v3)
 
