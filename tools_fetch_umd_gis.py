@@ -228,6 +228,92 @@ def a(attrs, *keys):
 
 
 BLDG_NAMES = {}
+BLDG_BY_LOWER = {}
+
+
+TOUR_CATS = {'Landmark', 'Arts', 'Research', 'Student life', 'Athletics', 'Green campus', 'Ghost tour'}
+STOP_WORDS = {'the', 'umd', 'university', 'of', 'maryland', 'at', 'and'}
+
+
+def _norm(name):
+    return ' '.join(w for w in re.sub(r'[^a-z0-9]+', ' ', name.lower()).split() if w not in STOP_WORDS)
+
+
+def _metres(a, b):
+    return math.hypot((a[0] - b[0]) * 86900, (a[1] - b[1]) * 111000)
+
+
+def dedupe_places(features):
+    """UMD's layers overlap: McKeldin Library is a library, a 'Student life' tour stop
+    and a Testudo statue location; restrooms come one per room. Collapse each real
+    thing to one place."""
+    # a) one service entry per building and category, rooms listed together
+    merged, order = {}, []
+    for f in features:
+        p = f['properties']
+        if p['group'] == 'services' and p.get('building'):
+            k = (p['category'], p['building'].lower())
+            if k in merged:
+                m = merged[k]['properties']
+                if p.get('room') and p['room'] not in (m.get('rooms') or []):
+                    m.setdefault('rooms', []).append(p['room'])
+                continue
+            if p.get('room'):
+                p['rooms'] = [p.pop('room')]
+            merged[k] = f
+        order.append(f)
+    features = order
+    for f in features:
+        r = f['properties'].pop('rooms', None)
+        if r:
+            f['properties']['room'] = ', '.join(sorted(r))
+
+    # b) tour stops, campus areas and statues fold into the real place they describe
+    def rank(p):
+        if p['category'] == 'Testudo statue':
+            return 4
+        if p['category'] == 'Area':
+            return 3
+        if p['category'] in TOUR_CATS:
+            return 1 if p['category'] == 'Landmark' else 2
+        return 0
+    keep = []
+    for f in sorted(features, key=lambda f: rank(f['properties'])):
+        p, c = f['properties'], f['geometry']['coordinates']
+        target = None
+        if rank(p) > 0:
+            for k in keep:
+                kp = k['properties']
+                if kp['group'] in ('transit', 'bike', 'services'):
+                    continue
+                if _metres(c, k['geometry']['coordinates']) > 120:
+                    continue
+                same = _norm(p['name']) == _norm(kp['name'])
+                statue = p['category'] == 'Testudo statue' and 'testudo' in kp['name'].lower()
+                if same or statue:
+                    target = kp
+                    break
+        else:
+            twin = next((k for k in keep if _norm(p['name']) == _norm(k['properties']['name'])
+                         and p['category'] == k['properties']['category']
+                         and _metres(c, k['geometry']['coordinates']) < 60), None)
+            if twin:                                   # same thing listed twice:
+                tp = twin['properties']                # keep one, add up its counts
+                for n in ('chargers', 'spaces', 'vehicles', 'loops'):
+                    if p.get(n) is not None:
+                        tp[n] = (tp.get(n) or 0) + p[n]
+                continue
+        if target is None:
+            keep.append(f)
+            continue
+        label = 'Testudo statue' if p['category'] == 'Testudo statue' else (
+            'campus area' if p['category'] == 'Area' else
+            p['category'] if p['category'].endswith('tour') else f"{p['category']} tour")
+        if label not in target.setdefault('also', []):
+            target['also'].append(label)
+        if p.get('description') and not target.get('description'):
+            target['description'] = p['description']
+    return keep
 
 
 def build_places():
@@ -235,6 +321,7 @@ def build_places():
         n = str(f['properties'].get('building_number') or '').lstrip('0')
         if n:
             BLDG_NAMES.setdefault(n, f['properties']['name'])
+        BLDG_BY_LOWER.setdefault(f['properties']['name'].lower(), f['properties']['name'])
     out, dropped = [], 0
     for service, layer, group, cat in PLACE_LAYERS:
         for f in query(service, layer):
@@ -250,11 +337,29 @@ def build_places():
                 bn = BLDG_NAMES.get(code[:3].lstrip('0'))
                 name = f'Bike rack {code}' + (f' — {bn}' if bn else '')
             bldg = a(at, 'BUILDINGNAME', 'BuildingName', 'BUILDING')
-            if bldg and bldg.isupper():
+            # Use UMD's official building name (by number, else by spelling) so the
+            # same building is never written three ways ("Mckeldin", "MCKELDIN", …).
+            num = a(at, 'BUILDINGID', 'BuildingNumber', 'FACILITY')
+            if num is not None and BLDG_NAMES.get(str(num).split('.')[0].lstrip('0')):
+                bldg = BLDG_NAMES[str(num).split('.')[0].lstrip('0')]
+            elif bldg and BLDG_BY_LOWER.get(bldg.lower()):
+                bldg = BLDG_BY_LOWER[bldg.lower()]
+            elif bldg and bldg.isupper():
                 bldg = bldg.title()
             room = a(at, 'ROOM', 'ROOM_NUM', 'Room_Num')
-            if group == 'services' and bldg and name.lower() in (cat.lower(), (a(at, 'SERVICE') or '').lower()):
+            if group in ('services', 'study') and bldg and name.lower() == cat.lower():
                 name = f'{cat} — {bldg}'
+            if group == 'services' and bldg:
+                # These layers name each room after its building, in capitals
+                # ("YAHENTAMITSI"); say what it is and where instead.
+                name = f'{cat} — {bldg}'
+            if cat == 'Terrapin Tech':
+                # Its 'name' field holds directions ("First floor, straight back…").
+                directions, name = name, f'Terrapin Tech — {bldg}' if bldg else 'Terrapin Tech'
+                at = {**at, 'Description': at.get('Description') or directions}
+            if cat == 'Testudo statue':
+                bldg = a(at, 'Location') or name
+                name = f'Testudo statue at {bldg}'
             props = {
                 'name': name, 'group': group, 'category': cat,
                 'building': bldg if bldg and bldg.lower() != name.lower() else None,
@@ -275,6 +380,7 @@ def build_places():
             }
             out.append({'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': c},
                         'properties': {k: v for k, v in props.items() if v is not None}})
+    out = dedupe_places(out)
     return {'type': 'FeatureCollection',
             '_source': 'UMD ArcGIS — DiningServices, CampusServices, Transportation, '
                        'CampusReference, Tours, CampusMapDefault_NoInsite, Residence_Community_Labels',

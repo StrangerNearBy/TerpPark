@@ -128,6 +128,15 @@ export function createEngine({
   const lotFeatures = (parking?.features ?? []).filter((f) => f.geometry);
   const payFeatures = (payParking?.features ?? []).filter((f) => f.geometry);
   const placeFeatures = (places?.features ?? []).filter((f) => f.geometry);
+  // A place that is itself a building (McKeldin Library the library) is already
+  // in search as the building; don't list it twice.
+  const buildingNames = new Set(buildingFeatures.map((f) => (f.properties.name ?? '').toLowerCase()));
+  // Search order: the places people look for first win a shared name ("McKeldin
+  // Mall" the area, not the e-scooter spot). Bike racks live in Bike mode only.
+  const SEARCH_RANK = { study: 0, food: 1, landmarks: 2, vehicle: 3, transit: 4, services: 5 };
+  const searchPlaces = placeFeatures
+    .filter((f) => f.properties.group !== 'bike')
+    .sort((a, b) => (SEARCH_RANK[a.properties.group] ?? 9) - (SEARCH_RANK[b.properties.group] ?? 9));
   const infoFor = (id) => (id ? lotInfo?.lots?.[id] ?? null : null);
   const garageFor = (num) => (num ? lotInfo?.garages?.[num] ?? null : null);
 
@@ -159,18 +168,26 @@ export function createEngine({
   function searchBuildings(query, limit = 8) {
     const q = query.trim().toLowerCase();
     if (!q) return [];
+    // One- or two-letter searches ("EV") match word starts only, so "ev" does not
+    // hit Centreville or Severn.
+    const short = q.length < 3;
+    const has = (text) => (short ? new RegExp(`(^|[^a-z0-9])${q.replace(/[^a-z0-9]/g, '')}`).test(text) : text.includes(q));
     const scored = [];
     const seenPlace = new Set();
-    for (const f of placeFeatures) {
+    for (const f of searchPlaces) {
       const p = f.properties;
       const name = (p.name ?? '').toLowerCase();
       const bldg = (p.building ?? '').toLowerCase();
       const cat = (p.category ?? '').toLowerCase();
+      // Rooms in buildings (restrooms, showers…) only when asked for by kind.
+      if (p.group === 'services' && !(cat.includes(q) || q.split(/\s+/).some((w) => w.length > 3 && cat.includes(w)))) continue;
+      // "Yahentamitsi" the dining hall *is* the building "Yahentamitsi Dining Hall".
+      if (bldg && buildingNames.has(bldg) && bldg.startsWith(name)) continue;
       let score = -1;
       if (name === q) score = 10;
       else if (name.startsWith(q)) score = 11;
-      else if (name.includes(q) || bldg.includes(q) || cat.startsWith(q)) score = 12;
-      if (score < 0 || seenPlace.has(name)) continue;
+      else if (has(name) || has(bldg) || cat.startsWith(q)) score = 12;
+      if (score < 0 || seenPlace.has(name) || buildingNames.has(name)) continue;
       seenPlace.add(name);
       scored.push({ score, feature: f });
     }
@@ -182,7 +199,7 @@ export function createEngine({
       let score = -1;
       if (name === q || num === q) score = 0;
       else if (name.startsWith(q) || printed.startsWith(q)) score = 1;
-      else if (name.includes(q) || printed.includes(q) || num.startsWith(q)) score = 2;
+      else if (has(name) || has(printed) || num.startsWith(q)) score = 2;
       if (score >= 0) scored.push({ score, feature: f });
     }
     scored.sort((a, b) =>

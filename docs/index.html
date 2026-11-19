@@ -977,6 +977,7 @@ function placePopup(f){
     p.spaces!=null&&`${p.spaces} spaces`,
     p.chargers!=null&&`${p.chargers} charging ${p.chargers==1?'port':'ports'}`,
     p.vehicles!=null&&`${p.vehicles} cars`,
+    p.also?.length&&`Also: ${esc(p.also.join(', '))}`,
   ].filter(Boolean).map(t=>`<p>${t}</p>`).join('');
   const web=p.website?`<p><a href="${esc(p.website)}" target="_blank" rel="noopener">Website</a></p>`:'';
   return `<div class="pp"><div class="c">${esc(p.category)}</div><h4>${esc(p.name)}</h4>${lines}${web}

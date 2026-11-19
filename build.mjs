@@ -46,7 +46,7 @@ const bundle = {
   lotInfo: load('./data/lot_info.json'),
   places: slim(places,
     ['name', 'group', 'category', 'building', 'room', 'website', 'description',
-     'spaces', 'chargers', 'vehicles', 'phone', 'loops', 'covered', 'access', 'lock', 'status', 'hours']),
+     'spaces', 'chargers', 'vehicles', 'phone', 'loops', 'covered', 'access', 'lock', 'status', 'hours', 'also']),
 };
 
 writeFileSync(new URL('./docs/data.bundle.js', import.meta.url),
