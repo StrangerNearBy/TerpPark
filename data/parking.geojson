@@ -1,0 +1,5096 @@
+{
+ "type": "FeatureCollection",
+ "name": "UMD College Park - parking lots and garages",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "metadata": {
+  "coordinate_source": "UMD official GIS - services9.arcgis.com/1rOwFRpAwrxe0rBl CampusMapDefault_NoInsite, layers ParkingLotPoint (6) and ParkingGarageLotPoint (5)",
+  "directory_source": "UMD Transportation Services Campus Parking Map 2025 (updated 2/26), page 1 Parking Lot Directory (grid refs)",
+  "datum": "WGS 84 (EPSG:4326)",
+  "coordinate_order": "GeoJSON [longitude, latitude]",
+  "note": "Lot markers, not individual parking spaces. A lot split across several parcels has one feature per parcel (see parcel / parcels_for_lot).",
+  "feature_count": 203,
+  "restriction_source": "Lot id text colour in the page-1 Parking Lot Directory, sampled at 300 dpi"
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9337319,
+     38.9833075
+    ]
+   },
+   "properties": {
+    "lot": "16f",
+    "type": "surface_lot",
+    "grid_location": "G11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9833075,
+    "longitude": -76.9337319,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16f",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9356241,
+     38.9848319
+    ]
+   },
+   "properties": {
+    "lot": "16b",
+    "type": "surface_lot",
+    "grid_location": "G11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9848319,
+    "longitude": -76.9356241,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16b",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9391268,
+     38.9910278
+    ]
+   },
+   "properties": {
+    "lot": "KK",
+    "type": "surface_lot",
+    "grid_location": "F8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9910278,
+    "longitude": -76.9391268,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=KK",
+    "restriction_class": "special_restrictions"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9391868,
+     38.9906734
+    ]
+   },
+   "properties": {
+    "lot": "KK",
+    "type": "surface_lot",
+    "grid_location": "F8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9906734,
+    "longitude": -76.9391868,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=KK",
+    "restriction_class": "special_restrictions"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9569117,
+     38.9847158
+    ]
+   },
+   "properties": {
+    "lot": "12a",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9847158,
+    "longitude": -76.9569117,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=12a",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9560211,
+     38.9842341
+    ]
+   },
+   "properties": {
+    "lot": "14b",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9842341,
+    "longitude": -76.9560211,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=14b",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9428223,
+     39.0030691
+    ]
+   },
+   "properties": {
+    "lot": "10a",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 1,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0030691,
+    "longitude": -76.9428223,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=10a",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9497123,
+     38.985617
+    ]
+   },
+   "properties": {
+    "lot": "1b (S)",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": 1,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.985617,
+    "longitude": -76.9497123,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=1b (S)",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.949438,
+     38.9861439
+    ]
+   },
+   "properties": {
+    "lot": "1b (S)",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": 2,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9861439,
+    "longitude": -76.949438,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=1b (S)",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9505866,
+     38.9865398
+    ]
+   },
+   "properties": {
+    "lot": "1d",
+    "type": "surface_lot",
+    "grid_location": "C10",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9865398,
+    "longitude": -76.9505866,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=1d",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.950612,
+     38.985707
+    ]
+   },
+   "properties": {
+    "lot": "1c",
+    "type": "surface_lot",
+    "grid_location": "C10",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.985707,
+    "longitude": -76.950612,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=1c",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9509185,
+     38.9850293
+    ]
+   },
+   "properties": {
+    "lot": "3",
+    "type": "surface_lot",
+    "grid_location": "C11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9850293,
+    "longitude": -76.9509185,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=3",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9481273,
+     38.9941547
+    ]
+   },
+   "properties": {
+    "lot": "2a",
+    "type": "surface_lot",
+    "grid_location": "C7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9941547,
+    "longitude": -76.9481273,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=2a",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9480056,
+     38.9936556
+    ]
+   },
+   "properties": {
+    "lot": "YC",
+    "type": "surface_lot",
+    "grid_location": "C7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9936556,
+    "longitude": -76.9480056,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=YC",
+    "restriction_class": "special_restrictions"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9391766,
+     38.9942385
+    ]
+   },
+   "properties": {
+    "lot": "9b",
+    "type": "surface_lot",
+    "grid_location": "F7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9942385,
+    "longitude": -76.9391766,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=9b",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9379205,
+     38.9943733
+    ]
+   },
+   "properties": {
+    "lot": "Xfinity Center Visitor Lot",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9943733,
+    "longitude": -76.9379205,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=Xfinity Center Visitor Lot",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9376759,
+     38.9930846
+    ]
+   },
+   "properties": {
+    "lot": "T",
+    "type": "surface_lot",
+    "grid_location": "F7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9930846,
+    "longitude": -76.9376759,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=T",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9392049,
+     38.9931139
+    ]
+   },
+   "properties": {
+    "lot": "FF2",
+    "type": "surface_lot",
+    "grid_location": "E7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9931139,
+    "longitude": -76.9392049,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=FF2",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9394359,
+     38.9925174
+    ]
+   },
+   "properties": {
+    "lot": "CC1",
+    "type": "surface_lot",
+    "grid_location": "E7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9925174,
+    "longitude": -76.9394359,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=CC1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.93696,
+     38.992412
+    ]
+   },
+   "properties": {
+    "lot": "DD",
+    "type": "surface_lot",
+    "grid_location": "F7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.992412,
+    "longitude": -76.93696,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=DD",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9369448,
+     38.9913496
+    ]
+   },
+   "properties": {
+    "lot": "GG1",
+    "type": "surface_lot",
+    "grid_location": "F8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 4,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9913496,
+    "longitude": -76.9369448,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=GG1",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9359532,
+     38.990694
+    ]
+   },
+   "properties": {
+    "lot": "GG1",
+    "type": "surface_lot",
+    "grid_location": "F8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 4,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.990694,
+    "longitude": -76.9359532,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=GG1",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9332986,
+     38.9827728
+    ]
+   },
+   "properties": {
+    "lot": "17a",
+    "type": "surface_lot",
+    "grid_location": "G12",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9827728,
+    "longitude": -76.9332986,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=17a",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9356026,
+     38.983065
+    ]
+   },
+   "properties": {
+    "lot": "K5",
+    "type": "surface_lot",
+    "grid_location": "F12",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.983065,
+    "longitude": -76.9356026,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=K5",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9358566,
+     38.984381
+    ]
+   },
+   "properties": {
+    "lot": "16a",
+    "type": "surface_lot",
+    "grid_location": "F11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 7,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.984381,
+    "longitude": -76.9358566,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16a",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9353069,
+     38.9835099
+    ]
+   },
+   "properties": {
+    "lot": "16a",
+    "type": "surface_lot",
+    "grid_location": "F11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 7,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9835099,
+    "longitude": -76.9353069,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16a",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9361461,
+     38.9829297
+    ]
+   },
+   "properties": {
+    "lot": "F",
+    "type": "surface_lot",
+    "grid_location": "F12",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9829297,
+    "longitude": -76.9361461,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=F",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9392814,
+     38.9972647
+    ]
+   },
+   "properties": {
+    "lot": "4J",
+    "type": "surface_lot",
+    "grid_location": "E5",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9972647,
+    "longitude": -76.9392814,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=5",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9435744,
+     38.9911695
+    ]
+   },
+   "properties": {
+    "lot": "Q",
+    "type": "surface_lot",
+    "grid_location": "D8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9911695,
+    "longitude": -76.9435744,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=Q",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9373508,
+     38.9892756
+    ]
+   },
+   "properties": {
+    "lot": "E",
+    "type": "surface_lot",
+    "grid_location": "F9",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9892756,
+    "longitude": -76.9373508,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=E",
+    "restriction_class": "special_restrictions"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9369232,
+     38.9909854
+    ]
+   },
+   "properties": {
+    "lot": "GG2",
+    "type": "surface_lot",
+    "grid_location": "F8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9909854,
+    "longitude": -76.9369232,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=GG2",
+    "restriction_class": "special_restrictions"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9421861,
+     38.9989932
+    ]
+   },
+   "properties": {
+    "lot": "P2",
+    "type": "surface_lot",
+    "grid_location": "E4",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9989932,
+    "longitude": -76.9421861,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=P2",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.943206,
+     38.9981073
+    ]
+   },
+   "properties": {
+    "lot": "P1",
+    "type": "surface_lot",
+    "grid_location": "E5",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9981073,
+    "longitude": -76.943206,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=P1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9427323,
+     38.9982135
+    ]
+   },
+   "properties": {
+    "lot": "NN",
+    "type": "surface_lot",
+    "grid_location": "E5",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9982135,
+    "longitude": -76.9427323,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=NN",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9430458,
+     38.9976621
+    ]
+   },
+   "properties": {
+    "lot": "4n",
+    "type": "surface_lot",
+    "grid_location": "E5",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9976621,
+    "longitude": -76.9430458,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=4n",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9487795,
+     38.9930309
+    ]
+   },
+   "properties": {
+    "lot": "LL5",
+    "type": "surface_lot",
+    "grid_location": "C7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9930309,
+    "longitude": -76.9487795,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=LL5",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9487371,
+     38.9917804
+    ]
+   },
+   "properties": {
+    "lot": "LL4",
+    "type": "surface_lot",
+    "grid_location": "C8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9917804,
+    "longitude": -76.9487371,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=LL4",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9466655,
+     38.9928568
+    ]
+   },
+   "properties": {
+    "lot": "S8",
+    "type": "surface_lot",
+    "grid_location": "D7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9928568,
+    "longitude": -76.9466655,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=S8",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9462874,
+     38.9940656
+    ]
+   },
+   "properties": {
+    "lot": "SS2",
+    "type": "surface_lot",
+    "grid_location": "D7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9940656,
+    "longitude": -76.9462874,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=SS2",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9477759,
+     38.9924302
+    ]
+   },
+   "properties": {
+    "lot": "N7",
+    "type": "surface_lot",
+    "grid_location": "D7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9924302,
+    "longitude": -76.9477759,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=N7",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9477759,
+     38.9927894
+    ]
+   },
+   "properties": {
+    "lot": "N9",
+    "type": "surface_lot",
+    "grid_location": "C7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9927894,
+    "longitude": -76.9477759,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=N9",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9438195,
+     38.9886401
+    ]
+   },
+   "properties": {
+    "lot": "BB",
+    "type": "surface_lot",
+    "grid_location": "D9",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9886401,
+    "longitude": -76.9438195,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=BB",
+    "restriction_class": "special_restrictions"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9457769,
+     38.9893131
+    ]
+   },
+   "properties": {
+    "lot": "R2",
+    "type": "surface_lot",
+    "grid_location": "D9",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 4,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9893131,
+    "longitude": -76.9457769,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=M",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9454997,
+     38.9902538
+    ]
+   },
+   "properties": {
+    "lot": "R3",
+    "type": "surface_lot",
+    "grid_location": "D8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9902538,
+    "longitude": -76.9454997,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=R3",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9441445,
+     38.9937576
+    ]
+   },
+   "properties": {
+    "lot": "SS1",
+    "type": "surface_lot",
+    "grid_location": "D7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9937576,
+    "longitude": -76.9441445,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=SS1",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9428446,
+     39.0044797
+    ]
+   },
+   "properties": {
+    "lot": "4m",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 1,
+    "parcels_for_lot": 5,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0044797,
+    "longitude": -76.9428446,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=4m",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9419096,
+     39.0013065
+    ]
+   },
+   "properties": {
+    "lot": "CY",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0013065,
+    "longitude": -76.9419096,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=CY",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.949484,
+     38.9905644
+    ]
+   },
+   "properties": {
+    "lot": "1b (Campus Dr)",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": 1,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9905644,
+    "longitude": -76.949484,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=1b (Campus Dr)",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9494769,
+     38.9897252
+    ]
+   },
+   "properties": {
+    "lot": "1b (Campus Dr)",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": 2,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9897252,
+    "longitude": -76.9494769,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=1b (Campus Dr)",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9420679,
+     38.9933561
+    ]
+   },
+   "properties": {
+    "lot": "PH2",
+    "type": "surface_lot",
+    "grid_location": "E7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9933561,
+    "longitude": -76.9420679,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=PH2",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9442903,
+     38.9920289
+    ]
+   },
+   "properties": {
+    "lot": "MM1",
+    "type": "surface_lot",
+    "grid_location": "D8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9920289,
+    "longitude": -76.9442903,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=MM1",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9442658,
+     38.9925927
+    ]
+   },
+   "properties": {
+    "lot": "N4",
+    "type": "surface_lot",
+    "grid_location": "D7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9925927,
+    "longitude": -76.9442658,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=N4",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.942922,
+     38.9925044
+    ]
+   },
+   "properties": {
+    "lot": "S3",
+    "type": "surface_lot",
+    "grid_location": "E7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9925044,
+    "longitude": -76.942922,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=S3",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.940699,
+     38.9916169
+    ]
+   },
+   "properties": {
+    "lot": "CC2",
+    "type": "surface_lot",
+    "grid_location": "E8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9916169,
+    "longitude": -76.940699,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=CC2",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9424982,
+     38.9850065
+    ]
+   },
+   "properties": {
+    "lot": "W1",
+    "type": "surface_lot",
+    "grid_location": "E11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9850065,
+    "longitude": -76.9424982,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=W1",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9413507,
+     38.9848431
+    ]
+   },
+   "properties": {
+    "lot": "W",
+    "type": "surface_lot",
+    "grid_location": "E11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9848431,
+    "longitude": -76.9413507,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=W",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9444745,
+     38.9839813
+    ]
+   },
+   "properties": {
+    "lot": "A",
+    "type": "surface_lot",
+    "grid_location": "D11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9839813,
+    "longitude": -76.9444745,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=A",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9395279,
+     38.9860197
+    ]
+   },
+   "properties": {
+    "lot": "QQ",
+    "type": "surface_lot",
+    "grid_location": "E10",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9860197,
+    "longitude": -76.9395279,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=QQ",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9388915,
+     38.9856565
+    ]
+   },
+   "properties": {
+    "lot": "L",
+    "type": "surface_lot",
+    "grid_location": "F10",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 5,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9856565,
+    "longitude": -76.9388915,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=L",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9403968,
+     38.993892
+    ]
+   },
+   "properties": {
+    "lot": "UU",
+    "type": "surface_lot",
+    "grid_location": "E7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.993892,
+    "longitude": -76.9403968,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=UU",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9489085,
+     38.9881349
+    ]
+   },
+   "properties": {
+    "lot": "Z",
+    "type": "surface_lot",
+    "grid_location": "C9",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9881349,
+    "longitude": -76.9489085,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=Z",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9491115,
+     38.9861531
+    ]
+   },
+   "properties": {
+    "lot": "JJ3",
+    "type": "surface_lot",
+    "grid_location": "C10",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9861531,
+    "longitude": -76.9491115,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=JJ3",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9483071,
+     38.9844155
+    ]
+   },
+   "properties": {
+    "lot": "O3",
+    "type": "surface_lot",
+    "grid_location": "C11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9844155,
+    "longitude": -76.9483071,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=O3",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9445643,
+     38.9845734
+    ]
+   },
+   "properties": {
+    "lot": "A",
+    "type": "surface_lot",
+    "grid_location": "D11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9845734,
+    "longitude": -76.9445643,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=A",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9455976,
+     38.9822951
+    ]
+   },
+   "properties": {
+    "lot": "MV",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9822951,
+    "longitude": -76.9455976,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=MV",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.949181,
+     38.9881378
+    ]
+   },
+   "properties": {
+    "lot": "Z",
+    "type": "surface_lot",
+    "grid_location": "C9",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9881378,
+    "longitude": -76.949181,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=Z",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9339687,
+     38.984585
+    ]
+   },
+   "properties": {
+    "lot": "16f",
+    "type": "surface_lot",
+    "grid_location": "G11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.984585,
+    "longitude": -76.9339687,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16f",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9336723,
+     38.9841234
+    ]
+   },
+   "properties": {
+    "lot": "16f",
+    "type": "surface_lot",
+    "grid_location": "G11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 3,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9841234,
+    "longitude": -76.9336723,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16f",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9410005,
+     38.9971931
+    ]
+   },
+   "properties": {
+    "lot": "4b",
+    "type": "surface_lot",
+    "grid_location": "E5",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9971931,
+    "longitude": -76.9410005,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=4b",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9480295,
+     38.9834788
+    ]
+   },
+   "properties": {
+    "lot": "O5",
+    "type": "surface_lot",
+    "grid_location": "C11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9834788,
+    "longitude": -76.9480295,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=O5",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9351302,
+     38.9843803
+    ]
+   },
+   "properties": {
+    "lot": "16a",
+    "type": "surface_lot",
+    "grid_location": "F11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 3,
+    "parcels_for_lot": 7,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9843803,
+    "longitude": -76.9351302,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16a",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9370402,
+     38.98438
+    ]
+   },
+   "properties": {
+    "lot": "16a",
+    "type": "surface_lot",
+    "grid_location": "F11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 4,
+    "parcels_for_lot": 7,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.98438,
+    "longitude": -76.9370402,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16a",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9359123,
+     38.983508
+    ]
+   },
+   "properties": {
+    "lot": "16a",
+    "type": "surface_lot",
+    "grid_location": "F11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 5,
+    "parcels_for_lot": 7,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.983508,
+    "longitude": -76.9359123,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16a",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9368333,
+     38.9835181
+    ]
+   },
+   "properties": {
+    "lot": "16a",
+    "type": "surface_lot",
+    "grid_location": "F11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 6,
+    "parcels_for_lot": 7,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9835181,
+    "longitude": -76.9368333,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16a",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9548614,
+     38.9908349
+    ]
+   },
+   "properties": {
+    "lot": "R4",
+    "type": "surface_lot",
+    "grid_location": "B8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9908349,
+    "longitude": -76.9548614,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=R4",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9397951,
+     38.9826856
+    ]
+   },
+   "properties": {
+    "lot": "LL1",
+    "type": "surface_lot",
+    "grid_location": "E12",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9826856,
+    "longitude": -76.9397951,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=LL1",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9432219,
+     38.9915433
+    ]
+   },
+   "properties": {
+    "lot": "MM3",
+    "type": "surface_lot",
+    "grid_location": "E8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9915433,
+    "longitude": -76.9432219,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=MM3",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9428532,
+     38.9915369
+    ]
+   },
+   "properties": {
+    "lot": "MM3",
+    "type": "surface_lot",
+    "grid_location": "E8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9915369,
+    "longitude": -76.9428532,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=MM3",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9456484,
+     38.9894509
+    ]
+   },
+   "properties": {
+    "lot": "R2",
+    "type": "surface_lot",
+    "grid_location": "D9",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 4,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9894509,
+    "longitude": -76.9456484,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=M",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9494788,
+     38.9901012
+    ]
+   },
+   "properties": {
+    "lot": "1b (Campus Dr)",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": 3,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9901012,
+    "longitude": -76.9494788,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=1b (Campus Dr)",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9493204,
+     38.9850739
+    ]
+   },
+   "properties": {
+    "lot": "1b (S)",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": 3,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9850739,
+    "longitude": -76.9493204,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=1b (S)",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.93808,
+     38.986049
+    ]
+   },
+   "properties": {
+    "lot": "L",
+    "type": "surface_lot",
+    "grid_location": "F10",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 5,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.986049,
+    "longitude": -76.93808,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=L",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9389105,
+     38.9864052
+    ]
+   },
+   "properties": {
+    "lot": "L",
+    "type": "surface_lot",
+    "grid_location": "F10",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 3,
+    "parcels_for_lot": 5,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9864052,
+    "longitude": -76.9389105,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=L",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9424651,
+     38.9937527
+    ]
+   },
+   "properties": {
+    "lot": "PH2",
+    "type": "surface_lot",
+    "grid_location": "E7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9937527,
+    "longitude": -76.9424651,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=PH2",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9418597,
+     38.9929006
+    ]
+   },
+   "properties": {
+    "lot": "MM2",
+    "type": "surface_lot",
+    "grid_location": "E7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9929006,
+    "longitude": -76.9418597,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=MM2",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9366366,
+     38.9913515
+    ]
+   },
+   "properties": {
+    "lot": "GG1",
+    "type": "surface_lot",
+    "grid_location": "F8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 3,
+    "parcels_for_lot": 4,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9913515,
+    "longitude": -76.9366366,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=GG1",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9370358,
+     38.9915233
+    ]
+   },
+   "properties": {
+    "lot": "GG1",
+    "type": "surface_lot",
+    "grid_location": "F8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 4,
+    "parcels_for_lot": 4,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9915233,
+    "longitude": -76.9370358,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=GG1",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.945733,
+     38.9891911
+    ]
+   },
+   "properties": {
+    "lot": "R2",
+    "type": "surface_lot",
+    "grid_location": "D9",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 3,
+    "parcels_for_lot": 4,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9891911,
+    "longitude": -76.945733,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=M",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9455213,
+     38.9894956
+    ]
+   },
+   "properties": {
+    "lot": "R2",
+    "type": "surface_lot",
+    "grid_location": "D9",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 4,
+    "parcels_for_lot": 4,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9894956,
+    "longitude": -76.9455213,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=M",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9450058,
+     38.9851298
+    ]
+   },
+   "properties": {
+    "lot": "D",
+    "type": "surface_lot",
+    "grid_location": "D11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9851298,
+    "longitude": -76.9450058,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=D",
+    "restriction_class": "special_restrictions"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9442856,
+     38.992278
+    ]
+   },
+   "properties": {
+    "lot": "N4",
+    "type": "surface_lot",
+    "grid_location": "D7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.992278,
+    "longitude": -76.9442856,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=N4",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9434162,
+     38.9911345
+    ]
+   },
+   "properties": {
+    "lot": "Q1",
+    "type": "surface_lot",
+    "grid_location": "E8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9911345,
+    "longitude": -76.9434162,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=Q1",
+    "restriction_class": "modified_restricted"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9455446,
+     38.9923838
+    ]
+   },
+   "properties": {
+    "lot": "N3",
+    "type": "surface_lot",
+    "grid_location": "D7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9923838,
+    "longitude": -76.9455446,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=N3",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9482585,
+     38.9938819
+    ]
+   },
+   "properties": {
+    "lot": "YC",
+    "type": "surface_lot",
+    "grid_location": "C7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9938819,
+    "longitude": -76.9482585,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=YC",
+    "restriction_class": "special_restrictions"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9352031,
+     38.9830672
+    ]
+   },
+   "properties": {
+    "lot": "16b",
+    "type": "surface_lot",
+    "grid_location": "G11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9830672,
+    "longitude": -76.9352031,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16b",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9339542,
+     38.9833248
+    ]
+   },
+   "properties": {
+    "lot": "16f",
+    "type": "surface_lot",
+    "grid_location": "G11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 4,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9833248,
+    "longitude": -76.9339542,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16f",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9340808,
+     38.9833578
+    ]
+   },
+   "properties": {
+    "lot": "16b",
+    "type": "surface_lot",
+    "grid_location": "G11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 3,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9833578,
+    "longitude": -76.9340808,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16b",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9337747,
+     38.9843418
+    ]
+   },
+   "properties": {
+    "lot": "16f",
+    "type": "surface_lot",
+    "grid_location": "G11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 5,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9843418,
+    "longitude": -76.9337747,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16f",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9352549,
+     38.9848926
+    ]
+   },
+   "properties": {
+    "lot": "16b",
+    "type": "surface_lot",
+    "grid_location": "G11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 4,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9848926,
+    "longitude": -76.9352549,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16b",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9350344,
+     38.9852502
+    ]
+   },
+   "properties": {
+    "lot": "J2",
+    "type": "surface_lot",
+    "grid_location": "F11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9852502,
+    "longitude": -76.9350344,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=J2",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9373952,
+     38.9866211
+    ]
+   },
+   "properties": {
+    "lot": "C1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": 1,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9866211,
+    "longitude": -76.9373952,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=C1",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9362558,
+     38.9843769
+    ]
+   },
+   "properties": {
+    "lot": "16a",
+    "type": "surface_lot",
+    "grid_location": "F11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 7,
+    "parcels_for_lot": 7,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9843769,
+    "longitude": -76.9362558,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16a",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9547218,
+     38.9906269
+    ]
+   },
+   "properties": {
+    "lot": "R4",
+    "type": "surface_lot",
+    "grid_location": "B8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9906269,
+    "longitude": -76.9547218,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=R4",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9445463,
+     39.0023957
+    ]
+   },
+   "properties": {
+    "lot": "4h",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0023957,
+    "longitude": -76.9445463,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=4h",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9418441,
+     39.0035233
+    ]
+   },
+   "properties": {
+    "lot": "8",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 1,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0035233,
+    "longitude": -76.9418441,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=8",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9413799,
+     39.0029096
+    ]
+   },
+   "properties": {
+    "lot": "8",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 2,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0029096,
+    "longitude": -76.9413799,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=8",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9426078,
+     39.0030286
+    ]
+   },
+   "properties": {
+    "lot": "8",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 3,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0030286,
+    "longitude": -76.9426078,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=8",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9434224,
+     38.9826725
+    ]
+   },
+   "properties": {
+    "lot": "LL3",
+    "type": "surface_lot",
+    "grid_location": "E12",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9826725,
+    "longitude": -76.9434224,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=LL3",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.942092,
+     38.9793799
+    ]
+   },
+   "properties": {
+    "lot": "22b",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9793799,
+    "longitude": -76.942092,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=22b",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9412874,
+     38.9787922
+    ]
+   },
+   "properties": {
+    "lot": "22c",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9787922,
+    "longitude": -76.9412874,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=22c",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9339086,
+     38.9899341
+    ]
+   },
+   "properties": {
+    "lot": "FD",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9899341,
+    "longitude": -76.9339086,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=FD",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9379636,
+     38.9948122
+    ]
+   },
+   "properties": {
+    "lot": "RR2",
+    "type": "surface_lot",
+    "grid_location": "F6",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9948122,
+    "longitude": -76.9379636,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=RR2",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9382377,
+     38.991998
+    ]
+   },
+   "properties": {
+    "lot": "G",
+    "type": "surface_lot",
+    "grid_location": "F8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.991998,
+    "longitude": -76.9382377,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=G",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9506865,
+     38.9929149
+    ]
+   },
+   "properties": {
+    "lot": "LL5",
+    "type": "surface_lot",
+    "grid_location": "C7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9929149,
+    "longitude": -76.9506865,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=LL5",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9495667,
+     38.9933676
+    ]
+   },
+   "properties": {
+    "lot": "LL5",
+    "type": "surface_lot",
+    "grid_location": "C7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 3,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9933676,
+    "longitude": -76.9495667,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=LL5",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9410073,
+     39.0029986
+    ]
+   },
+   "properties": {
+    "lot": "10a",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 2,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0029986,
+    "longitude": -76.9410073,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=10a",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9543819,
+     39.0037485
+    ]
+   },
+   "properties": {
+    "lot": "SA",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0037485,
+    "longitude": -76.9543819,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=SA",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9484087,
+     38.9854413
+    ]
+   },
+   "properties": {
+    "lot": "JJ1",
+    "type": "surface_lot",
+    "grid_location": "C11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9854413,
+    "longitude": -76.9484087,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=JJ1",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9356977,
+     38.9810087
+    ]
+   },
+   "properties": {
+    "lot": "15",
+    "type": "surface_lot",
+    "grid_location": "F13",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9810087,
+    "longitude": -76.9356977,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=15",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9378059,
+     38.9854309
+    ]
+   },
+   "properties": {
+    "lot": "S9",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9854309,
+    "longitude": -76.9378059,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=S9",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9372855,
+     38.9868069
+    ]
+   },
+   "properties": {
+    "lot": "C1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": 2,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9868069,
+    "longitude": -76.9372855,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=C1",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9426368,
+     39.0045582
+    ]
+   },
+   "properties": {
+    "lot": "4m",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 2,
+    "parcels_for_lot": 5,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0045582,
+    "longitude": -76.9426368,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=4m",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9427073,
+     39.0042568
+    ]
+   },
+   "properties": {
+    "lot": "4m",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 3,
+    "parcels_for_lot": 5,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0042568,
+    "longitude": -76.9427073,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=4m",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9424871,
+     39.0045915
+    ]
+   },
+   "properties": {
+    "lot": "4m",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 4,
+    "parcels_for_lot": 5,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0045915,
+    "longitude": -76.9424871,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=4m",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9425607,
+     39.0042317
+    ]
+   },
+   "properties": {
+    "lot": "4m",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 5,
+    "parcels_for_lot": 5,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0042317,
+    "longitude": -76.9425607,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=4m",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9350807,
+     38.9847717
+    ]
+   },
+   "properties": {
+    "lot": "16b",
+    "type": "surface_lot",
+    "grid_location": "G11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 5,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9847717,
+    "longitude": -76.9350807,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16b",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9414649,
+     38.9927489
+    ]
+   },
+   "properties": {
+    "lot": "PH1",
+    "type": "surface_lot",
+    "grid_location": "E7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 4,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9927489,
+    "longitude": -76.9414649,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=PH1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9391567,
+     38.9864994
+    ]
+   },
+   "properties": {
+    "lot": "L",
+    "type": "surface_lot",
+    "grid_location": "F10",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 4,
+    "parcels_for_lot": 5,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9864994,
+    "longitude": -76.9391567,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=L",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9391225,
+     38.985545
+    ]
+   },
+   "properties": {
+    "lot": "L",
+    "type": "surface_lot",
+    "grid_location": "F10",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 5,
+    "parcels_for_lot": 5,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.985545,
+    "longitude": -76.9391225,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=L",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9358461,
+     38.9812699
+    ]
+   },
+   "properties": {
+    "lot": "N6",
+    "type": "surface_lot",
+    "grid_location": "F13",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 1,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9812699,
+    "longitude": -76.9358461,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=N6",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9359845,
+     38.9808238
+    ]
+   },
+   "properties": {
+    "lot": "N6",
+    "type": "surface_lot",
+    "grid_location": "F13",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9808238,
+    "longitude": -76.9359845,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=N6",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.925022,
+     38.9763731
+    ]
+   },
+   "properties": {
+    "lot": "V",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": 1,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9763731,
+    "longitude": -76.925022,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=V",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9416734,
+     38.9925438
+    ]
+   },
+   "properties": {
+    "lot": "PH1",
+    "type": "surface_lot",
+    "grid_location": "E7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 4,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9925438,
+    "longitude": -76.9416734,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=PH1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9314385,
+     38.9937802
+    ]
+   },
+   "properties": {
+    "lot": "K7",
+    "type": "surface_lot",
+    "grid_location": "G7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9937802,
+    "longitude": -76.9314385,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=K7",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9314555,
+     38.993556
+    ]
+   },
+   "properties": {
+    "lot": "4a",
+    "type": "surface_lot",
+    "grid_location": "G7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.993556,
+    "longitude": -76.9314555,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=4a",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.923365,
+     38.9960443
+    ]
+   },
+   "properties": {
+    "lot": "X1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 1,
+    "parcels_for_lot": 12,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9960443,
+    "longitude": -76.923365,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=X1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9234531,
+     38.9961386
+    ]
+   },
+   "properties": {
+    "lot": "X1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 2,
+    "parcels_for_lot": 12,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9961386,
+    "longitude": -76.9234531,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=X1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9230763,
+     38.9974627
+    ]
+   },
+   "properties": {
+    "lot": "X1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 3,
+    "parcels_for_lot": 12,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9974627,
+    "longitude": -76.9230763,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=X1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9234113,
+     38.9973783
+    ]
+   },
+   "properties": {
+    "lot": "4k",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9973783,
+    "longitude": -76.9234113,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=4K",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9235976,
+     38.9965745
+    ]
+   },
+   "properties": {
+    "lot": "X1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 4,
+    "parcels_for_lot": 12,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9965745,
+    "longitude": -76.9235976,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=X1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.922473,
+     38.9976621
+    ]
+   },
+   "properties": {
+    "lot": "X1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 5,
+    "parcels_for_lot": 12,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9976621,
+    "longitude": -76.922473,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=X1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.922064,
+     38.9974633
+    ]
+   },
+   "properties": {
+    "lot": "X1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 6,
+    "parcels_for_lot": 12,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9974633,
+    "longitude": -76.922064,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=X1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9233273,
+     38.9957355
+    ]
+   },
+   "properties": {
+    "lot": "X1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 7,
+    "parcels_for_lot": 12,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9957355,
+    "longitude": -76.9233273,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=X1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9231669,
+     38.9960061
+    ]
+   },
+   "properties": {
+    "lot": "X1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 8,
+    "parcels_for_lot": 12,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9960061,
+    "longitude": -76.9231669,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=X1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9213934,
+     38.9975913
+    ]
+   },
+   "properties": {
+    "lot": "X1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 9,
+    "parcels_for_lot": 12,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9975913,
+    "longitude": -76.9213934,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=X1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9230534,
+     38.9973552
+    ]
+   },
+   "properties": {
+    "lot": "X1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 10,
+    "parcels_for_lot": 12,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9973552,
+    "longitude": -76.9230534,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=X1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9234212,
+     38.9972554
+    ]
+   },
+   "properties": {
+    "lot": "X1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 11,
+    "parcels_for_lot": 12,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9972554,
+    "longitude": -76.9234212,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=X1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9230333,
+     38.995663
+    ]
+   },
+   "properties": {
+    "lot": "X1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 12,
+    "parcels_for_lot": 12,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.995663,
+    "longitude": -76.9230333,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=X1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9247844,
+     38.9769354
+    ]
+   },
+   "properties": {
+    "lot": "V",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": 2,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9769354,
+    "longitude": -76.9247844,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=V",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9572955,
+     38.9853208
+    ]
+   },
+   "properties": {
+    "lot": "14a",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9853208,
+    "longitude": -76.9572955,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=14a",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9568275,
+     38.9840834
+    ]
+   },
+   "properties": {
+    "lot": "14c",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9840834,
+    "longitude": -76.9568275,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=14c",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9418888,
+     38.9840392
+    ]
+   },
+   "properties": {
+    "lot": "Y",
+    "type": "surface_lot",
+    "grid_location": "E11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9840392,
+    "longitude": -76.9418888,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=Y",
+    "restriction_class": "modified_restricted"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9379027,
+     38.9938874
+    ]
+   },
+   "properties": {
+    "lot": "XX1",
+    "type": "surface_lot",
+    "grid_location": "F7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9938874,
+    "longitude": -76.9379027,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=XX1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9373471,
+     38.9827804
+    ]
+   },
+   "properties": {
+    "lot": "F",
+    "type": "surface_lot",
+    "grid_location": "F12",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9827804,
+    "longitude": -76.9373471,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=F",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9362505,
+     38.9937567
+    ]
+   },
+   "properties": {
+    "lot": "11b",
+    "type": "surface_lot",
+    "grid_location": "F7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9937567,
+    "longitude": -76.9362505,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=11b",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9483351,
+     38.9927699
+    ]
+   },
+   "properties": {
+    "lot": "N",
+    "type": "surface_lot",
+    "grid_location": "C7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9927699,
+    "longitude": -76.9483351,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=N",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9336493,
+     38.9839099
+    ]
+   },
+   "properties": {
+    "lot": "16f",
+    "type": "surface_lot",
+    "grid_location": "G11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 6,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9839099,
+    "longitude": -76.9336493,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16f",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9377217,
+     38.9867041
+    ]
+   },
+   "properties": {
+    "lot": "C1",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": 3,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9867041,
+    "longitude": -76.9377217,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=C1",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9426201,
+     39.0019399
+    ]
+   },
+   "properties": {
+    "lot": "8",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 4,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0019399,
+    "longitude": -76.9426201,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=8",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9411652,
+     39.0025276
+    ]
+   },
+   "properties": {
+    "lot": "8",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 5,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0025276,
+    "longitude": -76.9411652,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=8",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9503361,
+     38.9934465
+    ]
+   },
+   "properties": {
+    "lot": "2b",
+    "type": "surface_lot",
+    "grid_location": "C7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9934465,
+    "longitude": -76.9503361,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=2b",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9388145,
+     38.9775767
+    ]
+   },
+   "properties": {
+    "lot": "24d",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9775767,
+    "longitude": -76.9388145,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=24d",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9422725,
+     39.0024667
+    ]
+   },
+   "properties": {
+    "lot": "8",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": 6,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 39.0024667,
+    "longitude": -76.9422725,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=8",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9437316,
+     38.9825178
+    ]
+   },
+   "properties": {
+    "lot": "U1",
+    "type": "surface_lot",
+    "grid_location": "D12",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9825178,
+    "longitude": -76.9437316,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=U1",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9378427,
+     38.9932981
+    ]
+   },
+   "properties": {
+    "lot": "YY",
+    "type": "surface_lot",
+    "grid_location": "F7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9932981,
+    "longitude": -76.9378427,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=YY",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9449785,
+     38.9851391
+    ]
+   },
+   "properties": {
+    "lot": "D",
+    "type": "surface_lot",
+    "grid_location": "D11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9851391,
+    "longitude": -76.9449785,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=D",
+    "restriction_class": "special_restrictions"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9403971,
+     38.9885075
+    ]
+   },
+   "properties": {
+    "lot": "TT",
+    "type": "surface_lot",
+    "grid_location": "E9",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9885075,
+    "longitude": -76.9403971,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=TT",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9415824,
+     38.992564
+    ]
+   },
+   "properties": {
+    "lot": "PH1",
+    "type": "surface_lot",
+    "grid_location": "E7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 3,
+    "parcels_for_lot": 4,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.992564,
+    "longitude": -76.9415824,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=PH1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9388448,
+     38.9824397
+    ]
+   },
+   "properties": {
+    "lot": "LL2",
+    "type": "surface_lot",
+    "grid_location": "F12",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9824397,
+    "longitude": -76.9388448,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=LL2",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9479236,
+     38.9839909
+    ]
+   },
+   "properties": {
+    "lot": "O1",
+    "type": "surface_lot",
+    "grid_location": "C11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9839909,
+    "longitude": -76.9479236,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=O1",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9447256,
+     38.9839205
+    ]
+   },
+   "properties": {
+    "lot": "A",
+    "type": "surface_lot",
+    "grid_location": "D11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 3,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9839205,
+    "longitude": -76.9447256,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=A",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9416728,
+     38.992219
+    ]
+   },
+   "properties": {
+    "lot": "PH1",
+    "type": "surface_lot",
+    "grid_location": "E7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 4,
+    "parcels_for_lot": 4,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.992219,
+    "longitude": -76.9416728,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=PH1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9337923,
+     38.9839735
+    ]
+   },
+   "properties": {
+    "lot": "16b",
+    "type": "surface_lot",
+    "grid_location": "G11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 6,
+    "parcels_for_lot": 6,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9839735,
+    "longitude": -76.9337923,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=16b",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9346184,
+     38.9852997
+    ]
+   },
+   "properties": {
+    "lot": "J2",
+    "type": "surface_lot",
+    "grid_location": "F11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9852997,
+    "longitude": -76.9346184,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=J2",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9517829,
+     38.9856748
+    ]
+   },
+   "properties": {
+    "lot": "1f",
+    "type": "surface_lot",
+    "grid_location": "C10",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9856748,
+    "longitude": -76.9517829,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=1f",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.936439,
+     38.9835126
+    ]
+   },
+   "properties": {
+    "lot": "N8",
+    "type": "surface_lot",
+    "grid_location": "F11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9835126,
+    "longitude": -76.936439,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=N8",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9438282,
+     38.9872072
+    ]
+   },
+   "properties": {
+    "lot": "HP",
+    "type": "surface_lot",
+    "grid_location": "D10",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9872072,
+    "longitude": -76.9438282,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=HH",
+    "restriction_class": "special_restrictions"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9344728,
+     38.9855
+    ]
+   },
+   "properties": {
+    "lot": "J1",
+    "type": "surface_lot",
+    "grid_location": "G11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9855,
+    "longitude": -76.9344728,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=J1",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9340275,
+     38.9849008
+    ]
+   },
+   "properties": {
+    "lot": "K3",
+    "type": "surface_lot",
+    "grid_location": "G11",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9849008,
+    "longitude": -76.9340275,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=K3",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9497045,
+     38.9881379
+    ]
+   },
+   "properties": {
+    "lot": "Z",
+    "type": "surface_lot",
+    "grid_location": "C9",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 3,
+    "parcels_for_lot": 3,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9881379,
+    "longitude": -76.9497045,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=Z",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9460244,
+     38.9884378
+    ]
+   },
+   "properties": {
+    "lot": "HH",
+    "type": "surface_lot",
+    "grid_location": "D9",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9884378,
+    "longitude": -76.9460244,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=HH",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9259044,
+     38.9797417
+    ]
+   },
+   "properties": {
+    "lot": "TV",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9797417,
+    "longitude": -76.9259044,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=TV",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9533818,
+     38.9882161
+    ]
+   },
+   "properties": {
+    "lot": "PRESIDENTS VISITOR PARKING",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9882161,
+    "longitude": -76.9533818,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=PRESIDENTS VISITOR PARKING",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9455445,
+     38.9923838
+    ]
+   },
+   "properties": {
+    "lot": "LL6",
+    "type": "surface_lot",
+    "grid_location": "D7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9923838,
+    "longitude": -76.9455445,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=LL6",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9469466,
+     38.9913635
+    ]
+   },
+   "properties": {
+    "lot": "S7",
+    "type": "surface_lot",
+    "grid_location": "D8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9913635,
+    "longitude": -76.9469466,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=S7",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9475204,
+     38.9930435
+    ]
+   },
+   "properties": {
+    "lot": "N7",
+    "type": "surface_lot",
+    "grid_location": "D7",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": 2,
+    "parcels_for_lot": 2,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9930435,
+    "longitude": -76.9475204,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=N7",
+    "restriction_class": "restricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9394796,
+     38.9891484
+    ]
+   },
+   "properties": {
+    "lot": "AA",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9891484,
+    "longitude": -76.9394796,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=AA",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9452392,
+     38.9869834
+    ]
+   },
+   "properties": {
+    "lot": "HC",
+    "type": "surface_lot",
+    "grid_location": "D10",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9869834,
+    "longitude": -76.9452392,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=HC",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9287278,
+     38.9702351
+    ]
+   },
+   "properties": {
+    "lot": "4t",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9702351,
+    "longitude": -76.9287278,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=4t",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9287483,
+     38.9714255
+    ]
+   },
+   "properties": {
+    "lot": "V2",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9714255,
+    "longitude": -76.9287483,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=V2",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9435727,
+     38.9962969
+    ]
+   },
+   "properties": {
+    "lot": "ES",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9962969,
+    "longitude": -76.9435727,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=ES",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9497049,
+     38.9881615
+    ]
+   },
+   "properties": {
+    "lot": "1b",
+    "type": "surface_lot",
+    "grid_location": "C10",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9881615,
+    "longitude": -76.9497049,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=1b",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9337385,
+     38.9937918
+    ]
+   },
+   "properties": {
+    "lot": "V3",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9937918,
+    "longitude": -76.9337385,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=parking&name=V3",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9455505,
+     38.9818208
+    ]
+   },
+   "properties": {
+    "lot": "19",
+    "type": "garage",
+    "grid_location": "D12",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": "Mowatt Lane Parking Garage",
+    "garage_building_number": "404",
+    "latitude": 38.9818208,
+    "longitude": -76.9455505,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=building&name=404",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9433202,
+     38.9950171
+    ]
+   },
+   "properties": {
+    "lot": "6",
+    "type": "garage",
+    "grid_location": "E5",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": "Terrapin Trail Parking Garage",
+    "garage_building_number": "403",
+    "latitude": 38.9950171,
+    "longitude": -76.9433202,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=building&name=403",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9414691,
+     38.9896923
+    ]
+   },
+   "properties": {
+    "lot": "B",
+    "type": "garage",
+    "grid_location": "E9",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": "Regents Drive Parking Garage",
+    "garage_building_number": "202",
+    "latitude": 38.9896923,
+    "longitude": -76.9414691,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=building&name=202",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9414691,
+     38.9896923
+    ]
+   },
+   "properties": {
+    "lot": "RR",
+    "type": "garage",
+    "grid_location": "E9",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": "Regents Drive Parking Garage",
+    "garage_building_number": "202",
+    "latitude": 38.9896923,
+    "longitude": -76.9414691,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=building&name=202",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9455505,
+     38.9818208
+    ]
+   },
+   "properties": {
+    "lot": "U2",
+    "type": "garage",
+    "grid_location": "D12",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": "Mowatt Lane Parking Garage",
+    "garage_building_number": "404",
+    "latitude": 38.9818208,
+    "longitude": -76.9455505,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=building&name=404",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9486801,
+     38.9910956
+    ]
+   },
+   "properties": {
+    "lot": "SDG",
+    "type": "garage",
+    "grid_location": "C8",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": "Stadium Drive Parking Garage",
+    "garage_building_number": "218",
+    "latitude": 38.9910956,
+    "longitude": -76.9486801,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=building&name=218",
+    "restriction_class": "restricted_24h"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9457862,
+     38.9885559
+    ]
+   },
+   "properties": {
+    "lot": null,
+    "type": "garage",
+    "grid_location": "D9",
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": "Union Lane Parking Garage",
+    "garage_building_number": "179",
+    "latitude": 38.9885559,
+    "longitude": -76.9457862,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=building&name=179",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9544869,
+     38.9869648
+    ]
+   },
+   "properties": {
+    "lot": null,
+    "type": "garage",
+    "grid_location": "B10",
+    "in_map_directory": false,
+    "shown_on_map_back": null,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": "UMGC/Marriott Garage",
+    "garage_building_number": "347",
+    "latitude": 38.9869648,
+    "longitude": -76.9544869,
+    "umd_map_url": "https://maps.umd.edu/map/index.html?&feature=building&name=347",
+    "restriction_class": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9494925,
+     38.9897188
+    ]
+   },
+   "properties": {
+    "lot": "1a",
+    "type": "surface_lot",
+    "grid_location": "C9",
+    "in_map_directory": true,
+    "shown_on_map_back": false,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": 38.9897188,
+    "longitude": -76.9494925,
+    "umd_map_url": null,
+    "note": "Centroid of the ParkingPublic polygon; this lot has no point in the ParkingLotPoint layer.",
+    "restriction_class": "unrestricted_after_4pm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": null,
+   "properties": {
+    "lot": "22",
+    "type": "surface_lot",
+    "grid_location": null,
+    "in_map_directory": true,
+    "shown_on_map_back": true,
+    "parcel": null,
+    "parcels_for_lot": null,
+    "garage_name": null,
+    "garage_building_number": null,
+    "latitude": null,
+    "longitude": null,
+    "umd_map_url": null,
+    "equivalent_lots": [
+     "22b",
+     "22c"
+    ],
+    "note": "Printed on the map as one lot; UMD GIS represents it as 22b and 22c, both present in this file with coordinates.",
+    "restriction_class": "restricted_24h"
+   }
+  }
+ ]
+}

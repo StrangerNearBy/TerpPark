@@ -1,0 +1,730 @@
+{
+ "type": "FeatureCollection",
+ "name": "UMD public pay parking",
+ "metadata": {
+  "source": "UMD GIS Transportation/PayPublicParking",
+  "datum": "WGS 84"
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9505771,
+     38.9931422
+    ]
+   },
+   "properties": {
+    "near_building": "Easton Hall",
+    "pay": true,
+    "pay_type": "3 Hour Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9433027,
+     38.9930181
+    ]
+   },
+   "properties": {
+    "near_building": "School of Public Health",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9440659,
+     38.9930184
+    ]
+   },
+   "properties": {
+    "near_building": "School of Public Health",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9504242,
+     38.9918348
+    ]
+   },
+   "properties": {
+    "near_building": "The Clarice Smith Performing Arts Center",
+    "pay": true,
+    "pay_type": "8 Hour Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9502031,
+     38.991989
+    ]
+   },
+   "properties": {
+    "near_building": "Denton Hall",
+    "pay": true,
+    "pay_type": "8 Hour Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9400939,
+     38.9837228
+    ]
+   },
+   "properties": {
+    "near_building": "Chapel",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9460865,
+     38.9849461
+    ]
+   },
+   "properties": {
+    "near_building": "Queen Annes Hall",
+    "pay": true,
+    "pay_type": "8 Hour Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9369012,
+     38.9892515
+    ]
+   },
+   "properties": {
+    "near_building": "Paint Branch Drive",
+    "pay": true,
+    "pay_type": "30 Min Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9403753,
+     38.9811864
+    ]
+   },
+   "properties": {
+    "near_building": "Knox Road",
+    "pay": true,
+    "pay_type": "30 Min Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9388574,
+     38.982452
+    ]
+   },
+   "properties": {
+    "near_building": "South Gate",
+    "pay": true,
+    "pay_type": "30 Min Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9399369,
+     38.9828498
+    ]
+   },
+   "properties": {
+    "near_building": "Annapolis Hall",
+    "pay": true,
+    "pay_type": "30 Min Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9479301,
+     38.9840198
+    ]
+   },
+   "properties": {
+    "near_building": "Architecture Building",
+    "pay": true,
+    "pay_type": "30 Min Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9437265,
+     38.9824464
+    ]
+   },
+   "properties": {
+    "near_building": "South Campus Commons 6",
+    "pay": true,
+    "pay_type": "2 Hour Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9375778,
+     38.9883481
+    ]
+   },
+   "properties": {
+    "near_building": "Map Kiosk",
+    "pay": true,
+    "pay_type": "5 Min Parking"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9467183,
+     38.9872317
+    ]
+   },
+   "properties": {
+    "near_building": "Cole Field House",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9469856,
+     38.9867741
+    ]
+   },
+   "properties": {
+    "near_building": "Benjamin Building",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9453196,
+     38.9855018
+    ]
+   },
+   "properties": {
+    "near_building": "McKeldin Library",
+    "pay": true,
+    "pay_type": "30 Min Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9480649,
+     38.9831515
+    ]
+   },
+   "properties": {
+    "near_building": "Van Munching Hall",
+    "pay": true,
+    "pay_type": "30 Min Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9452378,
+     38.986987
+    ]
+   },
+   "properties": {
+    "near_building": "Library Lane-North",
+    "pay": true,
+    "pay_type": "30 Min Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.943695,
+     38.9930228
+    ]
+   },
+   "properties": {
+    "near_building": "School of Public Health",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9471755,
+     38.993051
+    ]
+   },
+   "properties": {
+    "near_building": "Eppley Rec Center/ Pool",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9466265,
+     38.9930535
+    ]
+   },
+   "properties": {
+    "near_building": "Eppley Rec Center/ Pool",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9460642,
+     38.9930487
+    ]
+   },
+   "properties": {
+    "near_building": "Eppley Rec Center/ Pool",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.948594,
+     38.9926034
+    ]
+   },
+   "properties": {
+    "near_building": "Elkton Hall",
+    "pay": true,
+    "pay_type": "8 Hour Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9468233,
+     38.9913973
+    ]
+   },
+   "properties": {
+    "near_building": "S7",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9423125,
+     38.9819026
+    ]
+   },
+   "properties": {
+    "near_building": "South Campus Commons 1",
+    "pay": true,
+    "pay_type": "30 Min Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9373975,
+     38.9866289
+    ]
+   },
+   "properties": {
+    "near_building": "Visitor Center Lot",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9489378,
+     38.9857916
+    ]
+   },
+   "properties": {
+    "near_building": "Tawes Hall",
+    "pay": true,
+    "pay_type": "30 Min Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9211308,
+     38.9972538
+    ]
+   },
+   "properties": {
+    "near_building": "Severn Building",
+    "pay": true,
+    "pay_type": "8 Hour Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9231557,
+     38.996317
+    ]
+   },
+   "properties": {
+    "near_building": "Severn Bulding",
+    "pay": true,
+    "pay_type": "8 Hour Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.945547,
+     38.9926012
+    ]
+   },
+   "properties": {
+    "near_building": "LL6",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9478279,
+     38.9872305
+    ]
+   },
+   "properties": {
+    "near_building": "Cole Field House",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9489057,
+     38.9929877
+    ]
+   },
+   "properties": {
+    "near_building": "Denton Service Lane",
+    "pay": true,
+    "pay_type": "8 Hour Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9449387,
+     38.9826805
+    ]
+   },
+   "properties": {
+    "near_building": "Prince Frederick Meters",
+    "pay": true,
+    "pay_type": "3 Hour Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9420105,
+     38.9913506
+    ]
+   },
+   "properties": {
+    "near_building": "Farm Drive",
+    "pay": false,
+    "pay_type": "8 Hour Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.937952,
+     38.9943813
+    ]
+   },
+   "properties": {
+    "near_building": "XFINITY Center Visitor Lot",
+    "pay": false,
+    "pay_type": "30 Min Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9353382,
+     38.9828211
+    ]
+   },
+   "properties": {
+    "near_building": "K5 Aux",
+    "pay": false,
+    "pay_type": "15 Min Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9419596,
+     38.9843672
+    ]
+   },
+   "properties": {
+    "near_building": "Y",
+    "pay": false,
+    "pay_type": "30 Min Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9362829,
+     38.9853055
+    ]
+   },
+   "properties": {
+    "near_building": "Ritchie Coliseum",
+    "pay": false,
+    "pay_type": "8 Hour Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9416744,
+     38.9922766
+    ]
+   },
+   "properties": {
+    "near_building": "PH1",
+    "pay": false,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9377188,
+     38.9895632
+    ]
+   },
+   "properties": {
+    "near_building": "EE",
+    "pay": false,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9420256,
+     38.9991199
+    ]
+   },
+   "properties": {
+    "near_building": "P2",
+    "pay": true,
+    "pay_type": "8 Hour Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9483465,
+     38.9927606
+    ]
+   },
+   "properties": {
+    "near_building": "N",
+    "pay": true,
+    "pay_type": "8 Hour Meter"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9433426,
+     38.995029
+    ]
+   },
+   "properties": {
+    "near_building": "Terrapin Trail Parking Garage",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9457885,
+     38.9885637
+    ]
+   },
+   "properties": {
+    "near_building": "Union Lane Parking Garage",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9488011,
+     38.9911901
+    ]
+   },
+   "properties": {
+    "near_building": "Stadium Drive Parking Garage",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9455697,
+     38.9818428
+    ]
+   },
+   "properties": {
+    "near_building": "Mowatt Lane Parking Garage",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9414803,
+     38.9896791
+    ]
+   },
+   "properties": {
+    "near_building": "Regents Drive Parking Garage",
+    "pay": true,
+    "pay_type": "Pay Station"
+   }
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+  "_source": "UMD Transportation Services 'ParkMobile Zones' map (updated 8/26): https://transportation.umd.edu/sites/default/files/2026-08/Parkmobile_Map.pdf",
+  "_method": "Zone labels read from the PDF text layer. Garages identified from the label printed on each zone. Street/lot zones placed by fitting the PDF to 8 known building coordinates (residuals 5-26 m) and matched to the nearest UMD pay stations (35-59 m). Zones 6124 and 6127, and the off-map inset zones 6119/6120, matched no pay station in UMD's data and are deliberately not assigned.",
+  "_checked": "2026-11-18",
+  "pay_link": "https://app.parkmobile.io/zone/start",
+  "pay_link_note": "ParkMobile's web app; the zone is typed in on the page. No documented URL parameter pre-fills a zone, so none is used.",
+  "app_link": "https://parkmobile.io/",
+  "visitor_info": "https://transportation.umd.edu/parking/visitors",
+  "garages": {
+    "179": { "zone": "6102", "name": "Union Lane Parking Garage" },
+    "404": { "zone": "6103", "name": "Mowatt Lane Parking Garage" },
+    "202": { "zone": "6104", "name": "Regents Drive Parking Garage" },
+    "218": { "zone": "6105", "name": "Stadium Drive Parking Garage" }
+  },
+  "lots": {
+    "Xfinity Center Visitor Lot": { "zone": "6101" }
+  },
+  "pay_stations": {
+    "Eppley Rec Center/ Pool": { "zone": "6115", "where": "Valley Drive, by Eppley Recreation Center" },
+    "School of Public Health": { "zone": "6116", "where": "Valley Drive, by the School of Public Health" },
+    "XFINITY Center Visitor Lot": { "zone": "6101", "where": "XFINITY Center Visitor Lot" },
+    "Regents Drive Parking Garage": { "zone": "6104" },
+    "Union Lane Parking Garage": { "zone": "6102" },
+    "Mowatt Lane Parking Garage": { "zone": "6103" },
+    "Stadium Drive Parking Garage": { "zone": "6105" }
+  },
+  "off_campus": {
+    "City Garage": {
+      "text": "Pay at the garage's electronic pay stations by credit card, or with the mobile app named on the station. The City does not name the app online.",
+      "link": "https://www.collegeparkmd.gov/parking",
+      "link_label": "City parking info"
+    },
+    "Cambria": {
+      "text": "Privately run hotel garage: book through a parking app or pay the hotel directly.",
+      "link": null
+    }
+  }
+}

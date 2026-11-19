@@ -1,0 +1,156 @@
+{
+  "_source": "UMD Transportation Services Campus Parking Map 2025 (updated 2/26), page 1 'Parking Restrictions', 'Special Restrictions', 'Overflow Parking Lots' and 'Visitor Parking' panels. Rule text transcribed verbatim from the PDF.",
+  "_note": "Rules are data, not code. Edit this file to change app behaviour; the engine reads it at runtime. Times are campus local (America/New_York). A window whose 'to' is <= 'from' wraps past midnight.",
+  "_access_values": {
+    "permit_lot": "Requires a valid CLPR/permit for THIS specific lot.",
+    "faculty_staff": "Requires any valid faculty/staff CLPR/permit.",
+    "open": "Anyone may park, no permit needed.",
+    "pay": "Anyone may park but payment is required."
+  },
+
+  "classes": {
+    "unrestricted_after_4pm": {
+      "label": "Unrestricted after 4PM",
+      "short": "Free after 4pm",
+      "colour": "#64ae31",
+      "map_ink": [100, 174, 49],
+      "required_text": "7am - 4pm Mon. - Fri. valid lot # campus parking reg. required.",
+      "restriction_text": "Free parking 4pm - 7am Mon. - Fri. and all day Saturday and Sunday. Commuter registrants may not park overnight Mon. - Fri. from 3am - 5am.",
+      "windows": [
+        { "days": "mon-fri", "from": "07:00", "to": "16:00", "access": "permit_lot" },
+        { "days": "mon-fri", "from": "16:00", "to": "07:00", "access": "open" },
+        { "days": "sat-sun", "from": "00:00", "to": "24:00", "access": "open" }
+      ],
+      "exclusions": [
+        {
+          "days": "mon-fri",
+          "from": "03:00",
+          "to": "05:00",
+          "applies_to": "commuter",
+          "text": "Commuter registrants may not park overnight Mon-Fri from 3am - 5am."
+        }
+      ]
+    },
+
+    "restricted_after_4pm": {
+      "label": "Restricted after 4PM",
+      "short": "Faculty/staff after 4pm",
+      "colour": "#69cdcc",
+      "map_ink": [105, 205, 204],
+      "required_text": "7am - 4pm Mon. - Fri. valid lot # campus parking reg. required. Only F/S reg. allowed at all others times.",
+      "restriction_text": "Only faculty/staff with a valid CLPR/permit may park from 4pm - 7am Mon. - Fri. as well as all day on Saturday and Sunday.",
+      "windows": [
+        { "days": "mon-fri", "from": "07:00", "to": "16:00", "access": "permit_lot" },
+        { "days": "mon-fri", "from": "16:00", "to": "07:00", "access": "faculty_staff" },
+        { "days": "sat-sun", "from": "00:00", "to": "24:00", "access": "faculty_staff" }
+      ],
+      "exclusions": []
+    },
+
+    "modified_restricted": {
+      "label": "Modified restricted",
+      "short": "Open to all after 8pm",
+      "colour": "#f68213",
+      "map_ink": [246, 130, 19],
+      "required_text": "7am - 4pm Mon. - Fri. valid lot # campus parking reg. required. F/S reg. required 4pm - 8pm Mon. - Fri. and all day Sat. and Sun.",
+      "restriction_text": "Only faculty/staff with a valid CLPR/permit may park from 4pm - 8pm and all day on weekends. Anyone may park from 8pm - 7am Monday - Friday.",
+      "windows": [
+        { "days": "mon-fri", "from": "07:00", "to": "16:00", "access": "permit_lot" },
+        { "days": "mon-fri", "from": "16:00", "to": "20:00", "access": "faculty_staff" },
+        { "days": "mon-fri", "from": "20:00", "to": "07:00", "access": "open" },
+        { "days": "sat-sun", "from": "00:00", "to": "24:00", "access": "faculty_staff" }
+      ],
+      "exclusions": []
+    },
+
+    "restricted_24h": {
+      "label": "24-Hour restricted",
+      "short": "Permit required at all times",
+      "colour": "#e11d25",
+      "map_ink": [225, 29, 37],
+      "required_text": "24 hours a day 7 days a week valid lot # campus parking reg. required.",
+      "restriction_text": "Only individuals with a CLPR/permit corresponding to these lots may park here at anytime.",
+      "windows": [
+        { "days": "all", "from": "00:00", "to": "24:00", "access": "permit_lot" }
+      ],
+      "exclusions": []
+    },
+
+    "special_restrictions": {
+      "label": "Special Restrictions",
+      "short": "Per-lot rules",
+      "colour": "#782f9a",
+      "map_ink": [120, 47, 154],
+      "required_text": "See per-lot rules.",
+      "restriction_text": "KK requires lot KK CLPR/permit 7am - 8pm Mon. - Fri. TV requires lot TV CLPR/permit 7am - 4pm Mon. - Fri. YC requires lot YC CLPR/permit 7am - 6pm Mon. - Fri. Only valid CLPR/permit required all other times. BB, D, E, GG2, and HP (ADA Parking only) requires CLPR/permit or payment required at all times.",
+      "windows": [
+        { "days": "all", "from": "00:00", "to": "24:00", "access": "permit_lot" }
+      ],
+      "exclusions": []
+    }
+  },
+
+  "special_lots": {
+    "KK": {
+      "text": "KK requires lot KK CLPR/permit 7am - 8pm Mon. - Fri. Only valid CLPR/permit required all other times.",
+      "windows": [
+        { "days": "mon-fri", "from": "07:00", "to": "20:00", "access": "permit_lot" },
+        { "days": "mon-fri", "from": "20:00", "to": "07:00", "access": "faculty_staff" },
+        { "days": "sat-sun", "from": "00:00", "to": "24:00", "access": "faculty_staff" }
+      ]
+    },
+    "TV": {
+      "text": "TV requires lot TV CLPR/permit 7am - 4pm Mon. - Fri. Only valid CLPR/permit required all other times.",
+      "windows": [
+        { "days": "mon-fri", "from": "07:00", "to": "16:00", "access": "permit_lot" },
+        { "days": "mon-fri", "from": "16:00", "to": "07:00", "access": "faculty_staff" },
+        { "days": "sat-sun", "from": "00:00", "to": "24:00", "access": "faculty_staff" }
+      ]
+    },
+    "YC": {
+      "text": "YC requires lot YC CLPR/permit 7am - 6pm Mon. - Fri. Only valid CLPR/permit required all other times.",
+      "windows": [
+        { "days": "mon-fri", "from": "07:00", "to": "18:00", "access": "permit_lot" },
+        { "days": "mon-fri", "from": "18:00", "to": "07:00", "access": "faculty_staff" },
+        { "days": "sat-sun", "from": "00:00", "to": "24:00", "access": "faculty_staff" }
+      ]
+    },
+    "BB": { "ada_only": true, "text": "ADA Parking only. CLPR/permit or payment required at all times.", "windows": [{ "days": "all", "from": "00:00", "to": "24:00", "access": "pay" }] },
+    "D":  { "ada_only": true, "text": "ADA Parking only. CLPR/permit or payment required at all times.", "windows": [{ "days": "all", "from": "00:00", "to": "24:00", "access": "pay" }] },
+    "E":  { "ada_only": true, "text": "ADA Parking only. CLPR/permit or payment required at all times.", "windows": [{ "days": "all", "from": "00:00", "to": "24:00", "access": "pay" }] },
+    "GG2":{ "ada_only": true, "text": "ADA Parking only. CLPR/permit or payment required at all times.", "windows": [{ "days": "all", "from": "00:00", "to": "24:00", "access": "pay" }] },
+    "HP": { "ada_only": true, "text": "ADA Parking only. CLPR/permit or payment required at all times.", "windows": [{ "days": "all", "from": "00:00", "to": "24:00", "access": "pay" }] }
+  },
+
+  "overflow": {
+    "student": ["4"],
+    "faculty_staff": ["K", "P", "U", "V", "X", "XX1", "Z", "SDG", "1", "3", "4", "6", "9", "11", "15", "16", "17", "19"],
+    "text": "Overflow Parking Lots for Registered Parkers. Students: Lot 4. Faculty/Staff: K, P, U, V, X, XX1, Z, SDG, 1, 3, 4, 6, 9, 11, 15, 16, 17, 19."
+  },
+
+  "gated_lots": {
+    "lots": ["Y", "W1"],
+    "text": "Gated Parking Lots: Lots Y and W1."
+  },
+
+  "ada": {
+    "lots": ["BB", "D", "E", "GG2", "HP"],
+    "text": "Accessible parking spaces available in parking lots and garages. Campus parking registration / permit may be required.",
+    "_gap": "UMD publishes no per-lot ADA space counts or locations. The CampusServices 'Disability' layer contains disability service offices only, not parking. Do not synthesise this data."
+  },
+
+  "pay_parking": {
+    "rate": "$4/hr Daily ($20 max)",
+    "hours": { "from": "07:00", "to": "00:00" },
+    "text": "All pay area parking, including meters and pay stations within and around permitted lots, payment required daily, 7AM - midnight.",
+    "visitor_garages": ["404", "202", "218", "179"],
+    "visitor_garage_text": "Mowatt Lane, Regents Drive, Stadium Drive and Union Lane parking garages."
+  },
+
+  "permit_model": {
+    "_note": "UMD does not publish a permit -> lot eligibility table. The map establishes only these conventions. Replace resolveEligibleLots() in the engine when a real DOTS source exists.",
+    "letter_lots_are": "faculty_staff",
+    "number_lots_are": "student",
+    "text": "Signs that begin with a LETTER are considered faculty/staff lots, regardless of any sub-number that follows it. Signs that begin with a NUMBER are considered student lots."
+  }
+}

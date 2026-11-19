@@ -1,0 +1,6 @@
+{
+  "name": "umd-parking-mvp",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "UMD campus parking finder - MVP data layer, rules engine and prototype UI"
+}

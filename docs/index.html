@@ -1,155 +1,1180 @@
-<!DOCTYPE html>
-<html class="light" lang="en">
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>TerpPark - UMD Parking Guide</title>
-<meta name="description" content="TerpPark helps University of Maryland (UMD) students, staff, and visitors check parking lot restrictions in real time, find the nearest open parking lot to any building on campus, and see live status for every lot and visitor garage at College Park, MD.">
-<meta name="keywords" content="UMD parking, University of Maryland parking, College Park MD parking, UMD parking lots, UMD parking map, UMD visitor parking, UMD DOTS parking, campus parking guide">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://terppark.com/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TerpPark - UMD Parking Guide">
-<meta property="og:description" content="Check UMD parking lot restrictions in real time, find the nearest open lot to any campus building, and see live status for every lot and visitor garage.">
-<meta property="og:url" content="https://terppark.com/">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TerpPark - UMD Parking Guide">
-<meta name="twitter:description" content="Check UMD parking lot restrictions in real time and find the nearest open parking lot on campus.">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script id="tailwind-config">
-  const SYSTEM_FONT_STACK = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "inverse-surface": "#2f3131",
-          "on-error-container": "#93000a",
-          "tertiary-fixed": "#ffe07c",
-          "primary-fixed": "#ffdad8",
-          "secondary-container": "#dbe3ef",
-          "on-secondary-fixed": "#141c24",
-          "surface-container-highest": "#e2e2e2",
-          "on-tertiary": "#ffffff",
-          "on-tertiary-fixed": "#231b00",
-          "on-primary-container": "#fff8f7",
-          "on-tertiary-container": "#4d3e00",
-          "inverse-on-surface": "#f1f1f1",
-          "on-surface-variant": "#5d3f3e",
-          "surface-container": "#eeeeee",
-          "on-background": "#1a1c1c",
-          "outline": "#926e6d",
-          "outline-variant": "#e6bdba",
-          "on-secondary": "#ffffff",
-          "surface-variant": "#e2e2e2",
-          "error": "#ba1a1a",
-          "secondary": "#575f69",
-          "tertiary": "#725c00",
-          "surface-container-low": "#f3f3f3",
-          "secondary-fixed": "#dbe3ef",
-          "on-surface": "#1a1c1c",
-          "secondary-fixed-dim": "#bfc7d2",
-          "on-secondary-container": "#5d656f",
-          "error-container": "#ffdad6",
-          "on-primary-fixed": "#410006",
-          "on-error": "#ffffff",
-          "tertiary-container": "#cca800",
-          "on-tertiary-fixed-variant": "#564500",
-          "on-secondary-fixed-variant": "#3f4851",
-          "background": "#f9f9f9",
-          "surface-container-lowest": "#ffffff",
-          "surface-container-high": "#e8e8e8",
-          "on-primary": "#ffffff",
-          "surface-bright": "#f9f9f9",
-          "tertiary-fixed-dim": "#ecc200",
-          "inverse-primary": "#ffb3b0",
-          "primary-fixed-dim": "#ffb3b0",
-          "on-primary-fixed-variant": "#93001a",
-          "surface-dim": "#dadada",
-          "primary": "#b80023",
-          "surface-tint": "#bf0025",
-          "surface": "#f9f9f9",
-          "primary-container": "#e21833"
-        },
-        borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
-        spacing: {
-          "stack-md": "16px", "gutter": "12px", "margin-mobile": "16px",
-          "stack-lg": "24px", "touch-target-min": "48px", "stack-sm": "8px"
-        },
-        fontFamily: {
-          // Platform system font, not a fetched web font - it already ships
-          // correct optical sizing, tracking tables, and legibility tuning
-          // per platform (San Francisco on Apple, Segoe UI on Windows,
-          // Roboto on Android/Chrome OS). See the apple-design skill,
-          // "Typography - optical sizing, tracking, leading".
-          "body-lg": [SYSTEM_FONT_STACK], "label-md": [SYSTEM_FONT_STACK], "stat-display": [SYSTEM_FONT_STACK],
-          "headline-md": [SYSTEM_FONT_STACK], "body-md": [SYSTEM_FONT_STACK], "label-lg": [SYSTEM_FONT_STACK], "headline-lg": [SYSTEM_FONT_STACK]
-        },
-        // Sizes in rem (not px) so the scale honors the user's browser/OS text-size
-        // setting (Dynamic Type). Leading is unitless so it scales with each
-        // element's own font-size instead of being pinned to the root size.
-        // Tracking is size-specific per apple-design: negative and growing on
-        // large display/headline text, near-zero on body, slightly positive on
-        // small labels - never one flat value for every size.
-        fontSize: {
-          "body-lg": ["1rem", { lineHeight: "1.5", fontWeight: "400" }],
-          "label-md": ["0.6875rem", { lineHeight: "1.27", letterSpacing: "0.01em", fontWeight: "500" }],
-          "stat-display": ["2rem", { lineHeight: "1", letterSpacing: "-0.025em", fontWeight: "900" }],
-          "headline-md": ["1.25rem", { lineHeight: "1.4", letterSpacing: "-0.01em", fontWeight: "700" }],
-          "body-md": ["0.875rem", { lineHeight: "1.43", fontWeight: "400" }],
-          "label-lg": ["0.75rem", { lineHeight: "1.33", letterSpacing: "0.05em", fontWeight: "700" }],
-          "headline-lg": ["1.5rem", { lineHeight: "1.33", letterSpacing: "-0.02em", fontWeight: "800" }]
-        }
-      }
-    }
-  }
-</script>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="./vendor/leaflet.css">
+<title>TerpPark — UMD campus parking</title>
+<style>
+/* Clean, mobile-first. Three status colours carry all meaning:
+   green = anyone can park free now, blue = anyone can park and pay, grey = permit needed.
+   Red is the UMD brand and the one primary action — never a status. */
+:root{
+  --red:#E21833; --red-press:#c4142b;
+  --bg:#f6f6f4; --surface:#fff; --surface-2:#f2f2ef;
+  --ink:#141414; --ink-2:#4a4a46; --muted:#8a8a83;
+  --line:#e7e7e2; --line-2:#d6d6d0;
+  --free:#16824A; --pay:#D97706; --permit:#8E8E87; --none:#c3c3bc;
+  --you:#1A73E8; --sign-red:#C8102E; --sign-black:#141414;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(0,0,0,.05),0 2px 8px rgba(0,0,0,.05);
+  --shadow-l:0 6px 24px rgba(0,0,0,.14);
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);
+  font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
+input{font:inherit;color:inherit}
+a{color:inherit}
+
+/* ---------- shell ---------- */
+.app{position:fixed;inset:0;display:grid;grid-template-columns:400px 1fr}
+.panel{display:flex;flex-direction:column;min-height:0;background:var(--bg);
+  border-right:1px solid var(--line);position:relative;z-index:5}
+.mapPane{position:relative;min-height:0}
+#map{position:absolute;inset:0;z-index:0;background:#eceae6} /* own stacking context, so Leaflet's z-400 panes stay under the buttons */
+
+header.top{display:flex;align-items:center;gap:10px;padding:14px 16px 10px;flex:none}
+.logo{width:26px;height:26px;border-radius:7px;background:var(--red);display:grid;place-items:center;
+  color:#fff;font-weight:800;font-size:15px;flex:none}
+header.top h1{margin:0;font-size:18px;font-weight:750;letter-spacing:-.02em}
+header.top .home{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;border-radius:10px;
+  margin:-4px -6px;padding:4px 6px}
+header.top .home:hover h1{color:var(--ink-2)}
+header.top .home:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+
+/* ---------- search ---------- */
+.search{position:relative;margin:0 16px;flex:none}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:17px;height:17px;
+  fill:none;stroke:var(--muted);stroke-width:2;pointer-events:none}
+#q{width:100%;height:46px;padding:0 46px 0 40px;border:1px solid var(--line-2);border-radius:var(--radius);
+  background:var(--surface);font-size:16px;outline:0;transition:border-color .15s,box-shadow .15s}
+#q:focus{border-color:var(--ink);box-shadow:0 0 0 3px rgba(0,0,0,.06)}
+#locBtn{position:absolute;right:5px;top:5px;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:var(--ink-2)}
+#locBtn:hover{background:var(--surface-2)}
+#locBtn svg{position:static;transform:none;stroke:currentColor;width:18px;height:18px}
+#locBtn.busy{color:var(--red)}
+.sugg{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow-l);overflow:hidden auto;max-height:min(60vh,360px);z-index:60}
+.sugg button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:11px 14px;border-top:1px solid var(--line)}
+.sugg button:first-child{border-top:0}
+.sugg button:hover,.sugg button:focus{background:var(--surface-2);outline:0}
+.sugg .ic{width:28px;height:28px;border-radius:8px;background:var(--surface-2);display:grid;place-items:center;
+  font-size:11px;font-weight:750;color:var(--ink-2);flex:none}
+.sugg b{display:block;font-weight:600;font-size:14.5px}
+.sugg em{display:block;font-style:normal;font-size:12.5px;color:var(--muted)}
+
+/* ---------- vehicle modes ---------- */
+.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 16px 0;flex:none}
+.modes button{height:40px;border-radius:12px;background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;
+  justify-content:center;gap:7px;font-weight:650;font-size:14px;color:var(--ink-2);transition:.12s}
+.modes button:hover{border-color:var(--line-2)}
+.modes button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.modes svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+body:not([data-mode="car"]) .whoRow, body:not([data-mode="car"]) .whenBtn, body:not([data-mode="car"]) #timePick,
+body:not([data-mode="car"]) .evBtn, body:not([data-mode="car"]) #placesBtn, body:not([data-mode="car"]) .key,
+body:not([data-mode="car"]) #placesPanel{display:none!important}
+.evBtn{display:flex;align-items:center;gap:7px;width:100%;margin-top:8px;padding:8px 11px;border-radius:11px;font-size:13.5px;font-weight:650;
+  background:var(--surface-2);border:1.5px solid transparent;color:var(--ink-2)}
+.evBtn .n{margin-left:auto;font-weight:600;color:var(--muted)}
+.evBtn[aria-pressed="true"]{background:#E3F4EA;border-color:#16824A;color:#0E5C33}
+.evBtn svg{width:16px;height:16px;fill:currentColor}
+.mtag{display:inline-flex;align-items:center;padding:3px 10px;border-radius:99px;font-size:12.5px;font-weight:700;
+  background:color-mix(in srgb,var(--mc) 13%,#fff);color:var(--mc)}
+.mtag.big{font-size:14.5px;padding:5px 12px}
+.ftag{font-size:12.5px;color:var(--ink-2);font-weight:550}
+.ftag+.ftag::before{content:"· ";color:var(--muted)}
+.mpin{display:flex;align-items:center;gap:5px;white-space:nowrap;font-size:12px;font-weight:750;padding:4px 9px;border-radius:99px;
+  background:var(--mc);color:#fff;box-shadow:0 1px 4px rgba(0,0,0,.3);transform:translate(-50%,-50%);cursor:pointer}
+.mpin span{opacity:.8;font-weight:600}
+.mpin.sel{transform:translate(-50%,-50%) scale(1.18);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--you),0 4px 12px rgba(0,0,0,.3);z-index:900}
+.evline{display:flex;align-items:center;gap:7px;margin-top:10px;padding:10px 13px;border-radius:12px;background:#E3F4EA;color:#0E5C33;font-size:13.5px;font-weight:600}
+.evline svg{width:16px;height:16px;fill:currentColor;flex:none}
+
+/* ---------- summary: also the filter ---------- */
+.summary{margin:12px 16px 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:12px 12px 10px;flex:none;box-shadow:var(--shadow)}
+.sumHead{display:flex;align-items:center;gap:8px;padding:0 2px 10px}
+.sumHead .near{font-size:13px;color:var(--ink-2);min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sumHead .near b{color:var(--ink);font-weight:650}
+.whenBtn{margin-left:auto;flex:none;display:flex;align-items:center;gap:5px;font-size:13px;font-weight:650;
+  padding:6px 10px;border-radius:99px;background:var(--surface-2);font-variant-numeric:tabular-nums}
+.whenBtn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2}
+.whenBtn.later{background:var(--ink);color:#fff}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.tile{padding:8px 4px 7px;border-radius:11px;border:1.5px solid transparent;background:var(--surface-2);text-align:center;transition:.12s}
+.tile .n{display:block;font-size:19px;font-weight:750;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.15}
+.tile .l{display:flex;align-items:center;justify-content:center;gap:5px;font-size:11.5px;font-weight:600;color:var(--ink-2);white-space:nowrap}
+.tile.on{background:var(--surface);border-color:var(--ink)}
+.pip{width:8px;height:8px;border-radius:50%;flex:none;background:var(--c,var(--none))}
+.whoRow{display:flex;align-items:center;gap:8px;padding:0 2px 10px;font-size:13px;color:var(--ink-2)}
+.whoRow select{flex:1;min-width:0;height:34px;padding:0 30px 0 11px;border-radius:10px;border:1px solid var(--line-2);
+  background:var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a8a83' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center;
+  -webkit-appearance:none;appearance:none;font-size:14px;font-weight:600;color:var(--ink)}
+.hint{font-size:12.5px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:9px 12px;margin-bottom:8px;line-height:1.45}
+header.top .rulesBtn{margin-left:auto;font-size:13.5px;font-weight:650;padding:7px 12px;border-radius:99px;background:var(--surface);border:1px solid var(--line)}
+header.top .rulesBtn:hover{border-color:var(--ink)}
+.tag-off{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.02em;padding:1px 6px;border-radius:5px;background:#EEF0F3;color:#475569;margin-left:6px;vertical-align:2px}
+.info{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);margin-top:10px}
+.info div{padding:10px 13px;border-top:1px solid var(--line);font-size:13.5px;line-height:1.5}
+.info div:first-child{border-top:0}
+.info .k{display:block;font-size:11.5px;font-weight:650;color:var(--muted)}
+.rule{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;margin-bottom:8px}
+.rule h3{margin:0 0 4px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
+.rule p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.rule p+p{margin-top:6px}
+.credit{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.5}
+/* Lot signs: UMD prints the lot code in BLACK (free after 4 PM + weekends) or
+   RED (extra restrictions). Shown as the sign shows it — the only place red text
+   appears, because it is what drivers see at the entrance. */
+.ink-black{color:#141414}
+.ink-red{color:#C8102E}
+.signRow{display:flex;gap:14px;align-items:center;margin-top:10px;padding:12px 14px;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius)}
+.sign{flex:none;width:96px;border:2px solid #2b2b2b;border-radius:7px;background:#fff;text-align:center;overflow:hidden;
+  box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.sign .scode{display:block;font-size:26px;font-weight:850;letter-spacing:-.02em;line-height:1.1;padding:9px 4px 7px}
+.sign .strip{display:block;font-size:8.5px;font-weight:800;letter-spacing:.04em;line-height:1.25;padding:4px 4px;
+  background:#C8102E;color:#fff;text-transform:uppercase}
+.sign .strip.plain{background:#141414}
+.signRow p{margin:0;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.signRow p b{color:var(--ink)}
+
+.timePick{margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.timePick[hidden]{display:none}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px}
+.days button{padding:7px 0;font-size:12.5px;font-weight:600;border-radius:9px;color:var(--ink-2);background:var(--surface-2)}
+.days button.on{background:var(--ink);color:#fff}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:32px;background:none;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:99px;background:var(--line-2)}
+input[type=range]::-moz-range-track{height:4px;border-radius:99px;background:var(--line-2)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;
+  background:var(--surface);border:1px solid var(--line-2);box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:-9px}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:1px solid var(--line-2)}
+.timeRow{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted)}
+.timeRow button{font-weight:650;color:var(--ink);font-size:12.5px;padding:4px 8px;border-radius:8px;background:var(--surface-2)}
+
+/* ---------- list / map switch (mobile) ---------- */
+.seg{display:none}
+
+/* ---------- list ---------- */
+.list{flex:1;overflow-y:auto;padding:12px 16px calc(24px + var(--safe-b));min-height:0;-webkit-overflow-scrolling:touch}
+.card{display:block;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:12px 14px;margin-bottom:8px;transition:.12s}
+.card:hover{border-color:var(--line-2)}
+.card.on{border-color:var(--ink)}
+.card .r1{display:flex;align-items:baseline;gap:10px}
+.card h3{margin:0;font-size:16px;font-weight:700;letter-spacing:-.015em;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card .d{margin-left:auto;font-size:13px;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.card .r2{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;margin-top:7px;font-size:13.5px}
+.card .r2 .until{font-weight:500;color:var(--ink-2)}
+.card h3{display:flex;align-items:center;gap:6px}
+.code{display:inline-block;padding:2px 9px;border-radius:99px;color:#fff;font-weight:800;font-size:14px;letter-spacing:-.01em;line-height:1.35}
+.code.c-red{background:var(--sign-red)}
+.code.c-black{background:var(--sign-black)}
+.gname{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.st{display:inline-flex;align-items:center;gap:6px;padding:3px 10px 3px 8px;border-radius:99px;font-weight:650;font-size:13px}
+.st-free{background:#E3F4EA;color:#0E5C33}
+.st-pay{background:#FDF0DC;color:#8A4B00}
+.st-permit{background:#EFEFEC;color:#45453F}
+.st-none{background:#F4F4F1;color:#76766F}
+.card .r3{margin-top:4px;font-size:12.5px;color:var(--muted)}
+.card .r3.scope{color:#8A4B00}
+.payBox{margin-top:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 13px}
+.payBox .ph{display:flex;align-items:center;gap:10px}
+.payBox .ph b{font-size:14.5px}
+.payBox .zone{margin-left:auto;display:flex;align-items:center;gap:6px}
+.payBox .zone span{font-size:11.5px;color:var(--muted);font-weight:650}
+.payBox .zone code{font:800 18px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em;background:var(--surface-2);
+  padding:6px 9px;border-radius:9px;color:var(--ink)}
+.payBox .copy{font-size:12.5px;font-weight:650;padding:6px 9px;border-radius:9px;border:1px solid var(--line-2)}
+.payBox .copy:hover{border-color:var(--ink)}
+.payBox p{margin:8px 0 0;font-size:13px;color:var(--ink-2);line-height:1.5}
+.payBox .row{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:10px}
+.payBox .btn{height:42px;font-size:14.5px}
+.btn.pm{background:#141414;border-color:#141414;color:#fff}
+.btn.pm:hover{background:#333}
+.payBox .sm{height:42px;padding:0 12px;font-size:13px;color:var(--ink-2)}
+.card .r3.scope b{font-weight:650;color:var(--ink-2)}
+.card .warn{color:var(--red);font-weight:600}
+.empty{padding:32px 12px;text-align:center;color:var(--muted);font-size:14px}
+.foot{font-size:11.5px;color:var(--muted);text-align:center;padding:8px 6px 0;line-height:1.5}
+
+/* ---------- detail ---------- */
+.detail{position:absolute;inset:0;background:var(--bg);z-index:50;display:flex;flex-direction:column;
+  transform:translateX(102%);transition:transform .28s cubic-bezier(.32,.72,0,1);visibility:hidden}
+.detail.open{transform:none;visibility:visible}
+.dTop{display:flex;align-items:center;gap:6px;padding:10px 10px 4px;flex:none}
+.dTop .home{order:2;margin-left:auto;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink-2);
+  padding:6px 8px;border-radius:10px;font-size:14px;font-weight:700}
+.dTop .home:hover{background:var(--surface-2);color:var(--ink)}
+.dTop .home .logo{width:22px;height:22px;font-size:13px;border-radius:6px}
+.back{width:40px;height:40px;border-radius:12px;display:grid;place-items:center}
+.back:hover{background:var(--surface-2)}
+.back svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2}
+.dBody{flex:1;overflow-y:auto;padding:4px 16px calc(28px + var(--safe-b))}
+.dBody h2{margin:0;font-size:24px;font-weight:750;letter-spacing:-.025em;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.dBody h2 .code{font-size:20px;padding:3px 13px}
+.dBody .sub{font-size:13.5px;color:var(--muted);margin-top:2px}
+.status{display:flex;align-items:center;gap:9px;margin:14px 0 0;padding:13px 14px;border-radius:var(--radius);
+  background:var(--surface);border:1px solid var(--line)}
+.status .st{font-size:15px;padding:5px 12px 5px 10px}
+.status .until{color:var(--ink-2);font-size:14px}
+.notice{margin-top:10px;padding:11px 13px;border-radius:12px;font-size:13px;line-height:1.5;
+  background:#FFF6E0;color:#5c4400;border:1px solid #F2DFA6}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.stat{padding:10px 11px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
+.stat .k{font-size:11.5px;color:var(--muted);font-weight:600}
+.stat .v{font-size:18px;font-weight:750;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-top:1px}
+.stat .v.sm{font-size:14px;line-height:1.3;margin-top:4px}
+.dirs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.btn{display:flex;align-items:center;justify-content:center;gap:7px;height:46px;border-radius:12px;font-weight:650;
+  font-size:15px;text-decoration:none;background:var(--surface);border:1px solid var(--line-2)}
+.btn:hover{border-color:var(--ink)}
+.btn.primary{background:var(--red);border-color:var(--red);color:#fff}
+.btn.primary:hover{background:var(--red-press)}
+.sec{margin:22px 0 8px;font-size:13px;font-weight:700;color:var(--ink-2)}
+.sched{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.sched div{display:grid;grid-template-columns:82px 1fr;gap:10px;padding:10px 13px;border-top:1px solid var(--line);font-size:13.5px}
+.sched div:first-child{border-top:0}
+.sched div.act{background:var(--surface-2)}
+.sched .when{color:var(--muted);font-weight:600;font-size:12.5px;line-height:1.35}
+.sched .who{font-weight:600}
+.sched .who small{display:block;font-weight:500;color:var(--muted);font-size:12.5px}
+details.more{margin-top:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+details.more summary{padding:12px 14px;font-weight:650;font-size:14px;cursor:pointer;list-style:none;display:flex;align-items:center}
+details.more summary::after{content:"";margin-left:auto;width:8px;height:8px;border-right:2px solid var(--muted);
+  border-bottom:2px solid var(--muted);transform:rotate(45deg) translateY(-3px);transition:.15s}
+details.more[open] summary::after{transform:rotate(225deg)}
+details.more summary::-webkit-details-marker{display:none}
+details.more .in{padding:0 14px 12px;font-size:13px;color:var(--ink-2);line-height:1.55}
+details.more .in p{margin:0 0 8px}
+details.more .in b{color:var(--ink)}
+.parts{margin:4px 0 8px;padding:0;list-style:none}
+.parts li{display:flex;justify-content:space-between;padding:4px 0;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+
+/* ---------- map ---------- */
+/* OpenStreetMap tiles, desaturated so the three status colours are the only colour */
+.leaflet-tile-pane{filter:grayscale(1) contrast(.88) brightness(1.06)}
+.leaflet-container{font:inherit}
+.leaflet-control-attribution{font-size:10px;background:rgba(255,255,255,.85)!important}
+.pin{display:flex;align-items:center;gap:5px;white-space:nowrap;font-size:12px;font-weight:750;letter-spacing:-.01em;
+  padding:4px 9px 4px 5px;border-radius:99px;background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.3);
+  transform:translate(-50%,-50%);cursor:pointer;transition:transform .12s}
+.pin.s-red{background:var(--sign-red);color:#fff}
+.pin.s-black{background:var(--sign-black);color:#fff}
+.pin .pip{width:11px;height:11px;box-shadow:0 0 0 2px #fff}
+.pin .cap{font-weight:600;opacity:.75}
+.pin:hover{transform:translate(-50%,-50%) scale(1.06)}
+.pin.sel{transform:translate(-50%,-50%) scale(1.18);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--you),0 4px 12px rgba(0,0,0,.3);z-index:900}
+.mdot{width:13px;height:13px;border-radius:50%;border:2.5px solid #fff;box-shadow:0 0 0 1.5px var(--ring,#8E8E87),0 1px 3px rgba(0,0,0,.3);
+  transform:translate(-50%,-50%);cursor:pointer}
+/* You / where you're going: always blue, like every maps app */
+.me{position:relative;width:18px;height:18px;border-radius:50%;background:var(--you);border:3px solid #fff;
+  box-shadow:0 1px 4px rgba(0,0,0,.35);transform:translate(-50%,-50%)}
+.me::before{content:"";position:absolute;inset:-12px;border-radius:50%;background:rgba(26,115,232,.22);animation:pulse 2s ease-out infinite;z-index:-1}
+@keyframes pulse{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.6);opacity:0}}
+@media (prefers-reduced-motion:reduce){.me::before{animation:none;opacity:.6}}
+.dest{display:flex;flex-direction:column;align-items:center;transform:translate(-50%,-100%);pointer-events:none}
+.dest .lbl{background:var(--you);color:#fff;font-size:12.5px;font-weight:750;padding:5px 10px;border-radius:99px;white-space:nowrap;
+  box-shadow:0 2px 8px rgba(26,115,232,.45);max-width:200px;overflow:hidden;text-overflow:ellipsis}
+.dest .stem{width:3px;height:10px;background:var(--you)}
+.dest .tip{width:12px;height:12px;border-radius:50%;background:var(--you);border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);margin-top:-2px}
+.mapUI{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:8px;z-index:10}
+.mBtn{width:42px;height:42px;border-radius:12px;background:var(--surface);box-shadow:var(--shadow-l);display:grid;place-items:center;color:var(--ink-2)}
+.mBtn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2}
+.mBtn.on{background:var(--ink);color:#fff}
+.key{position:absolute;left:12px;bottom:calc(22px + var(--safe-b));z-index:10;display:flex;gap:12px;align-items:center;
+  background:var(--surface);border-radius:99px;padding:7px 13px;box-shadow:var(--shadow-l);font-size:12px;font-weight:600;color:var(--ink-2)}
+.key span{display:flex;align-items:center;gap:5px}
+.key .sep{width:1px;height:14px;background:var(--line-2)}
+.placesPanel{position:absolute;top:12px;right:62px;z-index:11;background:var(--surface);border-radius:var(--radius);
+  box-shadow:var(--shadow-l);padding:8px 12px;width:230px;font-size:13.5px}
+.placesPanel[hidden]{display:none}
+.placesPanel .lt{font-size:12px;font-weight:700;color:var(--ink-2);padding:4px 0}
+.placesPanel label{display:flex;align-items:center;gap:9px;padding:6px 0;cursor:pointer;font-weight:550}
+.placesPanel label .n{margin-left:auto;color:var(--muted);font-weight:500;font-size:12px}
+.placesPanel input{accent-color:var(--ink);margin:0;width:16px;height:16px}
+.placesPanel .pip{background:#fff;box-shadow:inset 0 0 0 2px var(--c)}
+.leaflet-popup-content-wrapper{border-radius:14px;box-shadow:var(--shadow-l)}
+.leaflet-popup-content{margin:12px 14px}
+.pp{min-width:200px;font:13px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif}
+.pp .c{font-size:11.5px;font-weight:650;color:var(--muted)}
+.pp h4{margin:1px 0 4px;font-size:15.5px;font-weight:700}
+.pp p{margin:2px 0;color:var(--ink-2)}
+.pp .row{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.pp .btn{height:36px;font-size:13px;border-radius:10px}
+.pp .btn.primary{grid-column:1/-1}
+
+/* ---------- mobile ---------- */
+@media (max-width:820px){
+  .app{grid-template-columns:100%;grid-template-rows:100%}
+  .panel{border-right:0;z-index:auto}
+  .mapPane{position:absolute;left:0;right:0;bottom:0;top:var(--mapTop,200px);display:none;z-index:6}
+  .detail{position:fixed;z-index:70}
+  body.mapMode .mapPane{display:block}
+  body.mapMode .list{display:none}
+  .seg{display:grid;grid-template-columns:1fr 1fr;margin:12px 16px 0;padding:3px;border-radius:12px;background:#e9e9e5;flex:none}
+  .seg button{height:34px;border-radius:9px;font-size:14px;font-weight:650;color:var(--ink-2)}
+  .seg button.on{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+  header.top{padding:12px 16px 8px}
+  .summary{margin-top:10px}
+  .tile .n{font-size:18px}
+}
+</style>
 </head>
-<body class="bg-background text-on-background font-body-lg min-h-screen flex flex-col">
+<body>
+<div class="app">
+  <section class="panel" id="panel">
+    <header class="top"><a class="home" id="homeBtn" href="#" aria-label="TerpPark, home"><div class="logo">P</div><h1>TerpPark</h1></a>
+      <button class="rulesBtn" id="rulesBtn">Rules</button></header>
 
-<!-- Top Navigation Shell -->
-<header class="fixed top-0 w-full z-50 bg-primary flex justify-between items-center h-14 px-margin-mobile">
-  <div class="flex items-center gap-stack-sm">
-    <button id="back-btn" class="press active:opacity-90 transition-opacity items-center justify-center w-10 h-10 -ml-2" style="display:none">
-      <span class="material-symbols-outlined text-white">arrow_back</span>
-    </button>
-    <span class="material-symbols-outlined text-white">directions_car</span>
-    <span class="font-headline-md text-headline-md font-black text-white">TerpPark</span>
+    <div class="search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" placeholder="Building, place or lot code" autocomplete="off" spellcheck="false" enterkeyhint="search">
+      <button id="locBtn" title="Use my location" aria-label="Use my location">
+        <svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>
+      </button>
+      <div id="sugg" class="sugg" hidden></div>
+    </div>
+
+    <div class="modes" id="modes" role="tablist" aria-label="How are you getting here?">
+      <button data-m="car" role="tab"><svg viewBox="0 0 24 24"><path d="M5 17h14M4 17v-4l2-5h12l2 5v4M7 17v2M17 17v2"/><circle cx="7.5" cy="13.5" r="1"/><circle cx="16.5" cy="13.5" r="1"/></svg>Car</button>
+      <button data-m="moto" role="tab"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="16" r="3.5"/><circle cx="18.5" cy="16" r="3.5"/><path d="M5.5 16 9 10h5l4.5 6M12 10l-1.5-3H8M14 10h3l1-2"/></svg>Motorcycle</button>
+      <button data-m="bike" role="tab"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="16" r="3.5"/><circle cx="18.5" cy="16" r="3.5"/><path d="M5.5 16 9.5 8h5l4 8M12 16l2.5-8M8 8h3"/></svg>Bike</button>
+    </div>
+
+    <div class="summary">
+      <div class="sumHead">
+        <div class="near" id="near"></div>
+        <button class="whenBtn" id="whenBtn" aria-expanded="false">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span id="whenLabel">Now</span>
+        </button>
+      </div>
+      <label class="whoRow">I need
+        <select id="who" aria-label="What kind of parking do you need?"></select></label>
+      <div class="tiles" id="tiles"></div>
+      <button class="evBtn" id="evBtn" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>EV charging<span class="n" id="evN"></span></button>
+      <div class="timePick" id="timePick" hidden>
+        <div class="days" id="days"></div>
+        <input type="range" id="hour" min="0" max="1425" step="15" aria-label="Time of day">
+        <div class="timeRow"><span id="timeVal"></span><button id="nowBtn">Back to now</button></div>
+      </div>
+    </div>
+
+    <div class="seg" id="seg"><button data-v="list" class="on">List</button><button data-v="map">Map</button></div>
+
+    <div class="list" id="list"></div>
+
+    <div class="detail" id="detail" aria-hidden="true"></div>
+  </section>
+
+  <div class="mapPane" id="mapPane">
+    <div id="map"></div>
+    <div class="mapUI">
+      <button class="mBtn" id="zFit" title="Show nearby lots" aria-label="Show nearby lots">
+        <svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+      </button>
+      <button class="mBtn" id="placesBtn" title="Campus places" aria-label="Campus places">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div class="placesPanel" id="placesPanel" hidden></div>
+    <div class="key">
+      <span><i class="pip" style="--c:var(--free)"></i>Free</span>
+      <span><i class="pip" style="--c:var(--pay)"></i>Pay</span>
+      <span><i class="pip" style="--c:var(--permit)"></i>Permit</span>
+      <span class="sep"></span>
+      <span><i class="pip" style="--c:var(--you)"></i>You</span>
+    </div>
   </div>
-</header>
-
-<!-- Testing Phase Notice -->
-<div class="flex items-center gap-2 px-margin-mobile py-2 w-full mt-14 bg-[#fdf0d5] border-b border-[#f0a02c]">
-  <span class="material-symbols-outlined text-[#8a5a00] text-[18px] flex-shrink-0">warning</span>
-  <span class="font-label-md text-label-md text-[#8a5a00]">This app is in testing - always check the posted sign at the lot before you park.</span>
 </div>
 
-<!-- Main Content Canvas -->
-<main id="app-root" class="flex-grow px-margin-mobile pt-stack-lg pb-8 space-y-stack-lg max-w-md mx-auto w-full">
-  <!-- Static fallback for search engines / non-JS clients. JavaScript replaces
-       this immediately with the live app for real visitors. -->
-  <h1 class="font-headline-lg text-headline-lg text-on-surface">TerpPark - UMD Parking Guide</h1>
-  <p class="font-body-md text-body-md text-on-surface-variant">
-    TerpPark is a free tool for checking parking at the University of Maryland, College Park.
-    Look up any UMD parking lot to see its restriction rules and whether it's open right now,
-    find the nearest available lot or visitor parking garage to any building on campus, and
-    browse an interactive map of every lot at College Park, MD.
-  </p>
-  <p class="font-body-md text-body-md text-on-surface-variant">Loading the live app…</p>
-</main>
+<script src="./vendor/leaflet.js"></script>
+<script type="module">
+import { DATA } from './data.bundle.js';
+import { createEngine, explainLot, prettyTime, matchesLot } from './engine.js';
 
-<!-- Disclaimer -->
-<footer class="w-full px-margin-mobile py-stack-md border-t border-outline-variant bg-surface-container-low">
-  <p class="font-label-md text-label-md text-on-surface-variant text-center max-w-md mx-auto">
-    TerpPark is provided for informational purposes only and is not affiliated with UMD Transportation Services. We are not liable for parking tickets, towing, fines, or any other consequence of relying on this app - always follow official posted signage.
-  </p>
-</footer>
+const RULES = DATA.rules;
+const engine = createEngine({
+  buildings: DATA.buildings, parking: DATA.parking,
+  payParking: DATA.payParking, rules: RULES,
+  lotInfo: DATA.lotInfo, places: DATA.places,
+});
+const el = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = (n) => n == null ? '—' : Number(n).toLocaleString('en-US');
+const mobile = () => matchMedia('(max-width:820px)').matches;
+const HOME_LINK = '<a class="home" href="#" data-home aria-label="TerpPark, home"><span class="logo">P</span>TerpPark</a>';
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="data.js"></script>
-<script src="app.js"></script>
+/* ---------------- state ---------------- */
+const S = { origin:null, when:new Date(), live:true, filter:'all', who:'any', selected:null, view:'list' };
+
+/* Three colours, plain words. Faculty/staff-only reads as "permit" — it is one. */
+const STATUS = {
+  open:          { key:'free',   label:'Free now',            c:'var(--free)'   },
+  pay:           { key:'pay',    label:'Pay to park',         c:'var(--pay)'    },
+  permit_lot:    { key:'permit', label:'Permit only',         c:'var(--permit)' },
+  faculty_staff: { key:'permit', label:'Faculty/staff permit',c:'var(--permit)' },
+  unknown:       { key:'none',   label:'No published rule',   c:'var(--none)'   },
+};
+const HEX = { free:'#16824A', pay:'#D97706', permit:'#8E8E87', none:'#c3c3bc' };
+const FILTERS = [
+  ['all','All', null],
+  ['free','Free', 'var(--free)'],
+  ['pay','Pay', 'var(--pay)'],
+  ['permit','Permit', 'var(--permit)'],
+];
+
+/* ---------------- time ---------------- */
+const DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const clock = (d) => { const h=d.getHours(), m=d.getMinutes();
+  return `${h%12||12}${m?':'+String(m).padStart(2,'0'):''} ${h<12?'AM':'PM'}`; };
+
+function buildDays(){
+  el('days').innerHTML = DOW.map((d,i)=>`<button data-d="${i}">${d}</button>`).join('');
+  el('days').onclick = (e)=>{ const b=e.target.closest('button'); if(!b) return;
+    S.when = new Date(S.when.getTime() + (+b.dataset.d - S.when.getDay())*86400000); S.live=false; sync(); };
+}
+function syncTime(){
+  [...el('days').children].forEach(b=>b.classList.toggle('on', +b.dataset.d===S.when.getDay()));
+  el('hour').value = S.when.getHours()*60 + S.when.getMinutes();
+  el('timeVal').textContent = `${DOW[S.when.getDay()]} ${clock(S.when)}`;
+  el('whenLabel').textContent = S.live ? 'Now' : `${DOW[S.when.getDay()]} ${clock(S.when)}`;
+  el('whenBtn').classList.toggle('later', !S.live);
+}
+el('hour').addEventListener('input',(e)=>{ const v=+e.target.value, d=new Date(S.when);
+  d.setHours(Math.floor(v/60), v%60, 0, 0); S.when=d; S.live=false; sync(); });
+el('nowBtn').onclick = ()=>{ S.when=new Date(); S.live=true; sync(); };
+el('whenBtn').onclick = ()=>{ const p=el('timePick'); p.hidden=!p.hidden;
+  el('whenBtn').setAttribute('aria-expanded', String(!p.hidden)); layoutMap(); };
+setInterval(()=>{ if(S.live){ S.when=new Date(); sync(); } }, 60000);
+
+/* "Free from 4 PM" / "until 7 AM": scan ahead for the next change of access. */
+// Compared by what a driver sees (free / pay / permit), so lot-A-permit -> any
+// faculty/staff permit is not reported as a change.
+const keyOf = (access) => (STATUS[access] ?? STATUS.unknown).key;
+function nextChange(x){
+  const now = keyOf(engine.accessAt(x.lot, x.restrictionClass, S.when).access);
+  const t = new Date(S.when); t.setSeconds(0,0); t.setMinutes(Math.floor(t.getMinutes()/15)*15);
+  for (let i=1; i<=4*24*3; i++){
+    t.setMinutes(t.getMinutes()+15);
+    const a = engine.accessAt(x.lot, x.restrictionClass, t).access;
+    if (keyOf(a) !== now){
+      const sameDay = t.toDateString() === S.when.toDateString();
+      const at = (sameDay ? '' : DOW[t.getDay()]+' ') + clock(t);
+      return { to:a, at };
+    }
+  }
+  return null;
+}
+function untilText(x){
+  if (x.st.key==='none') return '';
+  const n = nextChange(x);
+  if (!n) return x.st.key==='permit' ? 'at all times' : '';
+  if (n.to==='open') return `free from ${n.at}`;
+  return `until ${n.at}`;
+}
+
+/* ---------------- origin & search ---------------- */
+const lotIndex = (() => {           // one entry per lot code, nearest parcel irrelevant here
+  const m = new Map();
+  for (const f of DATA.parking.features){ const id=f.properties.lot; if(id && !m.has(id.toLowerCase())) m.set(id.toLowerCase(), f); }
+  return m;
+})();
+function searchAll(q){
+  const s=q.trim().toLowerCase(); if(!s) return [];
+  const lots=[];
+  for (const [k,f] of lotIndex) if (k===s || (s.length>=1 && k.startsWith(s) && /^[a-z0-9]{1,4}$/.test(s))) lots.push({kind:'lot',f});
+  lots.sort((a,b)=>a.f.properties.lot.length-b.f.properties.lot.length);
+  const places = engine.searchBuildings(q, 8).map(f=>({kind:f.properties.group?'place':'building', f}));
+  return [...lots.slice(0,3), ...places].slice(0,8);
+}
+function setOrigin(f, name){
+  S.origin = { coords:f.geometry.coordinates, name: name ?? f.properties.name, kind: f.kind ?? 'place' };
+  el('q').value = S.origin.name; el('sugg').hidden = true; fitted=false; closeDetail(false); sync();
+}
+let hits=[];
+el('q').addEventListener('input',()=>{
+  hits = searchAll(el('q').value); const box=el('sugg');
+  if(!hits.length){ box.hidden=true; return; }
+  box.innerHTML = hits.map((h,i)=>{ const p=h.f.properties;
+    if (h.kind==='lot'){
+      const info=DATA.lotInfo.lots[p.lot];
+      if (p.type==='off_campus') return `<button data-i="${i}"><span class="ic">P</span><span><b>${esc(p.lot)}</b>
+        <em>Off campus · ${esc(OFF[p.lot]?.name ?? '')}</em></span></button>`;
+      return `<button data-i="${i}"><span class="ic">P</span><span><b>Lot ${esc(p.lot)}</b>
+        <em>${[p.type==='garage'?esc(p.garage_name):'Parking lot', info?.total_spaces!=null?fmt(info.total_spaces)+' spaces':null].filter(Boolean).join(' · ')}</em></span></button>`;
+    }
+    const sub = h.kind==='place' ? [p.category, p.building].filter(Boolean).join(' · ')
+      : [p.building_number?'Building '+p.building_number:'UMD building', p.grid_location?'grid '+p.grid_location:null].filter(Boolean).join(' · ');
+    const ic = h.kind==='place' ? '•' : (p.building_number ? String(p.building_number).replace(/^0+/,'').slice(0,3) : 'B');
+    return `<button data-i="${i}"><span class="ic">${esc(ic)}</span><span><b>${esc(p.name)}</b><em>${esc(sub)}</em></span></button>`;
+  }).join('');
+  box.hidden=false;
+});
+el('sugg').onclick = (e)=>{ const b=e.target.closest('button'); if(!b) return; pick(hits[+b.dataset.i]); };
+el('q').addEventListener('keydown',(e)=>{ if(e.key==='Enter' && hits[0]){ pick(hits[0]); el('q').blur(); }
+  if(e.key==='Escape') el('sugg').hidden=true; });
+document.addEventListener('click',(e)=>{ if(!e.target.closest('.search')) el('sugg').hidden=true; });
+function pick(h){
+  if (h.kind==='lot'){
+    const p=h.f.properties, off=p.type==='off_campus';
+    setOrigin(h.f, off ? (OFF[p.lot]?.name ?? p.lot) : 'Lot '+p.lot); openDetail(p.lot);
+  }
+  else setOrigin(h.f);
+}
+
+function locate(){
+  if(!navigator.geolocation){ el('near').innerHTML='Location is not available here'; return; }
+  el('locBtn').classList.add('busy');
+  navigator.geolocation.getCurrentPosition(
+    (p)=>{ el('locBtn').classList.remove('busy');
+      setOrigin({kind:'me',geometry:{coordinates:[p.coords.longitude,p.coords.latitude]},properties:{}}, 'Your location'); },
+    (err)=>{ el('locBtn').classList.remove('busy');
+      el('near').innerHTML=`<b>Couldn't get your location.</b> ${esc(err.message)}`; },
+    {enableHighAccuracy:true,timeout:8000});
+}
+el('locBtn').onclick=locate;
+
+/* ---------------- query ---------------- */
+let rows=[];
+function query(){
+  const pseudo={type:'Feature',geometry:{type:'Point',coordinates:S.origin.coords},properties:{name:S.origin.name}};
+  // General information tool — never personalised to a permit.
+  const r=engine.findParking(pseudo,'',S.when,{radius:1400,limit:300,needsAda:true});
+  return r.results.map(x=>{
+    const ex=explainLot(RULES,x.lot,x.restrictionClass,S.when);
+    let st=STATUS[ex.now?.access ?? 'unknown'] ?? STATUS.unknown;
+    if (x.type==='off_campus' && st.key==='none') st={...st,label:'Hours unconfirmed'};
+    return {...x,ex,st};
+  }).sort((a,b)=>a.distance-b.distance);
+}
+const passes=(x)=> eligible(x) && (!S.ev || !!evOf(x)) && (S.filter==='all' || x.st.key===S.filter);
+const OFF = DATA.offCampus;
+const isOff=(x)=> x.type==='off_campus';
+const title=(x)=> isOff(x) ? x.lot : x.type==='garage' ? (x.garageName ?? 'Lot '+x.lot) : 'Lot '+x.lot;
+const fullTitle=(x)=> isOff(x) ? (OFF[x.lot]?.name ?? x.lot) : title(x);
+
+/* What the sign at the entrance looks like (Campus Parking Map, page 2,
+   "Black vs. Red" and "Types of Parking Lot Signs"). */
+const STRIP = {
+  unrestricted_after_4pm: 'Unrestricted after 4 p.m.',
+  restricted_after_4pm:   'Faculty/staff restrictions',
+  modified_restricted:    'Modified restrictions',
+  restricted_24h:         '24-hour restriction',
+};
+function signOf(x){
+  if (isOff(x) || !x.restrictionClass) return null;
+  const sp = RULES.special_lots?.[x.lot];
+  const ink = x.restrictionClass==='unrestricted_after_4pm' && !sp ? 'black' : 'red';
+  const strip = sp?.ada_only ? 'Accessible parking only'
+    : sp ? (()=>{ const w=sp.windows?.find(w=>w.access==='permit_lot');
+        const days={'mon-fri':'Mon–Fri','sat-sun':'Sat–Sun',all:'daily'}[w?.days]??w?.days??'';
+        return w ? `Valid lot ${x.lot} ${prettyTime(w.from)}–${prettyTime(w.to)} ${days}` : 'Special restrictions'; })()
+    : STRIP[x.restrictionClass] ?? 'Special restrictions';
+  const first = /^[A-Za-z]/.test(String(x.lot)) ? 'letter' : /^\d/.test(String(x.lot)) ? 'number' : null;
+  return { ink, strip, first };
+}
+/* Lot type: UMD's database field first; otherwise UMD's own printed rule
+   (map p.2): a code starting with a letter is faculty/staff, a number is student. */
+function typeOf(x){
+  if (x.lotType) return x.lotType;
+  if (isOff(x) || x.lot==null) return null;
+  return /^[A-Za-z]/.test(String(x.lot)) ? 'Faculty/Staff' : /^\d/.test(String(x.lot)) ? 'Student' : null;
+}
+/* "Lot JJ3" with the code in its sign ink. */
+function titleHTML(x){
+  const sg=signOf(x);
+  if (!sg) return esc(title(x));
+  const cap=`<span class="code c-${sg.ink}">${esc(x.lot)}</span>`;
+  return x.type==='garage' ? `${cap}<span class="gname">${esc(x.garageName??'Garage')}</span>` : `Lot ${cap}`;
+}
+/* UMD's four visitor garages hold two kinds of space: the permit lot (B, 19, U2, …)
+   and visitor pay-station spaces ($4/hr, 7 AM–midnight daily). The lot's status
+   only covers its own spaces, so say which, and what the pay spaces cost. */
+function visitorPay(x){
+  if (x.type!=='garage' || !RULES.pay_parking.visitor_garages.includes(String(x.garageNumber))) return null;
+  const parts=(x.garage?.parts??[]).filter(p=>/pay|visitor/i.test(p.lot));
+  const n=parts.reduce((a,p)=>a+(p.spaces||0),0);
+  const h=RULES.pay_parking.hours;
+  return { spaces:n||null, text:`${RULES.pay_parking.rate.replace(' Daily','')}, ${prettyTime(h.from)}–${prettyTime(h.to)} daily` };
+}
+/* Paying: UMD pay areas use ParkMobile (zones from UMD's "ParkMobile Zones" map,
+   data/parkmobile_zones.json). Off-campus lots get their own operator's route. */
+const PZ = DATA.payZones;
+function zoneFor(x){
+  if (isOff(x)) return null;
+  return (x.garageNumber && PZ.garages[x.garageNumber]?.zone) || PZ.lots[x.lot]?.zone || null;
+}
+function needsPay(x){
+  if (isOff(x)) return !!PZ.off_campus[x.lot];
+  return x.st.key==='pay' || !!visitorPay(x) || x.ex.schedule.some(s=>s.access==='pay');
+}
+function payBlock(x){
+  if (!needsPay(x)) return '';
+  if (isOff(x)){
+    const o=PZ.off_campus[x.lot];
+    return `<div class="payBox"><div class="ph"><b>How to pay</b></div><p>${esc(o.text)}</p>
+      ${o.link?`<div class="row"><a class="btn" href="${esc(o.link)}" target="_blank" rel="noopener">${esc(o.link_label)}</a></div>`:''}</div>`;
+  }
+  const z=zoneFor(x);
+  return `<div class="payBox">
+    <div class="ph"><b>Pay with ParkMobile</b>${z?`<span class="zone"><span>ZONE</span><code>${z}</code>
+      <button class="copy" data-copy="${z}">Copy</button></span>`:''}</div>
+    <p>${z?`Open ParkMobile and enter zone <b>${z}</b>, or pay at the pay station.`
+      :`Enter the zone number printed on the pay-station sign, or pay at the station.`}
+      ${esc(RULES.pay_parking.rate.replace(' Daily',''))}, ${prettyTime(RULES.pay_parking.hours.from)}–${prettyTime(RULES.pay_parking.hours.to)} daily.</p>
+    <div class="row"><a class="btn pm" href="${PZ.pay_link}" target="_blank" rel="noopener">Pay in ParkMobile</a>
+      <a class="btn sm" href="${PZ.app_link}" target="_blank" rel="noopener">Get the app</a></div></div>`;
+}
+document.addEventListener('click',async(e)=>{ const b=e.target.closest('[data-copy]'); if(!b) return;
+  try{ await navigator.clipboard.writeText(b.dataset.copy); b.textContent='Copied'; }
+  catch{ b.textContent=b.dataset.copy; }
+  setTimeout(()=>{ b.textContent='Copy'; },1600); });
+const statusPill=(x,u)=>`<span class="st st-${x.st.key}"><i class="pip" style="--c:${x.st.c}"></i>${x.st.label}</span>${u?`<span class="until">${u}</span>`:''}`;
+function signBlock(x){
+  const sg=signOf(x); if(!sg) return '';
+  const meaning = sg.ink==='black'
+    ? '<b>Black sign:</b> anyone may park after 4 PM on weekdays and all day on weekends, no permit needed.'
+    : '<b>Red sign:</b> this lot has extra restrictions; the strip under the lot code says which.';
+  const who = sg.first==='letter' ? ' Starts with a <b>letter</b>, so it is a faculty/staff lot.'
+    : sg.first==='number' ? ' Starts with a <b>number</b>, so it is a student lot.' : '';
+  return `<div class="signRow"><div class="sign" aria-label="Lot sign">
+      <span class="scode ink-${sg.ink}">${esc(x.lot)}</span><span class="strip ${sg.ink==='black'?'plain':''}">${esc(sg.strip)}</span></div>
+    <p>${meaning}${who}</p></div>`;
+}
+
+/* "What kind of parking do you need?" — from TerpPark, but grounded in UMD's own
+   lot-type field (ParkingRestriction table) instead of the letter/number guess.
+   It filters; it never claims your permit is valid for a lot. */
+const WHO_OPTS=[['any','Anyone'],['visitor','Visitor (no permit)'],['student','Student permit'],['faculty','Faculty/staff permit']];
+function eligible(x){
+  if (S.who==='any' || isOff(x)) return true;
+  if (x.st.key==='free' || x.st.key==='pay') return true;
+  if (S.who==='visitor') return false;
+  const ov = S.who==='student' ? RULES.overflow.student : RULES.overflow.faculty_staff;
+  if (ov.some(r=>matchesLot(r, x.lot))) return true;
+  if (S.who==='student') return typeOf(x)==='Student';
+  return typeOf(x)==='Faculty/Staff' || x.ex.now?.access==='faculty_staff';
+}
+const dist=(m)=> m<1000 ? `${m} m` : `${(m/1000).toFixed(1)} km`;
+const spacesOf=(x)=> x.spaces ?? (x.garage?.complete ? x.garage.total_spaces : null);
+
+/* ---------------- render ---------------- */
+function sync(){
+  syncTime();
+  el('near').innerHTML=`Near <b>${esc(S.origin.name)}</b>`;
+  if (S.mode!=='car'){
+    const rs=placeRows(); rows=[];
+    renderModeTiles(rs); renderModeList(rs); drawMap();
+    if (String(S.selected).startsWith('place:')) renderPlaceDetail(+String(S.selected).slice(6));
+    return;
+  }
+  rows=query();
+  renderTiles(); renderList(); drawMap();
+  if (S.selected!=null && S.selected!==RULES_VIEW && !String(S.selected).startsWith('place:')) renderDetail(S.selected);
+}
+
+function renderTiles(){
+  el('tiles').style.gridTemplateColumns='';
+  const evN=rows.filter(x=>eligible(x)&&evOf(x)).length;
+  el('evN').textContent=evN?`${evN} lot${evN===1?'':'s'} near here`:'none near here';
+  el('evBtn').setAttribute('aria-pressed',String(S.ev));
+  el('tiles').innerHTML=FILTERS.map(([k,label,c])=>{
+    const base=rows.filter(x=>eligible(x)&&(!S.ev||!!evOf(x)));
+    const n=k==='all'?base.length:base.filter(x=>x.st.key===k).length;
+    return `<button class="tile ${S.filter===k?'on':''}" data-k="${k}"><span class="n">${n}</span>
+      <span class="l">${c?`<i class="pip" style="--c:${c}"></i>`:''}${label}</span></button>`;
+  }).join('');
+}
+el('who').innerHTML=WHO_OPTS.map(([v,l])=>`<option value="${v}">${l}</option>`).join('');
+el('who').onchange=(e)=>{ S.who=e.target.value; fitted=false; sync(); };
+el('tiles').onclick=(e)=>{ const b=e.target.closest('.tile'); if(!b) return; const k=b.dataset.k;
+  if (S.mode!=='car'){ S.mfilter[S.mode] = S.mfilter[S.mode]===k && k!=='all' ? 'all' : k; fitted=false; sync(); return; }
+  S.filter = S.filter===k && k!=='all' ? 'all' : k; fitted=false; sync(); };
+el('evBtn').onclick=()=>{ S.ev=!S.ev; fitted=false; sync(); };
+
+function renderList(){
+  const list=rows.filter(passes);
+  const foot=`<p class="foot">Rules from the UMD Campus Parking Map and UMD's parking database.
+<br>Posted signs always win. Space counts are totals, not live availability.</p>`;
+  const HINT={
+    visitor:'Lots anyone can use at this time (free or pay), plus off-campus parking.',
+    student:'Lots UMD marks as student lots, student overflow, and anything open to all right now. Your permit still has to match the lot on the sign.',
+    faculty:'Lots UMD marks as faculty/staff lots, faculty/staff overflow, and anything open to all right now. Your permit still has to match the lot on the sign.',
+  };
+  const hint=HINT[S.who]?`<div class="hint">${HINT[S.who]}</div>`:'';
+  if(!list.length){ el('list').innerHTML=hint+`<div class="empty">No ${S.filter==='all'?'':FILTERS.find(f=>f[0]===S.filter)[1].toLowerCase()+' '}lots near here at this time.</div>`+foot; return; }
+  el('list').innerHTML=list.map(x=>{
+    const sp=spacesOf(x);
+    const ev=evOf(x);
+    const meta=[sp!=null?`${fmt(sp)} spaces`:null, ev?`EV charging${ev.ports?` (${ev.ports})`:''}`:null,
+        isOff(x)?OFF[x.lot]?.operator?.replace(/\s*\(.*$/,''):typeOf(x),
+        x.ex.adaOnly?'Accessible only':null, x.ex.gated?'Gated':null]
+      .filter(Boolean).map(esc).join(' · ');
+    const u=untilText(x);
+    return `<button class="card ${S.selected===String(x.lot)?'on':''}" data-lot="${esc(String(x.lot))}">
+      <div class="r1"><h3>${titleHTML(x)}${isOff(x)?'<span class="tag-off">Off campus</span>':''}</h3><span class="d">${dist(x.distance)} · ${x.walkMinutes} min</span></div>
+      <div class="r2">${statusPill(x,u)}</div>
+      ${(()=>{const vp=visitorPay(x); return vp&&x.lot?`<div class="r3 scope">${x.st.key==='pay'?'':`<b>Lot ${esc(x.lot)} spaces only.</b> `}Visitor spaces${vp.spaces?` (${fmt(vp.spaces)})`:''}: pay ${esc(vp.text)}${zoneFor(x)?` · ParkMobile ${zoneFor(x)}`:''}</div>`
+        : (x.st.key==='pay' && zoneFor(x) ? `<div class="r3 scope">ParkMobile zone ${zoneFor(x)}</div>` : '');})()}
+      ${meta||x.conflict?`<div class="r3">${meta}${x.conflict?`${meta?' · ':''}<span class="warn">Check sign</span>`:''}</div>`:''}
+    </button>`;
+  }).join('')+foot;
+  el('list').insertAdjacentHTML('afterbegin', hint);
+}
+el('list').onclick=(e)=>{ const c=e.target.closest('.card'); if(!c) return;
+  if (c.dataset.place!=null) openPlace(+c.dataset.place); else openDetail(c.dataset.lot); };
+
+/* ---------------- detail ---------------- */
+function dirLinks(lat,lon,name,primaryApple,travel='driving'){
+  const g=`https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}&travelmode=${travel}`;
+  // Apple's URL scheme has no cycling flag; leave it off so the app lets you pick.
+  const a=`https://maps.apple.com/?daddr=${lat},${lon}&q=${encodeURIComponent(name)}${travel==='driving'?'&dirflg=d':''}`;
+  const G=`<a class="btn ${primaryApple?'':'primary'}" href="${g}" target="_blank" rel="noopener">Google Maps</a>`;
+  const A=`<a class="btn ${primaryApple?'primary':''}" href="${a}" target="_blank" rel="noopener">Apple Maps</a>`;
+  return primaryApple ? A+G : G+A;
+}
+const isApple=/iPhone|iPad|Macintosh/.test(navigator.userAgent);
+
+const WEEK=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+function mergeDays(rows){
+  const out=[];
+  for (const r of rows){
+    const prev=out[out.length-1], i=WEEK.indexOf(r.days);
+    if (prev && i>0 && prev._last===i-1 && prev.hours===r.hours && prev.who===r.who){
+      prev._last=i; prev.days=`${prev._first}–${WEEK[i]}`; prev.active=prev.active||r.active;
+    } else out.push({...r, _first:r.days, _last:i>=0?i:-9});
+  }
+  return out;
+}
+function renderDetail(lot){
+  const x=rows.find(r=>String(r.lot)===String(lot));
+  const d=el('detail');
+  if(!x){ closeDetail(); return; }
+  const [lon,lat]=x.coordinates;
+  const sp=spacesOf(x), ratio=x.spaces&&x.permitsSold?(x.permitsSold/x.spaces):null;
+  const u=untilText(x);
+  const notes=[];
+  if(x.ex.summary) notes.push(`<p>${esc(x.ex.summary)}</p>`);
+  if(x.umdRegulation||x.umdAdditional) notes.push(`<p><b>UMD parking database:</b> ${esc([x.umdRegulation,x.umdAdditional].filter(Boolean).join(' '))}</p>`);
+  if(x.classSource==='umd_gis') notes.push(`<p>This lot has no colour on the printed map, so its schedule comes from UMD's parking database.</p>`);
+  if((x.st.key==='pay'||x.type==='garage') && !isOff(x)) notes.push(`<p><b>Pay to park:</b> ${esc(RULES.pay_parking.rate)}. ${esc(RULES.pay_parking.text)}</p>`);
+  if(x.ex.gated) notes.push(`<p><b>Gated lot.</b> ${esc(RULES.gated_lots.text)}</p>`);
+  if(x.ex.adaOnly) notes.push(`<p><b>Accessible parking.</b> ${esc(RULES.ada.text)}</p>`);
+  if(x.garage){
+    notes.push(`<p><b>${esc(x.garage.name)}: ${fmt(x.garage.total_spaces)} spaces</b>${x.garage.complete?'':' listed — UMD counts only part of this garage'}.</p>
+      <ul class="parts">${x.garage.parts.map(p=>`<li><span>${esc(p.lot)}</span><span>${fmt(p.spaces)}</span></li>`).join('')}</ul>`);
+  }
+  if(ratio) notes.push(`<p><b>${fmt(x.permitsSold)} permits sold</b> for ${fmt(x.spaces)} spaces (${ratio.toFixed(2)} per space). UMD oversells commuter lots on purpose; not everyone parks at once.</p>`);
+  if(!isOff(x)) notes.push(`<p><b>Special events:</b> during major campus events and game days, lots (even black-sign ones)
+    can be restricted. Signs go up at the entrance in advance; see
+    <a href="https://www.transportation.umd.edu/parking/athletics-parking" target="_blank" rel="noopener">UMD athletics parking</a>.</p>`);
+  if(isOff(x)) notes.push(`<p>Not a UMD lot: UMD permits do not apply. ${x.ex.schedule.length?'Hours outside those listed are unconfirmed.':''}
+    Posted signs always take priority.</p>`);
+  else notes.push(`<p>Grid ${esc(x.gridLocation??'—')} on the printed campus map. Posted signs always take priority.</p>`);
+  const o=isOff(x)?OFF[x.lot]:null;
+  const CONF={high:'High — checked against the operator and OpenStreetMap',medium:'Medium — some details from third-party listings',low:'Low — location only; price and hours unconfirmed'};
+  const offInfo=o?`<div class="info">
+      ${o.address?`<div><span class="k">Address</span>${esc(o.address)}</div>`:''}
+      ${o.pricing?`<div><span class="k">Price</span>${esc(o.pricing)}</div>`:''}
+      ${o.hours?`<div><span class="k">Hours</span>${esc(o.hours)}</div>`:''}
+      ${o.operator?`<div><span class="k">Run by</span>${esc(o.operator)}</div>`:''}
+      ${o.confidence?`<div><span class="k">How sure we are</span>${esc(CONF[o.confidence]??o.confidence)}</div>`:''}
+      ${o.note?`<div><span class="k">Good to know</span>${esc(o.note)}</div>`:''}
+    </div>`:'';
+
+  d.innerHTML=`
+    <div class="dTop">${HOME_LINK}<button class="back" id="dBack" aria-label="Back">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
+    <div class="dBody">
+      <h2>${isOff(x)?esc(fullTitle(x)):titleHTML(x)}</h2>
+      <div class="sub">${x.type==='garage'&&x.lot?'Lot '+esc(x.lot)+' · ':''}${x.distance<20 ? (isOff(x)?'Off-campus public parking':'UMD parking lot') : `${dist(x.distance)} · ${x.walkMinutes} min walk from ${esc(S.origin.name)}`}</div>
+      <div class="status">${statusPill(x,u)}</div>
+      ${(()=>{const ev=evOf(x); return ev?`<div class="evline"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>EV charging here${ev.ports?`: ${ev.ports} port${ev.ports===1?'':'s'}`:''}${ev.unknown&&ev.ports?' (plus some uncounted)':''}</div>`:'';})()}
+      ${(()=>{const vp=visitorPay(x); return vp&&x.lot?`<div class="notice" style="background:#FDF0DC;border-color:#F3D3A1;color:#5c3800">
+        <b>Two kinds of parking in this garage.</b> The status above is for <b>lot ${esc(x.lot)}</b> permit spaces.
+        The garage's visitor pay-station spaces${vp.spaces?` (${fmt(vp.spaces)})`:''} cost ${esc(vp.text)}, free hour or not. Check the sign on each level.</div>`:'';})()}
+      ${signBlock(x)}
+      ${x.conflict?`<div class="notice"><b>Check the sign.</b> ${esc(x.conflict)} This app follows the printed map.</div>`:''}
+      <div class="stats">
+        <div class="stat"><div class="k">Spaces</div><div class="v">${fmt(sp)}</div></div>
+        <div class="stat"><div class="k">Lot type</div><div class="v sm">${esc(isOff(x)?'Off campus':(typeOf(x)??'—'))}</div></div>
+        <div class="stat"><div class="k">Walk</div><div class="v">${x.walkMinutes} min</div></div>
+      </div>
+      ${offInfo}
+      <div class="dirs">${dirLinks(lat,lon,isOff(x)?fullTitle(x)+', College Park, MD':title(x)+', University of Maryland, College Park, MD',isApple)}</div>
+      ${payBlock(x)}
+      <div class="sec">Who can park, and when</div>
+      <div class="sched">${x.ex.schedule.length?mergeDays(x.ex.schedule).map(s=>`<div class="${s.active?'act':''}">
+        <span class="when">${s.days}<br>${s.hours}</span><span class="who">${esc(s.who)}${s.active?'<small>In effect at the selected time</small>':''}</span></div>`).join('')
+        :`<div><span class="when">—</span><span class="who">No published schedule<small>See the notes below and the sign at the lot.</small></span></div>`}</div>
+      <details class="more"><summary>Rules &amp; details</summary><div class="in">${notes.join('')}</div></details>
+    </div>`;
+  el('dBack').onclick=()=>closeDetail();
+}
+function openDetail(lot){
+  S.selected=String(lot); renderDetail(lot);
+  const d=el('detail'); d.classList.add('open'); d.setAttribute('aria-hidden','false');
+  d.querySelector('.dBody').scrollTop=0;
+  renderList(); drawMap(true);
+}
+function closeDetail(redraw=true){
+  if(S.selected==null) return;
+  S.selected=null; const d=el('detail'); d.classList.remove('open'); d.setAttribute('aria-hidden','true');
+  if(redraw){ renderList(); drawMap(); }
+}
+document.addEventListener('keydown',(e)=>{ if(e.key==='Escape' && S.selected!=null) closeDetail(); });
+
+/* ---------------- rules legend (from TerpPark's "Rules Legend") ---------------- */
+const RULES_VIEW='__rules';
+function openRules(){
+  const C=RULES.classes, sw=(c)=>`<i class="pip" style="--c:${c};width:10px;height:10px"></i>`;
+  const special=Object.entries(RULES.special_lots).filter(([,v])=>!v.off_campus&&!v.ada_only);
+  const d=el('detail');
+  d.innerHTML=`
+    <div class="dTop">${HOME_LINK}<button class="back" id="dBack" aria-label="Back">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
+    <div class="dBody">
+      <h2>Parking rules</h2>
+      <div class="sub">What each restriction on the UMD Campus Parking Map means</div>
+      <div class="sec">How to read a lot</div>
+      <div class="rule"><p>Every lot has one restriction class. The app turns it into one of three answers for the time you pick:</p>
+        <p>${sw('var(--free)')} <b>Free</b>: anyone may park, no permit. ${sw('var(--pay)')} <b>Pay</b>: anyone may park and pay.
+        ${sw('var(--permit)')} <b>Permit</b>: you need a permit for that lot (or, at some hours, any faculty/staff permit).</p></div>
+      <div class="sec">Reading the sign at the lot</div>
+      <div class="rule"><h3><span class="ink-black" style="font-weight:850">Black</span> vs <span class="ink-red" style="font-weight:850">Red</span></h3>
+        <p>Lot signs with <b>black</b> text welcome parking after 4 p.m. on weekdays and all day on weekends without a permit or CLPR.
+        Signs with <b>red</b> text mean the lot has extra restrictions: the strip under the lot code says which
+        (24-hour, modified, faculty/staff, or a lot-specific rule).</p></div>
+      <div class="rule"><h3>Letter or number</h3>
+        <p>Signs that begin with a <b>letter</b> (LL4, GG1) are faculty/staff lots, whatever number follows.
+        Signs that begin with a <b>number</b> (1a, 16b) are student lots.</p></div>
+      <div class="sec">Restriction classes <span style="font-weight:500;color:var(--muted)">· colour as printed on the map</span></div>
+      ${Object.values(C).map(c=>`<div class="rule"><h3>${sw(c.colour)}${esc(c.label)}</h3>
+        <p>${esc(c.required_text)}</p><p>${esc(c.restriction_text)}</p></div>`).join('')}
+      <div class="sec">Lots with their own rules</div>
+      ${special.map(([k,v])=>`<div class="rule"><h3>Lot ${esc(k)}</h3><p>${esc(v.text)}</p></div>`).join('')}
+      <div class="rule"><h3>Accessible (ADA) lots: ${esc(RULES.ada.lots.join(', '))}</h3><p>${esc(RULES.ada.text)}</p></div>
+      <div class="sec">Everything else</div>
+      <div class="rule"><h3>Overflow lots</h3><p>${esc(RULES.overflow.text)}</p></div>
+      <div class="rule"><h3>Gated lots</h3><p>${esc(RULES.gated_lots.text)}</p></div>
+      <div class="rule"><h3>Special events &amp; game days</h3><p>Access to some lots is restricted during major campus events, including
+        lots that are normally free after 4 PM. Restrictions are posted at the entrance in advance.
+        <a href="https://www.transportation.umd.edu/parking/athletics-parking" target="_blank" rel="noopener">Athletics parking</a>.</p></div>
+      <div class="rule"><h3>Paying with ParkMobile</h3><p>UMD pay areas take ParkMobile: open the app, enter the zone on the sign,
+        pick a time. Garage zones: ${Object.values(PZ.garages).map(g=>`${esc(g.name.replace(' Parking Garage',''))} <b>${g.zone}</b>`).join(', ')}.
+        Valley Drive: Eppley <b>6115</b>, Public Health <b>6116</b>. Xfinity Center Visitor Lot <b>6101</b>.</p>
+        <p><a href="${PZ.pay_link}" target="_blank" rel="noopener">Pay in ParkMobile</a> ·
+        <a href="${PZ.visitor_info}" target="_blank" rel="noopener">UMD visitor parking</a></p></div>
+      <div class="rule"><h3>Pay areas</h3><p>${esc(RULES.pay_parking.rate)}. ${esc(RULES.pay_parking.text)}</p>
+        <p>Visitor garages: ${esc(RULES.pay_parking.visitor_garage_text)}</p></div>
+      <div class="rule"><h3>Off-campus parking</h3><p>City of College Park garage and zone parking, and a hotel garage. These are not UMD lots,
+        so UMD permits do not apply. Most zone details are unconfirmed; check the posted signs.</p></div>
+      <p class="credit">Sources: UMD Transportation Services Campus Parking Map; UMD's campus GIS (space counts, lot types, places).
+        Posted signs at the lot always take priority over this app.</p>
+    </div>`;
+  S.selected=RULES_VIEW; d.classList.add('open'); d.setAttribute('aria-hidden','false'); d.querySelector('.dBody').scrollTop=0;
+  el('dBack').onclick=()=>closeDetail();
+}
+el('rulesBtn').onclick=openRules;
+
+/* ---------------- list / map switch (mobile) ---------------- */
+function setView(v){
+  S.view=v; document.body.classList.toggle('mapMode', v==='map');
+  [...el('seg').children].forEach(b=>b.classList.toggle('on', b.dataset.v===v));
+  layoutMap();
+}
+el('seg').onclick=(e)=>{ const b=e.target.closest('button'); if(b) setView(b.dataset.v); };
+function layoutMap(){
+  if (mobile()){
+    const r=el('seg').getBoundingClientRect();
+    document.documentElement.style.setProperty('--mapTop', (r.bottom+10)+'px');
+  }
+  if(map) setTimeout(()=>{ map.invalidateSize(); if(!fitted) drawMap(); },0);
+}
+addEventListener('resize', layoutMap);
+
+/* ---------------- map ---------------- */
+let map=null, layers=null, fitted=false;
+function initMap(){
+  map=L.map('map',{zoomControl:false}).setView([S.origin.coords[1],S.origin.coords[0]],16);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    maxZoom:19, attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  layers={ lots:L.layerGroup().addTo(map), places:L.layerGroup().addTo(map),
+           pins:L.layerGroup().addTo(map), origin:L.layerGroup().addTo(map) };
+  drawPlaces();
+}
+function drawOrigin(){
+  L.marker([S.origin.coords[1],S.origin.coords[0]],{interactive:false,
+    icon:L.divIcon({className:'',iconSize:null,html: S.origin.kind==='me' ? '<div class="me"></div>'
+      : `<div class="dest"><span class="lbl">${esc(S.origin.name)}</span><span class="stem"></span><span class="tip"></span></div>`}),
+    zIndexOffset:1200}).addTo(layers.origin);
+}
+function drawMap(keepView){
+  if(!map) initMap();
+  if (S.mode!=='car') return drawModeMap(keepView);
+  const shown=rows.filter(passes);
+  layers.lots.clearLayers(); layers.pins.clearLayers(); layers.origin.clearLayers();
+
+  // Outlines stay quiet; only the selected lot is coloured.
+  const sel=S.selected!=null?String(S.selected).toLowerCase():null;
+  const selRow=sel?rows.find(r=>String(r.lot).toLowerCase()===sel):null;
+  L.geoJSON(DATA.lotPolygons,{interactive:false,style:(f)=>{
+    const isSel=sel && String(f.properties.NAME).toLowerCase()===sel;
+    return isSel ? {color:HEX[selRow?.st.key]??'#141414',weight:2,opacity:1,fillOpacity:.22}
+                 : {color:'#a9a9a3',weight:.8,opacity:.55,fillColor:'#c9c8c2',fillOpacity:.22};
+  }}).addTo(layers.lots);
+
+  const LABELLED=12;
+  shown.forEach((x,i)=>{
+    const isSel=S.selected===String(x.lot), ll=[x.coordinates[1],x.coordinates[0]];
+    const sp=spacesOf(x), sg=signOf(x);
+    const html = (i<LABELLED||isSel)
+      ? `<div class="pin ${sg?'s-'+sg.ink:''} ${isSel?'sel':''}"><i class="pip" style="--c:${x.st.c}"></i>${x.type==='garage'?'P ':''}${esc(x.lot??'')}${sp!=null?`<span class="cap">${fmt(sp)}</span>`:''}${visitorPay(x)?'<span class="cap">· $</span>':''}</div>`
+      : `<div class="mdot" style="background:${x.st.c};--ring:${sg?`var(--sign-${sg.ink})`:'#8E8E87'}"></div>`;
+    L.marker(ll,{icon:L.divIcon({className:'',iconSize:null,html}),zIndexOffset:isSel?1000:(i<LABELLED?500-i:100),
+      keyboard:false}).addTo(layers.pins).on('click',()=>openDetail(String(x.lot)));
+  });
+
+  drawOrigin();
+
+  const visible = el('mapPane').offsetParent!==null;
+  if(!visible) return;
+  if(keepView && selRow){ map.panTo([selRow.coordinates[1],selRow.coordinates[0]]); return; }
+  if(!fitted && shown.length){
+    const b=L.latLngBounds([[S.origin.coords[1],S.origin.coords[0]],...shown.slice(0,10).map(x=>[x.coordinates[1],x.coordinates[0]])]);
+    map.fitBounds(b,{padding:[50,50],maxZoom:17}); fitted=true;
+  }
+}
+el('zFit').onclick=()=>{ fitted=false; drawMap(); };
+
+/* ---------------- campus places ---------------- */
+const PLACE_GROUPS=[
+  // Hollow rings in hues that never collide with the green/blue/grey status dots.
+  ['food','Food & dining','#7C3AED',true],
+  ['study','Libraries & study','#0891B2',true],
+  ['vehicle','EV, motorcycle, Zipcar','#4D7C0F',true],
+  ['landmarks','Landmarks','#78716C',false],
+  ['transit','Shuttle & transit','#475569',false],
+  ['services','Health & restrooms','#A21CAF',false],
+  ['bike','Bikes','#A8A29E',false],
+];
+const placeOn=Object.fromEntries(PLACE_GROUPS.map(g=>[g[0],g[3]]));
+const placeColour=Object.fromEntries(PLACE_GROUPS.map(g=>[g[0],g[2]]));
+const placeCanvas=L.canvas({padding:.3});
+function placePopup(f){
+  const p=f.properties, [lon,lat]=f.geometry.coordinates;
+  const lines=[
+    p.building&&`${esc(p.building)}${p.room?' · room '+esc(p.room):''}`,
+    p.spaces!=null&&`${p.spaces} spaces`,
+    p.chargers!=null&&`${p.chargers} charging ${p.chargers==1?'port':'ports'}`,
+    p.vehicles!=null&&`${p.vehicles} cars`,
+  ].filter(Boolean).map(t=>`<p>${t}</p>`).join('');
+  const web=p.website?`<p><a href="${esc(p.website)}" target="_blank" rel="noopener">Website</a></p>`:'';
+  return `<div class="pp"><div class="c">${esc(p.category)}</div><h4>${esc(p.name)}</h4>${lines}${web}
+    <div class="row"><button class="btn primary" data-park>Parking near here</button>
+    ${dirLinks(lat,lon,p.name+', University of Maryland, College Park, MD',false).replace(/btn primary/,'btn')}</div></div>`;
+}
+function drawPlaces(){
+  if(!map) return; layers.places.clearLayers();
+  for(const f of DATA.places.features){
+    const g=f.properties.group; if(!placeOn[g]) continue;
+    const [lon,lat]=f.geometry.coordinates;
+    L.circleMarker([lat,lon],{renderer:placeCanvas,radius:3.5,weight:2,color:placeColour[g],fillColor:'#fff',
+      fillOpacity:1,bubblingMouseEvents:false})
+      .bindPopup(()=>placePopup(f),{maxWidth:270})
+      .on('popupopen',(e)=>{ const b=e.popup.getElement().querySelector('[data-park]');
+        if(b) b.onclick=()=>{ map.closePopup(); setOrigin(f); if(mobile()) setView('list'); }; })
+      .addTo(layers.places);
+  }
+}
+(function(){
+  const counts={}; for(const f of DATA.places.features) counts[f.properties.group]=(counts[f.properties.group]||0)+1;
+  el('placesPanel').innerHTML=`<div class="lt">Show on map</div>`+PLACE_GROUPS.map(([k,label,c])=>
+    `<label><input type="checkbox" data-g="${k}" ${placeOn[k]?'checked':''}><i class="pip" style="--c:${c}"></i>${label}<span class="n">${counts[k]||0}</span></label>`).join('');
+})();
+el('placesPanel').addEventListener('change',(e)=>{ const g=e.target.dataset.g; if(g){ placeOn[g]=e.target.checked; drawPlaces(); } });
+el('placesBtn').onclick=()=>{ const p=el('placesPanel'); p.hidden=!p.hidden; el('placesBtn').classList.toggle('on',!p.hidden); };
+
+/* ---------------- vehicle modes: car / motorcycle / bike ---------------- */
+const lsGet=(k)=>{ try{ return localStorage.getItem(k); }catch{ return null; } };
+const lsSet=(k,v)=>{ try{ localStorage.setItem(k,v); }catch{} };
+const PF=DATA.places.features;
+const MODES={
+  moto:{ colour:'#6D28D9', radius:1600, travel:'driving',
+    match:(p)=>p.category==='Motorcycle & scooter parking',
+    filters:[['all','All',()=>true],['lock','Lock point',(p)=>p.lock===true],['count','Space count',(p)=>p.spaces!=null]],
+    hint:`<b>Motorcycles</b> need DOTS registration (a CLPR permit) and may park in your assigned lot or a designated motorcycle area.
+      <b>Scooters &amp; mopeds</b> need a DOTS plate and may park only in designated motorcycle, scooter and moped areas.
+      Chaining to fixed objects is not allowed. <a href="https://transportation.umd.edu/node/29" target="_blank" rel="noopener">UMD rules</a>` },
+  bike:{ colour:'#0F766E', radius:700, travel:'bicycling',
+    match:(p)=>p.group==='bike' && p.status!=='CLOSED',
+    filters:[['all','All',()=>true],['rack','Racks',(p)=>p.category==='Bike rack'],['covered','Covered',(p)=>p.covered===true],
+             ['ebike','E-bike & scooter',(p)=>p.category==='E-scooter & e-bike parking']],
+    hint:`<b>Bikes:</b> lock to bike racks only, not trees, railings or benches. <b>E-bikes &amp; e-scooters:</b> designated
+      e-scooter/e-bike areas, bike racks or covered bike parking. UMD requires all of them to be registered.
+      <a href="https://transportation.umd.edu/node/41" target="_blank" rel="noopener">Bike rules</a> ·
+      <a href="https://transportation.umd.edu/node/40" target="_blank" rel="noopener">E-bike &amp; e-scooter rules</a>` },
+};
+S.mode = ['car','moto','bike'].includes(lsGet('terp-mode')) ? lsGet('terp-mode') : 'car';
+S.mfilter = { moto:'all', bike:'all' };
+S.ev = false;
+
+/* EV chargers, attached to the lot they serve: "Lot NN" by code, "X Garage" to that
+   garage's lots, anything else to a lot within 60 m. Others stay map-only. */
+const EV=(()=>{
+  const m=new Map(), lots=DATA.parking.features.filter(f=>f.geometry);
+  const add=(k,ports)=>{ const e=m.get(k)??{n:0,ports:0,unknown:false}; e.n++; if(ports!=null) e.ports+=Number(ports); else e.unknown=true; m.set(k,e); };
+  for (const f of PF){
+    const p=f.properties; if (p.category!=='EV charging') continue;
+    const code=String(p.name).match(/^Lot (\S+)$/)?.[1];
+    let keys=[];
+    if (code) { const hit=lotIndex.get(code.toLowerCase()); if (hit) keys=[String(hit.properties.lot)]; }
+    else if (/ Garage$/.test(p.name)) {
+      const g=p.name.replace(/ Garage$/,'');
+      keys=[...new Set(lots.filter(l=>l.properties.garage_name?.startsWith(g+' ')).map(l=>String(l.properties.lot)))];
+    } else {
+      const near=lots.filter(l=>l.properties.lot).map(l=>[l,engine.haversine(f.geometry.coordinates,l.geometry.coordinates)]).sort((a,b)=>a[1]-b[1])[0];
+      if (near && near[1]<=60) keys=[String(near[0].properties.lot)];
+    }
+    keys.forEach(k=>add(k,p.chargers));
+  }
+  return m;
+})();
+function evOf(x){ return EV.get(String(x.lot)) ?? null; }
+
+function placeRows(){
+  const M=MODES[S.mode], o=S.origin.coords;
+  return PF.map((f,idx)=>({f,idx,p:f.properties,d:Math.round(engine.haversine(o,f.geometry.coordinates))}))
+    .filter(r=>M.match(r.p) && r.d<=M.radius).sort((a,b)=>a.d-b.d);
+}
+function placeTitle(p){
+  if (p.category==='Bike rack'){ const m=String(p.name).match(/^Bike rack (\S+)(?: — (.*))?$/);
+    return { t: m?.[2] ? `Rack by ${m[2]}` : 'Bike rack', s: m ? `Rack ${m[1]}` : '' }; }
+  if (p.category==='Bike room') return { t:`Bike room — ${p.name}`, s:p.room?`Room ${p.room}`:'' };
+  return { t:p.name, s:p.building && p.building!==p.name ? p.building : '' };
+}
+const SHORT={'Motorcycle & scooter parking':'Designated area','E-scooter & e-bike parking':'E-bike & scooter'};
+function placeFacts(p){
+  return [SHORT[p.category]??p.category, p.loops?`${p.loops} loops`:null, p.spaces!=null?`${p.spaces} spaces`:null, p.covered?'Covered':null,
+    p.lock===true?'Lock point':null, p.hours?(p.hours==='24/7'?'Open 24/7':p.hours):null].filter(Boolean);
+}
+const cleanAccess=(a)=>String(a).replace(/https?:\/\/\S+/,'').replace(/\s+/g,' ').trim();
+const glyph=(p)=>({'Bike rack':p.covered?'Covered':'Rack','E-scooter & e-bike parking':'E-bike','Bike room':'Room',
+  'Bike repair station':'Repair','Capital Bikeshare':'Bikeshare','Motorcycle & scooter parking':'Moto'})[p.category]??'•';
+
+function renderModeTiles(rs){
+  const M=MODES[S.mode];
+  el('tiles').style.gridTemplateColumns=`repeat(${M.filters.length},1fr)`;
+  el('tiles').innerHTML=M.filters.map(([k,l,fn])=>`<button class="tile ${S.mfilter[S.mode]===k?'on':''}" data-k="${k}">
+    <span class="n">${rs.filter(r=>fn(r.p)).length}</span><span class="l">${l}</span></button>`).join('');
+}
+function renderModeList(rs){
+  const M=MODES[S.mode], fn=M.filters.find(f=>f[0]===S.mfilter[S.mode])[2];
+  const list=rs.filter(r=>fn(r.p)).slice(0,80);
+  const hint=`<div class="hint">${M.hint}</div>`;
+  const foot=`<p class="foot">Locations from UMD's campus GIS${S.mode==='bike'?'. Loops = places on a rack to lock a bike':''}.
+    Within ${dist(M.radius)} of ${esc(S.origin.name)}.</p>`;
+  if (!list.length){ el('list').innerHTML=hint+`<div class="empty">Nothing like this within ${dist(M.radius)} of here.</div>`+foot; return; }
+  el('list').innerHTML=hint+list.map(r=>{
+    const {t,s}=placeTitle(r.p), facts=placeFacts(r.p);
+    return `<button class="card ${S.selected==='place:'+r.idx?'on':''}" data-place="${r.idx}">
+      <div class="r1"><h3>${esc(t)}</h3><span class="d">${dist(r.d)} · ${Math.max(1,Math.round(r.d/80))} min</span></div>
+      <div class="r2"><span class="mtag" style="--mc:${M.colour}">${esc(facts[0])}</span>${facts.slice(1).map(f=>`<span class="ftag">${esc(f)}</span>`).join('')}</div>
+      ${s||r.p.access?`<div class="r3">${esc([s, r.p.access?cleanAccess(r.p.access):null].filter(Boolean).join(' · '))}</div>`:''}
+    </button>`;
+  }).join('')+foot;
+}
+function renderPlaceDetail(idx){
+  const f=PF[idx]; if(!f){ closeDetail(); return; }
+  const p=f.properties, [lon,lat]=f.geometry.coordinates, M=MODES[S.mode]??MODES.bike;
+  const d0=Math.round(engine.haversine(S.origin.coords,f.geometry.coordinates)), {t,s}=placeTitle(p);
+  const stats=[p.loops?['Loops',p.loops]:null, p.spaces!=null?['Spaces',p.spaces]:null,
+    p.covered!=null?['Covered',p.covered?'Yes':'No']:null, p.lock!=null?['Lock point',p.lock?'Yes':'No']:null,
+    ['Walk',`${Math.max(1,Math.round(d0/80))} min`]].filter(Boolean).slice(0,3);
+  const link=p.access && String(p.access).match(/https?:\/\/\S+/)?.[0];
+  el('detail').innerHTML=`<div class="dTop">${HOME_LINK}<button class="back" id="dBack" aria-label="Back">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
+    <div class="dBody">
+      <h2>${esc(t)}</h2>
+      <div class="sub">${esc([s, d0>=20?`${dist(d0)} from ${S.origin.name}`:null].filter(Boolean).join(' · '))}</div>
+      <div class="status"><span class="mtag big" style="--mc:${M.colour}">${esc(p.category)}</span>
+        ${p.hours?`<span class="until">${esc(p.hours==='24/7'?'Open 24/7':p.hours)}</span>`:''}</div>
+      <div class="stats" style="grid-template-columns:repeat(${stats.length},1fr)">${stats.map(([k,v])=>
+        `<div class="stat"><div class="k">${k}</div><div class="v">${esc(v)}</div></div>`).join('')}</div>
+      ${p.access?`<div class="notice">${esc(cleanAccess(p.access))}${link?` <a href="${esc(link)}" target="_blank" rel="noopener">Request access</a>`:''}</div>`:''}
+      <div class="dirs">${dirLinks(lat,lon,t+', University of Maryland, College Park, MD',isApple,M.travel)}</div>
+      ${p.website?`<p class="credit"><a href="${esc(p.website)}" target="_blank" rel="noopener">${/veoride/.test(p.website)?'Veo rentals at UMD':'Website'}</a></p>`:''}
+      <div class="hint" style="margin-top:14px">${M.hint}</div>
+    </div>`;
+  el('dBack').onclick=()=>closeDetail();
+}
+function openPlace(idx){
+  S.selected='place:'+idx; renderPlaceDetail(idx);
+  const d=el('detail'); d.classList.add('open'); d.setAttribute('aria-hidden','false'); d.querySelector('.dBody').scrollTop=0;
+  renderModeList(placeRows()); drawMap(true);
+}
+function drawModeMap(keepView){
+  layers.lots.clearLayers(); layers.pins.clearLayers(); layers.origin.clearLayers(); layers.places.clearLayers();
+  const M=MODES[S.mode], fn=M.filters.find(f=>f[0]===S.mfilter[S.mode])[2];
+  const rs=placeRows().filter(r=>fn(r.p));
+  rs.forEach((r,i)=>{
+    const [lon,lat]=r.f.geometry.coordinates, sel=S.selected==='place:'+r.idx, n=r.p.loops??r.p.spaces, lab=i<12||sel;
+    const html= lab ? `<div class="mpin ${sel?'sel':''}" style="--mc:${M.colour}">${glyph(r.p)}${n!=null?`<span>${n}</span>`:''}</div>`
+      : `<div class="mdot" style="background:${M.colour};--ring:#fff"></div>`;
+    L.marker([lat,lon],{icon:L.divIcon({className:'',iconSize:null,html}),zIndexOffset:sel?1000:(lab?500-i:100),keyboard:false})
+      .addTo(layers.pins).on('click',()=>openPlace(r.idx));
+  });
+  drawOrigin();
+  if (el('mapPane').offsetParent===null) return;
+  const selR=rs.find(r=>S.selected==='place:'+r.idx);
+  if (keepView && selR){ map.panTo([selR.f.geometry.coordinates[1],selR.f.geometry.coordinates[0]]); return; }
+  if (!fitted){
+    const pts=[[S.origin.coords[1],S.origin.coords[0]],...rs.slice(0,10).map(r=>[r.f.geometry.coordinates[1],r.f.geometry.coordinates[0]])];
+    map.fitBounds(L.latLngBounds(pts),{padding:[50,50],maxZoom:18}); fitted=true;
+  }
+}
+function setMode(m){
+  S.mode=m; lsSet('terp-mode',m); document.body.dataset.mode=m;
+  [...el('modes').children].forEach(b=>{ b.classList.toggle('on',b.dataset.m===m); b.setAttribute('aria-selected',String(b.dataset.m===m)); });
+  closeDetail(false); fitted=false;
+  if (map && m==='car') drawPlaces();
+  sync(); el('list').scrollTop=0; layoutMap();
+}
+el('modes').onclick=(e)=>{ const b=e.target.closest('button[data-m]'); if(b && b.dataset.m!==S.mode) setMode(b.dataset.m); };
+
+/* ---------------- home ---------------- */
+const [seed]=engine.searchBuildings('McKeldin Library');
+const HOME={coords:seed.geometry.coordinates,name:seed.properties.name};
+/* Tapping the logo/title: back to the starting screen, like any app's home. */
+function goHome(){
+  closeDetail(false);
+  S.origin={...HOME}; S.filter='all'; S.who='any'; S.when=new Date(); S.live=true; S.ev=false; S.mfilter={moto:'all',bike:'all'};
+  el('q').value=''; el('sugg').hidden=true; el('who').value='any';
+  el('timePick').hidden=true; el('whenBtn').setAttribute('aria-expanded','false');
+  el('placesPanel').hidden=true; el('placesBtn').classList.remove('on');
+  if(map) map.closePopup();
+  fitted=false; setView('list'); sync();
+  el('list').scrollTop=0;
+}
+el('homeBtn').onclick=(e)=>{ e.preventDefault(); goHome(); };
+el('detail').addEventListener('click',(e)=>{ if(e.target.closest('[data-home]')){ e.preventDefault(); goHome(); } });
+
+/* ---------------- boot ---------------- */
+buildDays();
+S.origin={...HOME};
+document.body.dataset.mode=S.mode;
+[...el('modes').children].forEach(b=>b.classList.toggle('on',b.dataset.m===S.mode));
+setView('list');
+sync();
+</script>
 </body>
 </html>

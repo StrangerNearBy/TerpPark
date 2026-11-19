@@ -1,0 +1,1662 @@
+{
+ "_source": "UMD ArcGIS CampusMapDefault_NoInsite tables 11 (ParkingSpaceCount) and 12 (ParkingRestriction)",
+ "_fetched": "2026-11-19",
+ "_note": "permits_sold > total_spaces is normal: UMD oversells commuter lots (it has said 1.5-1.8 permits per space). Space counts are UMD's inventory, not live availability.",
+ "campus_total_spaces": 16341,
+ "lots": {
+  "16f": {
+   "total_spaces": 67,
+   "permits_sold": 62,
+   "lot_type": "Student",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "16b": {
+   "total_spaces": 105,
+   "permits_sold": 97,
+   "lot_type": "Student",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "KK": {
+   "total_spaces": 33,
+   "permits_sold": 26,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Special Restrictions",
+   "umd_regulation": "Lot KK Campus License Plate Registration or Permit Required, 7 a.m. - 8 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "12a": {
+   "total_spaces": 228,
+   "permits_sold": 219,
+   "lot_type": "Student",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "14b": {
+   "total_spaces": 22,
+   "permits_sold": 22,
+   "lot_type": "Student",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "10a": {
+   "total_spaces": 70,
+   "permits_sold": 113,
+   "lot_type": "Other",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "1b (S)": {
+   "total_spaces": 351,
+   "permits_sold": 365,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": "unrestricted_after_4pm",
+   "conflict": null
+  },
+  "1d": {
+   "total_spaces": 372,
+   "permits_sold": 211,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "1c": {
+   "total_spaces": 575,
+   "permits_sold": 619,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "3": {
+   "total_spaces": 269,
+   "permits_sold": 269,
+   "lot_type": "Student",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "2a": {
+   "total_spaces": 249,
+   "permits_sold": 241,
+   "lot_type": "Student",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "YC": {
+   "total_spaces": 42,
+   "permits_sold": 40,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Special Restrictions",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 6 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "9b": {
+   "total_spaces": 615,
+   "permits_sold": 615,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "Xfinity Center Visitor Lot": {
+   "total_spaces": 134,
+   "permits_sold": 0,
+   "lot_type": "Visitor",
+   "umd_restriction": "Visitor",
+   "umd_regulation": null,
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "T": {
+   "total_spaces": 22,
+   "permits_sold": 20,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Restricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "FF2": {
+   "total_spaces": 44,
+   "permits_sold": 40,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "CC1": {
+   "total_spaces": 35,
+   "permits_sold": 31,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "DD": {
+   "total_spaces": 29,
+   "permits_sold": 29,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Restricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "GG1": {
+   "total_spaces": 81,
+   "permits_sold": 72,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Restricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "17a": {
+   "total_spaces": 52,
+   "permits_sold": 47,
+   "lot_type": "Student",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "K5": {
+   "total_spaces": 8,
+   "permits_sold": 8,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "16a": {
+   "total_spaces": 153,
+   "permits_sold": 144,
+   "lot_type": "Student",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "F": {
+   "total_spaces": 62,
+   "permits_sold": 28,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24 Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "4J": {
+   "total_spaces": 48,
+   "permits_sold": 48,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "Q": {
+   "total_spaces": 56,
+   "permits_sold": 53,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "E": {
+   "total_spaces": 19,
+   "permits_sold": 9,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Special Restrictions",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "GG2": {
+   "total_spaces": 12,
+   "permits_sold": 0,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Special Restrictions",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "P2": {
+   "total_spaces": 70,
+   "permits_sold": 60,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "P1": {
+   "total_spaces": 57,
+   "permits_sold": 57,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "NN": {
+   "total_spaces": 64,
+   "permits_sold": 56,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "4n": {
+   "total_spaces": 9,
+   "permits_sold": 8,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "LL5": {
+   "total_spaces": 12,
+   "permits_sold": 6,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "LL4": {
+   "total_spaces": 8,
+   "permits_sold": 8,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "S8": {
+   "total_spaces": 8,
+   "permits_sold": 4,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24 Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "SS2": {
+   "total_spaces": 13,
+   "permits_sold": 12,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24 Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "N7": {
+   "total_spaces": 32,
+   "permits_sold": 31,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Restricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "N9": {
+   "total_spaces": 15,
+   "permits_sold": 8,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "BB": {
+   "total_spaces": 20,
+   "permits_sold": 10,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Special Restrictions",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "R2": {
+   "total_spaces": 40,
+   "permits_sold": 36,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "R3": {
+   "total_spaces": 15,
+   "permits_sold": 14,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "SS1": {
+   "total_spaces": 32,
+   "permits_sold": 29,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24 Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "4m": {
+   "total_spaces": 88,
+   "permits_sold": 7,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "CY": {
+   "total_spaces": 69,
+   "permits_sold": 49,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24 Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "1b (Campus Dr)": {
+   "total_spaces": 23,
+   "permits_sold": 17,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": "unrestricted_after_4pm",
+   "conflict": null
+  },
+  "PH2": {
+   "total_spaces": 24,
+   "permits_sold": 22,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "MM1": {
+   "total_spaces": 7,
+   "permits_sold": 7,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "N4": {
+   "total_spaces": 20,
+   "permits_sold": 17,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "S3": {
+   "total_spaces": 6,
+   "permits_sold": 3,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Restricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "CC2": {
+   "total_spaces": 8,
+   "permits_sold": 8,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "W1": {
+   "total_spaces": 26,
+   "permits_sold": 24,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Restricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "W": {
+   "total_spaces": 12,
+   "permits_sold": 6,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Restricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "A": {
+   "total_spaces": 101,
+   "permits_sold": 67,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Restricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "QQ": {
+   "total_spaces": 22,
+   "permits_sold": 20,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Restricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "L": {
+   "total_spaces": 106,
+   "permits_sold": 89,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "UU": {
+   "total_spaces": 56,
+   "permits_sold": 48,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "Z": {
+   "total_spaces": 448,
+   "permits_sold": 436,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "JJ3": {
+   "total_spaces": 128,
+   "permits_sold": 72,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "O3": {
+   "total_spaces": 11,
+   "permits_sold": 8,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Restricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "MV": {
+   "total_spaces": 69,
+   "permits_sold": 0,
+   "lot_type": "Visitor",
+   "umd_restriction": "Visitor",
+   "umd_regulation": null,
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "4b": {
+   "total_spaces": 495,
+   "permits_sold": 441,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "O5": {
+   "total_spaces": 3,
+   "permits_sold": 0,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "R4": {
+   "total_spaces": 9,
+   "permits_sold": 0,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "LL1": {
+   "total_spaces": 5,
+   "permits_sold": 5,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "MM3": {
+   "total_spaces": 6,
+   "permits_sold": 6,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "MM2": {
+   "total_spaces": 17,
+   "permits_sold": 17,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "D": {
+   "total_spaces": 16,
+   "permits_sold": 0,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Special Restrictions",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "Q1": {
+   "total_spaces": 15,
+   "permits_sold": 7,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Modified Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Valid Faculty/Staff Parking Registration Required 4PM-8PM Monday-Friday and all day Saturday and Sunday.",
+   "umd_additional": "Requires Faculty/Staff permit until 8p.m. Monday-Friday, and all day Saturday and Sunday.",
+   "fill_class": null,
+   "conflict": null
+  },
+  "N3": {
+   "total_spaces": 14,
+   "permits_sold": 11,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Restricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "J2": {
+   "total_spaces": 70,
+   "permits_sold": 25,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Lot J Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "C1": {
+   "total_spaces": 57,
+   "permits_sold": 57,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": "unrestricted_after_4pm",
+   "conflict": null
+  },
+  "4h": {
+   "total_spaces": 47,
+   "permits_sold": 0,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "8": {
+   "total_spaces": 578,
+   "permits_sold": 553,
+   "lot_type": "Student",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "LL3": {
+   "total_spaces": 4,
+   "permits_sold": 4,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "22b": {
+   "total_spaces": 40,
+   "permits_sold": 24,
+   "lot_type": "Student",
+   "umd_restriction": "Miscellaneous Permissions",
+   "umd_regulation": null,
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "22c": {
+   "total_spaces": 108,
+   "permits_sold": 104,
+   "lot_type": "Student",
+   "umd_restriction": "Miscellaneous Permissions",
+   "umd_regulation": null,
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "FD": {
+   "total_spaces": 40,
+   "permits_sold": 38,
+   "lot_type": "Other",
+   "umd_restriction": null,
+   "umd_regulation": null,
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "RR2": {
+   "total_spaces": 82,
+   "permits_sold": 70,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "G": {
+   "total_spaces": 2,
+   "permits_sold": 0,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "SA": {
+   "total_spaces": 168,
+   "permits_sold": 165,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Miscellaneous Permissions",
+   "umd_regulation": null,
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "JJ1": {
+   "total_spaces": 12,
+   "permits_sold": 11,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "15": {
+   "total_spaces": 102,
+   "permits_sold": 93,
+   "lot_type": "Student",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "S9": {
+   "total_spaces": 6,
+   "permits_sold": 6,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": "unrestricted_after_4pm",
+   "conflict": null
+  },
+  "PH1": {
+   "total_spaces": 93,
+   "permits_sold": 91,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "N6": {
+   "total_spaces": 13,
+   "permits_sold": 11,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "V": {
+   "total_spaces": 252,
+   "permits_sold": 0,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": "UMD's own records contradict each other for lot V: 'Unrestricted After 4PM' but \"Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.\""
+  },
+  "K7": {
+   "total_spaces": 102,
+   "permits_sold": 82,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "4a": {
+   "total_spaces": 5,
+   "permits_sold": 5,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "X1": {
+   "total_spaces": 182,
+   "permits_sold": 181,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "4k": {
+   "total_spaces": 18,
+   "permits_sold": 10,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "14a": {
+   "total_spaces": 100,
+   "permits_sold": 77,
+   "lot_type": "Student",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "14c": {
+   "total_spaces": 9,
+   "permits_sold": 9,
+   "lot_type": "Student",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "Y": {
+   "total_spaces": 115,
+   "permits_sold": 82,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Modified Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Valid Faculty/Staff Parking Registration Required 4PM-8PM Monday-Friday and all day Saturday and Sunday.",
+   "umd_additional": "Requires Faculty/Staff permit until 8 p.m., Monday-Friday, and all day Saturday and Sunday.",
+   "fill_class": null,
+   "conflict": null
+  },
+  "XX1": {
+   "total_spaces": 270,
+   "permits_sold": 268,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "11b": {
+   "total_spaces": 810,
+   "permits_sold": 759,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "N": {
+   "total_spaces": 17,
+   "permits_sold": 12,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "2b": {
+   "total_spaces": 15,
+   "permits_sold": 7,
+   "lot_type": "Student",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "24d": {
+   "total_spaces": 26,
+   "permits_sold": 28,
+   "lot_type": "Student",
+   "umd_restriction": "Miscellaneous Permissions",
+   "umd_regulation": null,
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "U1": {
+   "total_spaces": 38,
+   "permits_sold": 0,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "YY": {
+   "total_spaces": 6,
+   "permits_sold": 6,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "TT": {
+   "total_spaces": 16,
+   "permits_sold": 14,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "LL2": {
+   "total_spaces": 5,
+   "permits_sold": 4,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "O1": {
+   "total_spaces": 26,
+   "permits_sold": 20,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Restricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "1f": {
+   "total_spaces": 120,
+   "permits_sold": 120,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "N8": {
+   "total_spaces": 4,
+   "permits_sold": 4,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "HP": {
+   "total_spaces": 6,
+   "permits_sold": 3,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Modified Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": "No Courier or All-Campus permits allowed.",
+   "fill_class": null,
+   "conflict": "The printed map shows lot HP as Special Restrictions; UMD's parking database says Modified Restricted."
+  },
+  "J1": {
+   "total_spaces": 6,
+   "permits_sold": 6,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Lot J Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "K3": {
+   "total_spaces": 24,
+   "permits_sold": 24,
+   "lot_type": null,
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": null,
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": "The printed map shows lot K3 as Unrestricted after 4PM; UMD's parking database says 24-Hour Restricted."
+  },
+  "HH": {
+   "total_spaces": null,
+   "permits_sold": null,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Restricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "TV": {
+   "total_spaces": 72,
+   "permits_sold": 69,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Special Restrictions",
+   "umd_regulation": "Campus License Plate Registration or Permit for Lot TV Required, 7 a.m. - 4 p.m., Monday - Friday. Any Campus License Plate Registration or Permit Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "PRESIDENTS VISITOR PARKING": {
+   "total_spaces": 72,
+   "permits_sold": null,
+   "lot_type": "Visitor",
+   "umd_restriction": "Visitor",
+   "umd_regulation": null,
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "LL6": {
+   "total_spaces": 3,
+   "permits_sold": 3,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "S7": {
+   "total_spaces": 9,
+   "permits_sold": 6,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24 Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "AA": {
+   "total_spaces": null,
+   "permits_sold": null,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Special Restrictions",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday. Only Valid Faculty/Staff Registrations Allowed At All Other Times.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "HC": {
+   "total_spaces": 2,
+   "permits_sold": 2,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": "UMD's own records contradict each other for lot HC: '24-Hour Restricted' but \"Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.\""
+  },
+  "4t": {
+   "total_spaces": 12,
+   "permits_sold": 4,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "V2": {
+   "total_spaces": 208,
+   "permits_sold": 59,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24 Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": "The printed map shows lot V2 as Unrestricted after 4PM; UMD's parking database says 24 Hour Restricted."
+  },
+  "ES": {
+   "total_spaces": 45,
+   "permits_sold": 0,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "24 Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": "Gated, permits approved by ESSR",
+   "fill_class": "restricted_24h",
+   "conflict": null
+  },
+  "1b": {
+   "total_spaces": 65,
+   "permits_sold": 5,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "V3": {
+   "total_spaces": 176,
+   "permits_sold": 176,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "19": {
+   "total_spaces": 924,
+   "permits_sold": 906,
+   "lot_type": "Student",
+   "umd_restriction": "24-Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "6": {
+   "total_spaces": 1165,
+   "permits_sold": 1132,
+   "lot_type": "Student",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "B": {
+   "total_spaces": 1058,
+   "permits_sold": 1001,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "RR": {
+   "total_spaces": 94,
+   "permits_sold": 56,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "U2": {
+   "total_spaces": 658,
+   "permits_sold": 633,
+   "lot_type": "Faculty/Staff",
+   "umd_restriction": "Unrestricted After 4PM",
+   "umd_regulation": "Campus License Plate Registration or Permit Required, 7 a.m. - 4 p.m., Monday - Friday.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "SDG": {
+   "total_spaces": 780,
+   "permits_sold": 0,
+   "lot_type": "Student",
+   "umd_restriction": "24 Hour Restricted",
+   "umd_regulation": "Campus License Plate Registration or Permit Required 24 Hours-a-Day 7 Days-a-Week.",
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "1a": {
+   "total_spaces": null,
+   "permits_sold": null,
+   "lot_type": null,
+   "umd_restriction": null,
+   "umd_regulation": null,
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  },
+  "22": {
+   "total_spaces": null,
+   "permits_sold": null,
+   "lot_type": null,
+   "umd_restriction": null,
+   "umd_regulation": null,
+   "umd_additional": null,
+   "fill_class": null,
+   "conflict": null
+  }
+ },
+ "garages": {
+  "404": {
+   "name": "Mowatt Lane Parking Garage",
+   "total_spaces": 1626,
+   "parts": [
+    {
+     "lot": "19",
+     "spaces": 924,
+     "permits_sold": 906
+    },
+    {
+     "lot": "Mowatt Visitor Garage",
+     "spaces": 44,
+     "permits_sold": 0
+    },
+    {
+     "lot": "U2",
+     "spaces": 658,
+     "permits_sold": 633
+    }
+   ],
+   "complete": true
+  },
+  "403": {
+   "name": "Terrapin Trail Parking Garage",
+   "total_spaces": 1165,
+   "parts": [
+    {
+     "lot": "6",
+     "spaces": 1165,
+     "permits_sold": 1132
+    }
+   ],
+   "complete": true
+  },
+  "202": {
+   "name": "Regents Drive Parking Garage",
+   "total_spaces": 1497,
+   "parts": [
+    {
+     "lot": "B",
+     "spaces": 1058,
+     "permits_sold": 1001
+    },
+    {
+     "lot": "REGENTS DRIVE GARAGE PAY",
+     "spaces": 345,
+     "permits_sold": 0
+    },
+    {
+     "lot": "RR",
+     "spaces": 94,
+     "permits_sold": 56
+    }
+   ],
+   "complete": true
+  },
+  "218": {
+   "name": "Stadium Drive Parking Garage",
+   "total_spaces": 780,
+   "parts": [
+    {
+     "lot": "STADIUM DRIVE GARAGE",
+     "spaces": 780,
+     "permits_sold": 0
+    }
+   ],
+   "complete": true
+  },
+  "179": {
+   "name": "Union Lane Parking Garage",
+   "total_spaces": 16,
+   "parts": [
+    {
+     "lot": "UNION LANE",
+     "spaces": 16,
+     "permits_sold": 0
+    }
+   ],
+   "complete": false
+  }
+ },
+ "other_spaces": [
+  {
+   "name": "AA1",
+   "spaces": 3
+  },
+  {
+   "name": "ANNAPOLIS HALL",
+   "spaces": 14
+  },
+  {
+   "name": "ANNE ARUNDEL HALL",
+   "spaces": 2
+  },
+  {
+   "name": "ART-SOC BLDG",
+   "spaces": 2
+  },
+  {
+   "name": "BEL AIR HALL",
+   "spaces": 1
+  },
+  {
+   "name": "BENJAMIN BLDG",
+   "spaces": 10
+  },
+  {
+   "name": "BIO/PSYCH",
+   "spaces": 4
+  },
+  {
+   "name": "CALVERT HALL",
+   "spaces": 6
+  },
+  {
+   "name": "CAMPUS DRIVE (MAP)",
+   "spaces": 2
+  },
+  {
+   "name": "CENTREVILLE HALL",
+   "spaces": 8
+  },
+  {
+   "name": "CHAPEL (FRONT)",
+   "spaces": 14
+  },
+  {
+   "name": "CHAPEL DR",
+   "spaces": 10
+  },
+  {
+   "name": "CHESAPEAKE BUILDING",
+   "spaces": 1
+  },
+  {
+   "name": "CHESTERTOWN HALL",
+   "spaces": 1
+  },
+  {
+   "name": "CM",
+   "spaces": 4
+  },
+  {
+   "name": "COLE FH TRIANGLE",
+   "spaces": 2
+  },
+  {
+   "name": "COLE FIELD HOUSE",
+   "spaces": 18
+  },
+  {
+   "name": "COMCAST (REAR LOADING DOCK)",
+   "spaces": 53
+  },
+  {
+   "name": "DENTON DINING HALL",
+   "spaces": 4
+  },
+  {
+   "name": "DENTON HALL",
+   "spaces": 6
+  },
+  {
+   "name": "DENTON SERVICE LANE",
+   "spaces": 4
+  },
+  {
+   "name": "EASTON",
+   "spaces": 4
+  },
+  {
+   "name": "EASTON METERS",
+   "spaces": 4
+  },
+  {
+   "name": "ELKTON HALL",
+   "spaces": 3
+  },
+  {
+   "name": "ELLICOTT DINING HALL",
+   "spaces": 11
+  },
+  {
+   "name": "ELLICOTT HALL (REAR)",
+   "spaces": 5
+  },
+  {
+   "name": "EPPLEY REC CTR / POOL",
+   "spaces": 6
+  },
+  {
+   "name": "ESJ-ADA",
+   "spaces": 5
+  },
+  {
+   "name": "FARM DRIVE",
+   "spaces": 5
+  },
+  {
+   "name": "GEOLOGY",
+   "spaces": 6
+  },
+  {
+   "name": "GOLF COURSE",
+   "spaces": 226
+  },
+  {
+   "name": "GROUNDS",
+   "spaces": 42
+  },
+  {
+   "name": "HAGERSTOWN HALL",
+   "spaces": 2
+  },
+  {
+   "name": "HEALTH CENTER ",
+   "spaces": 2
+  },
+  {
+   "name": "KNOX RD",
+   "spaces": 3
+  },
+  {
+   "name": "LAPLATA HALL (REAR)",
+   "spaces": 4
+  },
+  {
+   "name": "LEE Building",
+   "spaces": 4
+  },
+  {
+   "name": "LEONARDTOWN",
+   "spaces": 38
+  },
+  {
+   "name": "LIBRARY LANE-NORTH",
+   "spaces": 2
+  },
+  {
+   "name": "LIBRARY LANE-SOUTH",
+   "spaces": 3
+  },
+  {
+   "name": "MARIE MOUNT HALL",
+   "spaces": 6
+  },
+  {
+   "name": "MCKELDIN LIBRARY",
+   "spaces": 7
+  },
+  {
+   "name": "MITCHELL BLDG",
+   "spaces": 2
+  },
+  {
+   "name": "MOWATT SUBSTATION",
+   "spaces": 6
+  },
+  {
+   "name": "OBSERVATORY",
+   "spaces": 30
+  },
+  {
+   "name": "PAINT BRANCH DR (map)",
+   "spaces": 2
+  },
+  {
+   "name": "PATAPSCO BLDG",
+   "spaces": 139
+  },
+  {
+   "name": "POCOMOKE BLDG (UMPD)",
+   "spaces": 10
+  },
+  {
+   "name": "PRINCE FREDERICK METERS",
+   "spaces": 4
+  },
+  {
+   "name": "PRINKERT HALL",
+   "spaces": 4
+  },
+  {
+   "name": "QUEEN ANNES HALL",
+   "spaces": 15
+  },
+  {
+   "name": "RITCHIE COLISEUM",
+   "spaces": 23
+  },
+  {
+   "name": "ROSSBOROUGH LANE",
+   "spaces": 4
+  },
+  {
+   "name": "SCH OF PUB HEALTH",
+   "spaces": 44
+  },
+  {
+   "name": "SCUB I",
+   "spaces": 4
+  },
+  {
+   "name": "SCUB II",
+   "spaces": 9
+  },
+  {
+   "name": "SCUB III",
+   "spaces": 2
+  },
+  {
+   "name": "SCUB ll / CAROLINE HALL",
+   "spaces": 12
+  },
+  {
+   "name": "SDG PERIMETER",
+   "spaces": 6
+  },
+  {
+   "name": "SERVICE BLDG ANNEX",
+   "spaces": 19
+  },
+  {
+   "name": "SHOEMAKER HALL",
+   "spaces": 15
+  },
+  {
+   "name": "SKINNER HALL",
+   "spaces": 6
+  },
+  {
+   "name": "SMITH CTR FOR THE PA",
+   "spaces": 22
+  },
+  {
+   "name": "SMITH CTR FOR THE PA (STADIUM DR)",
+   "spaces": 5
+  },
+  {
+   "name": "SOMERSET HALL",
+   "spaces": 4
+  },
+  {
+   "name": "SOUTH CAMPUS COMMONS 1",
+   "spaces": 2
+  },
+  {
+   "name": "SOUTH CAMPUS COMMONS 6",
+   "spaces": 2
+  },
+  {
+   "name": "ST MARYS HALL",
+   "spaces": 5
+  },
+  {
+   "name": "SYMONS HALL",
+   "spaces": 2
+  },
+  {
+   "name": "TALIAFERRO HALL",
+   "spaces": 3
+  },
+  {
+   "name": "TAWES HALL",
+   "spaces": 4
+  },
+  {
+   "name": "TERRAPIN TRADER STORAGE LOT",
+   "spaces": 21
+  },
+  {
+   "name": "TYSER TOWER (RT OF GATE)",
+   "spaces": 6
+  },
+  {
+   "name": "VAN MUNCHING HALL",
+   "spaces": 3
+  },
+  {
+   "name": "VISITOR CENTER LOT",
+   "spaces": 55
+  }
+ ]
+}
