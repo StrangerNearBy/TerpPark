@@ -32,12 +32,19 @@ import { inWindow } from './src/engine.js';
 const w = { days: 'mon-fri', from: '16:00', to: '07:00' };
 const t = (s) => inWindow(w, new Date(s));
 console.log('window wrap checks (mon-fri 16:00->07:00):');
-console.log('  Tue 15:59 ->', t('2026-08-11T15:59:00'), '(expect false)');
-console.log('  Tue 16:00 ->', t('2026-08-11T16:00:00'), '(expect true)');
-console.log('  Wed 06:59 ->', t('2026-08-12T06:59:00'), '(expect true)');
-console.log('  Wed 07:00 ->', t('2026-08-12T07:00:00'), '(expect false)');
-console.log('  Sat 06:00 ->', t('2026-08-15T06:00:00'), '(expect true, wraps from Fri)');
-console.log('  Sun 06:00 ->', t('2026-08-16T06:00:00'), '(expect false, Sat is not mon-fri)');
+let failures = 0;
+for (const [label, when, want] of [
+  ['Tue 15:59', '2026-08-11T15:59:00', false],
+  ['Tue 16:00', '2026-08-11T16:00:00', true],
+  ['Wed 06:59', '2026-08-12T06:59:00', true],
+  ['Wed 07:00', '2026-08-12T07:00:00', false],
+  ['Sat 06:00', '2026-08-15T06:00:00', true],   // wraps from Fri
+  ['Sun 06:00', '2026-08-16T06:00:00', false],  // Sat is not mon-fri
+]) {
+  const got = t(when);
+  if (got !== want) failures++;
+  console.log(`  ${got === want ? 'ok  ' : 'FAIL'} ${label} -> ${got} (expect ${want})`);
+}
 
 import { matchesLot } from './src/engine.js';
 console.log('\nlot family matching:');
@@ -51,3 +58,6 @@ for (const [ref,code,want] of cases) {
   if (got!==want) { bad++; console.log(`  FAIL ${ref} vs ${code}: got ${got} want ${want}`); }
 }
 console.log(bad ? `  ${bad} FAILURES` : `  all ${cases.length} family cases pass`);
+failures += bad;
+// Non-zero exit so CI (and the deploy workflow) stops on any failure.
+if (failures) { console.log(`\n${failures} test failure(s)`); process.exitCode = 1; }

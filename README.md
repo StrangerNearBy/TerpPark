@@ -17,6 +17,26 @@ cd docs && python3 -m http.server 8777            # then localhost:8777
 `docs/` on `main` (`docs/CNAME` holds the domain; never delete it). Every push to
 `main` is live in about a minute.
 
+### Deploying (manual, on purpose)
+
+Pages publishes whatever is on `main`, so **never push to `main` directly**. Work on
+`dev`, then publish when ready:
+
+```
+npm run build                  # rebuild docs/ from data/ + src/, then commit
+git push origin dev
+npm run deploy                 # or GitHub → Actions → "Deploy to terppark.com" → Run workflow
+gh run watch -R StrangerNearBy/TerpPark   # follow it
+```
+
+The workflow (`.github/workflows/deploy.yml`) runs the tests, checks `docs/` is
+rebuilt from current source, checks `docs/CNAME` = terppark.com, then fast-forwards
+`main` to your branch and asks Pages to rebuild. It refuses to deploy if any check
+fails, or if `main` has commits your branch lacks.
+
+Admin-only follow-ups: protect `main` so only the workflow can push, or switch Pages
+to "GitHub Actions" as its source.
+
 This is TerpPark v3. It replaced the original TerpPark app in this repo on
 2026-11-19. The original is preserved at tag **`legacy-v2`**; to bring it back:
 `git checkout legacy-v2 -- . && git commit -m "Restore v2"` (or revert the v3 merge).

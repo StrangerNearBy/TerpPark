@@ -1,6 +1,11 @@
 {
-  "name": "umd-parking-mvp",
+  "name": "terppark",
   "version": "0.1.0",
   "type": "module",
-  "description": "UMD campus parking finder - MVP data layer, rules engine and prototype UI"
+  "description": "TerpPark: UMD campus parking rules, space counts and campus places (terppark.com)",
+  "scripts": {
+    "build": "node build.mjs && node bundle-standalone.mjs && cp src/engine.js docs/engine.js",
+    "test": "node test.mjs",
+    "deploy": "gh workflow run deploy.yml -R StrangerNearBy/TerpPark -f ref=dev && echo \"Deploy started: gh run watch -R StrangerNearBy/TerpPark\""
+  }
 }
