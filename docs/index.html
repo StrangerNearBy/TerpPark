@@ -334,6 +334,9 @@ details.more .in b{color:var(--ink)}
 .picon .nm{display:none;font-size:11.5px;font-weight:700;color:var(--pc);background:rgba(255,255,255,.92);padding:1px 6px;border-radius:6px;
   box-shadow:0 0 0 1px rgba(0,0,0,.06);max-width:150px;overflow:hidden;text-overflow:ellipsis}
 #map.labels .picon .nm{display:block}
+/* Parking first: places switched on with ≡ appear only once you zoom in.
+   Explore results (an explicit request) are never hidden. */
+#map:not(.z17) .picon.pz17, #map:not(.z18) .picon.pz18{display:none}
 .key .kp{display:flex;align-items:center;gap:4px}
 .key .kp svg{width:12px;height:12px;fill:none;stroke:var(--pc);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .key{position:absolute;left:12px;bottom:calc(22px + var(--safe-b));z-index:10;display:flex;gap:12px;align-items:center;
@@ -1045,7 +1048,8 @@ function initMap(){
   layers={ lots:L.layerGroup().addTo(map), places:L.layerGroup().addTo(map),
            pins:L.layerGroup().addTo(map), origin:L.layerGroup().addTo(map) };
   // Place names show once zoomed in far enough to fit them; icons alone before that.
-  const labelZoom=()=>{ el('map').classList.toggle('labels', map.getZoom()>=18); el('map').classList.toggle('far', map.getZoom()<17); };
+  const labelZoom=()=>{ const z=map.getZoom(), m=el('map').classList;
+    m.toggle('labels', z>=18); m.toggle('far', z<17); m.toggle('z17', z>=17); m.toggle('z18', z>=18); };
   map.on('zoomend', labelZoom); labelZoom();
   drawPlaces();
 }
@@ -1109,6 +1113,9 @@ const PLACE_GROUPS=[
   ['bike','Bikes','#5F6B2E',false],
 ];
 const placeOn=Object.fromEntries(PLACE_GROUPS.map(g=>[g[0],g[3]]));
+// Zoom needed before a group shows on the normal map: useful places at street
+// level (17), rooms, stops and racks only up close (18).
+const PLACE_MIN_ZOOM={food:17, study:17, vehicle:17, landmarks:17, transit:18, services:18, bike:18};
 const placeColour=Object.fromEntries(PLACE_GROUPS.map(g=>[g[0],g[2]]));
 function placePopup(f){
   const p=f.properties, [lon,lat]=f.geometry.coordinates;
@@ -1175,7 +1182,7 @@ function drawPlaces(){
   for(const f of DATA.places.features){
     const p=f.properties, g=p.group; if(!placeOn[g]) continue;
     const [lon,lat]=f.geometry.coordinates;
-    const html=`<div class="picon" style="--pc:${placeColour[g]}"><span class="ic">${svg(iconFor(p))}</span><span class="nm">${esc(mapName(p))}</span></div>`;
+    const html=`<div class="picon pz${PLACE_MIN_ZOOM[g]??17}" style="--pc:${placeColour[g]}"><span class="ic">${svg(iconFor(p))}</span><span class="nm">${esc(mapName(p))}</span></div>`;
     L.marker([lat,lon],{icon:L.divIcon({className:'',iconSize:null,html}),keyboard:false,zIndexOffset:-100,bubblingMouseEvents:false})
       .bindTooltip(esc(p.name),{direction:'top',offset:[0,-12]})
       .bindPopup(()=>placePopup(f),{maxWidth:270})
@@ -1186,7 +1193,7 @@ function drawPlaces(){
 }
 (function(){
   const counts={}; for(const f of DATA.places.features) counts[f.properties.group]=(counts[f.properties.group]||0)+1;
-  el('placesPanel').innerHTML=`<div class="lt">Show on map</div>`+PLACE_GROUPS.map(([k,label,c])=>
+  el('placesPanel').innerHTML=`<div class="lt">Show on map <span style="font-weight:500;color:var(--muted)">· appear as you zoom in</span></div>`+PLACE_GROUPS.map(([k,label,c])=>
     `<label><input type="checkbox" data-g="${k}" ${placeOn[k]?'checked':''}><i class="pip" style="--c:${c}"></i>${label}<span class="n">${counts[k]||0}</span></label>`).join('');
 })();
 el('placesPanel').addEventListener('change',(e)=>{ const g=e.target.dataset.g; if(g){ placeOn[g]=e.target.checked; drawPlaces(); } });
