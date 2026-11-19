@@ -116,6 +116,19 @@ body:not([data-mode="car"]) #placesPanel{display:none!important}
   background:var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a8a83' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center;
   -webkit-appearance:none;appearance:none;font-size:14px;font-weight:600;color:var(--ink)}
 .hint{font-size:12.5px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:9px 12px;margin-bottom:8px;line-height:1.45}
+.beta{font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:6px;
+  background:#FFF1C2;color:#7A5200;border:1px solid #F0D27A;margin-left:2px}
+.devBanner{display:flex;align-items:flex-start;gap:10px;margin:0 16px 10px;padding:10px 12px;border-radius:12px;
+  background:#FFF8E1;border:1px solid #F3DFA2;color:#5C4400;font-size:12.5px;line-height:1.45;flex:none}
+.devBanner[hidden]{display:none}
+.devBanner b{color:#3D2E00}
+.devBanner .acts{display:flex;gap:4px;margin-left:auto;flex:none}
+.devBanner button{font-size:12.5px;font-weight:700;padding:4px 8px;border-radius:8px;color:#5C4400}
+.devBanner button:hover{background:#FCEDB8}
+.foot a{color:inherit}
+.disclaimer{background:#FFF8E1;border:1px solid #F3DFA2;border-radius:var(--radius);padding:12px 14px;margin-bottom:8px}
+.disclaimer p{margin:0;font-size:13.5px;color:#4A3800;line-height:1.55}
+.disclaimer p+p{margin-top:7px}
 header.top .rulesBtn{margin-left:auto;font-size:13.5px;font-weight:650;padding:7px 12px;border-radius:99px;background:var(--surface);border:1px solid var(--line)}
 header.top .rulesBtn:hover{border-color:var(--ink)}
 .tag-off{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.02em;padding:1px 6px;border-radius:5px;background:#EEF0F3;color:#475569;margin-left:6px;vertical-align:2px}
@@ -330,8 +343,14 @@ details.more .in b{color:var(--ink)}
 <body>
 <div class="app">
   <section class="panel" id="panel">
-    <header class="top"><a class="home" id="homeBtn" href="#" aria-label="TerpPark, home"><div class="logo">P</div><h1>TerpPark</h1></a>
+    <header class="top"><a class="home" id="homeBtn" href="#" aria-label="TerpPark, home"><div class="logo">P</div><h1>TerpPark</h1><span class="beta">Beta</span></a>
       <button class="rulesBtn" id="rulesBtn">Rules</button></header>
+
+    <div class="devBanner" id="devBanner" role="note" hidden>
+      <span><b>Beta, still under development.</b> Unofficial guide, not affiliated with UMD. Information may be
+        wrong or out of date. Always follow the posted signs.</span>
+      <span class="acts"><button id="devMore">Details</button><button id="devClose" aria-label="Dismiss">✕</button></span>
+    </div>
 
     <div class="search">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
@@ -703,7 +722,7 @@ el('evBtn').onclick=()=>{ S.ev=!S.ev; fitted=false; sync(); };
 function renderList(){
   const list=rows.filter(passes);
   const foot=`<p class="foot">Rules from the UMD Campus Parking Map and UMD's parking database.
-<br>Posted signs always win. Space counts are totals, not live availability.</p>`;
+<br>Posted signs always win. Space counts are totals, not live availability.<br><b>Beta.</b> Unofficial, not affiliated with UMD, no guarantees. <a href="#" data-about>Disclaimer</a></p>`;
   const HINT={
     visitor:'Lots anyone can use at this time (free or pay), plus off-campus parking.',
     student:'Lots UMD marks as student lots, student overflow, and anything open to all right now. Your permit still has to match the lot on the sign.',
@@ -844,6 +863,19 @@ function openRules(){
     <div class="dBody">
       <h2>Parking rules</h2>
       <div class="sub">What each restriction on the UMD Campus Parking Map means</div>
+      <div class="sec" id="about">About TerpPark &amp; disclaimer</div>
+      <div class="disclaimer">
+        <p><b>TerpPark is an independent, unofficial guide</b> to parking at the University of Maryland, College Park.
+          It is not affiliated with, endorsed by, or run by the University of Maryland or its Department of
+          Transportation Services (DOTS).</p>
+        <p><b>It is still under development (beta).</b> Rules, prices, hours, space counts, ParkMobile zones and locations
+          come from public UMD and City of College Park sources. They may be incomplete, out of date or wrong.</p>
+        <p><b>Nothing here is guaranteed.</b> Posted signs at the lot and official DOTS information always take priority.
+          Space counts are totals, not live availability. Special events can change any lot without notice.</p>
+        <p><b>Use it at your own risk.</b> TerpPark and its makers are not responsible for parking tickets, towing, boots,
+          impound fees, fines or any other consequence of relying on it.</p>
+        <p>Official information: <a href="https://transportation.umd.edu" target="_blank" rel="noopener">transportation.umd.edu</a></p>
+      </div>
       <div class="sec">How to read a lot</div>
       <div class="rule"><p>Every lot has one restriction class. The app turns it into one of three answers for the time you pick:</p>
         <p>${sw('var(--free)')} <b>Free</b>: anyone may park, no permit. ${sw('var(--pay)')} <b>Pay</b>: anyone may park and pay.
@@ -1083,7 +1115,7 @@ function renderModeList(rs){
   const list=rs.filter(r=>fn(r.p)).slice(0,80);
   const hint=`<div class="hint">${M.hint}</div>`;
   const foot=`<p class="foot">Locations from UMD's campus GIS${S.mode==='bike'?'. Loops = places on a rack to lock a bike':''}.
-    Within ${dist(M.radius)} of ${esc(S.origin.name)}.</p>`;
+    Within ${dist(M.radius)} of ${esc(S.origin.name)}.<br><b>Beta.</b> Unofficial, not affiliated with UMD, no guarantees. <a href="#" data-about>Disclaimer</a></p>`;
   if (!list.length){ el('list').innerHTML=hint+`<div class="empty">Nothing like this within ${dist(M.radius)} of here.</div>`+foot; return; }
   el('list').innerHTML=hint+list.map(r=>{
     const {t,s}=placeTitle(r.p), facts=placeFacts(r.p);
@@ -1168,6 +1200,13 @@ function goHome(){
 }
 el('homeBtn').onclick=(e)=>{ e.preventDefault(); goHome(); };
 el('detail').addEventListener('click',(e)=>{ if(e.target.closest('[data-home]')){ e.preventDefault(); goHome(); } });
+
+/* ---------------- beta / disclaimer ---------------- */
+const DISC_KEY='terp-disclaimer-v1';
+if (!lsGet(DISC_KEY)) el('devBanner').hidden=false;
+el('devClose').onclick=()=>{ el('devBanner').hidden=true; lsSet(DISC_KEY,'seen'); layoutMap(); };
+el('devMore').onclick=()=>openRules();
+document.addEventListener('click',(e)=>{ if(e.target.closest('[data-about]')){ e.preventDefault(); openRules(); } });
 
 /* ---------------- boot ---------------- */
 buildDays();
