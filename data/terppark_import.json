@@ -1,0 +1,476 @@
+{
+ "_source": "TerpPark by a friend of this project — https://raw.githubusercontent.com/StrangerNearBy/TerpPark/main/docs/data.js",
+ "_credit": "Off-campus parking research and bike/impound locations: TerpPark (terppark.com)",
+ "_fetched": "2026-11-18",
+ "off_campus": {
+  "type": "FeatureCollection",
+  "features": [
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.937078,
+      38.980453
+     ]
+    },
+    "properties": {
+     "lot": "City Garage",
+     "type": "off_campus",
+     "name": "City of College Park Downtown Parking Garage",
+     "source_id": "downtown-parking-garage",
+     "address": "4509 Knox Road, College Park, MD 20740 (at the corner of Knox Road and Yale Avenue)",
+     "operator": "City of College Park (Department of Public Services)",
+     "pricing": "$2.00/hour, Mon-Sat 8:00am-10:00pm, payable only by credit card or mobile app at electronic pay stations (per collegeparkmd.gov/parking, checked Aug 2026). Vehicles with handicap tags park free all day (no overnight parking permitted). Note: a couple of third-party aggregator sites (e.g. Yelp) list an older $0.75/hour rate - treat the official city site as authoritative and verify at the pay station.",
+     "hours": "Enforced Monday-Saturday, 8:00am-10:00pm, except City-observed holidays; appears unenforced/free outside those hours and on Sundays per the official rate structure.",
+     "confidence": "high",
+     "note": "In the heart of Downtown College Park, about 0.5 miles / ~10 min walk south of the main campus core, near Route 1 (Baltimore Ave) restaurants/shops. Has 2 EV charging stations. Some secondary listings (Yelp, an older Parkopedia entry) give the address as '7306 Yale Ave' instead of the Knox Road address OSM lists - likely reflects the building's dual street frontage at the Knox/Yale corner rather than a factual conflict, but flagging for a human to double-check the exact posted street number if it matters for the app.",
+     "windows": [
+      {
+       "days": "mon",
+       "from": "08:00",
+       "to": "22:00",
+       "access": "pay"
+      },
+      {
+       "days": "tue",
+       "from": "08:00",
+       "to": "22:00",
+       "access": "pay"
+      },
+      {
+       "days": "wed",
+       "from": "08:00",
+       "to": "22:00",
+       "access": "pay"
+      },
+      {
+       "days": "thu",
+       "from": "08:00",
+       "to": "22:00",
+       "access": "pay"
+      },
+      {
+       "days": "fri",
+       "from": "08:00",
+       "to": "22:00",
+       "access": "pay"
+      },
+      {
+       "days": "sat",
+       "from": "08:00",
+       "to": "22:00",
+       "access": "pay"
+      }
+     ]
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.932478,
+      38.993092
+     ]
+    },
+    "properties": {
+     "lot": "Cambria",
+     "type": "off_campus",
+     "name": "Cambria College Park Garage",
+     "source_id": "cambria-college-park-garage",
+     "address": "8321 Baltimore Avenue, College Park, MD 20740 (alley entrance)",
+     "operator": "Cambria Hotel College Park (Choice Hotels franchisee; privately operated, not UMD)",
+     "pricing": "Reported around $10-12 per night: ParkWhiz lists it as a bookable garage at this address for about $10, while the hotel's own guest-parking rate is described in press/review sources as $12.00/vehicle/night with in-and-out privileges. Treat as approximate; not independently confirmed from the hotel's own published rate card, so pricing_summary should be read as 'roughly $10-12/night, confirm current rate with the hotel.'",
+     "hours": "Not confirmed (self-park garage typically accessible whenever the hotel is staffed; no published public hours found).",
+     "confidence": "medium",
+     "note": "About 1.1 miles / ~20-22 min walk north of the main campus core, in the Lakeland/Discovery District area of Baltimore Avenue near Ritchie Coliseum's north side - at the outer edge of the 'walkable' range for most students, more realistic for visitors driving up and walking the last stretch, or biking/scooting in. Bookable via third-party parking apps (ParkWhiz/SpotHero-style aggregators), which is a meaningfully different access model than the WMATA or City garages (no dedicated public pay station on-site; you generally reserve ahead through an app or ask the hotel directly).",
+     "windows": [
+      {
+       "days": "all",
+       "from": "00:00",
+       "to": "24:00",
+       "access": "pay"
+      }
+     ]
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.936834,
+      38.9819197
+     ]
+    },
+    "properties": {
+     "lot": "Zone 4",
+     "type": "off_campus",
+     "name": "City of College Park Zone 4 Parking (College Avenue)",
+     "source_id": "zone4-college-ave",
+     "address": "4500 block College Avenue, College Park, MD 20740",
+     "operator": "City of College Park (Department of Public Services)",
+     "pricing": "Not confirmed for this specific block.",
+     "hours": "Not confirmed - check posted signage for enforcement hours.",
+     "confidence": "low",
+     "note": null,
+     "windows": null
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.9377217,
+      38.9817209
+     ]
+    },
+    "properties": {
+     "lot": "Zone 3",
+     "type": "off_campus",
+     "name": "City of College Park Zone 3 Parking (Baltimore Avenue)",
+     "source_id": "zone3-baltimore-ave",
+     "address": "7400 block Baltimore Avenue, College Park, MD 20740",
+     "operator": "City of College Park (Department of Public Services)",
+     "pricing": "Not confirmed for this specific block.",
+     "hours": "Not confirmed - check posted signage for enforcement hours.",
+     "confidence": "low",
+     "note": null,
+     "windows": null
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.9369146,
+      38.9808644
+     ]
+    },
+    "properties": {
+     "lot": "Zone 2A",
+     "type": "off_campus",
+     "name": "City of College Park Zone 2 Parking (Yale Ave / Lehigh Rd) - Segment A",
+     "source_id": "zone2-yale-lehigh-a",
+     "address": "7400 block Yale Avenue & 4500 block Lehigh Road, College Park, MD 20740",
+     "operator": "City of College Park (Department of Public Services)",
+     "pricing": "Not confirmed for this specific block.",
+     "hours": "Not confirmed - check posted signage for enforcement hours.",
+     "confidence": "low",
+     "note": null,
+     "windows": null
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.9371506,
+      38.9813313
+     ]
+    },
+    "properties": {
+     "lot": "Zone 2B",
+     "type": "off_campus",
+     "name": "City of College Park Zone 2 Parking (Yale Ave / Lehigh Rd) - Segment B",
+     "source_id": "zone2-yale-lehigh-b",
+     "address": "7400 block Yale Avenue & 4500 block Lehigh Road, College Park, MD 20740",
+     "operator": "City of College Park (Department of Public Services)",
+     "pricing": "Not confirmed for this specific block.",
+     "hours": "Not confirmed - check posted signage for enforcement hours.",
+     "confidence": "low",
+     "note": null,
+     "windows": null
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.9436791,
+      38.9811476
+     ]
+    },
+    "properties": {
+     "lot": "Zone 9A",
+     "type": "off_campus",
+     "name": "City of College Park Zone 9 Parking (Knox/Hartwick/Guilford) - Segment A",
+     "source_id": "zone9-knox-hartwick-guilford-a",
+     "address": "4200 block Guilford Drive & 4200 block Hartwick Road & 4200 block Knox Road, College Park, MD 20740",
+     "operator": "City of College Park (Department of Public Services)",
+     "pricing": "Not confirmed for this specific block.",
+     "hours": "Not confirmed - check posted signage for enforcement hours.",
+     "confidence": "low",
+     "note": null,
+     "windows": null
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.9434515,
+      38.9804964
+     ]
+    },
+    "properties": {
+     "lot": "Zone 9B",
+     "type": "off_campus",
+     "name": "City of College Park Zone 9 Parking (Knox/Hartwick/Guilford) - Segment B",
+     "source_id": "zone9-knox-hartwick-guilford-b",
+     "address": "4200 block Guilford Drive & 4200 block Hartwick Road & 4200 block Knox Road, College Park, MD 20740",
+     "operator": "City of College Park (Department of Public Services)",
+     "pricing": "Not confirmed for this specific block.",
+     "hours": "Not confirmed - check posted signage for enforcement hours.",
+     "confidence": "low",
+     "note": null,
+     "windows": null
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.9415858,
+      38.9800838
+     ]
+    },
+    "properties": {
+     "lot": "Zone 9C",
+     "type": "off_campus",
+     "name": "City of College Park Zone 9 Parking (Knox/Hartwick/Guilford) - Segment C",
+     "source_id": "zone9-knox-hartwick-guilford-c",
+     "address": "4200 block Guilford Drive & 4200 block Hartwick Road & 4200 block Knox Road, College Park, MD 20740",
+     "operator": "City of College Park (Department of Public Services)",
+     "pricing": "Not confirmed for this specific block.",
+     "hours": "Not confirmed - check posted signage for enforcement hours.",
+     "confidence": "low",
+     "note": null,
+     "windows": null
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.9406761,
+      38.9799641
+     ]
+    },
+    "properties": {
+     "lot": "Zone 8",
+     "type": "off_campus",
+     "name": "City of College Park Zone 8 Parking (Hartwick Road)",
+     "source_id": "zone8-hartwick-rd",
+     "address": "4300 & 4400 blocks Hartwick Road, College Park, MD 20740",
+     "operator": "City of College Park (Department of Public Services)",
+     "pricing": "Not confirmed for this specific block.",
+     "hours": "Not confirmed - check posted signage for enforcement hours.",
+     "confidence": "low",
+     "note": null,
+     "windows": null
+    }
+   }
+  ]
+ },
+ "amenities": {
+  "type": "FeatureCollection",
+  "features": [
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.941559,
+      38.996929
+     ]
+    },
+    "properties": {
+     "name": "Covered bike parking (near lot 6 / Terrapin Trail Garage)",
+     "group": "bike",
+     "category": "Covered bike parking",
+     "description": "Location is approximate: TerpPark anchors these to the nearest lot or building.",
+     "source": "TerpPark"
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.948661,
+      38.991092
+     ]
+    },
+    "properties": {
+     "name": "Covered bike parking (near Stadium Drive Garage)",
+     "group": "bike",
+     "category": "Covered bike parking",
+     "description": "Location is approximate: TerpPark anchors these to the nearest lot or building.",
+     "source": "TerpPark"
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.9458,
+      38.98857
+     ]
+    },
+    "properties": {
+     "name": "Covered bike parking (near Union Lane Garage / lot HH)",
+     "group": "bike",
+     "category": "Covered bike parking",
+     "description": "Location is approximate: TerpPark anchors these to the nearest lot or building.",
+     "source": "TerpPark"
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.949424,
+      38.992894
+     ]
+    },
+    "properties": {
+     "name": "Covered bike parking (near lot LL5 (Denton area))",
+     "group": "bike",
+     "category": "Covered bike parking",
+     "description": "Location is approximate: TerpPark anchors these to the nearest lot or building.",
+     "source": "TerpPark"
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.945135,
+      38.982968
+     ]
+    },
+    "properties": {
+     "name": "Covered bike parking (near lot 19 / U2)",
+     "group": "bike",
+     "category": "Covered bike parking",
+     "description": "Location is approximate: TerpPark anchors these to the nearest lot or building.",
+     "source": "TerpPark"
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.941716,
+      38.984538
+     ]
+    },
+    "properties": {
+     "name": "Covered bike parking (near lots W / W1 (Chapel Ln))",
+     "group": "bike",
+     "category": "Covered bike parking",
+     "description": "Location is approximate: TerpPark anchors these to the nearest lot or building.",
+     "source": "TerpPark"
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.941383,
+      38.982436
+     ]
+    },
+    "properties": {
+     "name": "Covered bike parking (near lot LL3 (Lehigh Rd))",
+     "group": "bike",
+     "category": "Covered bike parking",
+     "description": "Location is approximate: TerpPark anchors these to the nearest lot or building.",
+     "source": "TerpPark"
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.93563,
+      38.980974
+     ]
+    },
+    "properties": {
+     "name": "Covered bike parking (near lot N6 / lot 15 (College Ave))",
+     "group": "bike",
+     "category": "Covered bike parking",
+     "description": "Location is approximate: TerpPark anchors these to the nearest lot or building.",
+     "source": "TerpPark"
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.935757,
+      38.986012
+     ]
+    },
+    "properties": {
+     "name": "Covered bike parking (near bldg 003 (Hotel Dr))",
+     "group": "bike",
+     "category": "Covered bike parking",
+     "description": "Location is approximate: TerpPark anchors these to the nearest lot or building.",
+     "source": "TerpPark"
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.941875,
+      38.992975
+     ]
+    },
+    "properties": {
+     "name": "Covered bike parking (near bldg 111 / lot CC1 area)",
+     "group": "bike",
+     "category": "Covered bike parking",
+     "description": "Location is approximate: TerpPark anchors these to the nearest lot or building.",
+     "source": "TerpPark"
+    }
+   },
+   {
+    "type": "Feature",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -76.941451,
+      38.989664
+     ]
+    },
+    "properties": {
+     "name": "DOTS impound lot (at Regents Drive Garage)",
+     "group": "vehicle",
+     "category": "DOTS impound lot",
+     "description": "Location is approximate: TerpPark anchors these to the nearest lot or building.",
+     "source": "TerpPark"
+    }
+   }
+  ]
+ }
+}

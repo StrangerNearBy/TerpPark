@@ -1,4 +1,7 @@
-.DS_Store
-*.pyc
 __pycache__/
-v2/venv/
+*.pyc
+.DS_Store
+# extractor scratch output
+page1*.png
+p1.xml
+lot_restrictions.json

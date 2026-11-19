@@ -1,0 +1,6693 @@
+{
+ "type": "FeatureCollection",
+ "name": "UMD College Park campus parking map - building directory",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "metadata": {
+  "directory_source": "UMD Transportation Services Campus Parking Map 2025 (updated 2/26), page 2 building directory",
+  "coordinate_sources": [
+   "UMD official GIS - services9.arcgis.com/1rOwFRpAwrxe0rBl BuildingAllSearch",
+   "api.umd.io/v1/map/buildings",
+   "OpenStreetMap (Overpass)"
+  ],
+  "datum": "WGS 84 (EPSG:4326)",
+  "coordinate_order": "GeoJSON [longitude, latitude]",
+  "feature_count": 195,
+  "features_with_coordinates": 195
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9371502,
+     38.981073
+    ]
+   },
+   "properties": {
+    "name": "7401 Baltimore Ave",
+    "name_as_printed": "7401 BALTIMORE AVE",
+    "building_number": "815",
+    "facility_key": "BL354",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F13",
+    "latitude": 38.981073,
+    "longitude": -76.9371502,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9447072,
+     39.0018861
+    ]
+   },
+   "properties": {
+    "name": "4-H Headquarters",
+    "name_as_printed": "4-H HEADQUARTERS",
+    "building_number": "800",
+    "facility_key": "BL81",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D3",
+    "latitude": 39.0018861,
+    "longitude": -76.9447072,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.937725,
+     38.9919632
+    ]
+   },
+   "properties": {
+    "name": "A. James Clark Hall",
+    "name_as_printed": "A. JAMES CLARK HALL",
+    "building_number": "429",
+    "facility_key": "BL341",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F8",
+    "latitude": 38.9919632,
+    "longitude": -76.937725,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9365245,
+     38.990771
+    ]
+   },
+   "properties": {
+    "name": "A.V. Williams Building",
+    "name_as_printed": "A.V. WILLIAMS BUILDING",
+    "building_number": "115",
+    "facility_key": "BL287",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F8",
+    "latitude": 38.990771,
+    "longitude": -76.9365245,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9299721,
+     38.9715551
+    ]
+   },
+   "properties": {
+    "name": "Anacostia Building",
+    "name_as_printed": "ANACOSTIA",
+    "building_number": "816",
+    "facility_key": "BL360",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "BUILDING ANACOSTIA INSET",
+    "latitude": 38.9715551,
+    "longitude": -76.9299721,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9394775,
+     38.9916418
+    ]
+   },
+   "properties": {
+    "name": "Animal Sciences/Agricultural Engineering Building",
+    "name_as_printed": "ANIMAL SCIENCES/AGRIC. ENGRG. BLDG",
+    "building_number": "142",
+    "facility_key": "BL2",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E8",
+    "latitude": 38.9916418,
+    "longitude": -76.9394775,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.940061,
+     38.9822471
+    ]
+   },
+   "properties": {
+    "name": "Annapolis Hall",
+    "name_as_printed": "ANNAPOLIS HALL",
+    "building_number": "008",
+    "facility_key": "BL71",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E12",
+    "latitude": 38.9822471,
+    "longitude": -76.940061,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9487316,
+     38.9919297
+    ]
+   },
+   "properties": {
+    "name": "Arboretum Outreach Center",
+    "name_as_printed": "ARBORETUM OUTREACH CENTER",
+    "building_number": "156",
+    "facility_key": "BL28",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "C8",
+    "latitude": 38.9919297,
+    "longitude": -76.9487316,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9476337,
+     38.9843141
+    ]
+   },
+   "properties": {
+    "name": "Architecture Building",
+    "name_as_printed": "ARCHITECTURE BUILDING",
+    "building_number": "145",
+    "facility_key": "BL94",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D11",
+    "latitude": 38.9843141,
+    "longitude": -76.9476337,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9332702,
+     38.9937108
+    ]
+   },
+   "properties": {
+    "name": "Artemesia Building",
+    "name_as_printed": "ARTEMESIA BUILDING",
+    "building_number": "813",
+    "facility_key": "BL340",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "G7",
+    "latitude": 38.9937108,
+    "longitude": -76.9332702,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9560918,
+     39.0019648
+    ]
+   },
+   "properties": {
+    "name": "Astronomical Observatory",
+    "name_as_printed": "ASTRONOMICAL OBSERVATORY",
+    "building_number": "221",
+    "facility_key": "BL237",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "B3",
+    "latitude": 39.0019648,
+    "longitude": -76.9560918,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9424609,
+     38.991004
+    ]
+   },
+   "properties": {
+    "name": "Atlantic Building",
+    "name_as_printed": "ATLANTIC BUILDING",
+    "building_number": "224",
+    "facility_key": "BL20",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E8",
+    "latitude": 38.991004,
+    "longitude": -76.9424609,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9418174,
+     39.004245
+    ]
+   },
+   "properties": {
+    "name": "Avrum Gudelsky",
+    "name_as_printed": "AVRUM GUDELSKY VET. CENTER",
+    "building_number": "795",
+    "facility_key": "BL62",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E2",
+    "latitude": 39.004245,
+    "longitude": -76.9418174,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9473805,
+     38.9866935
+    ]
+   },
+   "properties": {
+    "name": "Benjamin Building",
+    "name_as_printed": "BENJAMIN BUILDING",
+    "building_number": "143",
+    "facility_key": "BL87",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D10",
+    "latitude": 38.9866935,
+    "longitude": -76.9473805,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9426022,
+     38.9888426
+    ]
+   },
+   "properties": {
+    "name": "Biology-Psychology Building",
+    "name_as_printed": "BIOLOGY-PSYCHOLOGY BUILDING",
+    "building_number": "144",
+    "facility_key": "BL242",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E9",
+    "latitude": 38.9888426,
+    "longitude": -76.9426022,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9377294,
+     38.9928667
+    ]
+   },
+   "properties": {
+    "name": "Biomolecular Sciences Building",
+    "name_as_printed": "BIOMOLECULAR SCIENCES BUILDING",
+    "building_number": "296",
+    "facility_key": "BL13",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F7",
+    "latitude": 38.9928667,
+    "longitude": -76.9377294,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9429829,
+     38.9890585
+    ]
+   },
+   "properties": {
+    "name": "Bioscience Research Building",
+    "name_as_printed": "BIOSCIENCE RESEARCH BUILDING",
+    "building_number": "413",
+    "facility_key": "BL300",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E9",
+    "latitude": 38.9890585,
+    "longitude": -76.9429829,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.93619,
+     38.9892236
+    ]
+   },
+   "properties": {
+    "name": "Brendan Iribe Center",
+    "name_as_printed": "BRENDEN IRIBE CENTER",
+    "building_number": "432",
+    "facility_key": "BL342",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F9",
+    "latitude": 38.9892236,
+    "longitude": -76.93619,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9345326,
+     38.9858058
+    ]
+   },
+   "properties": {
+    "name": "Building 006",
+    "name_as_printed": "BUILDING 006 (WEWORK)",
+    "building_number": "006",
+    "facility_key": "BL194",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "G10",
+    "latitude": 38.9858058,
+    "longitude": -76.9345326,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9430403,
+     38.9922051
+    ]
+   },
+   "properties": {
+    "name": "Cambridge Community Center",
+    "name_as_printed": "CAMBRIDGE COMMUNITY CENTER",
+    "building_number": "097",
+    "facility_key": "BL25",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E7",
+    "latitude": 38.9922051,
+    "longitude": -76.9430403,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9485148,
+     38.9935024
+    ]
+   },
+   "properties": {
+    "name": "Center for Young Children",
+    "name_as_printed": "CENTER FOR YOUNG CHILDREN",
+    "building_number": "381",
+    "facility_key": "BL37",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "C7",
+    "latitude": 38.9935024,
+    "longitude": -76.9485148,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9392164,
+     38.990585
+    ]
+   },
+   "properties": {
+    "name": "Chemical & Nuclear Engineering Building",
+    "name_as_printed": "CHEMICAL & NUCLEAR ENGINEERING BUILDING",
+    "building_number": "090",
+    "facility_key": "BL241",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F8",
+    "latitude": 38.990585,
+    "longitude": -76.9392164,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9398413,
+     38.9896141
+    ]
+   },
+   "properties": {
+    "name": "Chemistry Building",
+    "name_as_printed": "CHEMISTRY BUILDING",
+    "building_number": "091",
+    "facility_key": "BL282",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E9",
+    "latitude": 38.9896141,
+    "longitude": -76.9398413,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9421344,
+     38.9982329
+    ]
+   },
+   "properties": {
+    "name": "Chesapeake Building",
+    "name_as_printed": "CHESAPEAKE BUILDING",
+    "building_number": "338",
+    "facility_key": "BL82",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E5",
+    "latitude": 38.9982329,
+    "longitude": -76.9421344,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9445483,
+     38.9852267
+    ]
+   },
+   "properties": {
+    "name": "Chincoteague Hall",
+    "name_as_printed": "CHINCOTEAGUE HALL",
+    "building_number": "059",
+    "facility_key": "BL213",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D11",
+    "latitude": 38.9852267,
+    "longitude": -76.9445483,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9395328,
+     38.9866959
+    ]
+   },
+   "properties": {
+    "name": "Clarence M. Mitchell, Jr. Building",
+    "name_as_printed": "CLARENCE M. MITCHELL, JR. BUILDING",
+    "building_number": "052",
+    "facility_key": "BL68",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E10",
+    "latitude": 38.9866959,
+    "longitude": -76.9395328,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9504647,
+     38.9906303
+    ]
+   },
+   "properties": {
+    "name": "Clarice Smith Performing Arts Center",
+    "name_as_printed": "CLARICE SMITH PERFORMING ARTS CENTER",
+    "building_number": "386",
+    "facility_key": "BL79",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "C8",
+    "latitude": 38.9906303,
+    "longitude": -76.9504647,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9469747,
+     38.9881026
+    ]
+   },
+   "properties": {
+    "name": "Cole Student Activities Building",
+    "name_as_printed": "COLE STUDENT ACTIVITIES BUILDING",
+    "building_number": "162",
+    "facility_key": "BL88",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "Athletic and Recreational Facilities",
+    "grid_location": "D9",
+    "latitude": 38.9881026,
+    "longitude": -76.9469747,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9337427,
+     38.9903949
+    ]
+   },
+   "properties": {
+    "name": "College Park Fire Station",
+    "name_as_printed": "COLLEGE PARK FIRE STATION",
+    "building_number": "802",
+    "facility_key": "BL207",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "G8",
+    "latitude": 38.9903949,
+    "longitude": -76.9337427,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9361662,
+     38.9899816
+    ]
+   },
+   "properties": {
+    "name": "Computer Science Instructional Center",
+    "name_as_printed": "COMPUTER SCIENCE INSTRUCTIONAL CENTER",
+    "building_number": "406",
+    "facility_key": "BL293",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F8",
+    "latitude": 38.9899816,
+    "longitude": -76.9361662,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9403467,
+     39.0042846
+    ]
+   },
+   "properties": {
+    "name": "Crane Aquaculture Building",
+    "name_as_printed": "CRANE AQUACULTURE BUILDING",
+    "building_number": "886",
+    "facility_key": "BL61",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E2",
+    "latitude": 39.0042846,
+    "longitude": -76.9403467,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9333731,
+     38.9931611
+    ]
+   },
+   "properties": {
+    "name": "Cypress Building",
+    "name_as_printed": "CYPRESS BUILDING",
+    "building_number": "814",
+    "facility_key": "BL339",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "G7",
+    "latitude": 38.9931611,
+    "longitude": -76.9333731,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9496375,
+     38.9927298
+    ]
+   },
+   "properties": {
+    "name": "Denton Area Dining Hall",
+    "name_as_printed": "DENTON AREA DINING HALL",
+    "building_number": "251",
+    "facility_key": "BL35",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "C7",
+    "latitude": 38.9927298,
+    "longitude": -76.9496375,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9381921,
+     38.9903716
+    ]
+   },
+   "properties": {
+    "name": "Idea Factory",
+    "name_as_printed": "E.A. FERNANDEZ IDEA FACTORY",
+    "building_number": "228",
+    "facility_key": "BL355",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F8",
+    "latitude": 38.9903716,
+    "longitude": -76.9381921,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.941748,
+     38.9870827
+    ]
+   },
+   "properties": {
+    "name": "Edward St. John Learning & Teaching Center",
+    "name_as_printed": "EDWARD ST. JOHN CENTER",
+    "building_number": "226",
+    "facility_key": "BL336",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E10",
+    "latitude": 38.9870827,
+    "longitude": -76.941748,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9466039,
+     38.992464
+    ]
+   },
+   "properties": {
+    "name": "Ellicott Area Dining Hall",
+    "name_as_printed": "ELLICOTT AREA DINING HALL (THE DINER)",
+    "building_number": "257",
+    "facility_key": "BL33",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D7",
+    "latitude": 38.992464,
+    "longitude": -76.9466039,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9368163,
+     38.9919444
+    ]
+   },
+   "properties": {
+    "name": "Energy Research Facility",
+    "name_as_printed": "ENERGY RESEARCH FACILITY",
+    "building_number": "223",
+    "facility_key": "BL106",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F8",
+    "latitude": 38.9919444,
+    "longitude": -76.9368163,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9369432,
+     38.9907113
+    ]
+   },
+   "properties": {
+    "name": "Engineering Annex",
+    "name_as_printed": "ENGINEERING ANNEX",
+    "building_number": "093",
+    "facility_key": "BL208",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F8",
+    "latitude": 38.9907113,
+    "longitude": -76.9369432,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9379676,
+     38.9892987
+    ]
+   },
+   "properties": {
+    "name": "Engineering Laboratory Building",
+    "name_as_printed": "ENGINEERING LABORATORY BUILDING",
+    "building_number": "089",
+    "facility_key": "BL283",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F9",
+    "latitude": 38.9892987,
+    "longitude": -76.9379676,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9437327,
+     38.9965013
+    ]
+   },
+   "properties": {
+    "name": "Environmental Service Facility",
+    "name_as_printed": "ENVIRONMENTAL SERVICE FACILITY",
+    "building_number": "344",
+    "facility_key": "BL41",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D6",
+    "latitude": 38.9965013,
+    "longitude": -76.9437327,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9430781,
+     38.9850855
+    ]
+   },
+   "properties": {
+    "name": "Francis Scott Key Hall",
+    "name_as_printed": "FRANCIS SCOTT KEY HALL",
+    "building_number": "048",
+    "facility_key": "BL289",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E11",
+    "latitude": 38.9850855,
+    "longitude": -76.9430781,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9409107,
+     38.9881609
+    ]
+   },
+   "properties": {
+    "name": "Geology Building",
+    "name_as_printed": "GEOLOGY BUILDING",
+    "building_number": "237",
+    "facility_key": "BL67",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E9",
+    "latitude": 38.9881609,
+    "longitude": -76.9409107,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9328117,
+     38.9832507
+    ]
+   },
+   "properties": {
+    "name": "Graduate Student Housing (Discovery House)",
+    "name_as_printed": "GRADUATE STUDENT HOUSING",
+    "building_number": "352",
+    "facility_key": null,
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": null,
+    "grid_location": "G11",
+    "latitude": 38.9832507,
+    "longitude": -76.9328117,
+    "coordinate_source": "Google Maps place pin - \"Discovery House\", 4646 Graduate Way",
+    "match_method": "manual (geocoded, inferred identity)",
+    "points_averaged": null,
+    "identity_inferred": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9435319,
+     38.9869755
+    ]
+   },
+   "properties": {
+    "name": "H.J. Patterson Hall",
+    "name_as_printed": "H.J. PATTERSON HALL",
+    "building_number": "073",
+    "facility_key": "BL100",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D10",
+    "latitude": 38.9869755,
+    "longitude": -76.9435319,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9446619,
+     38.9871949
+    ]
+   },
+   "properties": {
+    "name": "Health Center",
+    "name_as_printed": "HEALTH CENTER",
+    "building_number": "140",
+    "facility_key": "BL102",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D10",
+    "latitude": 38.9871949,
+    "longitude": -76.9446619,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9409852,
+     38.9909271
+    ]
+   },
+   "properties": {
+    "name": "Institute for Physical Science & Technology",
+    "name_as_printed": "INSTITUTE FOR PHYSICAL SCIENCE & TECH. BLDG",
+    "building_number": "085",
+    "facility_key": "BL10",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E8",
+    "latitude": 38.9909271,
+    "longitude": -76.9409852,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9402452,
+     38.99051
+    ]
+   },
+   "properties": {
+    "name": "J.M. Patterson Building",
+    "name_as_printed": "J.M. PATTERSON BUILDING",
+    "building_number": "083",
+    "facility_key": "BL148",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E8",
+    "latitude": 38.99051,
+    "longitude": -76.9402452,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9445765,
+     38.9868108
+    ]
+   },
+   "properties": {
+    "name": "Jimenez Hall",
+    "name_as_printed": "JIMENEZ HALL",
+    "building_number": "034",
+    "facility_key": "BL101",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D10",
+    "latitude": 38.9868108,
+    "longitude": -76.9445765,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.94008,
+     38.9886773
+    ]
+   },
+   "properties": {
+    "name": "John S. Toll Physics Building",
+    "name_as_printed": "JOHN S. TOLL PHYSICS BUILDING",
+    "building_number": "082",
+    "facility_key": "BL255",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E9",
+    "latitude": 38.9886773,
+    "longitude": -76.94008,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9436038,
+     38.9908605
+    ]
+   },
+   "properties": {
+    "name": "Jull Hall",
+    "name_as_printed": "JULL HALL",
+    "building_number": "227",
+    "facility_key": "BL21",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D8",
+    "latitude": 38.9908605,
+    "longitude": -76.9436038,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9380969,
+     38.9909861
+    ]
+   },
+   "properties": {
+    "name": "Kim Engineering Building",
+    "name_as_printed": "KIM ENGINEERING BUILDING",
+    "building_number": "225",
+    "facility_key": "BL3",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F8",
+    "latitude": 38.9909861,
+    "longitude": -76.9380969,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9486064,
+     38.9868472
+    ]
+   },
+   "properties": {
+    "name": "Knight Hall",
+    "name_as_printed": "KNIGHT HALL",
+    "building_number": "417",
+    "facility_key": "BL246",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "C10",
+    "latitude": 38.9868472,
+    "longitude": -76.9486064,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9440041,
+     39.0037136
+    ]
+   },
+   "properties": {
+    "name": "Laboratory for Physical Sciences",
+    "name_as_printed": "LAB. FOR PHYSICAL SCIENCES",
+    "building_number": "796",
+    "facility_key": "BL234",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D2",
+    "latitude": 39.0037136,
+    "longitude": -76.9440041,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9394949,
+     38.9853589
+    ]
+   },
+   "properties": {
+    "name": "Lee Building",
+    "name_as_printed": "LEE BUILDING",
+    "building_number": "071",
+    "facility_key": "BL152",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E11",
+    "latitude": 38.9853589,
+    "longitude": -76.9394949,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9437007,
+     38.9836897
+    ]
+   },
+   "properties": {
+    "name": "LeFrak Hall",
+    "name_as_printed": "LEFRAK HALL",
+    "building_number": "038",
+    "facility_key": "BL178",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D11",
+    "latitude": 38.9836897,
+    "longitude": -76.9437007,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9394252,
+     38.9928637
+    ]
+   },
+   "properties": {
+    "name": "Manufacturing Building",
+    "name_as_printed": "MANUFACTURING BUILDING",
+    "building_number": "148",
+    "facility_key": "BL15",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E7",
+    "latitude": 38.9928637,
+    "longitude": -76.9394252,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9407983,
+     38.984985
+    ]
+   },
+   "properties": {
+    "name": "Marie Mount Hall",
+    "name_as_printed": "MARIE MOUNT HALL",
+    "building_number": "046",
+    "facility_key": "BL151",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E11",
+    "latitude": 38.984985,
+    "longitude": -76.9407983,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.937992,
+     38.9888963
+    ]
+   },
+   "properties": {
+    "name": "Martin Hall",
+    "name_as_printed": "MARTIN HALL",
+    "building_number": "088",
+    "facility_key": "BL284",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F9",
+    "latitude": 38.9888963,
+    "longitude": -76.937992,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.940878,
+     38.9841512
+    ]
+   },
+   "properties": {
+    "name": "Memorial Chapel",
+    "name_as_printed": "MEMORIAL CHAPEL",
+    "building_number": "009",
+    "facility_key": "BL72",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E11",
+    "latitude": 38.9841512,
+    "longitude": -76.940878,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9288607,
+     38.9833292
+    ]
+   },
+   "properties": {
+    "name": "MFRI Office/Classroom Building",
+    "name_as_printed": "MFRI OFFICE/CLASSROOM",
+    "building_number": "199",
+    "facility_key": "BL205",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "H12",
+    "latitude": 38.9833292,
+    "longitude": -76.9288607,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9433856,
+     38.9881142
+    ]
+   },
+   "properties": {
+    "name": "Microbiology Building",
+    "name_as_printed": "MICROBIOLOGY BUILDING",
+    "building_number": "231",
+    "facility_key": "BL99",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E9",
+    "latitude": 38.9881142,
+    "longitude": -76.9433856,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9441966,
+     38.9843121
+    ]
+   },
+   "properties": {
+    "name": "Morrill Hall",
+    "name_as_printed": "MORRILL HALL",
+    "building_number": "040",
+    "facility_key": "BL209",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D11",
+    "latitude": 38.9843121,
+    "longitude": -76.9441966,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9389716,
+     38.9928857
+    ]
+   },
+   "properties": {
+    "name": "Neutral Buoyancy Research Facility",
+    "name_as_printed": "NEUTRAL BUOYANCY RESEARCH FACILITY",
+    "building_number": "382",
+    "facility_key": "BL12",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F7",
+    "latitude": 38.9928857,
+    "longitude": -76.9389716,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9439086,
+     38.9881248
+    ]
+   },
+   "properties": {
+    "name": "Nyumburu Cultural Center",
+    "name_as_printed": "NYUMBURU CULTURAL CENTER",
+    "building_number": "232",
+    "facility_key": "BL297",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D9",
+    "latitude": 38.9881248,
+    "longitude": -76.9439086,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9291803,
+     38.9819557
+    ]
+   },
+   "properties": {
+    "name": "Paint Branch Building",
+    "name_as_printed": "PAINT BRANCH BUILDING",
+    "building_number": "383",
+    "facility_key": "BL226",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "H12",
+    "latitude": 38.9819557,
+    "longitude": -76.9291803,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9476462,
+     38.9852143
+    ]
+   },
+   "properties": {
+    "name": "Parren J. Mitchell Art-Sociology Building",
+    "name_as_printed": "PARREN J. MITCHELL ART-SOCIOLOGY BUILDING",
+    "building_number": "146",
+    "facility_key": "BL93",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D11",
+    "latitude": 38.9852143,
+    "longitude": -76.9476462,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9249259,
+     38.9767177
+    ]
+   },
+   "properties": {
+    "name": "Patapsco Building",
+    "name_as_printed": "PATAPSCO",
+    "building_number": "805",
+    "facility_key": "BL243",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "BUILDING PATAPSCO & TECH VENTURES INSET",
+    "latitude": 38.9767177,
+    "longitude": -76.9249259,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9434768,
+     38.9886368
+    ]
+   },
+   "properties": {
+    "name": "Patuxent Building",
+    "name_as_printed": "PATUXENT BUILDING",
+    "building_number": "010",
+    "facility_key": "BL165",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D9",
+    "latitude": 38.9886368,
+    "longitude": -76.9434768,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9414544,
+     38.9909292
+    ]
+   },
+   "properties": {
+    "name": "Physical Sciences Complex",
+    "name_as_printed": "PHYSICAL SCIENCES COMPLEX",
+    "building_number": "415",
+    "facility_key": "BL318",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E8",
+    "latitude": 38.9909292,
+    "longitude": -76.9414544,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9413465,
+     38.9887682
+    ]
+   },
+   "properties": {
+    "name": "Plant Sciences Building",
+    "name_as_printed": "PLANT SCIENCES BUILDING",
+    "building_number": "036",
+    "facility_key": "BL149",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E9",
+    "latitude": 38.9887682,
+    "longitude": -76.9413465,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9371149,
+     38.9829558
+    ]
+   },
+   "properties": {
+    "name": "Pocomoke Building",
+    "name_as_printed": "POCOMOKE BUILDING",
+    "building_number": "007",
+    "facility_key": "BL107",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F12",
+    "latitude": 38.9829558,
+    "longitude": -76.9371149,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9462196,
+     38.9844608
+    ]
+   },
+   "properties": {
+    "name": "Preinkert Hall",
+    "name_as_printed": "PREINKERT HALL",
+    "building_number": "054",
+    "facility_key": "BL92",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D11",
+    "latitude": 38.9844608,
+    "longitude": -76.9462196,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.941478,
+     38.9896713
+    ]
+   },
+   "properties": {
+    "name": "Regents Drive Parking Garage",
+    "name_as_printed": "REGENTS DRIVE PARKING GARAGE",
+    "building_number": "202",
+    "facility_key": "BL164",
+    "map_category": "UNIVERSITY BUILDINGS | VISITOR PARKING",
+    "building_class": "Parking Garage",
+    "grid_location": "E9",
+    "latitude": 38.9896713,
+    "longitude": -76.941478,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9429152,
+     38.9972352
+    ]
+   },
+   "properties": {
+    "name": "Research Greenhouse",
+    "name_as_printed": "RESEARCH GREENHOUSE",
+    "building_number": "398",
+    "facility_key": "BL334",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E5",
+    "latitude": 38.9972352,
+    "longitude": -76.9429152,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9487771,
+     38.989426
+    ]
+   },
+   "properties": {
+    "name": "Riggs Alumni Center",
+    "name_as_printed": "RIGGS ALUMNI CENTER",
+    "building_number": "407",
+    "facility_key": "BL158",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "C9",
+    "latitude": 38.989426,
+    "longitude": -76.9487771,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9376852,
+     38.9853031
+    ]
+   },
+   "properties": {
+    "name": "Rossborough Inn",
+    "name_as_printed": "ROSSBOROUGH INN",
+    "building_number": "080",
+    "facility_key": "BL153",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F11",
+    "latitude": 38.9853031,
+    "longitude": -76.9376852,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9431294,
+     38.993473
+    ]
+   },
+   "properties": {
+    "name": "School of Public Health Building",
+    "name_as_printed": "SCHOOL OF PUBLIC HEALTH BUILDING",
+    "building_number": "255",
+    "facility_key": "BL292",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E7",
+    "latitude": 38.993473,
+    "longitude": -76.9431294,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9312428,
+     38.9942465
+    ]
+   },
+   "properties": {
+    "name": "Seneca Building",
+    "name_as_printed": "SENECA BUILDING",
+    "building_number": "812",
+    "facility_key": "BL335",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "G7",
+    "latitude": 38.9942465,
+    "longitude": -76.9312428,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9358301,
+     38.9860421
+    ]
+   },
+   "properties": {
+    "name": "Service Building",
+    "name_as_printed": "SERVICE BUILDING",
+    "building_number": "003",
+    "facility_key": "BL285",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F10",
+    "latitude": 38.9860421,
+    "longitude": -76.9358301,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9222054,
+     38.9962121
+    ]
+   },
+   "properties": {
+    "name": "Severn Building",
+    "name_as_printed": "SEVERN",
+    "building_number": "810",
+    "facility_key": "BL298",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "BUILDING SEVERN INSET",
+    "latitude": 38.9962121,
+    "longitude": -76.9222054,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9427527,
+     38.9839383
+    ]
+   },
+   "properties": {
+    "name": "Shoemaker Building",
+    "name_as_printed": "SHOEMAKER BUILDING",
+    "building_number": "037",
+    "facility_key": "BL172",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E11",
+    "latitude": 38.9839383,
+    "longitude": -76.9427527,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9370937,
+     38.9955135
+    ]
+   },
+   "properties": {
+    "name": "Shuttle Bus Facility",
+    "name_as_printed": "SHUTTLE BUS FACILITY",
+    "building_number": "424",
+    "facility_key": "BL323",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F6",
+    "latitude": 38.9955135,
+    "longitude": -76.9370937,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9418525,
+     38.9848581
+    ]
+   },
+   "properties": {
+    "name": "Skinner Building",
+    "name_as_printed": "SKINNER BUILDING",
+    "building_number": "044",
+    "facility_key": "BL290",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E11",
+    "latitude": 38.9848581,
+    "longitude": -76.9418525,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9436886,
+     38.9830531
+    ]
+   },
+   "properties": {
+    "name": "South Campus Dining Hall",
+    "name_as_printed": "SOUTH CAMPUS DINING HALL",
+    "building_number": "026",
+    "facility_key": "BL179",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D12",
+    "latitude": 38.9830531,
+    "longitude": -76.9436886,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9447351,
+     38.9881257
+    ]
+   },
+   "properties": {
+    "name": "Stamp Student Union",
+    "name_as_printed": "STAMP STUDENT UNION",
+    "building_number": "163",
+    "facility_key": "BL288",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D9",
+    "latitude": 38.9881257,
+    "longitude": -76.9447351,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.943776,
+     38.9820876
+    ]
+   },
+   "properties": {
+    "name": "Susquehanna Hall",
+    "name_as_printed": "SUSQUEHANNA HALL",
+    "building_number": "233",
+    "facility_key": "BL177",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D12",
+    "latitude": 38.9820876,
+    "longitude": -76.943776,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9407684,
+     38.9870798
+    ]
+   },
+   "properties": {
+    "name": "Symons Hall",
+    "name_as_printed": "SYMONS HALL",
+    "building_number": "076",
+    "facility_key": "BL66",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E10",
+    "latitude": 38.9870798,
+    "longitude": -76.9407684,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.943162,
+     38.9848217
+    ]
+   },
+   "properties": {
+    "name": "Taliaferro Hall",
+    "name_as_printed": "TALIAFERRO HALL",
+    "building_number": "043",
+    "facility_key": "BL294",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E11",
+    "latitude": 38.9848217,
+    "longitude": -76.943162,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9481533,
+     38.9859474
+    ]
+   },
+   "properties": {
+    "name": "Tawes Hall",
+    "name_as_printed": "TAWES HALL",
+    "building_number": "141",
+    "facility_key": "BL91",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "C10",
+    "latitude": 38.9859474,
+    "longitude": -76.9481533,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9386174,
+     38.9924927
+    ]
+   },
+   "properties": {
+    "name": "Technology Advancement Building",
+    "name_as_printed": "TECH. ADVANCEMENT PROGRAM BUILDING",
+    "building_number": "387",
+    "facility_key": "BL14",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F7",
+    "latitude": 38.9924927,
+    "longitude": -76.9386174,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9255361,
+     38.9796271
+    ]
+   },
+   "properties": {
+    "name": "Technology Ventures Building",
+    "name_as_printed": "TECH.",
+    "building_number": "806",
+    "facility_key": "BL244",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "VENTURES BUILDING PATAPSCO & TECH VENTURES INSET",
+    "latitude": 38.9796271,
+    "longitude": -76.9255361,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9336152,
+     38.9861849
+    ]
+   },
+   "properties": {
+    "name": "The Hall",
+    "name_as_printed": "THE HALL",
+    "building_number": "011",
+    "facility_key": "BL185",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "G10",
+    "latitude": 38.9861849,
+    "longitude": -76.9336152,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9397944,
+     38.9860158
+    ]
+   },
+   "properties": {
+    "name": "Thomas V. Miller, Jr. Administration Building",
+    "name_as_printed": "THOMAS V. MILLER, JR. ADMINISTRATION BUILDING",
+    "building_number": "077",
+    "facility_key": "BL155",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E10",
+    "latitude": 38.9860158,
+    "longitude": -76.9397944,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9387873,
+     38.9851356
+    ]
+   },
+   "properties": {
+    "name": "Thurgood Marshall Hall",
+    "name_as_printed": "THURGOOD MARSHALL HALL",
+    "building_number": "433",
+    "facility_key": "BL358",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F11",
+    "latitude": 38.9851356,
+    "longitude": -76.9387873,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9373195,
+     38.9861466
+    ]
+   },
+   "properties": {
+    "name": "Turner Hall",
+    "name_as_printed": "TURNER HALL",
+    "building_number": "079",
+    "facility_key": "BL150",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F10",
+    "latitude": 38.9861466,
+    "longitude": -76.9373195,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9440326,
+     38.984838
+    ]
+   },
+   "properties": {
+    "name": "Tydings Hall",
+    "name_as_printed": "TYDINGS HALL",
+    "building_number": "042",
+    "facility_key": "BL210",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D11",
+    "latitude": 38.984838,
+    "longitude": -76.9440326,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9527717,
+     38.9890351
+    ]
+   },
+   "properties": {
+    "name": "University House",
+    "name_as_printed": "UNIVERSITY HOUSE",
+    "building_number": "164",
+    "facility_key": "BL143",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "B9",
+    "latitude": 38.9890351,
+    "longitude": -76.9527717,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9472635,
+     38.9830769
+    ]
+   },
+   "properties": {
+    "name": "Van Munching Hall",
+    "name_as_printed": "VAN MUNCHING HALL",
+    "building_number": "039",
+    "facility_key": "BL202",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D12",
+    "latitude": 38.9830769,
+    "longitude": -76.9472635,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9392039,
+     38.9886306
+    ]
+   },
+   "properties": {
+    "name": "William E. Kirwan Hall",
+    "name_as_printed": "WILLIAM E. KIRWAN HALL",
+    "building_number": "084",
+    "facility_key": "BL254",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F9",
+    "latitude": 38.9886306,
+    "longitude": -76.9392039,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9368613,
+     38.9898817
+    ]
+   },
+   "properties": {
+    "name": "Wind Tunnel Building",
+    "name_as_printed": "WIND TUNNEL BUILDING",
+    "building_number": "081",
+    "facility_key": "BL206",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "F9",
+    "latitude": 38.9898817,
+    "longitude": -76.9368613,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.94186,
+     38.9851526
+    ]
+   },
+   "properties": {
+    "name": "Woods Hall",
+    "name_as_printed": "WOODS HALL",
+    "building_number": "047",
+    "facility_key": "BL295",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "E11",
+    "latitude": 38.9851526,
+    "longitude": -76.94186,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9436959,
+     38.9959393
+    ]
+   },
+   "properties": {
+    "name": "Wye Oak Building",
+    "name_as_printed": "WYE OAK BUILDING",
+    "building_number": "428",
+    "facility_key": "BL332",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D6",
+    "latitude": 38.9959393,
+    "longitude": -76.9436959,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9446039,
+     38.9910561
+    ]
+   },
+   "properties": {
+    "name": "Yahentamitsi Dining Hall",
+    "name_as_printed": "YAHENTAMITSI DINING HALL",
+    "building_number": "436",
+    "facility_key": "BL357",
+    "map_category": "UNIVERSITY BUILDINGS",
+    "building_class": "University Building",
+    "grid_location": "D8",
+    "latitude": 38.9910561,
+    "longitude": -76.9446039,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9451085,
+     38.9859624
+    ]
+   },
+   "properties": {
+    "name": "McKeldin Library",
+    "name_as_printed": "MCKELDIN LIBRARY",
+    "building_number": "035",
+    "facility_key": "BL214",
+    "map_category": "LIBRARIES",
+    "building_class": "University Building",
+    "grid_location": "D10",
+    "latitude": 38.9859624,
+    "longitude": -76.9451085,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9415751,
+     38.9881644
+    ]
+   },
+   "properties": {
+    "name": "Hornbake Library",
+    "name_as_printed": "HORNBAKE LIBRARY",
+    "building_number": "147",
+    "facility_key": "BL95",
+    "map_category": "LIBRARIES",
+    "building_class": "University Building",
+    "grid_location": "E9",
+    "latitude": 38.9881644,
+    "longitude": -76.9415751,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9455674,
+     38.9818349
+    ]
+   },
+   "properties": {
+    "name": "Mowatt Lane Parking Garage",
+    "name_as_printed": "MOWATT LANE PARKING GARAGE",
+    "building_number": "404",
+    "facility_key": "BL105",
+    "map_category": "VISITOR PARKING",
+    "building_class": "Parking Garage",
+    "grid_location": "D12",
+    "latitude": 38.9818349,
+    "longitude": -76.9455674,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9486801,
+     38.9910956
+    ]
+   },
+   "properties": {
+    "name": "Stadium Drive Parking Garage",
+    "name_as_printed": "STADIUM DRIVE PARKING GARAGE",
+    "building_number": "218",
+    "facility_key": "BL29",
+    "map_category": "VISITOR PARKING",
+    "building_class": "Parking Garage",
+    "grid_location": "C8",
+    "latitude": 38.9910956,
+    "longitude": -76.9486801,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9457862,
+     38.9885559
+    ]
+   },
+   "properties": {
+    "name": "Union Lane Parking Garage",
+    "name_as_printed": "UNION LANE PARKING GARAGE",
+    "building_number": "179",
+    "facility_key": "BL85",
+    "map_category": "VISITOR PARKING",
+    "building_class": "Parking Garage",
+    "grid_location": "D9",
+    "latitude": 38.9885559,
+    "longitude": -76.9457862,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9464985,
+     38.9933859
+    ]
+   },
+   "properties": {
+    "name": "Aquatic Center",
+    "name_as_printed": "AQUATIC CENTER",
+    "building_number": "399",
+    "facility_key": "BL36",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "Athletic and Recreational Facilities",
+    "grid_location": "D7",
+    "latitude": 38.9933859,
+    "longitude": -76.9464985,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9413392,
+     38.9944799
+    ]
+   },
+   "properties": {
+    "name": "Barry P. Gossett Basketball Performance Center",
+    "name_as_printed": "BARRY P. GOSSETT BASKETBALL PERFORMANCE CENTER",
+    "building_number": "378",
+    "facility_key": "BL365",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "Athletic and Recreational Facilities",
+    "grid_location": "E6",
+    "latitude": 38.9944799,
+    "longitude": -76.9413392,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9445629,
+     38.988847
+    ]
+   },
+   "properties": {
+    "name": "Bob \"Turtle\" Smith Stadium at Shipley Field",
+    "name_as_printed": "BOB \u201cTURTLE\u201d SMITH STADIUM AT SHIPLEY FIELD",
+    "building_number": "159",
+    "facility_key": "BL163",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "Athletic and Recreational Facilities",
+    "grid_location": "D9",
+    "latitude": 38.988847,
+    "longitude": -76.9445629,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9467759,
+     38.9909149
+    ]
+   },
+   "properties": {
+    "name": "Maryland Stadium Building Upper Deck",
+    "name_as_printed": "CAPITAL ONE FIELD AT MARYLAND STADIUM",
+    "building_number": "368",
+    "facility_key": "BL319",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "University Building",
+    "grid_location": "D8",
+    "latitude": 38.9909149,
+    "longitude": -76.9467759,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9452869,
+     38.9936085
+    ]
+   },
+   "properties": {
+    "name": "Eppley Recreation Center",
+    "name_as_printed": "EPPLEY RECREATION CENTER",
+    "building_number": "068",
+    "facility_key": "BL286",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "Athletic and Recreational Facilities",
+    "grid_location": "D7",
+    "latitude": 38.9936085,
+    "longitude": -76.9452869,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9369,
+     38.9946949
+    ]
+   },
+   "properties": {
+    "name": "Field Hockey & Lacrosse Complex",
+    "name_as_printed": "FIELD HOCKEY AND LACROSSE COMPLEX",
+    "building_number": "414",
+    "facility_key": "BL44",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "Athletic and Recreational Facilities",
+    "grid_location": "F6",
+    "latitude": 38.9946949,
+    "longitude": -76.9369,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9547039,
+     38.9911352
+    ]
+   },
+   "properties": {
+    "name": "Golf Course Club House",
+    "name_as_printed": "GOLF COURSE CLUB HOUSE",
+    "building_number": "166",
+    "facility_key": "BL56",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "Athletic and Recreational Facilities",
+    "grid_location": "B8",
+    "latitude": 38.9911352,
+    "longitude": -76.9547039,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9463882,
+     38.9897555
+    ]
+   },
+   "properties": {
+    "name": "Gossett Football Team House",
+    "name_as_printed": "GOSSETT FOOTBALL TEAM HOUSE",
+    "building_number": "379",
+    "facility_key": "BL161",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "University Building",
+    "grid_location": "D9",
+    "latitude": 38.9897555,
+    "longitude": -76.9463882,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9543757,
+     38.9896788
+    ]
+   },
+   "properties": {
+    "name": "Indoor Practice Facility",
+    "name_as_printed": "INDOOR PRACTICE FACILITY",
+    "building_number": "309",
+    "facility_key": "BL54",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "University Building",
+    "grid_location": "B9",
+    "latitude": 38.9896788,
+    "longitude": -76.9543757,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9512961,
+     38.9875677
+    ]
+   },
+   "properties": {
+    "name": "Kehoe Track at Ludwig Field",
+    "name_as_printed": "KEHOE TRACK AT LUDWIG FIELD",
+    "building_number": "388",
+    "facility_key": "BL83",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "Athletic and Recreational Facilities",
+    "grid_location": "C10",
+    "latitude": 38.9875677,
+    "longitude": -76.9512961,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9398662,
+     38.9963508
+    ]
+   },
+   "properties": {
+    "name": "Maryland Softball Stadium",
+    "name_as_printed": "MARYLAND SOFTBALL STADIUM",
+    "building_number": "409",
+    "facility_key": "BL43",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "Athletic and Recreational Facilities",
+    "grid_location": "E6",
+    "latitude": 38.9963508,
+    "longitude": -76.9398662,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9389417,
+     38.986029
+    ]
+   },
+   "properties": {
+    "name": "Reckord Armory",
+    "name_as_printed": "RECKORD ARMORY",
+    "building_number": "078",
+    "facility_key": "BL154",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "Athletic and Recreational Facilities",
+    "grid_location": "F10",
+    "latitude": 38.986029,
+    "longitude": -76.9389417,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9364475,
+     38.9850353
+    ]
+   },
+   "properties": {
+    "name": "Ritchie Coliseum",
+    "name_as_printed": "RITCHIE COLISEUM",
+    "building_number": "004",
+    "facility_key": "BL200",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "Athletic and Recreational Facilities",
+    "grid_location": "F11",
+    "latitude": 38.9850353,
+    "longitude": -76.9364475,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9398287,
+     38.9969036
+    ]
+   },
+   "properties": {
+    "name": "Maryland Softball Player Development Center",
+    "name_as_printed": "SOFTBALL PLAYER DEVELOPMENT CENTER",
+    "building_number": "408",
+    "facility_key": "BL363",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "University Building",
+    "grid_location": "E6",
+    "latitude": 38.9969036,
+    "longitude": -76.9398287,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.945283,
+     38.989849
+    ]
+   },
+   "properties": {
+    "name": "Stanley Bobb Baseball Player Development Center",
+    "name_as_printed": "STANLEY BOBB BASEBALL PLAYER DEVELOP. CENTER",
+    "building_number": "157",
+    "facility_key": "BL361",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "University Building",
+    "grid_location": "D9",
+    "latitude": 38.989849,
+    "longitude": -76.945283,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9478378,
+     38.9897462
+    ]
+   },
+   "properties": {
+    "name": "Tyser Tower",
+    "name_as_printed": "TYSER TOWER",
+    "building_number": "361",
+    "facility_key": "BL162",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "Athletic and Recreational Facilities",
+    "grid_location": "C9",
+    "latitude": 38.9897462,
+    "longitude": -76.9478378,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9451835,
+     38.9900556
+    ]
+   },
+   "properties": {
+    "name": "Varsity Sports Teamhouse",
+    "name_as_printed": "VARSITY SPORTS TEAMHOUSE",
+    "building_number": "158",
+    "facility_key": "BL167",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "University Building",
+    "grid_location": "D8",
+    "latitude": 38.9900556,
+    "longitude": -76.9451835,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9412212,
+     38.9954898
+    ]
+   },
+   "properties": {
+    "name": "Xfinity Center",
+    "name_as_printed": "XFINITY CENTER",
+    "building_number": "360",
+    "facility_key": "BL42",
+    "map_category": "RECREATION AND ATHLETIC FACILITIES",
+    "building_class": "Athletic and Recreational Facilities",
+    "grid_location": "E6",
+    "latitude": 38.9954898,
+    "longitude": -76.9412212,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9414271,
+     38.9815679
+    ]
+   },
+   "properties": {
+    "name": "Allegany Hall",
+    "name_as_printed": "ALLEGANY HALL",
+    "building_number": "024",
+    "facility_key": "BL77",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E12",
+    "latitude": 38.9815679,
+    "longitude": -76.9414271,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9467358,
+     38.9859466
+    ]
+   },
+   "properties": {
+    "name": "Anne Arundel Hall",
+    "name_as_printed": "ANNE ARUNDEL HALL",
+    "building_number": "060",
+    "facility_key": "BL89",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D10",
+    "latitude": 38.9859466,
+    "longitude": -76.9467358,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9421946,
+     38.9822426
+    ]
+   },
+   "properties": {
+    "name": "Baltimore Hall",
+    "name_as_printed": "BALTIMORE HALL",
+    "building_number": "016",
+    "facility_key": "BL170",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E12",
+    "latitude": 38.9822426,
+    "longitude": -76.9421946,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9426231,
+     38.9928074
+    ]
+   },
+   "properties": {
+    "name": "Bel Air Hall",
+    "name_as_printed": "BEL AIR HALL",
+    "building_number": "099",
+    "facility_key": "BL26",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E7",
+    "latitude": 38.9928074,
+    "longitude": -76.9426231,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9423011,
+     38.9829232
+    ]
+   },
+   "properties": {
+    "name": "Calvert Hall",
+    "name_as_printed": "CALVERT HALL",
+    "building_number": "015",
+    "facility_key": "BL175",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E12",
+    "latitude": 38.9829232,
+    "longitude": -76.9423011,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9430393,
+     38.9917163
+    ]
+   },
+   "properties": {
+    "name": "Cambridge Hall",
+    "name_as_printed": "CAMBRIDGE HALL",
+    "building_number": "096",
+    "facility_key": "BL22",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E8",
+    "latitude": 38.9917163,
+    "longitude": -76.9430393,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9458321,
+     38.9834815
+    ]
+   },
+   "properties": {
+    "name": "Caroline Hall",
+    "name_as_printed": "CAROLINE HALL",
+    "building_number": "070",
+    "facility_key": "BL253",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D11",
+    "latitude": 38.9834815,
+    "longitude": -76.9458321,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9456087,
+     38.9839877
+    ]
+   },
+   "properties": {
+    "name": "Carroll Hall",
+    "name_as_printed": "CARROLL HALL",
+    "building_number": "065",
+    "facility_key": "BL252",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D11",
+    "latitude": 38.9839877,
+    "longitude": -76.9456087,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9416547,
+     38.9829375
+    ]
+   },
+   "properties": {
+    "name": "Cecil Hall",
+    "name_as_printed": "CECIL HALL",
+    "building_number": "017",
+    "facility_key": "BL171",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E12",
+    "latitude": 38.9829375,
+    "longitude": -76.9416547,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9421108,
+     38.9922511
+    ]
+   },
+   "properties": {
+    "name": "Centreville Hall",
+    "name_as_printed": "CENTREVILLE HALL",
+    "building_number": "098",
+    "facility_key": "BL23",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E7",
+    "latitude": 38.9922511,
+    "longitude": -76.9421108,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9405602,
+     38.9815972
+    ]
+   },
+   "properties": {
+    "name": "Charles Hall",
+    "name_as_printed": "CHARLES HALL",
+    "building_number": "025",
+    "facility_key": "BL76",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E12",
+    "latitude": 38.9815972,
+    "longitude": -76.9405602,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9434591,
+     38.9928077
+    ]
+   },
+   "properties": {
+    "name": "Chestertown Hall",
+    "name_as_printed": "CHESTERTOWN HALL",
+    "building_number": "121",
+    "facility_key": "BL27",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E7",
+    "latitude": 38.9928077,
+    "longitude": -76.9434591,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9439745,
+     38.9922533
+    ]
+   },
+   "properties": {
+    "name": "Cumberland Hall",
+    "name_as_printed": "CUMBERLAND HALL",
+    "building_number": "122",
+    "facility_key": "BL24",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D7",
+    "latitude": 38.9922533,
+    "longitude": -76.9439745,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9499756,
+     38.9922412
+    ]
+   },
+   "properties": {
+    "name": "Denton Hall",
+    "name_as_printed": "DENTON HALL",
+    "building_number": "252",
+    "facility_key": "BL17",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "C7",
+    "latitude": 38.9922412,
+    "longitude": -76.9499756,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9461631,
+     38.9867423
+    ]
+   },
+   "properties": {
+    "name": "Dorchester Hall",
+    "name_as_printed": "DORCHESTER HALL",
+    "building_number": "064",
+    "facility_key": "BL86",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D10",
+    "latitude": 38.9867423,
+    "longitude": -76.9461631,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9502494,
+     38.9930092
+    ]
+   },
+   "properties": {
+    "name": "Easton Hall",
+    "name_as_printed": "EASTON HALL",
+    "building_number": "253",
+    "facility_key": "BL18",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "C7",
+    "latitude": 38.9930092,
+    "longitude": -76.9502494,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9490033,
+     38.9924818
+    ]
+   },
+   "properties": {
+    "name": "Elkton Hall",
+    "name_as_printed": "ELKTON HALL",
+    "building_number": "254",
+    "facility_key": "BL34",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "C7",
+    "latitude": 38.9924818,
+    "longitude": -76.9490033,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9466656,
+     38.9918191
+    ]
+   },
+   "properties": {
+    "name": "Ellicott Hall",
+    "name_as_printed": "ELLICOTT HALL",
+    "building_number": "256",
+    "facility_key": "BL32",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D8",
+    "latitude": 38.9918191,
+    "longitude": -76.9466656,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9407379,
+     38.9820431
+    ]
+   },
+   "properties": {
+    "name": "Frederick Hall",
+    "name_as_printed": "FREDERICK HALL",
+    "building_number": "029",
+    "facility_key": "BL73",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E12",
+    "latitude": 38.9820431,
+    "longitude": -76.9407379,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9426871,
+     38.9832554
+    ]
+   },
+   "properties": {
+    "name": "Garrett Hall",
+    "name_as_printed": "GARRETT HALL",
+    "building_number": "031",
+    "facility_key": "BL173",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E12",
+    "latitude": 38.9832554,
+    "longitude": -76.9426871,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9474247,
+     38.9924294
+    ]
+   },
+   "properties": {
+    "name": "Hagerstown Hall",
+    "name_as_printed": "HAGERSTOWN HALL",
+    "building_number": "258",
+    "facility_key": "BL31",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D7",
+    "latitude": 38.9924294,
+    "longitude": -76.9474247,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9408832,
+     38.9825128
+    ]
+   },
+   "properties": {
+    "name": "Harford Hall",
+    "name_as_printed": "HARFORD HALL",
+    "building_number": "014",
+    "facility_key": "BL70",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E12",
+    "latitude": 38.9825128,
+    "longitude": -76.9408832,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9419723,
+     38.9819496
+    ]
+   },
+   "properties": {
+    "name": "Howard Hall",
+    "name_as_printed": "HOWARD HALL",
+    "building_number": "028",
+    "facility_key": "BL104",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E12",
+    "latitude": 38.9819496,
+    "longitude": -76.9419723,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9418318,
+     38.9832672
+    ]
+   },
+   "properties": {
+    "name": "Kent Hall",
+    "name_as_printed": "KENT HALL",
+    "building_number": "022",
+    "facility_key": "BL168",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E12",
+    "latitude": 38.9832672,
+    "longitude": -76.9418318,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9459089,
+     38.9924457
+    ]
+   },
+   "properties": {
+    "name": "La Plata Hall",
+    "name_as_printed": "LA PLATA HALL",
+    "building_number": "259",
+    "facility_key": "BL30",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D7",
+    "latitude": 38.9924457,
+    "longitude": -76.9459089,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.939324,
+     38.9820105
+    ]
+   },
+   "properties": {
+    "name": "Montgomery Hall",
+    "name_as_printed": "MONTGOMERY HALL",
+    "building_number": "032",
+    "facility_key": "BL74",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E12",
+    "latitude": 38.9820105,
+    "longitude": -76.939324,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9494431,
+     38.9938556
+    ]
+   },
+   "properties": {
+    "name": "Oakland Hall",
+    "name_as_printed": "OAKLAND HALL",
+    "building_number": "419",
+    "facility_key": "BL328",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "C7",
+    "latitude": 38.9938556,
+    "longitude": -76.9494431,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9457874,
+     38.9831121
+    ]
+   },
+   "properties": {
+    "name": "Prince Frederick Hall",
+    "name_as_printed": "PRINCE FREDERICK HALL",
+    "building_number": "425",
+    "facility_key": "BL322",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D12",
+    "latitude": 38.9831121,
+    "longitude": -76.9457874,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9418115,
+     38.9826024
+    ]
+   },
+   "properties": {
+    "name": "Prince George's Hall",
+    "name_as_printed": "PRINCE GEORGE\u2019S HALL",
+    "building_number": "021",
+    "facility_key": "BL169",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E12",
+    "latitude": 38.9826024,
+    "longitude": -76.9418115,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9449434,
+     38.9918687
+    ]
+   },
+   "properties": {
+    "name": "Pyon-Chen",
+    "name_as_printed": "PYON-CHEN HALL",
+    "building_number": "434",
+    "facility_key": "BL353",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D8",
+    "latitude": 38.9918687,
+    "longitude": -76.9449434,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.94615,
+     38.9852406
+    ]
+   },
+   "properties": {
+    "name": "Queen Anne's Hall",
+    "name_as_printed": "QUEEN ANNE\u2019S HALL",
+    "building_number": "061",
+    "facility_key": "BL90",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D11",
+    "latitude": 38.9852406,
+    "longitude": -76.94615,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9455717,
+     38.9850238
+    ]
+   },
+   "properties": {
+    "name": "Somerset Hall",
+    "name_as_printed": "SOMERSET HALL",
+    "building_number": "063",
+    "facility_key": "BL212",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D11",
+    "latitude": 38.9850238,
+    "longitude": -76.9455717,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9445379,
+     38.982161
+    ]
+   },
+   "properties": {
+    "name": "South Campus Commons",
+    "name_as_printed": "SOUTH CAMPUS COMMONS",
+    "building_number": "974, 975, 981",
+    "facility_key": "BL258",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D12",
+    "latitude": 38.982161,
+    "longitude": -76.9445379,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": 3,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9418385,
+     38.9818941
+    ]
+   },
+   "properties": {
+    "name": "South Campus Commons",
+    "name_as_printed": "SOUTH CAMPUS COMMONS",
+    "building_number": "996-999",
+    "facility_key": "BL128",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E12",
+    "latitude": 38.9818941,
+    "longitude": -76.9418385,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": 4,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9455641,
+     38.9910608
+    ]
+   },
+   "properties": {
+    "name": "Johnson-Whittle",
+    "name_as_printed": "JOHNSON-WHITTLE HALL",
+    "building_number": "435",
+    "facility_key": "BL356",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D8",
+    "latitude": 38.9910608,
+    "longitude": -76.9455641,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9455944,
+     38.9869724
+    ]
+   },
+   "properties": {
+    "name": "St. Mary's Hall",
+    "name_as_printed": "ST. MARY\u2019S HALL",
+    "building_number": "062",
+    "facility_key": "BL103",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D10",
+    "latitude": 38.9869724,
+    "longitude": -76.9455944,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9422642,
+     38.9833596
+    ]
+   },
+   "properties": {
+    "name": "Talbot Hall",
+    "name_as_printed": "TALBOT HALL",
+    "building_number": "030",
+    "facility_key": "BL174",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E11",
+    "latitude": 38.9833596,
+    "longitude": -76.9422642,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9413495,
+     38.9818278
+    ]
+   },
+   "properties": {
+    "name": "Washington Hall",
+    "name_as_printed": "WASHINGTON HALL",
+    "building_number": "023",
+    "facility_key": "BL78",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "E12",
+    "latitude": 38.9818278,
+    "longitude": -76.9413495,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9458219,
+     38.9837337
+    ]
+   },
+   "properties": {
+    "name": "Wicomico Hall",
+    "name_as_printed": "WICOMICO HALL",
+    "building_number": "069",
+    "facility_key": "BL251",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D11",
+    "latitude": 38.9837337,
+    "longitude": -76.9458219,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9449924,
+     38.9846399
+    ]
+   },
+   "properties": {
+    "name": "Worcester Hall",
+    "name_as_printed": "WORCESTER HALL",
+    "building_number": "051",
+    "facility_key": "BL211",
+    "map_category": "RESIDENTIAL FACILITIES",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "D11",
+    "latitude": 38.9846399,
+    "longitude": -76.9449924,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.942044,
+     39.0022038
+    ]
+   },
+   "properties": {
+    "name": "Courtyards",
+    "name_as_printed": "COURTYARDS",
+    "building_number": "987-994",
+    "facility_key": "BL126",
+    "map_category": "APARTMENTS",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "GREENMEAD DR INSET",
+    "latitude": 39.0022038,
+    "longitude": -76.942044,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": 8,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9409239,
+     38.9786188
+    ]
+   },
+   "properties": {
+    "name": "Graduate",
+    "name_as_printed": "GRADUATE",
+    "building_number": "260-285",
+    "facility_key": "BL261",
+    "map_category": "APARTMENTS",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "GARDENS APT GRADUATE GARDENS INSET",
+    "latitude": 38.9786188,
+    "longitude": -76.9409239,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": 26,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9570612,
+     38.9846931
+    ]
+   },
+   "properties": {
+    "name": "Graduate",
+    "name_as_printed": "GRADUATE",
+    "building_number": "286-292",
+    "facility_key": "BL129",
+    "map_category": "APARTMENTS",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "HILLS APARTMENTS GRADUATE HILLS INSET",
+    "latitude": 38.9846931,
+    "longitude": -76.9570612,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": 7,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9334247,
+     38.9841356
+    ]
+   },
+   "properties": {
+    "name": "Leonardtown Apartments",
+    "name_as_printed": "LEONARDTOWN APARTMENTS",
+    "building_number": "244-250",
+    "facility_key": "BL108",
+    "map_category": "APARTMENTS",
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": "G11, G12",
+    "latitude": 38.9841356,
+    "longitude": -76.9334247,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": 7,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.955067,
+     38.9861159
+    ]
+   },
+   "properties": {
+    "name": "College Park Marriott Hotel & Conference Center",
+    "name_as_printed": "COLLEGE PARK MARRIOTT HOTEL AND CONF. CTR.",
+    "building_number": "348",
+    "facility_key": "BL267",
+    "map_category": "UMGC / COLLEGE PARK MARRIOTT HOTEL AND CONFERENCE CENTER",
+    "building_class": "UMGC Inn & Conference Center",
+    "grid_location": "B10",
+    "latitude": 38.9861159,
+    "longitude": -76.955067,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9538764,
+     38.9860314
+    ]
+   },
+   "properties": {
+    "name": "College Park Marriott Hotel & Conference Center",
+    "name_as_printed": "COLLEGE PARK MARRIOTT HOTEL AND CONF. CTR.",
+    "building_number": "345",
+    "facility_key": "BL276",
+    "map_category": "UMGC / COLLEGE PARK MARRIOTT HOTEL AND CONFERENCE CENTER",
+    "building_class": "UMGC Inn & Conference Center",
+    "grid_location": "B10",
+    "latitude": 38.9860314,
+    "longitude": -76.9538764,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9536383,
+     38.9870587
+    ]
+   },
+   "properties": {
+    "name": "UMGC Administration Building",
+    "name_as_printed": "UMGC ADMINISTRATION BUILDING",
+    "building_number": "346",
+    "facility_key": "BL275",
+    "map_category": "UMGC / COLLEGE PARK MARRIOTT HOTEL AND CONFERENCE CENTER",
+    "building_class": "UMGC Inn & Conference Center",
+    "grid_location": "B10",
+    "latitude": 38.9870587,
+    "longitude": -76.9536383,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9544869,
+     38.9869648
+    ]
+   },
+   "properties": {
+    "name": "UMGC/Marriott Garage",
+    "name_as_printed": "UMGC/ MARRIOTT GARAGE",
+    "building_number": "347",
+    "facility_key": "BL274",
+    "map_category": "UMGC / COLLEGE PARK MARRIOTT HOTEL AND CONFERENCE CENTER",
+    "building_class": "UMGC Inn & Conference Center",
+    "grid_location": "B10",
+    "latitude": 38.9869648,
+    "longitude": -76.9544869,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9366795,
+     38.9846783
+    ]
+   },
+   "properties": {
+    "name": "Greek House 1 Kappa Alpha",
+    "name_as_printed": "HOUSE 1",
+    "building_number": "126",
+    "facility_key": "BL199",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F11",
+    "latitude": 38.9846783,
+    "longitude": -76.9366795,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.936194,
+     38.9846265
+    ]
+   },
+   "properties": {
+    "name": "Greek House 2 Sigma Alpha Mu",
+    "name_as_printed": "HOUSE 2",
+    "building_number": "127",
+    "facility_key": "BL201",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F11",
+    "latitude": 38.9846265,
+    "longitude": -76.936194,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9356279,
+     38.9846251
+    ]
+   },
+   "properties": {
+    "name": "Greek House 3 Tau Kappa Epsilon",
+    "name_as_printed": "HOUSE 3",
+    "building_number": "128",
+    "facility_key": "BL198",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F11",
+    "latitude": 38.9846251,
+    "longitude": -76.9356279,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9351412,
+     38.9846241
+    ]
+   },
+   "properties": {
+    "name": "Greek House 4 Alpha Epsilon Pi",
+    "name_as_printed": "HOUSE 4",
+    "building_number": "129",
+    "facility_key": "BL197",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F11",
+    "latitude": 38.9846241,
+    "longitude": -76.9351412,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9346333,
+     38.9845851
+    ]
+   },
+   "properties": {
+    "name": "Greek House 5 Phi Kappa Alpha",
+    "name_as_printed": "HOUSE 5",
+    "building_number": "130",
+    "facility_key": "BL195",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "G11",
+    "latitude": 38.9845851,
+    "longitude": -76.9346333,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9341866,
+     38.9843115
+    ]
+   },
+   "properties": {
+    "name": "Greek House 6 Delta Chi",
+    "name_as_printed": "HOUSE 6",
+    "building_number": "131",
+    "facility_key": "BL196",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "G11",
+    "latitude": 38.9843115,
+    "longitude": -76.9341866,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9340476,
+     38.9839403
+    ]
+   },
+   "properties": {
+    "name": "Greek House 7 Lambda Chi Alpha",
+    "name_as_printed": "HOUSE 7",
+    "building_number": "132",
+    "facility_key": "BL117",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "G11",
+    "latitude": 38.9839403,
+    "longitude": -76.9340476,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9341893,
+     38.9835689
+    ]
+   },
+   "properties": {
+    "name": "Greek House 8 Phi Epsilon",
+    "name_as_printed": "HOUSE 8",
+    "building_number": "133",
+    "facility_key": "BL118",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "G11",
+    "latitude": 38.9835689,
+    "longitude": -76.9341893,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9346383,
+     38.9832972
+    ]
+   },
+   "properties": {
+    "name": "Greek House 9 Alpha Sigma Phi",
+    "name_as_printed": "HOUSE 9",
+    "building_number": "134",
+    "facility_key": "BL119",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "G12",
+    "latitude": 38.9832972,
+    "longitude": -76.9346383,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9351475,
+     38.9832611
+    ]
+   },
+   "properties": {
+    "name": "Greek House 10 Sigma Kappa",
+    "name_as_printed": "HOUSE 10",
+    "building_number": "135",
+    "facility_key": "BL120",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F12",
+    "latitude": 38.9832611,
+    "longitude": -76.9351475,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9356322,
+     38.9832619
+    ]
+   },
+   "properties": {
+    "name": "Greek House 11 Alpha Epsilon Phi",
+    "name_as_printed": "HOUSE 11",
+    "building_number": "136",
+    "facility_key": "BL121",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F12",
+    "latitude": 38.9832619,
+    "longitude": -76.9356322,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9361993,
+     38.9832637
+    ]
+   },
+   "properties": {
+    "name": "Greek House 12 Zeta Tau Alpha",
+    "name_as_printed": "HOUSE 12",
+    "building_number": "137",
+    "facility_key": "BL122",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F12",
+    "latitude": 38.9832637,
+    "longitude": -76.9361993,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9366978,
+     38.9832627
+    ]
+   },
+   "properties": {
+    "name": "Greek House 13 Zeta Psi",
+    "name_as_printed": "HOUSE 13",
+    "building_number": "138",
+    "facility_key": "BL123",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F12",
+    "latitude": 38.9832627,
+    "longitude": -76.9366978,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9371988,
+     38.983214
+    ]
+   },
+   "properties": {
+    "name": "Greek House 14 Zeta Beta Tau",
+    "name_as_printed": "HOUSE 14",
+    "building_number": "139",
+    "facility_key": "BL124",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F12",
+    "latitude": 38.983214,
+    "longitude": -76.9371988,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9351804,
+     38.981265
+    ]
+   },
+   "properties": {
+    "name": "Greek House 170 Alpha Delta Pi",
+    "name_as_printed": "HOUSE 170",
+    "building_number": "170",
+    "facility_key": "BL111",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F12",
+    "latitude": 38.981265,
+    "longitude": -76.9351804,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9356203,
+     38.9813604
+    ]
+   },
+   "properties": {
+    "name": "Greek House 171 Phi Sigma Sigma",
+    "name_as_printed": "HOUSE 171",
+    "building_number": "171",
+    "facility_key": "BL112",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F12",
+    "latitude": 38.9813604,
+    "longitude": -76.9356203,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9360621,
+     38.9814211
+    ]
+   },
+   "properties": {
+    "name": "Greek House 172 Alpha Chi Omega",
+    "name_as_printed": "HOUSE 172",
+    "building_number": "172",
+    "facility_key": "BL113",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F12",
+    "latitude": 38.9814211,
+    "longitude": -76.9360621,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9363155,
+     38.9807664
+    ]
+   },
+   "properties": {
+    "name": "Greek House 173 Delta Phi Epsilon",
+    "name_as_printed": "HOUSE 173",
+    "building_number": "173",
+    "facility_key": "BL240",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F13",
+    "latitude": 38.9807664,
+    "longitude": -76.9363155,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9358815,
+     38.9806595
+    ]
+   },
+   "properties": {
+    "name": "Greek House 174 Sigma Delta Tau",
+    "name_as_printed": "HOUSE 174",
+    "building_number": "174",
+    "facility_key": "BL239",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F13",
+    "latitude": 38.9806595,
+    "longitude": -76.9358815,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9354379,
+     38.9805897
+    ]
+   },
+   "properties": {
+    "name": "Greek House 175 Delta Gamma",
+    "name_as_printed": "HOUSE 175",
+    "building_number": "175",
+    "facility_key": "BL109",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F13",
+    "latitude": 38.9805897,
+    "longitude": -76.9354379,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9352485,
+     38.9809008
+    ]
+   },
+   "properties": {
+    "name": "Greek House 176 Alpha Phi",
+    "name_as_printed": "HOUSE 176",
+    "building_number": "176",
+    "facility_key": "BL110",
+    "map_category": "FRATERNITIES / SORORITIES",
+    "building_class": "Fraternities/Sororities",
+    "grid_location": "F13",
+    "latitude": 38.9809008,
+    "longitude": -76.9352485,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "building_number (UMD GIS)",
+    "points_averaged": null,
+    "identity_inferred": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9287925,
+     38.9685252
+    ]
+   },
+   "properties": {
+    "name": "5700 Rivertech Ct",
+    "name_as_printed": null,
+    "building_number": "817",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9685252,
+    "longitude": -76.9287925,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9622595,
+     39.0003828
+    ]
+   },
+   "properties": {
+    "name": "Adelphi Road Office Annex",
+    "name_as_printed": null,
+    "building_number": "803",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 39.0003828,
+    "longitude": -76.9622595,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9410934,
+     38.9920034
+    ]
+   },
+   "properties": {
+    "name": "Animal Science Service Building",
+    "name_as_printed": null,
+    "building_number": "103",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9920034,
+    "longitude": -76.9410934,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9556367,
+     39.0020214
+    ]
+   },
+   "properties": {
+    "name": "Astronomy Lecture Building",
+    "name_as_printed": null,
+    "building_number": "219",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 39.0020214,
+    "longitude": -76.9556367,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9413392,
+     38.9944799
+    ]
+   },
+   "properties": {
+    "name": "Basketball Performance Center",
+    "name_as_printed": null,
+    "building_number": null,
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9944799,
+    "longitude": -76.9413392,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9543681,
+     38.9943339
+    ]
+   },
+   "properties": {
+    "name": "Boat House",
+    "name_as_printed": null,
+    "building_number": "169",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9943339,
+    "longitude": -76.9543681,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9383773,
+     38.9916966
+    ]
+   },
+   "properties": {
+    "name": "Central Animal Resources Facility",
+    "name_as_printed": null,
+    "building_number": "087",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9916966,
+    "longitude": -76.9383773,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9274075,
+     38.9679419
+    ]
+   },
+   "properties": {
+    "name": "College Park Academy",
+    "name_as_printed": null,
+    "building_number": "970",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9679419,
+    "longitude": -76.9274075,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9416516,
+     39.0021454
+    ]
+   },
+   "properties": {
+    "name": "Courtyard 100",
+    "name_as_printed": null,
+    "building_number": "987",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 39.0021454,
+    "longitude": -76.9416516,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9421646,
+     39.0017747
+    ]
+   },
+   "properties": {
+    "name": "Courtyard 200",
+    "name_as_printed": null,
+    "building_number": "988",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 39.0017747,
+    "longitude": -76.9421646,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9422152,
+     39.0010422
+    ]
+   },
+   "properties": {
+    "name": "Courtyard 300",
+    "name_as_printed": null,
+    "building_number": "989",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 39.0010422,
+    "longitude": -76.9422152,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9429888,
+     39.0021084
+    ]
+   },
+   "properties": {
+    "name": "Courtyard 400",
+    "name_as_printed": null,
+    "building_number": "990",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 39.0021084,
+    "longitude": -76.9429888,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9423187,
+     39.0028863
+    ]
+   },
+   "properties": {
+    "name": "Courtyard 500",
+    "name_as_printed": null,
+    "building_number": "991",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 39.0028863,
+    "longitude": -76.9423187,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9418442,
+     39.0028054
+    ]
+   },
+   "properties": {
+    "name": "Courtyard 600",
+    "name_as_printed": null,
+    "building_number": "992",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 39.0028054,
+    "longitude": -76.9418442,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9419535,
+     39.0032959
+    ]
+   },
+   "properties": {
+    "name": "Courtyard 700",
+    "name_as_printed": null,
+    "building_number": "993",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 39.0032959,
+    "longitude": -76.9419535,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9413921,
+     39.0016188
+    ]
+   },
+   "properties": {
+    "name": "Courtyard Clubhouse",
+    "name_as_printed": null,
+    "building_number": "994",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 39.0016188,
+    "longitude": -76.9413921,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9348497,
+     38.9867994
+    ]
+   },
+   "properties": {
+    "name": "Diamondback Garage",
+    "name_as_printed": null,
+    "building_number": "901",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9867994,
+    "longitude": -76.9348497,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9541431,
+     39.0047505
+    ]
+   },
+   "properties": {
+    "name": "Elkins Building",
+    "name_as_printed": null,
+    "building_number": "311",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 39.0047505,
+    "longitude": -76.9541431,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9424525,
+     38.979349
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4301",
+    "name_as_printed": null,
+    "building_number": "260",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.979349,
+    "longitude": -76.9424525,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9425515,
+     38.9791977
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4303",
+    "name_as_printed": null,
+    "building_number": "261",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9791977,
+    "longitude": -76.9425515,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9423658,
+     38.9790705
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4305",
+    "name_as_printed": null,
+    "building_number": "262",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9790705,
+    "longitude": -76.9423658,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9421551,
+     38.9789812
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4307",
+    "name_as_printed": null,
+    "building_number": "263",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9789812,
+    "longitude": -76.9421551,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9420103,
+     38.9791473
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4309",
+    "name_as_printed": null,
+    "building_number": "264",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9791473,
+    "longitude": -76.9420103,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9418819,
+     38.9788964
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4311",
+    "name_as_printed": null,
+    "building_number": "265",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9788964,
+    "longitude": -76.9418819,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9413193,
+     38.9790358
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4312",
+    "name_as_printed": null,
+    "building_number": "266",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9790358,
+    "longitude": -76.9413193,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.941702,
+     38.9787706
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4313",
+    "name_as_printed": null,
+    "building_number": "267",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9787706,
+    "longitude": -76.941702,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9410252,
+     38.9789859
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4314",
+    "name_as_printed": null,
+    "building_number": "268",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9789859,
+    "longitude": -76.9410252,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9414988,
+     38.9786791
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4315",
+    "name_as_printed": null,
+    "building_number": "269",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9786791,
+    "longitude": -76.9414988,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9408246,
+     38.9788955
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4316",
+    "name_as_printed": null,
+    "building_number": "270",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9788955,
+    "longitude": -76.9408246,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9412176,
+     38.9785749
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4317",
+    "name_as_printed": null,
+    "building_number": "271",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9785749,
+    "longitude": -76.9412176,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9405745,
+     38.9788965
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4318",
+    "name_as_printed": null,
+    "building_number": "272",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9788965,
+    "longitude": -76.9405745,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.941026,
+     38.97852
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4319",
+    "name_as_printed": null,
+    "building_number": "273",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.97852,
+    "longitude": -76.941026,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9403734,
+     38.9788058
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4320",
+    "name_as_printed": null,
+    "building_number": "274",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9788058,
+    "longitude": -76.9403734,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9407736,
+     38.9784337
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4321",
+    "name_as_printed": null,
+    "building_number": "275",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9784337,
+    "longitude": -76.9407736,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9402501,
+     38.9786373
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4322",
+    "name_as_printed": null,
+    "building_number": "276",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9786373,
+    "longitude": -76.9402501,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9406057,
+     38.9783578
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4323",
+    "name_as_printed": null,
+    "building_number": "277",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9783578,
+    "longitude": -76.9406057,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9400491,
+     38.9785465
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4324",
+    "name_as_printed": null,
+    "building_number": "278",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9785465,
+    "longitude": -76.9400491,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9404313,
+     38.9781939
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4325",
+    "name_as_printed": null,
+    "building_number": "279",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9781939,
+    "longitude": -76.9404313,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9398996,
+     38.9783954
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4326",
+    "name_as_printed": null,
+    "building_number": "280",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9783954,
+    "longitude": -76.9398996,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9402638,
+     38.9781185
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4327",
+    "name_as_printed": null,
+    "building_number": "281",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9781185,
+    "longitude": -76.9402638,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.94001,
+     38.9780046
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4329",
+    "name_as_printed": null,
+    "building_number": "282",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9780046,
+    "longitude": -76.94001,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9398083,
+     38.9779135
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4331",
+    "name_as_printed": null,
+    "building_number": "283",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9779135,
+    "longitude": -76.9398083,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9395921,
+     38.9778799
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4333",
+    "name_as_printed": null,
+    "building_number": "284",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9778799,
+    "longitude": -76.9395921,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9393839,
+     38.9777852
+    ]
+   },
+   "properties": {
+    "name": "Graduate Gardens Apartment 4335",
+    "name_as_printed": null,
+    "building_number": "285",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9777852,
+    "longitude": -76.9393839,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9582393,
+     38.9849965
+    ]
+   },
+   "properties": {
+    "name": "Graduate Hills Apartment 286",
+    "name_as_printed": null,
+    "building_number": "286",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9849965,
+    "longitude": -76.9582393,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9572366,
+     38.9849715
+    ]
+   },
+   "properties": {
+    "name": "Graduate Hills Apartment 287",
+    "name_as_printed": null,
+    "building_number": "287",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9849715,
+    "longitude": -76.9572366,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9562378,
+     38.9852007
+    ]
+   },
+   "properties": {
+    "name": "Graduate Hills Apartment 288",
+    "name_as_printed": null,
+    "building_number": "288",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9852007,
+    "longitude": -76.9562378,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9558798,
+     38.9844547
+    ]
+   },
+   "properties": {
+    "name": "Graduate Hills Apartment 289",
+    "name_as_printed": null,
+    "building_number": "289",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9844547,
+    "longitude": -76.9558798,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9563497,
+     38.9841886
+    ]
+   },
+   "properties": {
+    "name": "Graduate Hills Apartment 290",
+    "name_as_printed": null,
+    "building_number": "290",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9841886,
+    "longitude": -76.9563497,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9572427,
+     38.9844693
+    ]
+   },
+   "properties": {
+    "name": "Graduate Hills Apartment 291",
+    "name_as_printed": null,
+    "building_number": "291",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9844693,
+    "longitude": -76.9572427,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9583402,
+     38.9843588
+    ]
+   },
+   "properties": {
+    "name": "Graduate Hills Apartment 292",
+    "name_as_printed": null,
+    "building_number": "292",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9843588,
+    "longitude": -76.9583402,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9487522,
+     38.9827357
+    ]
+   },
+   "properties": {
+    "name": "Hillel Center",
+    "name_as_printed": null,
+    "building_number": null,
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9827357,
+    "longitude": -76.9487522,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9413696,
+     38.9996384
+    ]
+   },
+   "properties": {
+    "name": "LEAFHouse",
+    "name_as_printed": null,
+    "building_number": "799",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9996384,
+    "longitude": -76.9413696,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9436141,
+     39.0049646
+    ]
+   },
+   "properties": {
+    "name": "Laboratory for Telecommunication Sciences",
+    "name_as_printed": null,
+    "building_number": "797",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 39.0049646,
+    "longitude": -76.9436141,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9337777,
+     38.9848168
+    ]
+   },
+   "properties": {
+    "name": "Leonardtown 244",
+    "name_as_printed": null,
+    "building_number": "244",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9848168,
+    "longitude": -76.9337777,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9333906,
+     38.9845973
+    ]
+   },
+   "properties": {
+    "name": "Leonardtown 245",
+    "name_as_printed": null,
+    "building_number": "245",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9845973,
+    "longitude": -76.9333906,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9335504,
+     38.9843092
+    ]
+   },
+   "properties": {
+    "name": "Leonardtown 246",
+    "name_as_printed": null,
+    "building_number": "246",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9843092,
+    "longitude": -76.9335504,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9331045,
+     38.9842412
+    ]
+   },
+   "properties": {
+    "name": "Leonardtown 247",
+    "name_as_printed": null,
+    "building_number": "247",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9842412,
+    "longitude": -76.9331045,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9334226,
+     38.9839387
+    ]
+   },
+   "properties": {
+    "name": "Leonardtown 248",
+    "name_as_printed": null,
+    "building_number": "248",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9839387,
+    "longitude": -76.9334226,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9332299,
+     38.9836844
+    ]
+   },
+   "properties": {
+    "name": "Leonardtown 249",
+    "name_as_printed": null,
+    "building_number": "249",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9836844,
+    "longitude": -76.9332299,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9334975,
+     38.9833614
+    ]
+   },
+   "properties": {
+    "name": "Leonardtown Community Center",
+    "name_as_printed": null,
+    "building_number": "250",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9833614,
+    "longitude": -76.9334975,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.928287,
+     38.9836338
+    ]
+   },
+   "properties": {
+    "name": "MFRI Structural Firefighting Building",
+    "name_as_printed": null,
+    "building_number": "196",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9836338,
+    "longitude": -76.928287,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9454909,
+     38.9899061
+    ]
+   },
+   "properties": {
+    "name": "Maryland Baseball Annex",
+    "name_as_printed": null,
+    "building_number": "420",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9899061,
+    "longitude": -76.9454909,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9246359,
+     38.972069
+    ]
+   },
+   "properties": {
+    "name": "NOAA",
+    "name_as_printed": null,
+    "building_number": "967",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.972069,
+    "longitude": -76.9246359,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9234614,
+     38.9719941
+    ]
+   },
+   "properties": {
+    "name": "NOAA Parking Garage",
+    "name_as_printed": null,
+    "building_number": "968",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9719941,
+    "longitude": -76.9234614,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.925332,
+     38.9761057
+    ]
+   },
+   "properties": {
+    "name": "Police Services & Training Facility",
+    "name_as_printed": null,
+    "building_number": "809",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9761057,
+    "longitude": -76.925332,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.925619,
+     38.9742095
+    ]
+   },
+   "properties": {
+    "name": "Research Park Building 1",
+    "name_as_printed": null,
+    "building_number": "807",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9742095,
+    "longitude": -76.925619,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9429239,
+     38.9818776
+    ]
+   },
+   "properties": {
+    "name": "South Campus Commons 1",
+    "name_as_printed": null,
+    "building_number": "996",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9818776,
+    "longitude": -76.9429239,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9429495,
+     38.9827619
+    ]
+   },
+   "properties": {
+    "name": "South Campus Commons 2",
+    "name_as_printed": null,
+    "building_number": "997",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9827619,
+    "longitude": -76.9429495,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9399074,
+     38.9813265
+    ]
+   },
+   "properties": {
+    "name": "South Campus Commons 3",
+    "name_as_printed": null,
+    "building_number": "998",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9813265,
+    "longitude": -76.9399074,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9414184,
+     38.981293
+    ]
+   },
+   "properties": {
+    "name": "South Campus Commons 4",
+    "name_as_printed": null,
+    "building_number": "999",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.981293,
+    "longitude": -76.9414184,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9446556,
+     38.9827688
+    ]
+   },
+   "properties": {
+    "name": "South Campus Commons 5",
+    "name_as_printed": null,
+    "building_number": "974",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9827688,
+    "longitude": -76.9446556,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9444651,
+     38.9820171
+    ]
+   },
+   "properties": {
+    "name": "South Campus Commons 6",
+    "name_as_printed": null,
+    "building_number": "975",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9820171,
+    "longitude": -76.9444651,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9446316,
+     38.9815673
+    ]
+   },
+   "properties": {
+    "name": "South Campus Commons 7",
+    "name_as_printed": null,
+    "building_number": "981",
+    "map_category": null,
+    "building_class": "Residence Halls and Apartments",
+    "grid_location": null,
+    "latitude": 38.9815673,
+    "longitude": -76.9446316,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9377002,
+     38.9898618
+    ]
+   },
+   "properties": {
+    "name": "Stanley R. Zupnik Hall",
+    "name_as_printed": null,
+    "building_number": null,
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9898618,
+    "longitude": -76.9377002,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9433404,
+     38.9950212
+    ]
+   },
+   "properties": {
+    "name": "Terrapin Trail Parking Garage",
+    "name_as_printed": null,
+    "building_number": "403",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9950212,
+    "longitude": -76.9433404,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.9353693,
+     38.9870924
+    ]
+   },
+   "properties": {
+    "name": "The Hotel at the University of Maryland",
+    "name_as_printed": null,
+    "building_number": "900",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 38.9870924,
+    "longitude": -76.9353693,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.941189,
+     39.0069874
+    ]
+   },
+   "properties": {
+    "name": "Turfgrass Research Facility",
+    "name_as_printed": null,
+    "building_number": "395",
+    "map_category": null,
+    "building_class": null,
+    "grid_location": null,
+    "latitude": 39.0069874,
+    "longitude": -76.941189,
+    "coordinate_source": "UMD GIS (BuildingAllSearch)",
+    "match_method": "not in the printed map directory",
+    "added_from_gis": "2026-11-19"
+   }
+  }
+ ]
+}
